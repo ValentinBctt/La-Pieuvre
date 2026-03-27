@@ -1,0 +1,22 @@
+:root {
+    /* Primary Colors */
+
+    --orange: #ea5137;
+
+
+    /* Neutral Colors */
+    --white: #ffffff;
+    --black: #000000;
+
+    --grey: #4c4c4c;
+
+
+
+}
+
+body {
+    background-color: var(--black);
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}

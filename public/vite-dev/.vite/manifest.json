@@ -1,0 +1,64 @@
+{
+  "_application-BJTtrnZk.css": {
+    "file": "assets/application-BJTtrnZk.css",
+    "src": "_application-BJTtrnZk.css"
+  },
+  "_application-OxMAD0v9.js": {
+    "file": "assets/application-OxMAD0v9.js",
+    "name": "application",
+    "css": [
+      "assets/application-BJTtrnZk.css"
+    ]
+  },
+  "_chunk-UVKPFVEO-hpfKN-5a.js": {
+    "file": "assets/chunk-UVKPFVEO-hpfKN-5a.js",
+    "name": "chunk-UVKPFVEO",
+    "imports": [
+      "_application-OxMAD0v9.js"
+    ]
+  },
+  "entrypoints/application.js": {
+    "file": "assets/application-dRpAzmfH.js",
+    "name": "entrypoints\\application.js",
+    "src": "entrypoints/application.js",
+    "isEntry": true
+  },
+  "entrypoints/application.jsx": {
+    "file": "assets/application-p3R1ZCSi.js",
+    "name": "entrypoints\\application.jsx",
+    "src": "entrypoints/application.jsx",
+    "isEntry": true,
+    "imports": [
+      "_application-OxMAD0v9.js",
+      "_chunk-UVKPFVEO-hpfKN-5a.js"
+    ]
+  },
+  "entrypoints/atelier.jsx": {
+    "file": "assets/atelier-SmIg5q_l.js",
+    "name": "entrypoints\\atelier.jsx",
+    "src": "entrypoints/atelier.jsx",
+    "isEntry": true,
+    "imports": [
+      "_application-OxMAD0v9.js",
+      "_chunk-UVKPFVEO-hpfKN-5a.js"
+    ]
+  },
+  "entrypoints/bureau.jsx": {
+    "file": "assets/bureau-C6gdTop8.js",
+    "name": "entrypoints\\bureau.jsx",
+    "src": "entrypoints/bureau.jsx",
+    "isEntry": true,
+    "imports": [
+      "_application-OxMAD0v9.js"
+    ]
+  },
+  "entrypoints/prestationlive.jsx": {
+    "file": "assets/prestationlive-BYLSo4Ty.js",
+    "name": "entrypoints\\prestationlive.jsx",
+    "src": "entrypoints/prestationlive.jsx",
+    "isEntry": true,
+    "imports": [
+      "_application-OxMAD0v9.js"
+    ]
+  }
+}

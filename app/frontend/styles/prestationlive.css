@@ -1,0 +1,165 @@
+.prestation-live-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+
+
+
+}
+
+.prestation-live-content {
+
+    margin: 0 auto; 
+
+    h1 {
+    margin: 5rem;    
+    text-align: center;
+    }
+
+    p {
+    text-align: center;
+    width: 50%;
+    margin: 5rem auto 2rem auto;}
+
+}
+.info-presta p {
+  margin: 0;
+    text-align: justify; /* 👈 remet le comportement propre */
+    width: 100%; /* 👈 prend toute la largeur disponible */
+}
+
+.info-presta {
+  
+  position: relative;
+
+
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "client contexte"
+    "missions contexte";
+
+  gap: 0.5rem;
+
+  border-left: solid 2px var(--orange);
+  border-right: solid 2px var(--orange);
+
+  width: 50%;
+  margin: 3rem auto 5rem auto;
+  padding: 1rem 2rem;
+}
+
+/* lignes */
+.info-presta::before,
+.info-presta::after {
+  content: "";
+  position: absolute;
+  top: 50%; /* centre vertical */
+  transform: translateY(-50%); /* ajustement parfait */
+
+  height: 2px;
+  background: var(--orange);
+  width: 50vw;
+}
+
+/* gauche */
+.info-presta::before {
+  right: 100%;
+}
+
+/* droite */
+.info-presta::after {
+  left: 100%;
+}
+
+  .contexte  {
+
+        text-align: right !important;
+    }
+
+/* reset */
+.info-presta p {
+  margin: 0;
+}
+
+/* placement */
+.client { 
+  grid-area: client;
+  text-align: left;
+}
+
+.missions { 
+  grid-area: missions;
+  text-align: left;
+}
+
+.contexte { 
+  grid-area: contexte;
+  text-align: right;
+  justify-self: end;
+  white-space: nowrap;
+}
+
+
+.description {
+  white-space: pre-line;
+  line-height: 1;
+}
+/* Slider horizontal pour les images de prestation */
+.scroll-container {
+  margin: 0 15rem 0rem 15rem;
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 3rem 5rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--orange) #000;
+  background: #000;
+}
+
+.scroll-container::-webkit-scrollbar {
+  height: 10px;
+  background: #000;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: #000;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: var(--orange);
+}
+
+
+
+.scroll-item {
+  flex: 0 0 auto;
+  width: 20rem;
+  height: 30rem;
+  background: #eee;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+  scroll-snap-align: start;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.6s ease;
+  border-radius: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--orange)
+}
+
+.scroll-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0; /* L'image ne dépasse plus, le parent masque tout débordement */
+  display: block;
+  transition: transform 1s ease, filter 0.6s ease;
+}
+
+
+
+

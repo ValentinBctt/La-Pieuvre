@@ -1,0 +1,69 @@
+:root {
+    /* Primary Colors */
+
+    --orange: #ea5137;
+
+
+    /* Neutral Colors */
+    --white: #ffffff;
+    --black: #000000;
+    --grey: #4c4c4c;
+
+
+    /* Font Families */
+    --font-main: 'Inter', Arial, sans-serif;
+    --font-title: 'Montserrat', 'Segoe UI', sans-serif;
+    --font-mono: 'Fira Mono', 'Consolas', monospace;
+}
+
+body {
+    background-color: var(--black);
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, p {
+  color: var(--white);
+  font-family: var(--font-title);
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+h2 {
+  margin-bottom: 0.5rem;
+  background-color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+h2::before,
+h2::after {
+  content: '';
+  flex: 1 1;
+  height: 2px;
+  background: var(--orange);
+  border-radius: 1px;
+  display: block;
+  margin: 0;
+}
+
+h2::before {
+  margin-right: 10rem;
+}
+
+h2::after {
+  margin-left: 10rem;
+}
+
+p {
+  line-height: 1.5;
+}
+

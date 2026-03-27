@@ -1,0 +1,1 @@
+import{i as e,n as t,t as n}from"./application-OxMAD0v9.js";var r=n(),i=e(t(),1);function a(){return i.createElement(`div`,{className:`bureau-page`},i.createElement(`h1`,null,`Bienvenue dans le Bureau`))}window.React=i.default,document.addEventListener(`DOMContentLoaded`,()=>{(0,r.createRoot)(document.getElementById(`root`)).render(i.createElement(a,null))});
