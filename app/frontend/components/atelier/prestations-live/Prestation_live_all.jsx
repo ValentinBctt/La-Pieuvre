@@ -1,7 +1,10 @@
-import React from 'react';
 
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/scrollbar';
+import { Scrollbar } from 'swiper/modules';
 import '../../../styles/prestationlive.css';
-import client from 'react-dom/client';
 
 const defaultPrestations = [
   {
@@ -23,26 +26,34 @@ export default function PrestationLiveAll({ prestations }) {
   return (
     <div className="prestation-live">
       {data.map((presta, idx) => (
-        <div className='prestation-live-content'>
-
-        <h1>{presta.title}</h1>
-        <div className='info-presta'>
-          <p><strong>Client:</strong> {presta.client || 'Non spécifié'}</p>
-          <p className='contexte'><strong>Contexte:</strong> {presta.contexte || 'Non spécifié'}</p>
-          <p><strong>Missions:</strong> {presta.missions || 'Non spécifié'}</p>
+        <div className='prestation-live-content' key={idx}>
+          <h1>{presta.title}</h1>
+          <div className='info-presta'>
+            <p><strong>Client:</strong> {presta.client || 'Non spécifié'}</p>
+            <p className='contexte'><strong>Contexte:</strong> {presta.contexte || 'Non spécifié'}</p>
+            <p><strong>Missions:</strong> {presta.missions || 'Non spécifié'}</p>
+          </div>
+          <p className="description">{presta.description}</p>
+          <div className="scroll-container">
+            <Swiper
+              modules={[Scrollbar]}
+              spaceBetween={20}
+              slidesPerView={2}
+              scrollbar={{ draggable: true, hide: false }}
+              style={{ padding: '1rem 0' }}
+            >
+              {[presta.image1, presta.image2, presta.image3, presta.image4, presta.image5]
+                .filter(Boolean)
+                .map((img, i) => (
+                  <SwiperSlide key={i}>
+                    <div className="scroll-item">
+                      <img src={img} alt={presta.title} loading="lazy" />
+                    </div>
+                  </SwiperSlide>
+                ))}
+            </Swiper>
+          </div>
         </div>
-              <p className="description">{presta.description}</p>
-        <div className="scroll-container">
-          {[presta.image1, presta.image2, presta.image3, presta.image4, presta.image5]
-            .filter(Boolean)
-            .map((img, i) => (
-              <div className="scroll-item" key={i}>
-                <img src={img} alt={presta.title} loading="lazy" />
-              </div>
-          ))}
-        </div>
-        </div>
-    
       ))}
     </div>
   );

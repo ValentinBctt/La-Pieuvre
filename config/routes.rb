@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   get '/atelier', to: 'atelier#index'
   get '/bureau', to: 'bureau#index'
   get '/prestationlive/:name', to: 'prestationlive#show', as: :prestationlive
+  namespace :atelier do
+    get 'prestationlive/:name', to: 'prestationlive#show', as: :prestationlive
+  end
 end

@@ -1,0 +1,50 @@
+/* ...existing code... */
+.nos-realisations {
+  width: 100%;
+ 
+  padding: 2rem 0;
+}
+
+.realisations-swiper {
+  width: 90vw;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.realisations-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+  border-radius: 1rem;
+  padding: 1rem;
+  min-width: 180px;
+  min-height: 120px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.realisations-image img {
+  width: 15rem;
+  height: 15rem;
+  object-fit: cover;
+  border-radius: 0.7rem;
+ 
+}
+
+.swiper-wrapper {
+  align-items: center;
+}
+
+@keyframes defilement-infinite {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Pour un effet infini, il faut dupliquer le contenu JS côté React :
+   Affiche deux fois la liste ImagesRealisations dans le JSX pour que le scroll soit continu. */
