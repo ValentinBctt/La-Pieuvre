@@ -1,1 +1,26 @@
-{}
+{
+  "images/92I.png": {
+    "file": "assets/92I-n0uH4jK7.png",
+    "src": "images/92I.png"
+  },
+  "images/banner.png": {
+    "file": "assets/banner-BNro4Tm0.png",
+    "src": "images/banner.png"
+  },
+  "images/pac118.png": {
+    "file": "assets/pac118-eReAKCY-.png",
+    "src": "images/pac118.png"
+  },
+  "images/psg1.png": {
+    "file": "assets/psg1-DI3eAh3D.png",
+    "src": "images/psg1.png"
+  },
+  "images/psg2.png": {
+    "file": "assets/psg2-Dljqqgvm.png",
+    "src": "images/psg2.png"
+  },
+  "images/tshirt.png": {
+    "file": "assets/tshirt-DinuJNtZ.png",
+    "src": "images/tshirt.png"
+  }
+}
