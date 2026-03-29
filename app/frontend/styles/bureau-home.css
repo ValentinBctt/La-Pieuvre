@@ -1,0 +1,219 @@
+.bureau-home {
+    display: flex;
+    flex-direction: row;
+    width: 90%;          /* ou 100% si tu veux occuper tout l'espace sauf le left margin */
+    margin-left: 10%;    /* laisse 10% d'espace à gauche */
+    margin-right: 0;     /* collé à droite */
+    margin-top: 4rem;    /* espace en haut */
+}
+
+.bureau-home-items-1 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.bureau-home-item {
+    width: 30%;
+    padding: 1rem;
+    position: relative;
+    gap: 2rem;
+}
+
+.bureau-nav-left-separator {
+    margin: 1rem 0 1rem -2rem;
+}
+
+
+.bureau-nav-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  
+  margin-top: 8rem;
+  margin-right: 10rem;
+}
+
+.bureau-nav-left a,
+.bureau-nav-left button {
+  text-decoration: none;
+  color: var(--grey);
+
+  white-space: nowrap;        /* empêche le retour à la ligne */
+  overflow: hidden;           /* cache le texte qui déborde */
+  text-overflow: ellipsis;    /* ajoute "..." si le texte est trop long */
+
+  transition: transform 0.3s ease; /* pour le smooth */
+}
+
+.bureau-nav-left a:hover,
+.bureau-nav-left button:hover {
+  transform: translateX(15px); /* décale légèrement vers la droite */
+  color: var(--white)
+}
+
+.bureau-home-item-title {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+   
+}
+
+.bureau-home-images {
+    position: relative;
+    width: 100%; /* ou la taille que tu veux */
+}
+
+.bureau-home-image-1,
+.bureau-home-image-2 {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.bureau-home-image-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 2;
+}
+
+.bureau-item-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 3;
+    background-color: var(--grey);
+    /* centrer le contenu */
+    align-items: center;
+    justify-content: center;
+}
+
+.bureau-item-hover p {
+    font-size: 0.5rem;
+}
+
+.bureau-home-images:hover .bureau-home-image-2  {
+    display: block;
+}
+
+.bureau-home-images:hover .bureau-item-hover {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    z-index: 3;
+    align-items: center;
+    justify-content: center;
+}
+
+.bureau-home-items-2 {
+  width: 60vw;
+  height: 60vh;
+  margin: 0 auto;
+}
+
+.bureau-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.bureau-home-item-swiper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+.bureau-home-images-swiper {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+}
+
+.bureau-home-image-1-swiper,
+.bureau-home-image-2-swiper {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+ 
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+}
+
+.bureau-item-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 3;
+    background-color: var(--grey);
+    /* centrer le contenu */
+    align-items: center;
+    justify-content: center;
+}
+
+.bureau-item-hover p {
+    font-size: 0.5rem;
+}
+
+.bureau-home-images:hover .bureau-home-image-2  {
+    display: block;
+}
+
+.bureau-home-images:hover .bureau-item-hover {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    z-index: 3;
+    align-items: center;
+    justify-content: center;
+}
+
+.bureau-home-images-swiper:hover .bureau-home-image-2  {
+    display: block;
+}
+
+.bureau-home-images-swiper:hover .bureau-item-hover {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    z-index: 3;
+    align-items: center;
+    justify-content: center;
+}
+
+.bureau-home-images-swiper {
+    
+}
