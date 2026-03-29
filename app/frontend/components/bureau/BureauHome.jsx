@@ -8,8 +8,8 @@ const ImagesBureauContainer = [
     {
         name: 'Paris-SaintGermain x FUTURA 2000',
         type : 'Merchandising - Personnalisation textile - DTF',
-        image1: '/vite-dev/images/psg1.png',
-        image2: '/vite-dev/images/psg2.png',
+        image1: '/images/psg1.png',
+        image2: '/images/psg2.png',
         text: 'L’Atelier La Pieuvre a eu le plaisir de collaborer avec le Paris Saint-Germain'
 
     },

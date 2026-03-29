@@ -14194,3 +14194,112 @@ Processing by AtelierController#index as HTML
 Completed 200 OK in 311ms (Views: 82.4ms | ActiveRecord: 0.0ms | Allocations: 6145)
 
 
+Started GET "/atelier" for ::1 at 2026-03-29 19:09:31 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 18.8ms | Allocations: 873)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 1469)
+Completed 200 OK in 22ms (Views: 21.4ms | ActiveRecord: 0.0ms | Allocations: 1716)
+
+
+Started GET "/atelier" for ::1 at 2026-03-29 19:10:16 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 16.7ms | Allocations: 871)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 1455)
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.0ms | Allocations: 1700)
+
+
+Started GET "/prestationlive/Reebok" for ::1 at 2026-03-29 19:10:29 +0200
+Processing by PrestationliveController#show as HTML
+  Parameters: {"name"=>"Reebok"}
+  Rendering layout layouts/application.html.erb
+  Rendering prestationlive/show.html.erb within layouts/application
+  Rendered prestationlive/show.html.erb within layouts/application (Duration: 18.5ms | Allocations: 967)
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 1436)
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 0.0ms | Allocations: 2032)
+
+
+Started GET "/bureau" for ::1 at 2026-03-29 19:10:50 +0200
+Processing by BureauController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bureau/index.html.erb within layouts/application
+  Rendered bureau/index.html.erb within layouts/application (Duration: 17.9ms | Allocations: 962)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 1585)
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 0.0ms | Allocations: 2179)
+
+
+Started GET "/bureau" for ::1 at 2026-03-29 19:11:19 +0200
+Processing by BureauController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bureau/index.html.erb within layouts/application
+  Rendered bureau/index.html.erb within layouts/application (Duration: 25.8ms | Allocations: 871)
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 1453)
+Completed 200 OK in 28ms (Views: 28.1ms | ActiveRecord: 0.0ms | Allocations: 1700)
+
+
+Started GET "/bureau" for ::1 at 2026-03-29 19:12:31 +0200
+Processing by BureauController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bureau/index.html.erb within layouts/application
+  Rendered bureau/index.html.erb within layouts/application (Duration: 13.1ms | Allocations: 871)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 1476)
+Completed 200 OK in 16ms (Views: 15.7ms | ActiveRecord: 0.0ms | Allocations: 1720)
+
+
+Started GET "/bureau" for ::1 at 2026-03-29 19:13:39 +0200
+Processing by BureauController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bureau/index.html.erb within layouts/application
+  Rendered bureau/index.html.erb within layouts/application (Duration: 19.0ms | Allocations: 872)
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 1444)
+Completed 200 OK in 21ms (Views: 20.8ms | ActiveRecord: 0.0ms | Allocations: 1688)
+
+
+Started GET "/atelier" for ::1 at 2026-03-29 19:13:57 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 22.5ms | Allocations: 871)
+  Rendered layout layouts/application.html.erb (Duration: 23.7ms | Allocations: 1458)
+Completed 200 OK in 25ms (Views: 24.4ms | ActiveRecord: 0.0ms | Allocations: 1704)
+
+
+Started GET "/atelier" for ::1 at 2026-03-29 19:16:13 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 27.2ms | Allocations: 1324)
+  Rendered layout layouts/application.html.erb (Duration: 31.2ms | Allocations: 2459)
+Completed 200 OK in 67ms (Views: 43.4ms | ActiveRecord: 0.0ms | Allocations: 6711)
+
+
+Started GET "/atelier" for ::1 at 2026-03-29 19:17:33 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 20.7ms | Allocations: 871)
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 1451)
+Completed 200 OK in 23ms (Views: 23.1ms | ActiveRecord: 0.0ms | Allocations: 1696)
+
+
+Started GET "/atelier" for ::1 at 2026-03-29 19:20:37 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 18.7ms | Allocations: 871)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 1441)
+Completed 200 OK in 21ms (Views: 20.7ms | ActiveRecord: 0.0ms | Allocations: 1687)
+
+
+Started GET "/atelier" for ::1 at 2026-03-29 19:20:58 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 18.9ms | Allocations: 871)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 1452)
+Completed 200 OK in 21ms (Views: 20.7ms | ActiveRecord: 0.0ms | Allocations: 1697)
+
+

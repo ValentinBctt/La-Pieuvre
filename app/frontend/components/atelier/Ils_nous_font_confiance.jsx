@@ -5,12 +5,12 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 
 const ImagesConfiance = [
-  '/vite-dev/images/92I.png',
-  '/vite-dev/images/92I.png',
-  '/vite-dev/images/92I.png',
-  '/vite-dev/images/92I.png',
-  '/vite-dev/images/92I.png',
-  '/vite-dev/images/92I.png',
+  '/images/92i.png',
+  '/images/92i.png',
+  '/images/92i.png',
+  '/images/92i.png',
+  '/images/92i.png',
+  '/images/92i.png',
 ];
 
 export default function IlsNousFontConfiance() {
