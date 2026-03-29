@@ -1,3 +1,10 @@
+/* Aligner le titre à droite */
+.realisation-title-right {
+  text-align: right;
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+}
 /* ...existing code... */
 .nos-realisations {
   width: 100%;
@@ -48,3 +55,67 @@
 
 /* Pour un effet infini, il faut dupliquer le contenu JS côté React :
    Affiche deux fois la liste ImagesRealisations dans le JSX pour que le scroll soit continu. */
+
+   .nos-realisations-all {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 4rem;
+   
+   }
+
+  .realisation-on-title {
+    line-height: 1;
+    margin-top: 4rem;
+     border: none;
+  }
+  
+  .realisation-on-title p {
+    margin: 0 !important;
+  }
+
+   .realisation-container {
+    margin-top: 1rem;
+    padding: 0 5rem;
+     border: solid 1px var(--grey);
+   }
+
+   .realisation-title {
+    text-align: center;
+    margin: 4rem auto;
+    border-bottom: solid 1px var(--grey);
+    padding-bottom: 4rem;  
+   }
+
+  .realisation-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+  .realisation-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+
+
+  }
+
+  .realisation-item img {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 0.7rem;
+    object-fit: cover;
+  }
+
+  .realisation-item h3,
+  .realisation-item p,
+  .realisation-item span {
+    text-align: center;
+    margin: 0.2rem 0;
+  }

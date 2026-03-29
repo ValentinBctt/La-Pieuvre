@@ -1,10 +1,95 @@
 import React from "react";
 
+
+const ImagesRealisations = [
+  {
+    image: '/vite-dev/images/tshirt.png',
+    name: 'SDM',
+    subname: 'Tee Shirt "JEUX d\'ECHEC"',
+    type: 'Sérigraphie'
+  },
+  {
+    image: '/vite-dev/images/tshirt.png',
+    name: 'SDM',
+    subname: 'Tee Shirt "JEUX d\'ECHEC"',
+    type: 'Sérigraphie'
+  },
+  {
+    image: '/vite-dev/images/tshirt.png',
+    name: 'SDM',
+    subname: 'Tee Shirt "JEUX d\'ECHEC"',
+    type: 'Sérigraphie'
+  },
+  {
+    image: '/vite-dev/images/tshirt.png',
+    name: 'SDM',
+    subname: 'Tee Shirt "JEUX d\'ECHEC"',
+    type: 'Sérigraphie'
+  },
+  {
+    image: '/vite-dev/images/tshirt.png',
+    name: 'SDM',
+    subname: 'Tee Shirt "JEUX d\'ECHEC"',
+    type: 'Sérigraphie'
+  },
+  {
+    image: '/vite-dev/images/tshirt.png',
+    name: 'SDM',
+    subname: 'Tee Shirt "JEUX d\'ECHEC"',
+    type: 'Sérigraphie'
+  },
+  {
+    image: '/vite-dev/images/tshirt.png',
+    name: 'SDM',
+    subname: 'Tee Shirt "JEUX d\'ECHEC"',
+    type: 'Sérigraphie'
+  },
+  {
+    image: '/vite-dev/images/tshirt.png',
+    name: 'SDM',
+    subname: 'Tee Shirt "JEUX d\'ECHEC"',
+    type: 'Sérigraphie'
+  },
+  {
+    image: '/vite-dev/images/tshirt.png',
+    name: 'SDM',
+    subname: 'Tee Shirt "JEUX d\'ECHEC"',
+    type: 'Sérigraphie'
+  },
+  {
+    image: '/vite-dev/images/tshirt.png',
+    name: 'SDM',
+    subname: 'Tee Shirt "JEUX d\'ECHEC"',
+    type: 'Sérigraphie'
+  }
+]
+
 export default function NosRealisationsAll() {
     return (
         <div className="nos-realisations-all">
-            <h1>Nos réalisations</h1>
-            <p>Découvrez nos projets les plus récents et les plus marquants, témoignant de notre savoir-faire et de notre créativité. Chaque réalisation est une histoire unique, façonnée par la collaboration avec nos clients et notre passion pour l'excellence.</p>
+
+            <div className="realisation-on-title">
+            <p>ATELIER LA PIEUVRE</p>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <p>Confection_Personalisation_Events_Merchandising</p>
+                <p className="realisation-title-right">Selection_2024_2025</p>
+            </div>
+            </div>
+
+
+            <div className="realisation-container">
+                <h1 className="realisation-title">NOS REALISATIONS</h1>
+                <div className="realisation-grid">
+                    {ImagesRealisations.map((item, index) => (
+                        <div key={index} className="realisation-item">
+                            <img src={item.image} alt={item.name} />
+                            <h3>{item.name}</h3>
+                            <p>{item.subname}</p>
+                            <p>{item.type}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
     )
 }

@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   get '/prestationlive/:name', to: 'prestationlive#show', as: :prestationlive
   namespace :atelier do
     get 'prestationlive/:name', to: 'prestationlive#show', as: :prestationlive
+    get 'realisations', to: 'realisations#index', as: :realisations
   end
 end

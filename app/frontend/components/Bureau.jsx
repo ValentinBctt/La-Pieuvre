@@ -1,11 +1,13 @@
 import React from 'react'
 
+import BureauHome from'./bureau/BureauHome.jsx'
+
 
 export default function Bureau() {
   return (
     <div className="bureau-page">
-      <h1>Bienvenue dans le Bureau</h1>
     
+      <BureauHome />
     </div>
   )
 }
