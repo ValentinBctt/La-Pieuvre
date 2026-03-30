@@ -3,61 +3,61 @@ import React from "react";
 
 const ImagesRealisations = [
   {
-    image: '/vite-dev/images/tshirt.png',
+    image: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/tshirt_ajvjuj.png',
     name: 'SDM',
     subname: 'Tee Shirt "JEUX d\'ECHEC"',
     type: 'Sérigraphie'
   },
   {
-    image: '/vite-dev/images/tshirt.png',
+    image: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/tshirt_ajvjuj.png',
     name: 'SDM',
     subname: 'Tee Shirt "JEUX d\'ECHEC"',
     type: 'Sérigraphie'
   },
   {
-    image: '/vite-dev/images/tshirt.png',
+    image: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/tshirt_ajvjuj.png',
     name: 'SDM',
     subname: 'Tee Shirt "JEUX d\'ECHEC"',
     type: 'Sérigraphie'
   },
   {
-    image: '/vite-dev/images/tshirt.png',
+    image: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/tshirt_ajvjuj.png',
     name: 'SDM',
     subname: 'Tee Shirt "JEUX d\'ECHEC"',
     type: 'Sérigraphie'
   },
   {
-    image: '/vite-dev/images/tshirt.png',
+    image: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/tshirt_ajvjuj.png',
     name: 'SDM',
     subname: 'Tee Shirt "JEUX d\'ECHEC"',
     type: 'Sérigraphie'
   },
   {
-    image: '/vite-dev/images/tshirt.png',
+    image: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/tshirt_ajvjuj.png',
     name: 'SDM',
     subname: 'Tee Shirt "JEUX d\'ECHEC"',
     type: 'Sérigraphie'
   },
   {
-    image: '/vite-dev/images/tshirt.png',
+    image: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/tshirt_ajvjuj.png',
     name: 'SDM',
     subname: 'Tee Shirt "JEUX d\'ECHEC"',
     type: 'Sérigraphie'
   },
   {
-    image: '/vite-dev/images/tshirt.png',
+    image: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/tshirt_ajvjuj.png',
     name: 'SDM',
     subname: 'Tee Shirt "JEUX d\'ECHEC"',
     type: 'Sérigraphie'
   },
   {
-    image: '/vite-dev/images/tshirt.png',
+    image: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/tshirt_ajvjuj.png',
     name: 'SDM',
     subname: 'Tee Shirt "JEUX d\'ECHEC"',
     type: 'Sérigraphie'
   },
   {
-    image: '/vite-dev/images/tshirt.png',
+    image: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/tshirt_ajvjuj.png',
     name: 'SDM',
     subname: 'Tee Shirt "JEUX d\'ECHEC"',
     type: 'Sérigraphie'

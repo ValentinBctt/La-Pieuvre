@@ -14430,3 +14430,12 @@ Processing by BureauController#index as HTML
 Completed 200 OK in 30ms (Views: 29.5ms | ActiveRecord: 0.0ms | Allocations: 1688)
 
 
+Started GET "/bureau" for ::1 at 2026-03-30 10:48:57 +0200
+Processing by BureauController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bureau/index.html.erb within layouts/application
+  Rendered bureau/index.html.erb within layouts/application (Duration: 37.6ms | Allocations: 873)
+  Rendered layout layouts/application.html.erb (Duration: 39.2ms | Allocations: 1448)
+Completed 200 OK in 40ms (Views: 40.1ms | ActiveRecord: 0.0ms | Allocations: 1692)
+
+
