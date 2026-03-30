@@ -14303,3 +14303,121 @@ Processing by AtelierController#index as HTML
 Completed 200 OK in 21ms (Views: 20.7ms | ActiveRecord: 0.0ms | Allocations: 1697)
 
 
+Started GET "/" for ::1 at 2026-03-30 10:29:10 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 27.6ms | Allocations: 322)
+  Rendered layout layouts/application.html.erb (Duration: 78.2ms | Allocations: 2104)
+Completed 200 OK in 391ms (Views: 141.1ms | ActiveRecord: 0.0ms | Allocations: 6352)
+
+
+Started GET "/atelier" for ::1 at 2026-03-30 10:29:18 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 31.1ms | Allocations: 965)
+  Rendered layout layouts/application.html.erb (Duration: 33.2ms | Allocations: 1613)
+Completed 200 OK in 40ms (Views: 38.6ms | ActiveRecord: 0.0ms | Allocations: 2210)
+
+
+Started GET "/atelier" for ::1 at 2026-03-30 10:30:04 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 27.8ms | Allocations: 873)
+  Rendered layout layouts/application.html.erb (Duration: 29.2ms | Allocations: 1472)
+Completed 200 OK in 30ms (Views: 30.0ms | ActiveRecord: 0.0ms | Allocations: 1719)
+
+
+Started GET "/atelier" for ::1 at 2026-03-30 10:31:44 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 23.8ms | Allocations: 873)
+  Rendered layout layouts/application.html.erb (Duration: 25.4ms | Allocations: 1475)
+Completed 200 OK in 27ms (Views: 26.6ms | ActiveRecord: 0.0ms | Allocations: 1719)
+
+
+Started GET "/atelier/realisations" for ::1 at 2026-03-30 10:32:05 +0200
+Processing by Atelier::RealisationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/realisations/index.html.erb within layouts/application
+  Rendered atelier/realisations/index.html.erb within layouts/application (Duration: 9.0ms | Allocations: 107)
+  Rendered layout layouts/application.html.erb (Duration: 44.4ms | Allocations: 1374)
+Completed 200 OK in 51ms (Views: 49.0ms | ActiveRecord: 0.0ms | Allocations: 1972)
+
+
+Started GET "/atelier" for ::1 at 2026-03-30 10:32:23 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 19.7ms | Allocations: 873)
+  Rendered layout layouts/application.html.erb (Duration: 21.0ms | Allocations: 1460)
+Completed 200 OK in 22ms (Views: 22.1ms | ActiveRecord: 0.0ms | Allocations: 1708)
+
+
+Started GET "/atelier" for ::1 at 2026-03-30 10:33:15 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 21.4ms | Allocations: 873)
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | Allocations: 1448)
+Completed 200 OK in 24ms (Views: 23.9ms | ActiveRecord: 0.0ms | Allocations: 1692)
+
+
+Started GET "/atelier" for ::1 at 2026-03-30 10:33:34 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 17.8ms | Allocations: 873)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 1454)
+Completed 200 OK in 20ms (Views: 20.2ms | ActiveRecord: 0.0ms | Allocations: 1698)
+
+
+Started GET "/atelier" for ::1 at 2026-03-30 10:35:14 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 25.8ms | Allocations: 873)
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 1463)
+Completed 200 OK in 28ms (Views: 27.9ms | ActiveRecord: 0.0ms | Allocations: 1707)
+
+
+Started GET "/prestationlive/Yamaha_x_union" for ::1 at 2026-03-30 10:35:28 +0200
+Processing by PrestationliveController#show as HTML
+  Parameters: {"name"=>"Yamaha_x_union"}
+  Rendering layout layouts/application.html.erb
+  Rendering prestationlive/show.html.erb within layouts/application
+  Rendered prestationlive/show.html.erb within layouts/application (Duration: 22.6ms | Allocations: 971)
+  Rendered layout layouts/application.html.erb (Duration: 23.9ms | Allocations: 1448)
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.0ms | Allocations: 2043)
+
+
+Started GET "/bureau" for ::1 at 2026-03-30 10:35:56 +0200
+Processing by BureauController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bureau/index.html.erb within layouts/application
+  Rendered bureau/index.html.erb within layouts/application (Duration: 27.7ms | Allocations: 966)
+  Rendered layout layouts/application.html.erb (Duration: 29.0ms | Allocations: 1568)
+Completed 200 OK in 35ms (Views: 33.1ms | ActiveRecord: 0.0ms | Allocations: 2162)
+
+
+Started GET "/bureau" for ::1 at 2026-03-30 10:37:10 +0200
+Processing by BureauController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bureau/index.html.erb within layouts/application
+  Rendered bureau/index.html.erb within layouts/application (Duration: 13.2ms | Allocations: 873)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 1461)
+Completed 200 OK in 16ms (Views: 15.6ms | ActiveRecord: 0.0ms | Allocations: 1707)
+
+
+Started GET "/bureau" for ::1 at 2026-03-30 10:38:23 +0200
+Processing by BureauController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bureau/index.html.erb within layouts/application
+  Rendered bureau/index.html.erb within layouts/application (Duration: 26.5ms | Allocations: 873)
+  Rendered layout layouts/application.html.erb (Duration: 28.1ms | Allocations: 1376)
+Completed 200 OK in 29ms (Views: 28.8ms | ActiveRecord: 0.0ms | Allocations: 1621)
+
+

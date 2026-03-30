@@ -1,0 +1,10 @@
+# config/cloudinary.yml
+development:
+  cloud_name: "dnojcwwos"
+  api_key: "459896845145127"
+  api_secret: "TAaagspy6ect2YIigfpEPgZd5xs"
+
+production:
+  cloud_name: "dnojcwwos"
+  api_key: "459896845145127"
+  api_secret: "TAaagspy6ect2YIigfpEPgZd5xs"

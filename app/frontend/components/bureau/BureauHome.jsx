@@ -17,8 +17,8 @@ const ImagesBureauContainer = [
        {
         name: 'Paris-SaintGermain x FUTURA 2000',
         type : 'Merchandising - Personnalisation textile - DTF',
-        image1: '/vite-dev/images/psg1.png',
-        image2: '/vite-dev/images/psg2.png',
+        image1: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/psg1_qk5mtv.png',
+        image2: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/psg2_qtdrr7.png',
         text: 'L’Atelier La Pieuvre a eu le plaisir de collaborer avec le Paris Saint-Germain'
 
     },
@@ -26,8 +26,8 @@ const ImagesBureauContainer = [
        {
         name: 'Paris-SaintGermain x FUTURA 2000',
         type : 'Merchandising - Personnalisation textile - DTF',
-        image1: '/vite-dev/images/psg1.png',
-        image2: '/vite-dev/images/psg2.png',
+        image1: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/psg1_qk5mtv.png',
+        image2: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/psg2_qtdrr7.png',
         text: 'L’Atelier La Pieuvre a eu le plaisir de collaborer avec le Paris Saint-Germain'
 
     },
@@ -35,8 +35,8 @@ const ImagesBureauContainer = [
        {
         name: 'Paris-SaintGermain x FUTURA 2000',
         type : 'Merchandising - Personnalisation textile - DTF',
-        image1: '/vite-dev/images/psg1.png',
-        image2: '/vite-dev/images/psg2.png',
+        image1: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/psg1_qk5mtv.png',
+        image2: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/psg2_qtdrr7.png',
         text: 'L’Atelier La Pieuvre a eu le plaisir de collaborer avec le Paris Saint-Germain'
 
     },
@@ -44,8 +44,8 @@ const ImagesBureauContainer = [
        {
         name: 'Paris-SaintGermain x FUTURA 2000',
         type : 'Merchandising - Personnalisation textile - DTF',
-        image1: '/vite-dev/images/psg1.png',
-        image2: '/vite-dev/images/psg2.png',
+        image1: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/psg1_qk5mtv.png',
+        image2: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/psg2_qtdrr7.png',
         text: 'L’Atelier La Pieuvre a eu le plaisir de collaborer avec le Paris Saint-Germain'
 
     },
@@ -53,8 +53,8 @@ const ImagesBureauContainer = [
        {
         name: 'Paris-SaintGermain x FUTURA 2000',
         type : 'Merchandising - Personnalisation textile - DTF',
-        image1: '/vite-dev/images/psg1.png',
-        image2: '/vite-dev/images/psg2.png',
+        image1: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/psg1_qk5mtv.png',
+        image2: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/psg2_qtdrr7.png',
         text: 'L’Atelier La Pieuvre a eu le plaisir de collaborer avec le Paris Saint-Germain'
 
     },

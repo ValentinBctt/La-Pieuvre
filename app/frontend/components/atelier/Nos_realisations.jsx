@@ -7,11 +7,11 @@ import 'swiper/css/autoplay';
 
 const ImagesRealisations = [
   {
-    image1: '/vite-dev/images/tshirt.png',
-    image2: '/vite-dev/images/tshirt.png',
-    image3: '/vite-dev/images/tshirt.png',
-    image4: '/vite-dev/images/tshirt.png',
-    image5: '/vite-dev/images/tshirt.png',
+    image1: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/tshirt_ajvjuj.png',
+    image2: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/tshirt_ajvjuj.png',
+    image3: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/tshirt_ajvjuj.png',
+    image4: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/tshirt_ajvjuj.png',
+    image5: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/tshirt_ajvjuj.png',
   },
   // Ajoute d'autres objets ici si besoin
 ];

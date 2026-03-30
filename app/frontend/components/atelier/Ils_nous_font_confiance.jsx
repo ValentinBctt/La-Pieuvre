@@ -3,14 +3,16 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/autoplay';
+import images from '../../images/images.jsx'; // adapte le chemin si besoin
+
 
 const ImagesConfiance = [
-  '/images/92i.png',
-  '/images/92i.png',
-  '/images/92i.png',
-  '/images/92i.png',
-  '/images/92i.png',
-  '/images/92i.png',
+  {name: '92i', src: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857839/92i_eqy61e.png'},
+  {name: '92i', src: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857839/92i_eqy61e.png'},
+  {name: '92i', src: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857839/92i_eqy61e.png'},
+  {name: '92i', src: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857839/92i_eqy61e.png'},
+  {name: '92i', src: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857839/92i_eqy61e.png'},
+  {name: '92i', src: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857839/92i_eqy61e.png'},
 ];
 
 export default function IlsNousFontConfiance() {
@@ -30,7 +32,7 @@ export default function IlsNousFontConfiance() {
       >
           {ImagesConfiance.map((img, idx) => (
             <SwiperSlide key={idx}>
-              <img src={img} alt={`Confiance ${idx + 1}`} />
+              <img src={img.src} alt={img.name || `Confiance ${idx + 1}`} />
             </SwiperSlide>
           ))}
         </Swiper>

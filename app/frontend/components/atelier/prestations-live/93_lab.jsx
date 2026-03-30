@@ -12,11 +12,11 @@ Chaque étape, du moodboard à l’impression textile, a été pensée pour les 
 Un atelier qui prouve que la créativité n’attend pas l’âge, mais qu’elle a besoin d’espace pour s’exprimer.
 On est fiers d’avoir pu contribuer à cela.
 Merci à l’association pour cette initiative, et surtout aux jeunes, pour leur belle implication.`,
-        image1: '/vite-dev/images/pac118.png',
-        image2: '/vite-dev/images/pac118.png',
-        image3: '/vite-dev/images/pac118.png',
-        image4: '/vite-dev/images/pac118.png',
-        image5: '/vite-dev/images/pac118.png',
+        image1: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/pac118_ocmami.png',
+        image2: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/pac118_ocmami.png',
+        image3: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/pac118_ocmami.png',
+        image4: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/pac118_ocmami.png',
+        image5: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/pac118_ocmami.png',
 
   }
 ];
