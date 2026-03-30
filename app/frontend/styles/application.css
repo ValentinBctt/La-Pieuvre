@@ -72,7 +72,15 @@ p {
   justify-content: space-between;
   padding: 1rem 2rem;
   background-color: var(--orange);
+;
+}
 
+.navbar-bureau {
+  display : flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: var(--black);
+  border-bottom: solid 1px var(--white);
 }
 
 .navbar-atelier a {
@@ -80,6 +88,18 @@ p {
   text-decoration: none;
   font-family: var(--font-main);
   font-weight: bold;
+}
+
+.navbar-bureau a {
+  color: var(--white);
+  text-decoration: none;
+  font-family: var(--font-main);
+  font-weight: bold;
+}
+
+/* Espace horizontal entre les liens de la navbar à droite */
+.navbar-right a:not(:last-child) {
+  margin-right: 1rem;
 }
 
 .navbar-atelier-center img {
@@ -95,7 +115,16 @@ p {
   transform: translateX(-50%);
 }
 
-.navbar-right {
-  gap: 2rem;
-
+.navbar-bureau-center img {
+  background-color: var(--black);
+  height: 3rem;
+  object-fit: cover;
+  border-radius: 100%;
+  padding: 0.5rem;
+  z-index: 1000;
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
+

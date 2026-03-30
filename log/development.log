@@ -14720,3 +14720,116 @@ Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2026-
   
 ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
   
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2026-03-30 12:16:09 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2026-03-30 12:16:12 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/bureau" for ::1 at 2026-03-30 12:16:16 +0200
+Processing by BureauController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bureau/index.html.erb within layouts/application
+  Rendered bureau/index.html.erb within layouts/application (Duration: 24.6ms | Allocations: 873)
+  Rendered layout layouts/application.html.erb (Duration: 25.9ms | Allocations: 1448)
+Completed 200 OK in 27ms (Views: 26.6ms | ActiveRecord: 0.0ms | Allocations: 1693)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2026-03-30 12:16:16 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/bureau" for ::1 at 2026-03-30 12:18:38 +0200
+Processing by BureauController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bureau/index.html.erb within layouts/application
+  Rendered bureau/index.html.erb within layouts/application (Duration: 27.4ms | Allocations: 873)
+  Rendered layout layouts/application.html.erb (Duration: 28.7ms | Allocations: 1466)
+Completed 200 OK in 30ms (Views: 29.5ms | ActiveRecord: 0.0ms | Allocations: 1711)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2026-03-30 12:18:38 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/bureau" for ::1 at 2026-03-30 12:19:24 +0200
+Processing by BureauController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bureau/index.html.erb within layouts/application
+  Rendered bureau/index.html.erb within layouts/application (Duration: 29.8ms | Allocations: 873)
+  Rendered layout layouts/application.html.erb (Duration: 31.4ms | Allocations: 1457)
+Completed 200 OK in 33ms (Views: 32.3ms | ActiveRecord: 0.0ms | Allocations: 1702)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2026-03-30 12:19:24 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/bureau" for ::1 at 2026-03-30 12:20:16 +0200
+Processing by BureauController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bureau/index.html.erb within layouts/application
+  Rendered bureau/index.html.erb within layouts/application (Duration: 19.7ms | Allocations: 873)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 1445)
+Completed 200 OK in 22ms (Views: 22.0ms | ActiveRecord: 0.0ms | Allocations: 1690)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2026-03-30 12:20:16 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/bureau" for ::1 at 2026-03-30 12:20:46 +0200
+Processing by BureauController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bureau/index.html.erb within layouts/application
+  Rendered bureau/index.html.erb within layouts/application (Duration: 25.7ms | Allocations: 873)
+  Rendered layout layouts/application.html.erb (Duration: 27.6ms | Allocations: 1469)
+Completed 200 OK in 29ms (Views: 29.0ms | ActiveRecord: 0.0ms | Allocations: 1714)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2026-03-30 12:20:46 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/bureau" for ::1 at 2026-03-30 12:22:34 +0200
+Processing by BureauController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bureau/index.html.erb within layouts/application
+  Rendered bureau/index.html.erb within layouts/application (Duration: 22.7ms | Allocations: 873)
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 1457)
+Completed 200 OK in 25ms (Views: 24.7ms | ActiveRecord: 0.0ms | Allocations: 1702)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2026-03-30 12:22:34 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/bureau" for ::1 at 2026-03-30 12:23:14 +0200
+Processing by BureauController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bureau/index.html.erb within layouts/application
+  Rendered bureau/index.html.erb within layouts/application (Duration: 15.8ms | Allocations: 873)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 1460)
+Completed 200 OK in 18ms (Views: 18.2ms | ActiveRecord: 0.0ms | Allocations: 1705)
+
+
+Started GET "/bureau" for ::1 at 2026-03-30 12:24:02 +0200
+Processing by BureauController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bureau/index.html.erb within layouts/application
+  Rendered bureau/index.html.erb within layouts/application (Duration: 24.0ms | Allocations: 873)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 1472)
+Completed 200 OK in 26ms (Views: 26.0ms | ActiveRecord: 0.0ms | Allocations: 1716)
+
+
+Started GET "/bureau" for ::1 at 2026-03-30 12:24:24 +0200
+Processing by BureauController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bureau/index.html.erb within layouts/application
+  Rendered bureau/index.html.erb within layouts/application (Duration: 27.2ms | Allocations: 873)
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 1439)
+Completed 200 OK in 30ms (Views: 29.6ms | ActiveRecord: 0.0ms | Allocations: 1684)
+
+

@@ -4,6 +4,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 
+import NavbarBureau from "./NavbarBureau.jsx";
+
 const ImagesBureauContainer = [
     {
         name: 'Paris-SaintGermain x FUTURA 2000',
@@ -66,7 +68,13 @@ const ImagesBureauContainer = [
 export default function BureauHome() {
   const [showSlider, setShowSlider] = useState(false);
 
-  return <div className="bureau-home">
+  return (
+
+    <>
+    <NavbarBureau />
+     
+  
+  <div className="bureau-home">
 
     <div className="bureau-nav-left">
             <a href="#">Branding</a>
@@ -153,7 +161,7 @@ export default function BureauHome() {
       )}
     </div>
     
-<div className="toggle-bureau" style={{ position: 'absolute', top: 24, right: 24, zIndex: 1000 }}>
+<div className="toggle-bureau" style={{ position: 'absolute', top: 60, right: 48, zIndex: 1000 }}>
   <button
     onClick={() => setShowSlider(s => !s)}
     style={{
@@ -204,5 +212,8 @@ export default function BureauHome() {
     )}
   </button>
 </div>
-  </div>;
+  </div>
+  </>
+  );
+  
 }
