@@ -2,10 +2,22 @@ import React from 'react'
 import { createRoot } from 'react-dom/client'
 import Atelier from '../components/Atelier.jsx'
 import '../styles/application.css'
+import '../styles/selection-textile.css'
 
 window.React = React
 
-document.addEventListener('DOMContentLoaded', () => {
-  const root = createRoot(document.getElementById('root'))
-  root.render(<Atelier />)
-})
+function mountAtelier() {
+  const container = document.getElementById('root');
+  if (container) {
+    if (!window._atelierReactRoot) {
+      window._atelierReactRoot = createRoot(container);
+    }
+    window._atelierReactRoot.render(<Atelier />);
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', mountAtelier);
+} else {
+  mountAtelier();
+}

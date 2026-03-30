@@ -7,6 +7,11 @@ import '../styles/bureau-home.css';
 window.React = React
 
 document.addEventListener('DOMContentLoaded', () => {
-  const root = createRoot(document.getElementById('root'))
-  root.render(<Bureau />)
-})
+  const container = document.getElementById('root');
+  if (container) {
+    if (!window._bureauReactRoot) {
+      window._bureauReactRoot = createRoot(container);
+    }
+    window._bureauReactRoot.render(<Bureau />);
+  }
+});

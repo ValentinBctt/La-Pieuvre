@@ -1,0 +1,101 @@
+.carousel-wrapper {
+  width: 80%;
+  padding: 60px 0;
+  height: 80%;
+
+}
+
+.textile-swiper {
+    width: 70%;
+    margin: 3rem auto;
+}
+
+.full-card {
+    display: flex;
+}
+
+.mySwiper {
+  overflow: visible; /* 👈 permet de voir les slides sur les côtés */
+}
+
+.swiper-slide {
+  transition: all 0.3s ease;
+  opacity: 0.4;
+  transform: scale(0.85);
+}
+
+.swiper-slide-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  border-color: #ff5a2f; /* accent comme ton design */
+  width : 30%;
+}
+
+.card p {
+  color: var(--black);
+  margin-top: 10px;
+  text-align: left;
+}
+
+
+.card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.card h3 {
+  color: white;
+  margin-top: 15px;
+}
+
+.selection-textile {
+  padding: 2rem 0;
+  min-height: 60vh;
+}
+
+.card-description {
+    margin-left: 6rem;
+    width: 40%;
+}
+
+.card-info > * {
+  border-bottom: 1px solid #ccc; /* ou la couleur de ton choix */
+  padding-bottom: 8px; /* optionnel, pour espacer le contenu du bord */
+  margin-bottom: 8px;  /* optionnel, pour éviter que le bord touche le suivant */
+}
+
+/* Si tu ne veux pas de bord sur le dernier élément : */
+.card-info > *:last-child {
+  border-bottom: none;
+}
+
+.textile-swiper .swiper-button-next {
+    right: 20rem; /* Ajuste la position à droite */
+}
+
+/* Swiper navigation arrows blanches */
+.textile-swiper .swiper-button-next,
+.textile-swiper .swiper-button-prev {
+  color: #fff;
+  fill: #fff;
+  background: transparent;
+}
+
+/* Swiper pagination bullets : actifs en blanc, inactifs en gris */
+.textile-swiper .swiper-pagination-bullet {
+  background: #888 !important;
+  opacity: 1;
+}
+.textile-swiper .swiper-pagination-bullet-active {
+  background: #fff !important;
+}
+

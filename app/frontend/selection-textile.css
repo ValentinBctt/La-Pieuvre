@@ -1,0 +1,21 @@
+/* Add your styles for the textile selection component here */
+.selection-textile {
+  padding: 2rem 0;
+}
+.textile-swiper .card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 1rem;
+  text-align: center;
+}
+.textile-swiper .card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+.textile-swiper .card h3 {
+  font-size: 1.1rem;
+  margin: 0;
+}
