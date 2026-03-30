@@ -107,7 +107,7 @@ export default function BureauHome() {
           {ImagesBureauContainer.map((item, index) => (
             <div key={index} className="bureau-home-item">
               <div className="bureau-home-item-title">
-                <p>{item.name}</p>
+                <p>{item.name} </p>
                 <p>{item.type}</p>
               </div>
               <div className="bureau-home-images">
