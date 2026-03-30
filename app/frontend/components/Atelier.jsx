@@ -7,10 +7,12 @@ import NosRealisations from './atelier/Nos_realisations'
 import PrestationLive from './atelier/Prestation_live'
 import ContactezNous from './atelier/Contactez_nous'        
 
+import NavbarAtelier from './atelier/NavbarAtelier'
 
 export default function Atelier() {
   return (
     <div className="atelier-page">
+        <NavbarAtelier />
         <BannerAtelier />
         <IlsNousFontConfiance />
         <SelectionTextile />

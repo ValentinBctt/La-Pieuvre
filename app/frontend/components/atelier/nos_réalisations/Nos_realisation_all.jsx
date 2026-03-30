@@ -1,5 +1,6 @@
 import React from "react";
 
+import NavbarAtelier from "../NavbarAtelier";
 
 const ImagesRealisations = [
   {
@@ -66,7 +67,10 @@ const ImagesRealisations = [
 
 export default function NosRealisationsAll() {
     return (
+      <>
+        <NavbarAtelier />
         <div className="nos-realisations-all">
+       
 
             <div className="realisation-on-title">
             <p>ATELIER LA PIEUVRE</p>
@@ -91,5 +95,6 @@ export default function NosRealisationsAll() {
                 </div>
             </div>
         </div>
+        </>
     )
 }

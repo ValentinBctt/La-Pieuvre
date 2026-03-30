@@ -67,3 +67,35 @@ p {
   line-height: 1.5;
 }
 
+.navbar-atelier {
+  display : flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: var(--orange);
+
+}
+
+.navbar-atelier a {
+  color: var(--white);
+  text-decoration: none;
+  font-family: var(--font-main);
+  font-weight: bold;
+}
+
+.navbar-atelier-center img {
+  background-color: var(--orange);
+  height: 3rem;
+  object-fit: cover;
+  border-radius: 100%;
+  padding: 0.5rem;
+  z-index: 1000;
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar-right {
+  gap: 2rem;
+
+}
