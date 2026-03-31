@@ -9,14 +9,15 @@
     <!-- Vite client (nécessaire pour HMR en dev et manifest en prod) -->
     <%= vite_client_tag %>
 
-    <!-- JS React principal depuis entrypoints -->
+    <!-- JS React principal depuis entrypoints (uniquement sur la homepage) -->
+    <%= vite_javascript_tag 'entrypoints/application.jsx' %>
 
     <!-- Cloudinary Upload Widget -->
     <script src="https://widget.cloudinary.com/v2.0/global/all.js"></script>
   </head>
 
   <body>
-    <!-- Conteneurs React requis -->
+    <!-- Conteneur React requis pour la homepage -->
     <div id="root"></div>
     <div id="realisations-react-root"></div>
 

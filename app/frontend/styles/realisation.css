@@ -1,3 +1,51 @@
+.ils-nous-font-confiance .marquee {
+  overflow: hidden;
+  width: 80%;
+  margin: 2rem auto;
+}
+
+.ils-nous-font-confiance .marquee-content {
+  display: flex;
+  align-items: center;
+  animation: defilement-infinite 18s linear infinite;
+}
+
+.ils-nous-font-confiance .realisations-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 3rem;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  min-width: unset;
+  min-height: unset;
+  border-radius: 0;
+}
+
+.ils-nous-font-confiance .realisations-image img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+.marquee {
+  overflow: hidden;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.marquee-content {
+  display: flex;
+  animation: defilement-infinite 20s linear infinite;
+}
+
+@keyframes defilement-infinite {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 /* Aligner le titre à droite */
 .realisation-title-right {
   text-align: right;
@@ -28,7 +76,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
- 
+  margin-right: 8rem; /* espace augmenté entre chaque image */
   border-radius: 1rem;
   padding: 1rem;
   min-width: 180px;

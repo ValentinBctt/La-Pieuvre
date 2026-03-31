@@ -7,7 +7,7 @@ import '../styles/selection-textile.css'
 window.React = React
 
 function mountAtelier() {
-  const container = document.getElementById('root');
+  const container = document.getElementById('atelier-root');
   if (container) {
     if (!window._atelierReactRoot) {
       window._atelierReactRoot = createRoot(container);

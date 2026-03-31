@@ -1,3 +1,66 @@
+
+
+/* --- Gotham --- */
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham-Book.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham-BookItalic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* --- Pluto --- */
+@font-face {
+  font-family: 'Pluto';
+  src: url('/fonts/PlutoRegular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pluto';
+  src: url('/fonts/PlutoBold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pluto';
+  src: url('/fonts/PlutoHeavy.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* --- ChaparralPro --- */
+@font-face {
+  font-family: 'ChaparralPro';
+  src: url('/fonts/ChaparralPro-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+
 :root {
     /* Primary Colors */
 
@@ -25,20 +88,24 @@ body {
 
 h1, h2, p {
   color: var(--white);
-  font-family: var(--font-title);
+
 }
 
 h1 {
   margin-bottom: 1rem;
+  font-family: 'Pluto';
+  font-weight: 700;
+  font-size: 4.5rem;
 }
 
 h2 {
+  font-family: 'Pluto';
   margin-bottom: 0.5rem;
   background-color: var(--black);
   display: flex;
   align-items: center;
   justify-content: center;
-
+  font-weight: 350;
   text-align: center;
   position: relative;
   z-index: 1;
@@ -64,6 +131,7 @@ h2::after {
 }
 
 p {
+  font-family: 'Gotham';
   line-height: 1.5;
 }
 

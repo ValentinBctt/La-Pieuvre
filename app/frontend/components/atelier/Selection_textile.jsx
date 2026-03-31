@@ -113,7 +113,7 @@ function TextileList() {
   slidesPerView={1.4}        // 1 slide complète + 40% de la suivante
   centeredSlides={false}     // ne pas centrer la slide active
   spaceBetween={100}          // espace entre les slides
-  loop={false}               // loop peut être false si tu veux aligner la première slide à gauche
+  loop={true}               // loop peut être false si tu veux aligner la première slide à gauche
   navigation
   pagination={{ clickable: true }}
   className="textile-swiper"

@@ -1,10 +1,6 @@
-import React from "react";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/autoplay';
-import images from '../../images/images.jsx'; // adapte le chemin si besoin
 
+import React from "react";
+import '../../styles/realisation.css';
 
 const ImagesConfiance = [
   {name: '92i', src: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857839/92i_eqy61e.png'},
@@ -16,27 +12,21 @@ const ImagesConfiance = [
 ];
 
 export default function IlsNousFontConfiance() {
+  // On duplique le tableau pour l'effet infini
+  const images = [...ImagesConfiance, ...ImagesConfiance,...ImagesConfiance, ...ImagesConfiance,...ImagesConfiance, ...ImagesConfiance,...ImagesConfiance, ...ImagesConfiance];
+
   return (
     <div className="ils-nous-font-confiance" style={{ margin: '0 auto' }}>
-        <h2>Ils nous font confiance</h2>
-        <div className="confiance-container" style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', gap: '1rem', margin: '2rem 0' }}>
-            <Swiper
-        modules={[Autoplay]}
-        spaceBetween={24}
-        slidesPerView={4}
-        loop={true}
-        autoplay={{ delay: 0, disableOnInteraction: false, pauseOnMouseEnter: true }}
-        speed={6000}
-        allowTouchMove={false}
-        className="realisations-swiper"
-      >
-          {ImagesConfiance.map((img, idx) => (
-            <SwiperSlide key={idx}>
+      <h2>Ils nous font confiance</h2>
+      <div className="marquee">
+        <div className="marquee-content">
+          {images.map((img, idx) => (
+            <div className="realisations-image" key={idx}>
               <img src={img.src} alt={img.name || `Confiance ${idx + 1}`} />
-            </SwiperSlide>
+            </div>
           ))}
-        </Swiper>
         </div>
+      </div>
     </div>
-  )
+  );
 }
