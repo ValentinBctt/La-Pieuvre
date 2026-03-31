@@ -1,12 +1,12 @@
 import React from "react";
 
 const prestations = [
-  { name: 'Pac_118', label: 'Pac 118', image: "https://res.cloudinary.com/dnojcwwos/image/upload/v1774886851/2bd3a08b-eda0-4b3b-87db-a38541b537a3.png" },
-  { name: 'PSG', label: 'PSG', image: "https://res.cloudinary.com/dnojcwwos/image/upload/v1774886851/2bd3a08b-eda0-4b3b-87db-a38541b537a3.png" },
-  { name: 'Reebok', label: 'Reebok', image: "https://res.cloudinary.com/dnojcwwos/image/upload/v1774886851/2bd3a08b-eda0-4b3b-87db-a38541b537a3.png" },
-  { name: 'Yamaha_x_union', label: 'Yamaha x Union', image: "https://res.cloudinary.com/dnojcwwos/image/upload/v1774886851/2bd3a08b-eda0-4b3b-87db-a38541b537a3.png" },
-  { name: 'Station_F', label: 'Station F', image: "https://res.cloudinary.com/dnojcwwos/image/upload/v1774886851/2bd3a08b-eda0-4b3b-87db-a38541b537a3.png" },
-  { name: '93_lab', label: '93 Lab', image: "https://res.cloudinary.com/dnojcwwos/image/upload/v1774886851/2bd3a08b-eda0-4b3b-87db-a38541b537a3.png" },
+  { name: 'Pac_118', label: 'Pac 118', image: "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948022/01_PAC_c9t02l.png" },
+  { name: 'PSG', label: 'PSG', image: "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948024/14_bfyqkd.webp" },
+  { name: 'Reebok', label: 'Reebok', image: "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948024/01_gujqad.webp" },
+  { name: 'Yamaha_x_union', label: 'Yamaha x Union', image: "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948028/14_mnfyem.webp" },
+  { name: 'Station_F', label: 'Station F', image: "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948026/07_rnpqcq.webp" },
+  { name: '93_lab', label: '93 Lab', image: "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948020/05_phjzou.webp" },
 ];
 
 export default function PrestationLive() {
@@ -45,7 +45,7 @@ export default function PrestationLive() {
             style={{
               position: 'relative',
               width: '400px',
-              height: '200px',
+              height: '250px',
               overflow: 'hidden',
              
               cursor: 'pointer',
@@ -60,6 +60,7 @@ export default function PrestationLive() {
                 height: '100%',
                 objectFit: 'cover',
                 display: 'block',
+               
                 transition: 'transform 0.3s ease'
               }}
             />

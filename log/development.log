@@ -17111,3 +17111,2497 @@ Processing by AtelierController#index as HTML
 Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 827)
 
 
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 12:24:53 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 337)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 958)
+Completed 200 OK in 37ms (Views: 30.8ms | ActiveRecord: 0.0ms | Allocations: 1794)
+
+
+Started POST "/api/send_mail" for 127.0.0.1 at 2026-03-31 12:25:05 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/api/send_mail"):
+  
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 12:25:08 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started POST "/api/send_mail" for 127.0.0.1 at 2026-03-31 12:25:11 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/api/send_mail"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 12:31:47 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 626)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 851)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 12:31:48 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started POST "/api/contacts" for 127.0.0.1 at 2026-03-31 12:31:59 +0200
+Processing by Api::ContactsController#create as */*
+  Parameters: {"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"0760101550", "message"=>"plop", "contact"=>{"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"0760101550", "message"=>"plop"}}
+[31mUnpermitted parameter: :contact. Context: { controller: Api::ContactsController, action: create, request: #<ActionDispatch::Request:0x000075315373b190>, params: {"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"0760101550", "message"=>"plop", "controller"=>"api/contacts", "action"=>"create", "contact"=>{"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"0760101550", "message"=>"plop"}} }[0m
+  Rendering layout layouts/mailer.html.erb
+  Rendering contact_mailer/contact_email.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_email.html.erb within layouts/mailer (Duration: 15.1ms | Allocations: 192)
+  Rendered layout layouts/mailer.html.erb (Duration: 23.3ms | Allocations: 409)
+ContactMailer#contact_email: processed outbound mail in 394.0ms
+Delivered mail 69cba2a05e493_ce232642153d@PC.mail (261.9ms)
+Date: Tue, 31 Mar 2026 12:32:00 +0200
+From: valentin.bctt@gmail.com
+To: vbracchetti@yahoo.fr
+Message-ID: <69cba2a05e493_ce232642153d@PC.mail>
+Subject: Nouveau message de Valentin Bracchetti
+MIME-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Nouveau message re=C3=A7u :</p>
+<p><strong>Nom :</strong> Valentin Bracchetti</p>
+<p><strong>Email :</strong> valentin.bctt@gmail.com</p>
+<p><strong>T=C3=A9l=C3=A9phone :</strong> 0760101550</p>
+<p><strong>Message :</strong></p>
+<p>plop</p>
+  </body>
+</html>
+
+Completed 200 OK in 1108ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 33260)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 12:47:34 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 189)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 612)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 842)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 12:47:35 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started POST "/api/contacts" for 127.0.0.1 at 2026-03-31 12:47:44 +0200
+Processing by Api::ContactsController#create as */*
+  Parameters: {"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"07 60 10 15 50", "message"=>"plop", "contact"=>{"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"07 60 10 15 50", "message"=>"plop"}}
+[31mUnpermitted parameter: :contact. Context: { controller: Api::ContactsController, action: create, request: #<ActionDispatch::Request:0x0000753189c88900>, params: {"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"07 60 10 15 50", "message"=>"plop", "controller"=>"api/contacts", "action"=>"create", "contact"=>{"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"07 60 10 15 50", "message"=>"plop"}} }[0m
+  Rendering layout layouts/mailer.html.erb
+  Rendering contact_mailer/contact_email.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_email.html.erb within layouts/mailer (Duration: 0.1ms | Allocations: 17)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.7ms | Allocations: 108)
+ContactMailer#contact_email: processed outbound mail in 2.9ms
+Delivered mail 69cba6504109e_ce232282161b@PC.mail (1.8ms)
+Date: Tue, 31 Mar 2026 12:47:44 +0200
+From: valentin.bctt@gmail.com
+To: vbracchetti@yahoo.fr
+Message-ID: <69cba6504109e_ce232282161b@PC.mail>
+Subject: Nouveau message de Valentin Bracchetti
+MIME-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Nouveau message re=C3=A7u :</p>
+<p><strong>Nom :</strong> Valentin Bracchetti</p>
+<p><strong>Email :</strong> valentin.bctt@gmail.com</p>
+<p><strong>T=C3=A9l=C3=A9phone :</strong> 07 60 10 15 50</p>
+<p><strong>Message :</strong></p>
+<p>plop</p>
+  </body>
+</html>
+
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 3088)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 12:49:25 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 223)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 670)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 1143)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 12:49:26 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 12:53:25 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 15.4ms | Allocations: 662)
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | Allocations: 1558)
+Completed 200 OK in 154ms (Views: 62.1ms | ActiveRecord: 0.0ms | Allocations: 5275)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 12:53:26 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started POST "/api/contacts" for 127.0.0.1 at 2026-03-31 12:53:33 +0200
+Processing by Api::ContactsController#create as */*
+  Parameters: {"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"0760101550", "message"=>"plop", "contact"=>{"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"0760101550", "message"=>"plop"}}
+[31mUnpermitted parameter: :contact. Context: { controller: Api::ContactsController, action: create, request: #<ActionDispatch::Request:0x0000760a988771c0>, params: {"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"0760101550", "message"=>"plop", "controller"=>"api/contacts", "action"=>"create", "contact"=>{"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"0760101550", "message"=>"plop"}} }[0m
+  Rendering layout layouts/mailer.html.erb
+  Rendering contact_mailer/contact_email.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_email.html.erb within layouts/mailer (Duration: 6.6ms | Allocations: 192)
+  Rendered layout layouts/mailer.html.erb (Duration: 14.6ms | Allocations: 410)
+ContactMailer#contact_email: processed outbound mail in 112.1ms
+Delivered mail 69cba7ae70896_29ed32286287b@PC.mail (58.9ms)
+Date: Tue, 31 Mar 2026 12:53:34 +0200
+From: valentin.bctt@gmail.com
+To: valentin.bcttl@gmail.com
+Message-ID: <69cba7ae70896_29ed32286287b@PC.mail>
+Subject: Nouveau message de Valentin Bracchetti
+MIME-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Nouveau message re=C3=A7u :</p>
+<p><strong>Nom :</strong> Valentin Bracchetti</p>
+<p><strong>Email :</strong> valentin.bctt@gmail.com</p>
+<p><strong>T=C3=A9l=C3=A9phone :</strong> 0760101550</p>
+<p><strong>Message :</strong></p>
+<p>plop</p>
+  </body>
+</html>
+
+Completed 200 OK in 328ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 15745)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 12:55:08 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 17.4ms | Allocations: 662)
+  Rendered layout layouts/application.html.erb (Duration: 34.0ms | Allocations: 1552)
+Completed 200 OK in 177ms (Views: 69.9ms | ActiveRecord: 0.0ms | Allocations: 5271)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 12:55:09 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 12:55:18 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 621)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 850)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 12:55:18 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started POST "/api/contacts" for 127.0.0.1 at 2026-03-31 12:55:26 +0200
+Processing by Api::ContactsController#create as */*
+  Parameters: {"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"07 60 10 15 50", "message"=>"plop", "contact"=>{"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"07 60 10 15 50", "message"=>"plop"}}
+[31mUnpermitted parameter: :contact. Context: { controller: Api::ContactsController, action: create, request: #<ActionDispatch::Request:0x00007876adb12be0>, params: {"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"07 60 10 15 50", "message"=>"plop", "controller"=>"api/contacts", "action"=>"create", "contact"=>{"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"07 60 10 15 50", "message"=>"plop"}} }[0m
+  Rendering layout layouts/mailer.html.erb
+  Rendering contact_mailer/contact_email.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_email.html.erb within layouts/mailer (Duration: 7.8ms | Allocations: 192)
+  Rendered layout layouts/mailer.html.erb (Duration: 15.9ms | Allocations: 410)
+ContactMailer#contact_email: processed outbound mail in 123.3ms
+Delivered mail 69cba81edce2d_2a5a326421748@PC.mail (61.9ms)
+Date: Tue, 31 Mar 2026 12:55:26 +0200
+From: valentin.bctt@gmail.com
+To: valentin.bctt@gmail.com
+Message-ID: <69cba81edce2d_2a5a326421748@PC.mail>
+Subject: Nouveau message de Valentin Bracchetti
+MIME-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Nouveau message re=C3=A7u :</p>
+<p><strong>Nom :</strong> Valentin Bracchetti</p>
+<p><strong>Email :</strong> valentin.bctt@gmail.com</p>
+<p><strong>T=C3=A9l=C3=A9phone :</strong> 07 60 10 15 50</p>
+<p><strong>Message :</strong></p>
+<p>plop</p>
+  </body>
+</html>
+
+Completed 200 OK in 365ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 15747)
+
+
+Started POST "/api/contacts" for 127.0.0.1 at 2026-03-31 12:57:37 +0200
+Processing by Api::ContactsController#create as */*
+  Parameters: {"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"0760101550", "message"=>"plop", "contact"=>{"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"0760101550", "message"=>"plop"}}
+[31mUnpermitted parameter: :contact. Context: { controller: Api::ContactsController, action: create, request: #<ActionDispatch::Request:0x00007876af928530>, params: {"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"0760101550", "message"=>"plop", "controller"=>"api/contacts", "action"=>"create", "contact"=>{"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"0760101550", "message"=>"plop"}} }[0m
+  Rendering layout layouts/mailer.html.erb
+  Rendering contact_mailer/contact_email.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_email.html.erb within layouts/mailer (Duration: 0.1ms | Allocations: 17)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.7ms | Allocations: 109)
+ContactMailer#contact_email: processed outbound mail in 2.6ms
+Delivered mail 69cba8a1d5a44_2a5a325021833@PC.mail (1.4ms)
+Date: Tue, 31 Mar 2026 12:57:37 +0200
+From: valentin.bctt@gmail.com
+To: valentin.bctt@gmail.com
+Message-ID: <69cba8a1d5a44_2a5a325021833@PC.mail>
+Subject: Nouveau message de Valentin Bracchetti
+MIME-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Nouveau message re=C3=A7u :</p>
+<p><strong>Nom :</strong> Valentin Bracchetti</p>
+<p><strong>Email :</strong> valentin.bctt@gmail.com</p>
+<p><strong>T=C3=A9l=C3=A9phone :</strong> 0760101550</p>
+<p><strong>Message :</strong></p>
+<p>plop</p>
+  </body>
+</html>
+
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 3078)
+
+
+Started POST "/api/contacts" for 127.0.0.1 at 2026-03-31 13:02:25 +0200
+Processing by Api::ContactsController#create as */*
+  Parameters: {"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"0760101550", "message"=>"plpo", "contact"=>{"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"0760101550", "message"=>"plpo"}}
+[31mUnpermitted parameter: :contact. Context: { controller: Api::ContactsController, action: create, request: #<ActionDispatch::Request:0x00007876ad9dce60>, params: {"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"0760101550", "message"=>"plpo", "controller"=>"api/contacts", "action"=>"create", "contact"=>{"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"0760101550", "message"=>"plpo"}} }[0m
+  Rendering layout layouts/mailer.html.erb
+  Rendering contact_mailer/contact_email.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_email.html.erb within layouts/mailer (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.0ms | Allocations: 115)
+ContactMailer#contact_email: processed outbound mail in 3.1ms
+Delivered mail 69cba9c27c3a2_2a5a32142194@PC.mail (1.8ms)
+Date: Tue, 31 Mar 2026 13:02:26 +0200
+From: no-reply@atelier-lapieuvre.fr
+To: valentin.bctt@gmail.com
+Message-ID: <69cba9c27c3a2_2a5a32142194@PC.mail>
+Subject: Nouveau message de Valentin Bracchetti
+MIME-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Nouveau message re=C3=A7u :</p>
+<p><strong>Nom :</strong> Valentin Bracchetti</p>
+<p><strong>Email :</strong> valentin.bctt@gmail.com</p>
+<p><strong>T=C3=A9l=C3=A9phone :</strong> 0760101550</p>
+<p><strong>Message :</strong></p>
+<p>plpo</p>
+  </body>
+</html>
+
+Completed 200 OK in 65ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4624)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 13:03:51 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 16.2ms | Allocations: 662)
+  Rendered layout layouts/application.html.erb (Duration: 32.1ms | Allocations: 1558)
+Completed 200 OK in 166ms (Views: 64.8ms | ActiveRecord: 0.0ms | Allocations: 5275)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 13:03:51 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 13:03:59 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 606)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 835)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 13:04:00 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started POST "/api/contacts" for 127.0.0.1 at 2026-03-31 13:04:07 +0200
+Processing by Api::ContactsController#create as */*
+  Parameters: {"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"0760101550", "message"=>"plop", "contact"=>{"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"0760101550", "message"=>"plop"}}
+[31mUnpermitted parameter: :contact. Context: { controller: Api::ContactsController, action: create, request: #<ActionDispatch::Request:0x0000709566262ef8>, params: {"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"0760101550", "message"=>"plop", "controller"=>"api/contacts", "action"=>"create", "contact"=>{"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"0760101550", "message"=>"plop"}} }[0m
+  Rendering layout layouts/mailer.html.erb
+  Rendering contact_mailer/contact_email.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_email.html.erb within layouts/mailer (Duration: 6.8ms | Allocations: 192)
+  Rendered layout layouts/mailer.html.erb (Duration: 13.6ms | Allocations: 409)
+ContactMailer#contact_email: processed outbound mail in 117.7ms
+Delivered mail 69cbaa2832f3c_2b6c32288835e@PC.mail (61.8ms)
+Date: Tue, 31 Mar 2026 13:04:08 +0200
+From: no-reply@atelier-lapieuvre.fr
+To: valentin.bctt@gmail.com
+Message-ID: <69cbaa2832f3c_2b6c32288835e@PC.mail>
+Subject: Nouveau message de Valentin Bracchetti
+MIME-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Nouveau message re=C3=A7u :</p>
+<p><strong>Nom :</strong> Valentin Bracchetti</p>
+<p><strong>Email :</strong> valentin.bctt@gmail.com</p>
+<p><strong>T=C3=A9l=C3=A9phone :</strong> 0760101550</p>
+<p><strong>Message :</strong></p>
+<p>plop</p>
+  </body>
+</html>
+
+Completed 200 OK in 317ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 15707)
+
+
+  Rendering layout layouts/mailer.html.erb
+  Rendering contact_mailer/contact_email.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_email.html.erb within layouts/mailer (Duration: 16.4ms | Allocations: 421)
+  Rendered layout layouts/mailer.html.erb (Duration: 17.5ms | Allocations: 676)
+ContactMailer#contact_email: processed outbound mail in 689.3ms
+Delivered mail 69cbab37b2a32_789ce4c51783@PC.mail (208.8ms)
+Date: Tue, 31 Mar 2026 13:08:39 +0200
+From: valentin.bctt@gmail.com
+To: valentin.bctt@gmail.com
+Message-ID: <69cbab37b2a32_789ce4c51783@PC.mail>
+Subject: Nouveau message de
+MIME-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Nouveau message re=C3=A7u :</p>
+<p><strong>Nom :</strong>  </p>
+<p><strong>Email :</strong> </p>
+<p><strong>T=C3=A9l=C3=A9phone :</strong> </p>
+<p><strong>Message :</strong></p>
+<p></p>
+  </body>
+</html>
+
+  Rendering layout layouts/mailer.html.erb
+  Rendering contact_mailer/contact_email.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_email.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.5ms | Allocations: 92)
+ContactMailer#contact_email: processed outbound mail in 5.6ms
+Delivered mail 69cbab791990d_789ce4c518b5@PC.mail (2.2ms)
+Date: Tue, 31 Mar 2026 13:09:45 +0200
+From: valentin.bctt@gmail.com
+To: valentin.bctt@gmail.com
+Message-ID: <69cbab791990d_789ce4c518b5@PC.mail>
+Subject: Nouveau message de
+MIME-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Nouveau message re=C3=A7u :</p>
+<p><strong>Nom :</strong>  </p>
+<p><strong>Email :</strong> </p>
+<p><strong>T=C3=A9l=C3=A9phone :</strong> </p>
+<p><strong>Message :</strong></p>
+<p></p>
+  </body>
+</html>
+
+  Rendering layout layouts/mailer.html.erb
+  Rendering contact_mailer/contact_email.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_email.html.erb within layouts/mailer (Duration: 2.6ms | Allocations: 421)
+  Rendered layout layouts/mailer.html.erb (Duration: 3.7ms | Allocations: 676)
+ContactMailer#contact_email: processed outbound mail in 83.0ms
+Delivered mail 69cbabbdcf57d_4a98e4c84270@PC.mail (23.9ms)
+Date: Tue, 31 Mar 2026 13:10:53 +0200
+From: valentin.bctt@gmail.com
+To: valentin.bctt@gmail.com
+Message-ID: <69cbabbdcf57d_4a98e4c84270@PC.mail>
+Subject: Nouveau message de
+MIME-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Nouveau message re=C3=A7u :</p>
+<p><strong>Nom :</strong>  </p>
+<p><strong>Email :</strong> </p>
+<p><strong>T=C3=A9l=C3=A9phone :</strong> </p>
+<p><strong>Message :</strong></p>
+<p></p>
+  </body>
+</html>
+
+  Rendering layout layouts/mailer.html.erb
+  Rendering contact_mailer/contact_email.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_email.html.erb within layouts/mailer (Duration: 2.1ms | Allocations: 433)
+  Rendered layout layouts/mailer.html.erb (Duration: 3.1ms | Allocations: 685)
+ContactMailer#contact_email: processed outbound mail in 93.5ms
+Delivered mail 69cbac12a420f_5204e4c6661e@PC.mail (22.1ms)
+Date: Tue, 31 Mar 2026 13:12:18 +0200
+From: valentin.bctt@gmail.com
+Reply-To: test@example.com
+To: valentin.bctt@gmail.com
+Message-ID: <69cbac12a420f_5204e4c6661e@PC.mail>
+Subject: Nouveau message de Valentin Bracchetti
+MIME-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Nouveau message re=C3=A7u :</p>
+<p><strong>Nom :</strong> Valentin Bracchetti</p>
+<p><strong>Email :</strong> test@example.com</p>
+<p><strong>T=C3=A9l=C3=A9phone :</strong> 0123456789</p>
+<p><strong>Message :</strong></p>
+<p>Bonjour</p>
+  </body>
+</html>
+
+  Rendering layout layouts/mailer.html.erb
+  Rendering contact_mailer/contact_email.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_email.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 12)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.5ms | Allocations: 99)
+ContactMailer#contact_email: processed outbound mail in 2.1ms
+Delivered mail 69cbacf0a6bee_5204e4c66726@PC.mail (1.3ms)
+Date: Tue, 31 Mar 2026 13:16:00 +0200
+From: valentin.bctt@gmail.com
+Reply-To: test@example.com
+To: valentin.bctt@gmail.com
+Message-ID: <69cbacf0a6bee_5204e4c66726@PC.mail>
+Subject: Nouveau message de Valentin Bracchetti
+MIME-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Nouveau message re=C3=A7u :</p>
+<p><strong>Nom :</strong> Valentin Bracchetti</p>
+<p><strong>Email :</strong> test@example.com</p>
+<p><strong>T=C3=A9l=C3=A9phone :</strong> 0123456789</p>
+<p><strong>Message :</strong></p>
+<p>Bonjour</p>
+  </body>
+</html>
+
+  Rendering layout layouts/mailer.html.erb
+  Rendering contact_mailer/contact_email.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_email.html.erb within layouts/mailer (Duration: 2.4ms | Allocations: 432)
+  Rendered layout layouts/mailer.html.erb (Duration: 3.4ms | Allocations: 684)
+ContactMailer#contact_email: processed outbound mail in 82.8ms
+Delivered mail 69cbad11e5ff1_9b44e4c29449@PC.mail (24.5ms)
+Date: Tue, 31 Mar 2026 13:16:33 +0200
+From: valentin.bctt@gmail.com
+Reply-To: test@example.com
+To: valentin.bctt@gmail.com
+Message-ID: <69cbad11e5ff1_9b44e4c29449@PC.mail>
+Subject: Nouveau message de Valentin Bracchetti
+MIME-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Nouveau message re=C3=A7u :</p>
+<p><strong>Nom :</strong> Valentin Bracchetti</p>
+<p><strong>Email :</strong> test@example.com</p>
+<p><strong>T=C3=A9l=C3=A9phone :</strong> 0123456789</p>
+<p><strong>Message :</strong></p>
+<p>Bonjour</p>
+  </body>
+</html>
+
+  Rendering layout layouts/mailer.html.erb
+  Rendering contact_mailer/contact_email.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_email.html.erb within layouts/mailer (Duration: 2.9ms | Allocations: 432)
+  Rendered layout layouts/mailer.html.erb (Duration: 4.0ms | Allocations: 684)
+ContactMailer#contact_email: processed outbound mail in 75.7ms
+Delivered mail 69cbad4652e41_7f00e4c-43d@PC.mail (21.1ms)
+Date: Tue, 31 Mar 2026 13:17:26 +0200
+From: valentin.bctt@gmail.com
+Reply-To: test@example.com
+To: vbracchetti@yahoo.fr
+Message-ID: <69cbad4652e41_7f00e4c-43d@PC.mail>
+Subject: Nouveau message de Valentin Bracchetti
+MIME-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Nouveau message re=C3=A7u :</p>
+<p><strong>Nom :</strong> Valentin Bracchetti</p>
+<p><strong>Email :</strong> test@example.com</p>
+<p><strong>T=C3=A9l=C3=A9phone :</strong> 0123456789</p>
+<p><strong>Message :</strong></p>
+<p>Bonjour</p>
+  </body>
+</html>
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 13:22:44 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 338)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 968)
+Completed 200 OK in 158ms (Views: 28.8ms | ActiveRecord: 0.0ms | Allocations: 3608)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 13:22:45 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+  Rendering layout layouts/mailer.html.erb
+  Rendering contact_mailer/contact_email.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_email.html.erb within layouts/mailer (Duration: 30.7ms | Allocations: 531)
+  Rendered layout layouts/mailer.html.erb (Duration: 38.7ms | Allocations: 786)
+ContactMailer#contact_email: processed outbound mail in 1019.1ms
+Delivered mail 69cbaf7f40766_396ee7460516@PC.mail (1885.2ms)
+Date: Tue, 31 Mar 2026 13:26:55 +0200
+From: valentin.bctt@gmail.com
+Reply-To: test@example.com
+To: vbracchetti@yahoo.fr
+Message-ID: <69cbaf7f40766_396ee7460516@PC.mail>
+Subject: Nouveau message de Valentin Bracchetti
+MIME-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Nouveau message re=C3=A7u :</p>
+<p><strong>Nom :</strong> Valentin Bracchetti</p>
+<p><strong>Email :</strong> test@example.com</p>
+<p><strong>T=C3=A9l=C3=A9phone :</strong> 0123456789</p>
+<p><strong>Message :</strong></p>
+<p>Bonjour</p>
+  </body>
+</html>
+
+Started POST "/api/contacts" for 127.0.0.1 at 2026-03-31 15:11:22 +0200
+Processing by Api::ContactsController#create as */*
+  Parameters: {"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"07 60 10 15 50", "message"=>"plop", "contact"=>{"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"07 60 10 15 50", "message"=>"plop"}}
+  Rendering layout layouts/mailer.html.erb
+  Rendering contact_mailer/contact_email.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_email.html.erb within layouts/mailer (Duration: 7.1ms | Allocations: 185)
+  Rendered layout layouts/mailer.html.erb (Duration: 14.9ms | Allocations: 399)
+ContactMailer#contact_email: processed outbound mail in 39.5ms
+Delivered mail 69cbc7fb4ee51_2b6c3214884e@PC.mail (1.6ms)
+Date: Tue, 31 Mar 2026 15:11:23 +0200
+From: valentin.bctt@gmail.com
+Reply-To: valentin.bctt@gmail.com
+To: vbracchetti@yahoo.fr
+Message-ID: <69cbc7fb4ee51_2b6c3214884e@PC.mail>
+Subject: Nouveau message de Valentin Bracchetti
+MIME-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Nouveau message re=C3=A7u :</p>
+<p><strong>Nom :</strong> Valentin Bracchetti</p>
+<p><strong>Email :</strong> valentin.bctt@gmail.com</p>
+<p><strong>T=C3=A9l=C3=A9phone :</strong> 07 60 10 15 50</p>
+<p><strong>Message :</strong></p>
+<p>plop</p>
+  </body>
+</html>
+
+Completed 200 OK in 85ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 5239)
+
+
+Started POST "/api/contacts" for 127.0.0.1 at 2026-03-31 15:11:57 +0200
+Processing by Api::ContactsController#create as */*
+  Parameters: {"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"07 60 10 15 50", "message"=>"plop", "contact"=>{"firstName"=>"Valentin", "lastName"=>"Bracchetti", "email"=>"valentin.bctt@gmail.com", "phone"=>"07 60 10 15 50", "message"=>"plop"}}
+  Rendering layout layouts/mailer.html.erb
+  Rendering contact_mailer/contact_email.html.erb within layouts/mailer
+  Rendered contact_mailer/contact_email.html.erb within layouts/mailer (Duration: 12.9ms | Allocations: 399)
+  Rendered layout layouts/mailer.html.erb (Duration: 21.1ms | Allocations: 644)
+ContactMailer#contact_email: processed outbound mail in 217.9ms
+Delivered mail 69cbc81eaa332_3a6f326422473@PC.mail (1623.7ms)
+Date: Tue, 31 Mar 2026 15:11:58 +0200
+From: valentin.bctt@gmail.com
+Reply-To: valentin.bctt@gmail.com
+To: vbracchetti@yahoo.fr
+Message-ID: <69cbc81eaa332_3a6f326422473@PC.mail>
+Subject: Nouveau message de Valentin Bracchetti
+MIME-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Nouveau message re=C3=A7u :</p>
+<p><strong>Nom :</strong> Valentin Bracchetti</p>
+<p><strong>Email :</strong> valentin.bctt@gmail.com</p>
+<p><strong>T=C3=A9l=C3=A9phone :</strong> 07 60 10 15 50</p>
+<p><strong>Message :</strong></p>
+<p>plop</p>
+  </body>
+</html>
+
+Completed 200 OK in 2029ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 26457)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:17:23 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 438)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 1290)
+Completed 200 OK in 35ms (Views: 29.1ms | ActiveRecord: 0.0ms | Allocations: 2197)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 15:17:23 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:18:03 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 617)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 844)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 15:18:04 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:19:31 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 609)
+Completed 200 OK in 17ms (Views: 17.0ms | ActiveRecord: 0.0ms | Allocations: 838)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 15:19:32 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:20:42 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 602)
+Completed 200 OK in 3ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 827)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 15:20:42 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:23:13 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 635)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 860)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 15:23:13 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:23:49 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 620)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 845)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 15:23:49 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:25:05 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 609)
+Completed 200 OK in 4ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 838)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 15:25:05 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:26:15 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 614)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 839)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 15:26:15 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:26:58 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 611)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 836)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 15:26:59 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:27:11 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 623)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 850)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 15:27:11 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:27:28 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 608)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 833)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:27:50 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 602)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 826)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:28:38 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 620)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 847)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:29:24 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 620)
+Completed 200 OK in 4ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 845)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 15:29:41 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:30:20 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 632)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 857)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 15:30:20 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:30:51 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 641)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 870)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:32:05 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 608)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 833)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:32:28 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 599)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 824)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 15:32:34 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:33:09 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 617)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 842)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 15:33:09 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:34:41 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 593)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 820)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:34:52 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 626)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 851)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 15:35:10 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:36:08 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 614)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 839)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 15:36:08 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:36:36 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 614)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 839)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:37:44 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 596)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 820)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:38:03 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 626)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 853)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:40:59 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 626)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 851)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:41:41 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 608)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 835)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:43:39 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 605)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 830)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:44:47 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 599)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 824)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:45:30 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 608)
+Completed 200 OK in 3ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 835)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:48:39 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 599)
+Completed 200 OK in 3ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 824)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:49:01 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 611)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 836)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:49:58 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 620)
+Completed 200 OK in 3ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 847)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:50:24 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 602)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 827)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:52:46 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 608)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 835)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:54:54 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 599)
+Completed 200 OK in 3ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 824)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:55:33 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 608)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 833)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 15:55:50 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:57:56 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 614)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 839)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 15:57:56 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:59:04 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 599)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 824)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 15:59:04 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 15:59:29 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 620)
+Completed 200 OK in 3ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 845)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 15:59:29 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:00:10 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 611)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 836)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:00:11 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:00:38 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 617)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 842)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:00:39 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:02:27 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 620)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 847)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:02:28 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:03:38 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 605)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 832)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:03:38 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:04:35 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 614)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 839)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:05:02 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 608)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 832)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:05:35 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 602)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 829)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:06:09 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 602)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 827)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:07:41 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 617)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 844)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:07:52 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 596)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 821)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:08:03 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 599)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 826)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:08:13 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:08:34 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 611)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 836)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:08:34 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:09:01 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 608)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 833)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:11:22 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 626)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 852)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:11:57 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 602)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 827)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:12:10 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:13:16 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 611)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 836)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:13:17 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:20:13 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 611)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 838)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:20:58 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 617)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 842)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:21:53 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 620)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 847)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:22:53 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 629)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 854)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:23:44 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 626)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 851)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:24:08 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 602)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 829)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:24:23 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 605)
+Completed 200 OK in 3ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 830)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:24:51 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 611)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 838)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:27:31 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 626)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 851)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:27:59 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 629)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 856)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:28:16 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 611)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 836)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:29:53 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 614)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 841)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:30:18 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 611)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 836)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:30:48 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 608)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 835)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:33:17 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 605)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 830)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:34:17 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 590)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 817)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:35:48 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 617)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 842)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:36:04 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 605)
+Completed 200 OK in 4ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 832)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:37:32 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 608)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 833)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:38:04 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 611)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 838)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:38:25 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 602)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 827)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:39:00 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 608)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 835)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:39:16 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 593)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 818)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:40:10 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 596)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 823)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:40:19 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:40:44 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 602)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 827)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:40:44 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:41:13 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 632)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 857)
+
+
+Started GET "/atelier/realisations" for 127.0.0.1 at 2026-03-31 16:42:49 +0200
+Processing by Atelier::RealisationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/realisations/index.html.erb within layouts/application
+  Rendered atelier/realisations/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 105)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 595)
+Completed 200 OK in 24ms (Views: 15.4ms | ActiveRecord: 0.0ms | Allocations: 1176)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:42:55 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier/realisations" for 127.0.0.1 at 2026-03-31 16:43:06 +0200
+Processing by Atelier::RealisationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/realisations/index.html.erb within layouts/application
+  Rendered atelier/realisations/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 448)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 677)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:43:07 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:43:40 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/prestationlive/Pac_118" for 127.0.0.1 at 2026-03-31 16:43:43 +0200
+Processing by PrestationliveController#show as HTML
+  Parameters: {"name"=>"Pac_118"}
+  Rendering layout layouts/application.html.erb
+  Rendering prestationlive/show.html.erb within layouts/application
+  Rendered prestationlive/show.html.erb within layouts/application (Duration: 10.1ms | Allocations: 334)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 778)
+Completed 200 OK in 25ms (Views: 17.6ms | ActiveRecord: 0.0ms | Allocations: 1353)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:43:43 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/prestationlive/Pac_118" for 127.0.0.1 at 2026-03-31 16:44:48 +0200
+Processing by PrestationliveController#show as HTML
+  Parameters: {"name"=>"Pac_118"}
+  Rendering layout layouts/application.html.erb
+  Rendering prestationlive/show.html.erb within layouts/application
+  Rendered prestationlive/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 614)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 839)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:44:49 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:44:57 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/prestationlive/Pac_118" for 127.0.0.1 at 2026-03-31 16:44:58 +0200
+Processing by PrestationliveController#show as HTML
+  Parameters: {"name"=>"Pac_118"}
+  Rendering layout layouts/application.html.erb
+  Rendering prestationlive/show.html.erb within layouts/application
+  Rendered prestationlive/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 614)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 839)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:44:58 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:45:00 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/prestationlive/PSG" for 127.0.0.1 at 2026-03-31 16:45:01 +0200
+Processing by PrestationliveController#show as HTML
+  Parameters: {"name"=>"PSG"}
+  Rendering layout layouts/application.html.erb
+  Rendering prestationlive/show.html.erb within layouts/application
+  Rendered prestationlive/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 623)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 848)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:45:01 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:45:04 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier/realisations" for 127.0.0.1 at 2026-03-31 16:45:12 +0200
+Processing by Atelier::RealisationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/realisations/index.html.erb within layouts/application
+  Rendered atelier/realisations/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 445)
+Completed 200 OK in 3ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 675)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:45:12 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier/realisations" for 127.0.0.1 at 2026-03-31 16:47:51 +0200
+Processing by Atelier::RealisationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/realisations/index.html.erb within layouts/application
+  Rendered atelier/realisations/index.html.erb within layouts/application (Duration: 18.4ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 946)
+Completed 200 OK in 48ms (Views: 39.7ms | ActiveRecord: 0.0ms | Allocations: 1698)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:47:51 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier/realisations" for 127.0.0.1 at 2026-03-31 16:49:32 +0200
+Processing by Atelier::RealisationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/realisations/index.html.erb within layouts/application
+  Rendered atelier/realisations/index.html.erb within layouts/application (Duration: 11.3ms | Allocations: 327)
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 946)
+Completed 200 OK in 41ms (Views: 32.7ms | ActiveRecord: 0.0ms | Allocations: 1699)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:49:32 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier/realisations" for 127.0.0.1 at 2026-03-31 16:50:31 +0200
+Processing by Atelier::RealisationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/realisations/index.html.erb within layouts/application
+  Rendered atelier/realisations/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 185)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 587)
+Completed 200 OK in 5ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 817)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:50:32 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier/realisations" for 127.0.0.1 at 2026-03-31 16:50:57 +0200
+Processing by Atelier::RealisationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/realisations/index.html.erb within layouts/application
+  Rendered atelier/realisations/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 185)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 626)
+Completed 200 OK in 3ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 857)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:50:58 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier/realisations" for 127.0.0.1 at 2026-03-31 16:51:28 +0200
+Processing by Atelier::RealisationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/realisations/index.html.erb within layouts/application
+  Rendered atelier/realisations/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 185)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 611)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 842)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:51:29 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier/realisations" for 127.0.0.1 at 2026-03-31 16:51:57 +0200
+Processing by Atelier::RealisationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/realisations/index.html.erb within layouts/application
+  Rendered atelier/realisations/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 185)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 614)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 845)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:51:57 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier/realisations" for 127.0.0.1 at 2026-03-31 16:53:11 +0200
+Processing by Atelier::RealisationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/realisations/index.html.erb within layouts/application
+  Rendered atelier/realisations/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 185)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 593)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 824)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:53:12 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier/realisations" for 127.0.0.1 at 2026-03-31 16:53:55 +0200
+Processing by Atelier::RealisationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/realisations/index.html.erb within layouts/application
+  Rendered atelier/realisations/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 185)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 602)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 833)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:53:55 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/" for 127.0.0.1 at 2026-03-31 16:54:02 +0200
+Processing by PagesController#home as HTML
+  Rendering layout layouts/home.html.erb
+  Rendering pages/home.html.erb within layouts/home
+  Rendered pages/home.html.erb within layouts/home (Duration: 7.1ms | Allocations: 99)
+  Rendered layout layouts/home.html.erb (Duration: 17.3ms | Allocations: 964)
+Completed 200 OK in 32ms (Views: 25.8ms | ActiveRecord: 0.0ms | Allocations: 1538)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:54:02 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/bureau" for 127.0.0.1 at 2026-03-31 16:54:04 +0200
+Processing by BureauController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bureau/index.html.erb within layouts/application
+  Rendered bureau/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 334)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 799)
+Completed 200 OK in 23ms (Views: 16.7ms | ActiveRecord: 0.0ms | Allocations: 1374)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:54:04 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:54:08 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 16:54:10 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 329)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 795)
+Completed 200 OK in 23ms (Views: 15.6ms | ActiveRecord: 0.0ms | Allocations: 1293)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 16:54:10 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 17:25:25 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 626)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 852)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 17:25:34 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 17:26:11 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 593)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 818)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 17:26:12 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 17:28:42 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 611)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 838)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 17:28:42 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 17:35:20 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 596)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 821)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 17:35:20 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 17:35:47 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 620)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 845)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 17:35:48 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 17:47:54 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 602)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 827)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 17:48:29 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 17:49:40 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 623)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 848)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 17:49:40 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 17:49:56 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 590)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 815)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 17:49:56 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 17:50:36 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 599)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 824)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 17:50:36 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 17:50:49 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 605)
+Completed 200 OK in 4ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 830)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 17:50:49 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 17:51:18 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 626)
+Completed 200 OK in 4ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 851)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 17:51:18 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/prestationlive/Pac_118" for 127.0.0.1 at 2026-03-31 17:52:38 +0200
+Processing by PrestationliveController#show as HTML
+  Parameters: {"name"=>"Pac_118"}
+  Rendering layout layouts/application.html.erb
+  Rendering prestationlive/show.html.erb within layouts/application
+  Rendered prestationlive/show.html.erb within layouts/application (Duration: 9.9ms | Allocations: 329)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 753)
+Completed 200 OK in 25ms (Views: 17.8ms | ActiveRecord: 0.0ms | Allocations: 1252)
+
+
+Started GET "/prestationlive/Pac_118" for 127.0.0.1 at 2026-03-31 17:56:27 +0200
+Processing by PrestationliveController#show as HTML
+  Parameters: {"name"=>"Pac_118"}
+  Rendering layout layouts/application.html.erb
+  Rendering prestationlive/show.html.erb within layouts/application
+  Rendered prestationlive/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 611)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 839)
+
+
+Started GET "/prestationlive/93_lab" for 127.0.0.1 at 2026-03-31 17:56:40 +0200
+Processing by PrestationliveController#show as HTML
+  Parameters: {"name"=>"93_lab"}
+  Rendering layout layouts/application.html.erb
+  Rendering prestationlive/show.html.erb within layouts/application
+  Rendered prestationlive/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 611)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 836)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:02:50 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 596)
+Completed 200 OK in 5ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 822)
+
+
+Started GET "/prestationlive/Pac_118" for 127.0.0.1 at 2026-03-31 18:02:52 +0200
+Processing by PrestationliveController#show as HTML
+  Parameters: {"name"=>"Pac_118"}
+  Rendering layout layouts/application.html.erb
+  Rendering prestationlive/show.html.erb within layouts/application
+  Rendered prestationlive/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 617)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 842)
+
+
+Started GET "/prestationlive/PSG" for 127.0.0.1 at 2026-03-31 18:02:59 +0200
+Processing by PrestationliveController#show as HTML
+  Parameters: {"name"=>"PSG"}
+  Rendering layout layouts/application.html.erb
+  Rendering prestationlive/show.html.erb within layouts/application
+  Rendered prestationlive/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 596)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 823)
+
+
+Started GET "/prestationlive/Reebok" for 127.0.0.1 at 2026-03-31 18:03:04 +0200
+Processing by PrestationliveController#show as HTML
+  Parameters: {"name"=>"Reebok"}
+  Rendering layout layouts/application.html.erb
+  Rendering prestationlive/show.html.erb within layouts/application
+  Rendered prestationlive/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 608)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 833)
+
+
+Started GET "/prestationlive/Yamaha_x_union" for 127.0.0.1 at 2026-03-31 18:03:09 +0200
+Processing by PrestationliveController#show as HTML
+  Parameters: {"name"=>"Yamaha_x_union"}
+  Rendering layout layouts/application.html.erb
+  Rendering prestationlive/show.html.erb within layouts/application
+  Rendered prestationlive/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 629)
+Completed 200 OK in 3ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 854)
+
+
+Started GET "/prestationlive/Station_F" for 127.0.0.1 at 2026-03-31 18:03:15 +0200
+Processing by PrestationliveController#show as HTML
+  Parameters: {"name"=>"Station_F"}
+  Rendering layout layouts/application.html.erb
+  Rendering prestationlive/show.html.erb within layouts/application
+  Rendered prestationlive/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 605)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 830)
+
+
+Started GET "/prestationlive/Yamaha_x_union" for 127.0.0.1 at 2026-03-31 18:03:20 +0200
+Processing by PrestationliveController#show as HTML
+  Parameters: {"name"=>"Yamaha_x_union"}
+  Rendering layout layouts/application.html.erb
+  Rendering prestationlive/show.html.erb within layouts/application
+  Rendered prestationlive/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 608)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 833)
+
+
+Started GET "/prestationlive/93_lab" for 127.0.0.1 at 2026-03-31 18:03:24 +0200
+Processing by PrestationliveController#show as HTML
+  Parameters: {"name"=>"93_lab"}
+  Rendering layout layouts/application.html.erb
+  Rendering prestationlive/show.html.erb within layouts/application
+  Rendered prestationlive/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 620)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 847)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:10:35 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 620)
+Completed 200 OK in 4ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 845)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:14:45 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 605)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 830)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:15:28 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 611)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 838)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:15:52 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 608)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 833)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:16:21 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 602)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 827)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:16:34 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 602)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 827)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:17:40 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 614)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 841)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:19:45 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 605)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 830)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:20:23 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 614)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 839)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:21:09 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 605)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 830)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:21:27 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 602)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 829)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:21:50 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 608)
+Completed 200 OK in 3ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 833)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:28:22 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 605)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 830)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:29:08 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 614)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 839)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:29:26 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 614)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 841)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:29:45 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 614)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 839)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:30:00 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 611)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 836)
+
+
+Started GET "/atelier/realisations" for 127.0.0.1 at 2026-03-31 18:31:25 +0200
+Processing by Atelier::RealisationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/realisations/index.html.erb within layouts/application
+  Rendered atelier/realisations/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 185)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 605)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 838)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:33:18 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 608)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 833)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:35:09 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 614)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 839)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 18:35:18 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:36:22 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 599)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 824)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 18:36:22 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:38:52 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 614)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 838)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 18:38:53 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:39:15 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 599)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 824)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 18:39:15 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:39:35 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 608)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 833)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2026-03-31 18:39:36 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:40:01 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 623)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 848)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:40:32 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 617)
+Completed 200 OK in 3ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 841)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:41:33 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 605)
+Completed 200 OK in 3ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 832)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:41:54 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 599)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 824)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:42:16 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 620)
+Completed 200 OK in 3ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 845)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:42:35 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 611)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 838)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:43:56 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 614)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 839)
+
+
+Started GET "/atelier" for 127.0.0.1 at 2026-03-31 18:46:42 +0200
+Processing by AtelierController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering atelier/index.html.erb within layouts/application
+  Rendered atelier/index.html.erb within layouts/application (Duration: 15.7ms | Allocations: 662)
+  Rendered layout layouts/application.html.erb (Duration: 28.3ms | Allocations: 1561)
+Completed 200 OK in 144ms (Views: 56.3ms | ActiveRecord: 0.0ms | Allocations: 5275)
+
+

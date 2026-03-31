@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/scrollbar';
 import { Scrollbar } from 'swiper/modules';
 import '../../../styles/prestationlive.css';
+import ContactForm from '../../ContactForm';
 
 const defaultPrestations = [
   {
@@ -24,6 +25,7 @@ const defaultPrestations = [
 export default function PrestationLiveAll({ prestations }) {
   const data = Array.isArray(prestations) && prestations.length > 0 ? prestations : defaultPrestations;
   return (
+    <>
     <div className="prestation-live">
       {data.map((presta, idx) => (
         <div className='prestation-live-content' key={idx}>
@@ -54,7 +56,10 @@ export default function PrestationLiveAll({ prestations }) {
             </Swiper>
           </div>
         </div>
+        
       ))}
     </div>
+    <ContactForm />
+    </>
   );
 }

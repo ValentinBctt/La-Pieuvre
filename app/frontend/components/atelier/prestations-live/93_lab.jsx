@@ -12,11 +12,12 @@ Chaque étape, du moodboard à l’impression textile, a été pensée pour les 
 Un atelier qui prouve que la créativité n’attend pas l’âge, mais qu’elle a besoin d’espace pour s’exprimer.
 On est fiers d’avoir pu contribuer à cela.
 Merci à l’association pour cette initiative, et surtout aux jeunes, pour leur belle implication.`,
-        image1: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/pac118_ocmami.png',
-        image2: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/pac118_ocmami.png',
-        image3: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/pac118_ocmami.png',
-        image4: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/pac118_ocmami.png',
-        image5: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/pac118_ocmami.png',
+        image1: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948019/01_s6ktrs.webp',
+        image2: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948019/08_btyoca.webp',
+        image3: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948021/23_rcqoqk.webp',
+        image4: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948021/18_hk1ckq.webp',
+        image5: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948020/13_tzckc8.webp',
+        image6: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948019/04_drunfa.webp'
 
   }
 ];

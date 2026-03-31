@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   get '/atelier', to: 'atelier#index'
   get '/bureau', to: 'bureau#index'
   get '/prestationlive/:name', to: 'prestationlive#show', as: :prestationlive
+
+  namespace :api do
+  resources :contacts, only: [:create]
+end
+
   namespace :atelier do
     get 'prestationlive/:name', to: 'prestationlive#show', as: :prestationlive
     get 'realisations', to: 'realisations#index', as: :realisations

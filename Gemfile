@@ -5,7 +5,11 @@ ruby "3.3.10"
 
 # Gemfile
 gem 'cloudinary'
-
+group :development do
+  gem 'letter_opener'
+  gem 'launchy'
+  gem 'childprocess'
+end
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.10"
 

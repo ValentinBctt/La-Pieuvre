@@ -1,6 +1,7 @@
 import React from "react";
 
 import NavbarAtelier from "../NavbarAtelier";
+import ContactForm from "../../ContactForm";
 
 const ImagesRealisations = [
   {
@@ -95,6 +96,8 @@ export default function NosRealisationsAll() {
                 </div>
             </div>
         </div>
+        <ContactForm />
+
         </>
     )
 }

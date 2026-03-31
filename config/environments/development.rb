@@ -1,6 +1,21 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  # Configuration SMTP pour l'envoi d'emails en développement
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'gmail.com',
+    user_name:            ENV['SMTP_EMAIL'],
+    password:             ENV['SMTP_PASSWORD'],
+    authentication:       'plain',
+    enable_starttls_auto: true
+  }
+  config.action_mailer.raise_delivery_errors = true
+config.action_mailer.perform_deliveries = true
+config.action_mailer.delivery_method = :letter_opener
+
   # Autorise les requêtes venant de Vite (localhost et 127.0.0.1)
   config.hosts << "localhost"
   config.hosts << "127.0.0.1"
