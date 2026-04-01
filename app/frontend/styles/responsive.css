@@ -1,0 +1,85 @@
+@media (max-width: 768px) {
+
+.banner-atelier-title {
+    font-size: 3rem
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  width: 100%; /* prend toute la largeur */
+  gap: 1rem; /* espace entre texte et barres */
+}
+
+h2::before,
+h2::after {
+  content: '';
+  flex: 1; /* les barres prennent l'espace disponible */
+  height: 2px;
+  background: var(--orange);
+  border-radius: 1px;
+  display: block;
+}
+
+h2::before {
+  margin-right: 1rem; /* espace entre barre et texte */
+}
+
+h2::after {
+  margin-left: 1rem; /* espace entre texte et barre */
+}
+
+.navbar-right {
+  display: flex;             /* assure que c’est un flex container */
+  justify-content: flex-end; /* aligne à droite horizontalement */
+  align-items: center;       /* centre verticalement dans la navbar */
+           /* optionnel, espace entre les items */
+}
+
+.navbar-atelier, .navbar-bureau {
+    padding: 1rem 0.5rem;
+    
+}
+
+.navbar-right a {
+  
+  font-size: 0.8rem;
+  gap:0
+}
+
+ .contact-form {
+    flex-direction: column;
+    gap: 2rem; /* optionnel : réduit l'espace */
+    width: 90%; /* optionnel : plus adapté mobile */
+  }
+
+  .form-message textarea {
+    width: 140%
+  }
+
+  .contact-form  {
+    gap: 0 !important; 
+  }
+
+  .footer-holding {
+    font-size: 1.2rem;
+  }
+
+    .footer-content {
+    flex-direction: column;
+    align-items: flex-start; /* aligné à gauche */
+    gap: 2rem;
+    width: 90%;
+    margin: 2rem auto;
+  }
+
+  .footer-la-pieuvre,
+  .footer-contact,
+  .footer-legal {
+    align-items: flex-start; /* texte bien aligné à gauche */
+  }
+
+
+
+
+}

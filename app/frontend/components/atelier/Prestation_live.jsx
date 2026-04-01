@@ -25,51 +25,20 @@ export default function PrestationLive() {
         padding: '2rem'
       }}
     >
-      <p>La Pieuvre propose des animations sur mesure lors d'événements extérieurs grâce à la personnalisation live.</p>
+      <p>La Pieuvre propose des animations sur mesure lors <br /> d'événements extérieurs grâce à la personnalisation live.</p>
 
-      <div
-        style={{
-          display: 'flex',
-          gap: '1rem',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-          marginTop: '2rem',
-          width: '80%',
-        }}
-      >
-        {prestations.map((p) => (
-          <a
-            key={p.name}
-            href={`/prestationlive/${p.name}`}
-            className="prestation-card"
-            style={{
-              position: 'relative',
-              width: '400px',
-              height: '250px',
-              overflow: 'hidden',
-             
-              cursor: 'pointer',
-              display: 'block'
-            }}
-          >
-            <img
-              src={p.image}
-              alt={p.label}
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                display: 'block',
-               
-                transition: 'transform 0.3s ease'
-              }}
-            />
-            <div className="overlay">
-              {p.label}
-            </div>
-          </a>
-        ))}
-      </div>
+<div className="prestation-container">
+  {prestations.map((p) => (
+    <a
+      key={p.name}
+      href={`/prestationlive/${p.name}`}
+      className="prestation-card"
+    >
+      <img src={p.image} alt={p.label} />
+      <div className="overlay">{p.label}</div>
+    </a>
+  ))}
+</div>
 
       <style>
         {`

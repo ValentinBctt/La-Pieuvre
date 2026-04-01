@@ -9,6 +9,7 @@ import Yamaha_x_union from '../components/atelier/prestations-live/Yamaha_x_unio
 import Station_F from '../components/atelier/prestations-live/Station_F.jsx';
 import Lab93 from '../components/atelier/prestations-live/93_lab.jsx';
 import '../styles/application.css';
+import '../styles/responsive.css'
 
 const prestationsMap = {
   pac_118: Pac_118,

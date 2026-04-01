@@ -11,7 +11,17 @@ const ImagesConfiance = [
   {name: 'UCPA', src: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774974349/bf624533-afca-4491-9f4a-ca6f3f5d03ce.png'},
   {name: 'Adidas', src: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774974381/3656618d-c91b-4ac2-8ab1-cd1b9224f877.png'},
   {name: 'Suez', src: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774974436/fbf73513-51ea-4bd4-802b-8d17c19ecd77.png'},
-  {name: 'Paperboy', src : 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774974469/fe781a2f-8fee-4634-bb1a-0e7d1ce6e66b.png' }, 
+  {name: 'Paperboy', src : 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774974469/fe781a2f-8fee-4634-bb1a-0e7d1ce6e66b.png' },
+  {name: 'Brut.', src: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1775048606/dcac92e2-f796-4b70-bea6-f3877b9f3388.png' },
+  {name: 'La-Lucanre', src:'https://res.cloudinary.com/dnojcwwos/image/upload/v1775048755/c4a0e40e-9fcd-4c16-8f12-1335c0e1d728.png'}, 
+  {name: '667', src: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1775048837/1cf7e0a1-11db-4fd9-a897-81d6736c3da6.png'},
+  {name: '75e-session', src: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1775048905/557d2685-4701-4b49-ae06-7397810a7e5d.png'},
+  {name:'SDM', src: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1775048948/cce10a5d-e45e-46a4-8027-4ed8fdac7835.png'},
+  {name: 'Tchekslpay', src: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1775048989/bdd2bfbc-712e-47cb-9027-dd196c6a729e.png'},
+  {name: 'Echo-banlieues', src:'https://res.cloudinary.com/dnojcwwos/image/upload/v1775049070/7806d3ae-a7ed-4a73-ba29-0f64e0611271.png'},
+  {name: 'Philarmonie-de-Paris', src: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1775049122/71de6470-96cf-4422-b7ed-27271179f00e.png'}
+
+
 ];
 
 export default function IlsNousFontConfiance() {

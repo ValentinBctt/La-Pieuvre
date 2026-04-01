@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import Atelier from '../components/Atelier.jsx'
 import '../styles/application.css'
 import '../styles/selection-textile.css'
+import '../styles/responsive.css'
 
 window.React = React
 

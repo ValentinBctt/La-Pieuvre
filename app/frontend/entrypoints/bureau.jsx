@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import Bureau from '../components/Bureau.jsx'
 import '../styles/application.css'
 import '../styles/bureau-home.css';
+import '../styles/responsive.css'
 
 window.React = React
 

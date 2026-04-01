@@ -1,3 +1,11 @@
+.footer-logo {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  margin-right: 12px;
+  vertical-align: middle;
+  filter: none;
+}
 
 
 /* --- Gotham --- */
@@ -79,9 +87,14 @@
     --font-mono: 'Fira Mono', 'Consolas', monospace;
 }
 
+html {
+  width: 100wh
+}
+
 body {
     background-color: var(--black);
     height: 100vh;
+    width: 100vw;
     margin: 0;
     padding: 0;
 
@@ -125,13 +138,6 @@ h2 {
   z-index: 1;
 }
 
-h3 {
-  font-family: 'Pluto';
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-  margin-top: 0;
-}
-
 h2::before,
 h2::after {
   content: '';
@@ -151,10 +157,21 @@ h2::after {
   margin-left: 10rem;
 }
 
+
+h3 {
+  font-family: 'Pluto';
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+
 p {
   font-family: 'Gotham';
 
 }
+
+
 
 .navbar-atelier {
   display : flex;
@@ -170,20 +187,27 @@ p {
   padding: 1rem 2rem;
   background-color: var(--black);
   border-bottom: solid 1px var(--white);
+
+  transition: all 0.3s ease;
+  &:hover {
+    .navbar-bureau-center img {
+      padding: 0.5rem 35rem;
+
+    }
+  }
 }
 
 .navbar-atelier a {
   color: var(--white);
   text-decoration: none;
-  font-family: var(--font-main);
-  font-weight: bold;
+   font-family: 'Pluto';
+  font-weight: 400;
 }
 
 .navbar-bureau a {
   color: var(--white);
   text-decoration: none;
-  font-family: var(--font-main);
-  font-weight: bold;
+ 
 }
 
 /* Espace horizontal entre les liens de la navbar à droite */
@@ -205,16 +229,25 @@ p {
 }
 
 .navbar-bureau-center img {
-  background-color: var(--black);
+background: linear-gradient(
+  to right,
+  rgba(0, 0, 0, 0),
+
+  rgba(0, 0, 0, 1) 45%,
+   rgba(0, 0, 0, 1) 55%,
+  rgba(0, 0, 0, 0)
+);
   height: 3rem;
   object-fit: cover;
   border-radius: 100%;
-  padding: 0.5rem;
+  padding: 0.5rem 10rem ;
   z-index: 1000;
   position: absolute;
   top: 1rem;
   left: 50%;
   transform: translateX(-50%);
+  
+  transition: all 0.3s ease;
 }
 
 
@@ -379,5 +412,72 @@ p {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+
+
+
+
+.prestation-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* Chaque card */
+.prestation-card {
+  position: relative;
+  flex: 1 1 calc(33.33% - 1rem); /* 3 par ligne */
+  max-width: calc(33.33% - 1rem);
+  height: 250px;
+  overflow: hidden;
+  cursor: pointer;
+  display: block;
+}
+
+/* Image */
+.prestation-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Tablette */
+@media (max-width: 1024px) {
+  .prestation-card {
+    flex: 1 1 calc(50% - 1rem); /* 2 par ligne */
+    max-width: calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .prestation-container {
+    display: flex;
+    flex-direction: column; /* stack vertical */
+    align-items: center;    /* centre horizontal si besoin */
+    width: 100%;            /* container prend toute la largeur possible */
+    margin: 0 auto;         /* centre container si width < 100% */
+    gap: 1rem;              /* espace entre les cards */
+  }
+
+  .prestation-card {
+    flex: none;            /* ignore flex shrink/grow */
+    width: 100%;           /* chaque card prend 100% du container */
+    max-width: 100%;       /* pour être sûr */
+  }
+
+  .prestation-card img {
+    width: 100%;           /* image remplit entièrement la card */
+    height: 100%;          /* remplit la card, ratio via object-fit */
+    object-fit: cover;     /* conserve le ratio, centre l'image */
+    object-position: center center; /* centre l'image dans la card */
+    display: block;        /* supprime les espaces inline */
+  }
 }
 
