@@ -12,7 +12,7 @@ export default function NavbarBureau() {
             </div>
           <div className="navbar-right">
             <a href="/">Instagram</a>
-            <a href="/">Contact</a>
+           <a href="#contactez-nous">Contact</a>
           </div>
         </nav>
      )

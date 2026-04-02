@@ -12,7 +12,7 @@ export default function NavbarAtelier() {
             </div>
           <div className="navbar-right">
             <a href="/" style={{ marginRight: "1rem" }}>Prestation live</a>
-            <a href="/">Contact</a>
+            <a href="#contactez-nous">Contact</a>
           </div>
         </nav>
      )

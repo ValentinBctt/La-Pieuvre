@@ -1,4 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+// Hook pour détecter si on est sur mobile (largeur <= 768px)
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 768);
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth <= 768);
+    }
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  return isMobile;
+}
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -16,29 +28,29 @@ const ImagesBureauContainer = [
       {
         name: 'Paris-Saint-Germain x FUTURA 2000',
         type: 'Merchandising - Personnalisation textile - DTF',
-        image1: '/images/psg1.png',
-        image2: '/images/psg2.png',
+        image1: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/psg1_qk5mtv.png',
+        image2: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/psg1_qk5mtv.png',
         text: 'L’Atelier La Pieuvre a eu le plaisir de collaborer avec le Paris Saint-Germain'
       },
       {
         name: 'Paris-Saint-Germain x FUTURA 2000',
         type: 'Merchandising - Personnalisation textile - DTF',
         image1: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/psg1_qk5mtv.png',
-        image2: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/psg2_qtdrr7.png',
+        image2: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/psg1_qk5mtv.png',
         text: 'L’Atelier La Pieuvre a eu le plaisir de collaborer avec le Paris Saint-Germain'
       },
       {
         name: 'Paris-Saint-Germain x FUTURA 2000',
         type: 'Merchandising - Personnalisation textile - DTF',
         image1: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/psg1_qk5mtv.png',
-        image2: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/psg2_qtdrr7.png',
+        image2: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/psg1_qk5mtv.png',
         text: 'L’Atelier La Pieuvre a eu le plaisir de collaborer avec le Paris Saint-Germain'
       },
       {
         name: 'Paris-Saint-Germain x FUTURA 2000',
         type: 'Merchandising - Personnalisation textile - DTF',
         image1: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/psg1_qk5mtv.png',
-        image2: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/psg2_qtdrr7.png',
+        image2: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774857840/psg1_qk5mtv.png',
         text: 'L’Atelier La Pieuvre a eu le plaisir de collaborer avec le Paris Saint-Germain'
       }
     ]
@@ -127,8 +139,11 @@ const ImagesBureauContainer = [
 
 
 export default function BureauHome() {
+  const isMobile = useIsMobile();
   const [showSlider, setShowSlider] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState('Branding');
+  const [selectedCategory, setSelectedCategory] = useState('PSG');
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [closingAnim, setClosingAnim] = useState(false);
 
   // Liste des catégories principales
   const mainCategories = [
@@ -158,7 +173,37 @@ export default function BureauHome() {
   return (
     <>
       <NavbarBureau />
+
       <div className="bureau-home">
+        {/* Hamburger/Cross menu button (mobile only) */}
+        <button
+          className={`hamburger-menu${showMobileMenu ? ' open' : ''}${closingAnim ? ' closing' : ''}`}
+          onClick={() => {
+            if (showMobileMenu) {
+              setClosingAnim(true);
+              setTimeout(() => {
+                setShowMobileMenu(false);
+                setClosingAnim(false);
+              }, 300); // durée de l'animation CSS
+            } else {
+              setShowMobileMenu(true);
+            }
+          }}
+          aria-label={showMobileMenu ? "Fermer le menu" : "Ouvrir le menu"}
+        >
+          {!showMobileMenu && !closingAnim && (
+            <span className="burger-bars">
+              <span />
+              <span />
+              <span />
+            </span>
+          )}
+          {(showMobileMenu || closingAnim) && (
+            <span className="cross-icon">✕</span>
+          )}
+        </button>
+
+        {/* Menu latéral desktop */}
         <div className="bureau-nav-left">
           {mainCategories.map(cat => (
             <a
@@ -203,6 +248,54 @@ export default function BureauHome() {
           ))}
         </div>
 
+        {/* Menu mobile modal/side */}
+        {showMobileMenu && (
+          <div className="mobile-menu">
+            <div className="mobile-menu-categories">
+              {mainCategories.map(cat => (
+                <a
+                  key={cat}
+                  href="#"
+                  className={selectedCategory === cat ? 'selected' : ''}
+                  onClick={e => {
+                    e.preventDefault();
+                    setSelectedCategory(cat);
+                    setShowMobileMenu(false);
+                  }}
+                >
+                  {cat}
+                </a>
+              ))}
+              <div className="bureau-nav-left-separator">
+                <svg width="30%" height="2" viewBox="0 0 100 2" preserveAspectRatio="none">
+                  <line x1="0" y1="1" x2="100" y2="1" stroke="var(--grey)" strokeWidth="2" />
+                  <defs>
+                    <linearGradient id="fadeGradientMobile" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="var(--grey)" stopOpacity="1" />
+                      <stop offset="100%" stopColor="var(--grey)" stopOpacity="0" />
+                    </linearGradient>
+                  </defs>
+                  <line x1="0" y1="1" x2="100" y2="1" stroke="url(#fadeGradientMobile)" strokeWidth="2" />
+                </svg>
+              </div>
+              {projectCategories.map(cat => (
+                <a
+                  key={cat}
+                  href="#"
+                  className={selectedCategory === cat ? 'selected' : ''}
+                  onClick={e => {
+                    e.preventDefault();
+                    setSelectedCategory(cat);
+                    setShowMobileMenu(false);
+                  }}
+                >
+                  {cat}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
         <div className="bureau-home-container">
           {!showSlider ? (
             <div className="bureau-home-items-1">
@@ -231,6 +324,8 @@ export default function BureauHome() {
                 slidesPerView={1.3}
                 loop={true}
                 className="bureau-swiper"
+                direction={isMobile ? "vertical" : "horizontal"}
+                style={isMobile ? {height: '70vh', minHeight: 400} : {}}
               >
                 {items.map((item, index) => (
                   <SwiperSlide key={index}>

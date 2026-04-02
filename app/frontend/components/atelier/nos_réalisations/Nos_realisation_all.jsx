@@ -76,7 +76,9 @@ export default function NosRealisationsAll() {
             <div className="realisation-on-title">
             <p>ATELIER LA PIEUVRE</p>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <p>Confection_Personalisation_Events_Merchandising</p>
+                <p className="personalisation-text">
+                  Confection_Personalisation_Events_Merchandising
+</p>
                 <p className="realisation-title-right">Selection_2024_2025</p>
             </div>
             </div>

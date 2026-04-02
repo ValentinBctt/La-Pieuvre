@@ -46,8 +46,24 @@ export default function ContactForm({ endpoint = '/api/contacts', buttonText = '
 
   return (
     <>       
-    <div className="contactez-nous">
-    <h2>Contactez-nous</h2>
+    <div className="contactez-nous" id="contactez-nous">
+      <h2>Contactez-nous</h2>
+        {/* Scroll smooth vers l'ancre depuis n'importe quelle page */}
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            document.addEventListener('DOMContentLoaded', function() {
+              document.querySelectorAll('a[href="#contactez-nous"]').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                  const anchor = document.getElementById('contactez-nous');
+                  if(anchor) {
+                    e.preventDefault();
+                    anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                });
+              });
+            });
+          `
+        }} />
     </div>
     <form onSubmit={handleSubmit} className="contact-form">
       

@@ -1,4 +1,135 @@
 @media (max-width: 768px) {
+  .hamburger-menu.open .cross-icon {
+    color: #fff !important;
+    display: block;
+  }
+}
+.burger-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+/* Hamburger menu bouton */
+/* Hamburger menu bouton */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  top: 72px; /* sous la navbar (ajustez selon la hauteur de votre navbar) */
+  left: 24px;
+  z-index: 2100;
+}
+.burger-bars span {
+  width: 28px;
+  height: 3px;
+  background: var(--black);
+  border-radius: 2px;
+  display: block;
+  transition: background 0.2s;
+}
+.hamburger-menu .cross-icon {
+  font-size: 2.2rem;
+  color: #fff !important;
+  line-height: 1;
+  font-weight: bold;
+  display: block;
+
+}
+
+.hamburger-menu span {
+  /* Par défaut noir, mais blanc sur mobile */
+}
+@media (max-width: 768px) {
+  .bureau-nav-left {
+    display: none !important;
+  }
+  .hamburger-menu {
+    display: flex;
+    position: static !important;
+    margin: 0.5rem 0 0 0.5rem;
+    top: unset;
+    left: unset;
+    align-self: flex-start;
+  }
+  .burger-bars span {
+    background: #fff;
+  }
+  .mobile-menu {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--black);
+    z-index: 2000;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    animation: fadeInMenu 0.2s;
+  }
+
+  .mobile-menu-categories {
+    margin-top: 7rem;
+    margin-left: 2rem;
+  }
+  .mobile-menu-categories a {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    transition: color 0.2s;
+  }
+  .mobile-menu-categories a.selected {
+    color: var(--orange);
+    font-weight: bold;
+  }
+}
+
+@keyframes fadeInMenu {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 768px) {
+
+  .bureau-home {
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+
+  .bureau-home-items-1, .bureau-home-items-2 {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bureau-home-items-1 {
+    margin-top: 2rem
+   }
+  
+
+   .bureau-home-items-2 {
+    margin-top: 7rem
+   }
+
+  .bureau-home-items-2 img {
+    height: 25rem !important;
+    object-fit: cover;
+    width: auto;
+    max-width: 100%;
+    display: block;
+    margin-bottom: 2rem;
+  }
 
 .banner-atelier-title {
     font-size: 3rem
@@ -78,6 +209,41 @@ h2::after {
   .footer-legal {
     align-items: flex-start; /* texte bien aligné à gauche */
   }
+
+
+  .realisation-container {
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    
+  }
+
+  .realisation-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .realisation-title  {
+    text-align: left;
+    font-size: 2rem;
+  }
+
+  .personalisation-text {
+    display: flex;
+    flex-direction: column;
+  }
+  /* Desktop : tout sur une ligne */
+.personalisation-text span {
+  display: inline;
+}
+
+/* Mobile */
+
+  .personalisation-text span {
+    display: block; /* force le passage à la ligne */
+
+}
 
 
 

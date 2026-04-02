@@ -6,6 +6,7 @@ import 'swiper/css/scrollbar';
 import { Scrollbar } from 'swiper/modules';
 import '../../../styles/prestationlive.css';
 import ContactForm from '../../ContactForm';
+import NavbarAtelier from '../NavbarAtelier';
 
 const defaultPrestations = [
   {
@@ -26,6 +27,8 @@ export default function PrestationLiveAll({ prestations }) {
   const data = Array.isArray(prestations) && prestations.length > 0 ? prestations : defaultPrestations;
   return (
     <>
+    <NavbarAtelier />
+
     <div className="prestation-live">
       {data.map((presta, idx) => (
         <div className='prestation-live-content' key={idx}>
@@ -35,7 +38,9 @@ export default function PrestationLiveAll({ prestations }) {
             <p className='contexte'><strong>Contexte:</strong> {presta.contexte || 'Non spécifié'}</p>
             <p><strong>Missions:</strong> {presta.missions || 'Non spécifié'}</p>
           </div>
-          <p className="description">{presta.description}</p>
+          <div className="description">
+          <p >{presta.description}</p>
+          </div>
           <div className="scroll-container">
             <Swiper
               modules={[Scrollbar]}
