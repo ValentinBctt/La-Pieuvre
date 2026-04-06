@@ -54,19 +54,44 @@ export default function SelectionTextile() {
 const items = [
   {
     name: "T-shirt",
-    image: "https://res.cloudinary.com/dnojcwwos/image/upload/v1774884651/b5f9dd39-5160-4bd7-8070-ec537eb34b00.png",
-    imageorange: "https://res.cloudinary.com/dnojcwwos/image/upload/v1774885291/bdcf460b-693d-46b8-a7fa-a32dab46c83b.png"
+    image: "https://res.cloudinary.com/dnojcwwos/image/upload/v1775468481/01_TSHIRT_rnwpr5.webp",
+    imageorange: "https://res.cloudinary.com/dnojcwwos/image/upload/v1775468490/01_TSHIRT_jfczp1.webp"
   },
   {
-    name: "Lonsleeve",
+    name: "Longsleeve",
     image: "https://res.cloudinary.com/dnojcwwos/image/upload/v1774884714/0fce6926-7fcf-401c-b0b7-7ce86325a80c.png",
     imageorange: "https://res.cloudinary.com/dnojcwwos/image/upload/v1774885472/a5d01399-bf77-426a-84c7-58231f84d9c8.png"
   },
   {
     name: "Crewneck",
-    image: "https://res.cloudinary.com/dnojcwwos/image/upload/v1774886465/18d06266-3364-4b9d-b114-a3e921623f91.png",
-    imageorange: "https://res.cloudinary.com/dnojcwwos/image/upload/v1774885533/ba5a5d9f-72f9-48ce-a50c-e203c3d19310.png"
-  }
+    image: "https://res.cloudinary.com/dnojcwwos/image/upload/v1775468482/03_CREWNECK_djrd3o.webp",
+    imageorange: "https://res.cloudinary.com/dnojcwwos/image/upload/v1775468492/03_CREWNECK_vxhggx.webp"
+  },
+
+  {name: "Hoodie",
+    image: "https://res.cloudinary.com/dnojcwwos/image/upload/v1775468482/04_HOODIE_tkntvs.webp",
+    imageorange: "https://res.cloudinary.com/dnojcwwos/image/upload/v1775468491/04_HOODIE_bggcdv.webp"
+   },
+
+   {name: "Pant",
+    image: "https://res.cloudinary.com/dnojcwwos/image/upload/v1775468482/05_PANTS_qnldxi.webp",
+    imageorange: "https://res.cloudinary.com/dnojcwwos/image/upload/v1775468492/05_PANTS_udbb8n.webp"
+   },
+
+   {name: "Accessoires",
+    image: "https://res.cloudinary.com/dnojcwwos/image/upload/v1775468482/06_TOTEBAG_sia2sa.webp",
+    imageorange: "https://res.cloudinary.com/dnojcwwos/image/upload/v1775468492/06_TOTEBAG_kx2chb.webp"
+   },
+
+   {name: "Head-wear",
+    image: "https://res.cloudinary.com/dnojcwwos/image/upload/v1775468483/07_HEADWEAR_ylv0hg.webp",
+    imageorange: "https://res.cloudinary.com/dnojcwwos/image/upload/v1775468493/07_HEADWEAR_ywjodv.webp"
+   }
+
+
+
+
+
 ];
 
 function TextileList() {
@@ -74,12 +99,22 @@ function TextileList() {
   const [hovered, setHovered] = useState(null);
 
   return (
-    <div style={{ display: "flex", gap: "40px", justifyContent: "center", alignItems: "center", width: "100%", marginTop: "4rem" }}>
+   <div
+  style={{
+    display: "flex",
+    gap: "40px",
+    justifyContent: "center",
+    alignItems: "center",
+    flexWrap: "wrap",   // permet de passer à la ligne si plus de place
+    width: "95%",
+    marginTop: "4rem"
+  }}
+>
       {items.map((item, index) => {
         const isActive = selected === index || hovered === index;
 
         return (
-          <div
+          <div 
             key={index}
             onClick={() => setSelected(index)}
             onMouseEnter={() => setHovered(index)}
@@ -89,12 +124,19 @@ function TextileList() {
               textAlign: "center"
             }}
           >
-            <img
-              src={isActive ? item.imageorange : item.image}
-              alt={item.name}
-              style={{ width: "120px", transition: "0.3s ease" }}
-            />
-            <p style={{ color: isActive ? '#ff5a2f' : '#fff', fontWeight: isActive ? 'bold' : 'normal', transition: 'color 0.2s' }}>{item.name}</p>
+            <div 
+
+>
+  <img
+    src={isActive ? item.imageorange : item.image}
+    alt={item.name}
+    style={{
+      height: item.name === "Head-wear" ? "70px" : "120px",
+      transition: "0.3s ease"
+    }}
+  />
+</div>
+            <p style={{ color: isActive ? '#ff5a2f' : '#fff', transition: 'color 0.2s' }}>{item.name}</p>
           </div>
         );
       })}
@@ -110,31 +152,35 @@ function TextileList() {
 
 <Swiper
   modules={[Navigation, Pagination]}
-  slidesPerView={1.4}        // 1 slide complète + 40% de la suivante
-  centeredSlides={false}     // ne pas centrer la slide active
-  spaceBetween={100}          // espace entre les slides
-  loop={true}               // loop peut être false si tu veux aligner la première slide à gauche
+  slidesPerView={1.4}
+  centeredSlides={false}
+  spaceBetween={100}
+  loop={true}
   navigation
   pagination={{ clickable: true }}
   className="textile-swiper"
+  breakpoints={{
+    0: { slidesPerView: 1, spaceBetween: 20 }, // mobile
+    768: { slidesPerView: 1.4, spaceBetween: 100 } // tablette et +
+  }}
 >
         {products.map((product) => (
           <SwiperSlide key={product.id}>
             <div className="full-card">
             <div className="card">
               <img src={product.image} alt={product.title} />
-              <p>{product.title}</p>
+              <p><strong>{product.title}</strong></p>
 
             </div>
             <div className="card-description">
-              <p>Réf : {product.ref}</p>
-              <p>Description : {product.desciption}</p>
+              <p><strong>Réf : </strong> {product.ref}</p>
+              <p><strong>Description : </strong> {product.desciption}</p>
               <div className="card-info">
-              <p>INFOS</p>
-              <p>Tailles disponibles : {product.sizeavailable}</p>
-              <p>Grammage : {product.grammage}</p>
-              <p>Matière : {product.matiere}</p>
-              <p>Qualité : {product.qualité}</p>
+              <p><strong>INFOS</strong></p>
+              <p><strong>Tailles disponibles : </strong> {product.sizeavailable}</p>
+              <p><strong>Grammage : </strong> {product.grammage}</p>
+              <p><strong>Matière : </strong> {product.matiere}</p>
+              <p><strong>Qualité : </strong> {product.qualité}</p>
               </div>
             </div>
             </div>

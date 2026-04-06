@@ -4,7 +4,7 @@ export default function BannerAtelier() {
     return (      
         <div className="banner-atelier" style={{ position: 'relative' }}>
             <img 
-                src="https://res.cloudinary.com/dnojcwwos/image/upload/v1774857841/banner_u9uft4.png" 
+                src="https://res.cloudinary.com/dnojcwwos/image/upload/v1775468402/BANNI%C3%88RE_txwvfi.webp" 
                 alt="Atelier Lapieuvre"
                 style={{ width: '100%', height: '80vh', objectFit: 'cover', objectPosition: 'center 60%', filter: 'brightness(0.5)' }} 
             />

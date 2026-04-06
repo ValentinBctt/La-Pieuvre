@@ -1,3 +1,25 @@
+.textile-swiper .swiper-pagination .swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+
+  background: none !important;
+  background-image: url('https://res.cloudinary.com/dnojcwwos/image/upload/v1775051989/c36fa1a1-7052-4db1-8996-220a4a5c79a7.png') !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain !important;
+
+  opacity: 1 !important;
+  border-radius: 50% !important;
+  background-color: transparent !important;
+  filter: brightness(0.5) ;
+  transition: filter 0.2s;
+}
+
+/* Active */
+.textile-swiper .swiper-pagination .swiper-pagination-bullet-active {
+  filter: brightness(1.2) drop-shadow(0 0 2px var(--orange, #ff5a2f));
+}
+
 .carousel-wrapper {
   width: 80%;
   padding: 60px 0;

@@ -1,3 +1,25 @@
+.swiper-button-next, .swiper-button-prev {
+  position: absolute !important;
+  top: 30% !important;
+  transform: translateY(-50%) !important;
+  z-index: 10 !important;
+  width: 2rem !important;
+  height: 2rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  color: #fff !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+.swiper-button-prev {
+  left: 0 !important;
+}
+.swiper-button-next {
+  right: 0 !important;
+}
 @media (max-width: 768px) {
   .hamburger-menu.open .cross-icon {
     color: #fff !important;
@@ -244,8 +266,61 @@ h2::after {
     display: block; /* force le passage à la ligne */
 
 }
+.realisation-item img {
+  margin-bottom: -2rem !important;
+}
+
+.card {
+  width: 70%;
+}
+
+.textile-swiper {
+    width: 90%;
+    margin: 3rem auto;
+}
+
+.full-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.card-service {
+    width: 80% !important;
+
+
+}
 
 
 
+.card-description {
+    margin: 2rem auto;
+    width: 90% !important;
+ 
+}
+
+.swiper-button-next, .swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.15);
+  border-radius: 50%;
+  color: #fff;
+}
+
+.swiper-button-prev {
+  left: 0;
+}
+.swiper-button-next {
+  right: 0;
+}
 
 }
