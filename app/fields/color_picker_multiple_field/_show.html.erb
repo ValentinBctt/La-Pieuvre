@@ -1,0 +1,15 @@
+<% if data.is_a?(Array) && data.any? %>
+  <div style="display: flex; gap: 0.5em;">
+    <% data.each do |color| %>
+      <span title="<%= color %>" style="display:inline-block;width:2em;height:2em;background:<%= color %>;border:1px solid #ccc;border-radius:4px;"></span>
+    <% end %>
+  </div>
+  <div style="margin-top:0.5em;">
+    <%= data.join(', ') %>
+  </div>
+<% elsif data.present? %>
+  <span style="display:inline-block;width:2em;height:2em;background:<%= data %>;border:1px solid #ccc;border-radius:4px;"></span>
+  <span><%= data %></span>
+<% else %>
+  <em>Aucune couleur</em>
+<% end %>

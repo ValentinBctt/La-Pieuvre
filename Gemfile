@@ -10,6 +10,10 @@ group :development do
   gem 'launchy'
   gem 'childprocess'
 end
+
+gem "image_processing", "~> 1.2"
+gem "administrate"
+gem "administrate-field-active_storage"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.10"
 

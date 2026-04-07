@@ -1,0 +1,36 @@
+<div data-color-picker-multiple>
+  <input type="hidden" name="product[colors][]" value="" />
+  <% (data || []).reject(&:blank?).each do |color| %>
+    <div class="color-picker-item">
+      <input type="color" value="<%= color %>" oninput="this.nextElementSibling.value = toHex(this.value); this.nextElementSibling.dispatchEvent(new Event('input'))" />
+      <input type="text" name="product[colors][]" pattern="#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})" maxlength="7" value="<%= color %>" oninput="if(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.test(this.value)){this.previousElementSibling.value=this.value;}" style="width:90px; margin-left:4px;" />
+      <button type="button" onclick="this.parentNode.remove()">✖</button>
+    </div>
+  <% end %>
+  <button type="button" onclick="addColorPicker(this)">Ajouter une couleur</button>
+</div>
+<script>
+function toHex(color) {
+  // color est déjà au format #RRGGBB pour input[type=color], on le retourne tel quel
+  if(/^#([A-Fa-f0-9]{6})$/.test(color)) return color;
+  // Si jamais on reçoit un format rgb/rgba, on convertit
+  var ctx = document.createElement('canvas').getContext('2d');
+  ctx.fillStyle = color;
+  return ctx.fillStyle;
+}
+
+function addColorPicker(btn) {
+  var container = btn.parentNode;
+  var div = document.createElement('div');
+  div.className = 'color-picker-item';
+  div.innerHTML = `
+    <input type="color" value="#000000" oninput="this.nextElementSibling.value = toHex(this.value); this.nextElementSibling.dispatchEvent(new Event('input'))" />
+    <input type="text" name="product[colors][]" pattern="#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})" maxlength="7" value="#000000" oninput="if(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.test(this.value)){this.previousElementSibling.value=this.value;}" style="width:90px; margin-left:4px;" />
+    <button type="button" onclick="this.parentNode.remove()">✖</button>
+  `;
+  container.insertBefore(div, btn);
+}
+</script>
+<style>
+.color-picker-item { display: flex; align-items: center; gap: 0.5em; margin-bottom: 0.5em; }
+</style>

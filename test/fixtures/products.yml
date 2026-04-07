@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category: one
+  image: MyString
+  reference: MyString
+  name: MyString
+  subname: MyString
+  description: MyText
+  colors: MyText
+  sizes_available: MyString
+  grammage: MyString
+  matiere: MyString
+  quality: MyString
+  position: 1
+
+two:
+  category: two
+  image: MyString
+  reference: MyString
+  name: MyString
+  subname: MyString
+  description: MyText
+  colors: MyText
+  sizes_available: MyString
+  grammage: MyString
+  matiere: MyString
+  quality: MyString
+  position: 1

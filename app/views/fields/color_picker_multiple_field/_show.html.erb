@@ -1,0 +1,15 @@
+<% if field.data.is_a?(Array) && field.data.any? %>
+  <div style="display: flex; gap: 0.5em;">
+    <% field.data.each do |color| %>
+      <span title="<%= color %>" style="display:inline-block;width:2em;height:2em;background:<%= color %>;border:1px solid #ccc;border-radius:4px;"></span>
+    <% end %>
+  </div>
+  <div style="margin-top:0.5em;">
+    <%= field.data.join(', ') %>
+  </div>
+<% elsif field.data.present? %>
+  <span style="display:inline-block;width:2em;height:2em;background:<%= field.data %>;border:1px solid #ccc;border-radius:4px;"></span>
+  <span><%= field.data %></span>
+<% else %>
+  <em>Aucune couleur</em>
+<% end %>

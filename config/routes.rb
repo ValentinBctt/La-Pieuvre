@@ -8,11 +8,20 @@ Rails.application.routes.draw do
   get '/prestationlive/:name', to: 'prestationlive#show', as: :prestationlive
 
   namespace :api do
-  resources :contacts, only: [:create]
-end
+    resources :contacts, only: [:create]
+    resources :products, only: [:index]
+  end
 
   namespace :atelier do
     get 'prestationlive/:name', to: 'prestationlive#show', as: :prestationlive
     get 'realisations', to: 'realisations#index', as: :realisations
   end
+
+
+namespace :admin do
+  resources :categories
+  resources :products
+  root to: "categories#index"
+
+end
 end

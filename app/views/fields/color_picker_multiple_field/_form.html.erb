@@ -1,0 +1,45 @@
+<div data-color-picker-multiple>
+  <% (field.data || [""]).each_with_index do |color, idx| %>
+    <div class="color-picker-item">
+      <label class="color-label">
+        <span class="color-preview" style="background: <%= color.presence || '#000000' %>;"></span>
+        <input type="color" name="product[colors][]" value="<%= color.presence || '#000000' %>" oninput="this.previousElementSibling.style.background=this.value" />
+      </label>
+      <button type="button" onclick="this.parentNode.remove()">✖</button>
+    </div>
+  <% end %>
+  <button type="button" onclick="addColorPicker(this)">Ajouter une couleur</button>
+</div>
+<script>
+function addColorPicker(btn) {
+  var container = btn.parentNode;
+  var div = document.createElement('div');
+  div.className = 'color-picker-item';
+  div.innerHTML = '<label class="color-label"><span class="color-preview" style="background: #000000;"></span><input type="color" name="product[colors][]" value="#000000" oninput="this.previousElementSibling.style.background=this.value" /></label> <button type="button" onclick="this.parentNode.remove()">✖</button>';
+  container.insertBefore(div, btn);
+}
+</script>
+<style>
+.color-picker-item { display: flex; align-items: center; gap: 0.5em; margin-bottom: 0.5em; }
+.color-label {
+  position: relative;
+  display: inline-block;
+}
+.color-preview {
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  border: 1px solid #aaa;
+  cursor: pointer;
+}
+.color-label input[type="color"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2em;
+  height: 2em;
+  opacity: 0;
+  cursor: pointer;
+}
+</style>
