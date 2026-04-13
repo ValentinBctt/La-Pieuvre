@@ -1,0 +1,25 @@
+.octopus-scroll-anchor {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.octopus-img {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  transition:
+    left 0.18s cubic-bezier(0.34, 1.56, 0.64, 1),
+    top 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform 0.12s ease;
+  will-change: left, top, transform;
+}
+
+.octopus-jerk {
+  transition:
+    left 0.06s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+    top 0.06s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+    transform 0.06s ease;
+}
