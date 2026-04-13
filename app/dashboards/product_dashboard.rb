@@ -16,7 +16,7 @@ class ProductDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     category: Field::BelongsTo,
-    colors: Field::ColorPickerMultipleField,
+    colors: ColorPickerMultipleField,
     description: Field::Text,
     grammage: Field::String,
     image: Field::ActiveStorage.with_options(show_preview: true),
