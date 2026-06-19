@@ -1,25 +1,23 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
-  # Configuration SMTP pour l'envoi d'emails en production
+  # Configuration SMTP pour l'envoi d'emails en production (validée au démarrage de l'app)
   smtp_email = ENV['SMTP_EMAIL'].to_s
   smtp_password = ENV['SMTP_PASSWORD'].to_s
 
-  if smtp_email.blank? || smtp_password.blank? 
-    raise "SMTP_EMAIL and SMTP_PASSWORD must be set in production"
+  if smtp_email.present? && smtp_password.present?
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      address:              'smtp.gmail.com',
+      port:                 587,
+      domain:               'gmail.com',
+      user_name:            smtp_email,
+      password:             smtp_password,
+      authentication:       'plain',
+      enable_starttls_auto: true
+    }
+    config.action_mailer.raise_delivery_errors = true
   end
-
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    port:                 587,
-    domain:               'gmail.com',
-    user_name:            smtp_email,
-    password:             smtp_password,
-    authentication:       'plain',
-    enable_starttls_auto: true
-  }
-  config.action_mailer.raise_delivery_errors = true
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
