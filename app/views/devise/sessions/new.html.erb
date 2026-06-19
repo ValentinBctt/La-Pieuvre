@@ -1,0 +1,82 @@
+
+<style>
+  .login-container {
+    max-width: 350px;
+    margin: 60px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 2.5rem 2rem 2rem 2rem;
+    font-family: 'Segoe UI', Arial, sans-serif;
+  }
+  .login-container h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #222;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .login-container label {
+    color: #444;
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+    display: block;
+  }
+  .login-container input[type="text"],
+  .login-container input[type="password"] {
+    width: 100%;
+    padding: 0.7rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #f9f9f9;
+    transition: border 0.2s;
+  }
+  .login-container input[type="text"]:focus,
+  .login-container input[type="password"]:focus {
+    border: 1.5px solid #0077ff;
+    outline: none;
+    background: #fff;
+  }
+  .login-container .actions {
+    text-align: center;
+  }
+  .login-container input[type="submit"] {
+    background: #0077ff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.7rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .login-container input[type="submit"]:hover {
+    background: #005fcc;
+  }
+</style>
+
+<div class="login-container">
+  <h2>Connexion</h2>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div style="margin-bottom: 1.5rem;">
+      <%= f.label :name, 'Nom d\'utilisateur', style: 'font-weight:500;font-size:1.08rem;' %>
+      <%= f.text_field :name, autofocus: true, autocomplete: "username", placeholder: "Votre nom d'utilisateur", style: 'margin-top:0.3rem;' %>
+    </div>
+    <div style="margin-bottom: 2rem;">
+      <%= f.label :password, 'Mot de passe', style: 'font-weight:500;font-size:1.08rem;' %>
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: "Votre mot de passe", style: 'margin-top:0.3rem;' %>
+    </div>
+    <% if devise_mapping.rememberable? %>
+      <div style="margin-bottom: 1.2rem;">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me, 'Se souvenir de moi' %>
+      </div>
+    <% end %>
+    <div class="actions">
+      <%= f.submit "Se connecter", style: 'width:100%;padding:0.8rem 0;font-size:1.1rem;' %>
+    </div>
+  <% end %>
+</div>

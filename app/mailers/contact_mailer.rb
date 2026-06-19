@@ -3,11 +3,13 @@ class ContactMailer < ApplicationMailer
 
   def contact_email(data)
     @data = data.transform_keys(&:to_s)
+    reply_to = @data['email'].to_s.strip
+
+    raise ArgumentError, "Invalid reply-to email" unless URI::MailTo::EMAIL_REGEXP.match?(reply_to)
 
     mail(
       subject: "Nouveau message de #{@data['firstName']} #{@data['lastName']}",
-      from: 'valentin.bctt@gmail.com',  # doit correspondre à ton SMTP_EMAIL
-      reply_to: @data['email']          # l'adresse du formulaire
+      reply_to: reply_to
     )
   end
 end

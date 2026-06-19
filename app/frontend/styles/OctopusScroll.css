@@ -17,9 +17,20 @@
   will-change: left, top, transform;
 }
 
+.octopus-scroll-anchor {
+  position: fixed;
+}
+
 .octopus-jerk {
   transition:
     left 0.06s cubic-bezier(0.68, -0.55, 0.27, 1.55),
     top 0.06s cubic-bezier(0.68, -0.55, 0.27, 1.55),
     transform 0.06s ease;
+}
+
+@media (max-width: 600px) {
+  .octopus-img {
+    width: 60px;
+    height: 60px;
+  }
 }

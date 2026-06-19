@@ -5,7 +5,8 @@ class Api::ContactsController < ApplicationController
     ContactMailer.contact_email(contact_params).deliver_now
     render json: { status: 'ok' }, status: :ok
   rescue => e
-    render json: { status: 'error', message: e.message }, status: :unprocessable_entity
+    Rails.logger.error("[Api::ContactsController] #{e.class}: #{e.message}")
+    render json: { status: 'error', message: 'Impossible d’envoyer le message' }, status: :unprocessable_entity
   end
 
   private

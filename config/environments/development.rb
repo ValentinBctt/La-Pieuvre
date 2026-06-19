@@ -2,19 +2,23 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Configuration SMTP pour l'envoi d'emails en développement
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    port:                 587,
-    domain:               'gmail.com',
-    user_name:            ENV['SMTP_EMAIL'],
-    password:             ENV['SMTP_PASSWORD'],
-    authentication:       'plain',
-    enable_starttls_auto: true
-  }
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-config.action_mailer.perform_deliveries = true
-config.action_mailer.delivery_method = :letter_opener
+
+  if ENV['SMTP_EMAIL'].present? && ENV['SMTP_PASSWORD'].present?
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      address:              'smtp.gmail.com',
+      port:                 587,
+      domain:               'gmail.com',
+      user_name:            ENV['SMTP_EMAIL'],
+      password:             ENV['SMTP_PASSWORD'],
+      authentication:       'plain',
+      enable_starttls_auto: true
+    }
+  else
+    config.action_mailer.delivery_method = :letter_opener
+  end
 
   # Autorise les requêtes venant de Vite (localhost et 127.0.0.1)
   config.hosts << "localhost"
@@ -40,7 +44,6 @@ config.action_mailer.delivery_method = :letter_opener
   end
 
   config.active_storage.service = :local
-  config.action_mailer.raise_delivery_errors = false
   config.action_mailer.perform_caching = false
   config.active_support.deprecation = :log
   config.active_support.disallowed_deprecation = :raise

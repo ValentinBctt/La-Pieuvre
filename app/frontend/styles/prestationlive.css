@@ -168,7 +168,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 1rem;
+  border-radius: 58.59px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
 
   padding: 1rem;
@@ -179,7 +179,7 @@
   width: 120%;
   height: 120%;
   object-fit: cover;
-  border-radius: 1.2rem;
+  border-radius: 58.59px;
   display: block;
 
   box-sizing: border-box;
@@ -192,6 +192,7 @@
   border-radius: 4px;
 }
 .swiper-scrollbar-drag {
+  margin-top: 1rem;
   background: var(--orange);
   border-radius: 4px;
 }

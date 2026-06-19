@@ -7,7 +7,7 @@
 .ils-nous-font-confiance .marquee-content {
   display: flex;
   align-items: center;
-  animation: defilement-infinite 45s linear infinite;
+  animation: defilement-infinite 60s linear infinite;
 }
 
 .ils-nous-font-confiance .realisations-image {
@@ -115,7 +115,7 @@
    }
 
   .realisation-on-title {
-    line-height: 1;
+    line-height: 2rem;
     margin-top: 4rem;
      border: none;
   }
@@ -223,3 +223,43 @@
 
 /* Glow dynamique qui suit la souris */
 
+.voir-en-details {
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: 7rem;
+  margin-top: 2rem;
+  padding: 0.5rem 1rem;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 700;
+
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--orange);
+  }
+}
+
+.voir-en-details-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.voir-en-details-arrow {
+  z-index: -10;
+  width: 96px;
+  height: 96px;
+  margin-top: -2.5rem;
+  margin-right: 7rem;
+}
+
+.voir-en-details-arrow path {
+  fill: none;
+  stroke: var(--white);
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

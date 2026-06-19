@@ -2,13 +2,20 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Configuration SMTP pour l'envoi d'emails en production
+  smtp_email = ENV['SMTP_EMAIL'].to_s
+  smtp_password = ENV['SMTP_PASSWORD'].to_s
+
+  if smtp_email.blank? || smtp_password.blank? 
+    raise "SMTP_EMAIL and SMTP_PASSWORD must be set in production"
+  end
+
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
     domain:               'gmail.com',
-    user_name:            ENV['SMTP_EMAIL'],
-    password:             ENV['SMTP_PASSWORD'],
+    user_name:            smtp_email,
+    password:             smtp_password,
     authentication:       'plain',
     enable_starttls_auto: true
   }

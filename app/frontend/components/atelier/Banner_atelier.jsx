@@ -12,8 +12,8 @@ export default function BannerAtelier() {
                 className="banner-atelier-texte" 
                 style={{ position: 'absolute', bottom: '40px', left: '40px', color: 'white', textAlign: 'left' }}
             >
-                <h1 className="banner-atelier-title">ENCREZ <br />VOTRE IMAGE.</h1>
-                <p className="banner-atelier-subtitle">Agence de création numérique et de personnalisation textile.</p>
+                <h1 className="banner-atelier-title">Printing</h1>
+                <p className="banner-atelier-subtitle">Production et Activations</p>
             </div>
         </div>
     )

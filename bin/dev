@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+# Start Vite dev server
+bundle exec vite dev &
+VITE_PID=$!
+
+# Start Rails server
+bundle exec rails s &
+RAILS_PID=$!
+
+# Handle cleanup on exit
+trap "kill $VITE_PID $RAILS_PID 2>/dev/null" EXIT INT TERM
+
+# Wait for both processes
+wait

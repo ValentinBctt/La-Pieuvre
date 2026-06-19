@@ -9,20 +9,27 @@
     <!-- Vite client (nécessaire pour HMR en dev et manifest en prod) -->
     <%= vite_client_tag %>
 
-    <!-- JS React principal depuis entrypoints -->
-
-    <!-- Cloudinary Upload Widget -->
-    <script src="https://widget.cloudinary.com/v2.0/global/all.js"></script>
   </head>
 
   <body>
     <!-- Conteneurs React requis -->
     <div id="root"></div>
     <div id="realisations-react-root"></div>
+    <div id="atelier-root"></div>
 
+    <!-- Messages flash Devise -->
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
     <!-- Contenu Rails classique -->
     <div id="rails-content">
       <%= yield %>
     </div>
+
+    <!-- Cloudinary Upload Widget -->
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js"></script>
   </body>
 </html>

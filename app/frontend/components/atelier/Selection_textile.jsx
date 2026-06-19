@@ -6,6 +6,37 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+function SkeletonSelectionTextile() {
+  return (
+    <div className="selection-textile">
+      <h2>Notre sélection de textile</h2>
+
+      <div className="textile-list-skeleton" aria-hidden="true">
+        {Array.from({ length: 6 }).map((_, index) => (
+          <div className="textile-list-skeleton-item" key={index}>
+            <div className="skeleton skeleton-thumb" />
+            <div className="skeleton skeleton-label" />
+          </div>
+        ))}
+      </div>
+
+      <div className="textile-swiper-skeleton" aria-hidden="true">
+        {Array.from({ length: 3 }).map((_, index) => (
+          <div className="textile-swiper-skeleton-card" key={index}>
+            <div className="skeleton skeleton-card-image" />
+            <div className="textile-swiper-skeleton-copy">
+              <div className="skeleton skeleton-line skeleton-line-wide" />
+              <div className="skeleton skeleton-line" />
+              <div className="skeleton skeleton-line skeleton-line-medium" />
+              <div className="skeleton skeleton-line" />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function TextileList({ items, selectedCategory, onSelect }) {
   const [hovered, setHovered] = useState(null);
 
@@ -61,16 +92,35 @@ const SelectionTextile = () => {
   const [error, setError] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null); // ← ajout
 
+  const preloadImage = (src) => {
+    if (!src) return Promise.resolve();
+
+    return new Promise((resolve) => {
+      const image = new Image();
+      image.onload = resolve;
+      image.onerror = resolve;
+      image.src = src;
+    });
+  };
+
   useEffect(() => {
     fetch("/api/products")
       .then((res) => {
         if (!res.ok) throw new Error("Erreur lors du chargement des données");
         return res.json();
       })
-      .then((data) => {
+      .then(async (data) => {
         setItems(data.categories);
         setProducts(data.products);
         setSelectedCategory(data.categories[0]?.id ?? null); // ← sélectionne la 1ère catégorie par défaut
+
+        const imageUrls = [
+          ...data.categories.flatMap((category) => [category.image, category.imageorange]),
+          ...data.products.map((product) => product.image)
+        ].filter(Boolean);
+
+        await Promise.all(imageUrls.map((url) => preloadImage(url)));
+
         setLoading(false);
       })
       .catch((err) => {
@@ -79,7 +129,7 @@ const SelectionTextile = () => {
       });
   }, []);
 
-  if (loading) return <div>Chargement...</div>;
+  if (loading) return <SkeletonSelectionTextile />;
   if (error) return <div>Erreur : {error}</div>;
 
   const filteredProducts = products.filter(p => p.category_id === selectedCategory); // ← filtre
@@ -115,25 +165,28 @@ const SelectionTextile = () => {
                 <img src={product.image || "/images/placeholder.png"} alt={product.name} />
                 <p><strong>{product.name}</strong></p>
                 {Array.isArray(product.colors) && product.colors.length > 0 && (
-                  <div style={{ display: "flex", gap: "0.5em", margin: "0.5em 0" }}>
+                  <div style={{ display: "flex", gap: "0.5em", margin: "0.5em 1rem"
+                    
+                  }}>
                     {product.colors.map((color, idx) => (
                       <span key={idx} title={color} style={{
                         display: "inline-block",
-                        width: "2em",
-                        height: "2em",
+                        width: "1.5em",
+                        height: "1.5em",
                         background: color,
                         border: "1px solid #ccc",
-                        borderRadius: "50%"
+                        borderRadius: "50%",
+              
                       }}></span>
                     ))}
                   </div>
                 )}
               </div>
               <div className="card-description">
-                {product.reference && <p><strong>Réf : </strong> {product.reference}</p>}
-                {product.description && <p><strong>Description : </strong> {product.description}</p>}
+                {product.reference && <p className="reference-line"><strong>Réf : </strong> <span>{product.reference}</span></p>}
+                {product.description && <p className="description-line"><strong>Description : </strong> <span>{product.description}</span></p>}
                 <div className="card-info">
-                  <p><strong>INFOS</strong></p>
+                  <p className="info-line"><strong>Infos</strong></p>
                   {Object.entries(product)
                     .filter(([key, value]) =>
                       value !== undefined && value !== null && value !== "" &&
@@ -142,7 +195,7 @@ const SelectionTextile = () => {
                     .map(([key, value]) => (
                       <p key={key}>
                         <strong>{key} : </strong>
-                        {typeof value === "object" ? JSON.stringify(value) : value.toString()}
+                       <span>{typeof value === "object" ? JSON.stringify(value) : value.toString()}</span>
                       </p>
                     ))}
                 </div>

@@ -1,23 +1,124 @@
+/* Skeleton loading animation */
+@keyframes skeleton-pulse {
+  0%, 100% {
+    opacity: 1;
+    background-color: #333333;
+  }
+  50% {
+    opacity: 0.7;
+    background-color: #444444;
+  }
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background: linear-gradient(90deg, #333333 0%, #555555 50%, #333333 100%);
+    background-position: -1000px 0;
+  }
+  100% {
+    background: linear-gradient(90deg, #333333 0%, #555555 50%, #333333 100%);
+    background-position: 1000px 0;
+  }
+}
+
+/* Textile list skeleton */
+.textile-list-skeleton {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 95%;
+  margin-top: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.textile-list-skeleton-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.skeleton {
+  border-radius: 8px;
+  background-color: #333333;
+  background-size: 1000px 100%;
+}
+
+.skeleton-thumb {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  animation: skeleton-pulse 8s infinite, skeleton-shimmer 12s infinite !important;
+}
+
+.skeleton-label {
+  display: none;
+}
+
+/* Swiper skeleton */
+.textile-swiper-skeleton {
+  width: 70%;
+  margin: 3rem auto;
+  padding: 60px 0;
+}
+
+.textile-swiper-skeleton-card {
+  display: flex;
+  gap: 0;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+.textile-swiper-skeleton-card:nth-child(n+2) {
+  display: none;
+}
+
+.skeleton-card-image {
+  width: 100%;
+  height: 450px;
+  border-radius: 20px;
+  flex-shrink: 0;
+  animation: skeleton-pulse 6s infinite, skeleton-shimmer 9s infinite !important;
+}
+
+.textile-swiper-skeleton-copy {
+  display: none;
+}
+
+.skeleton-line {
+  height: 12px;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.skeleton-line-wide {
+  width: 90%;
+}
+
+.skeleton-line-medium {
+  width: 60%;
+}
+
 .textile-swiper .swiper-pagination .swiper-pagination-bullet {
-  width: 20px;
-  height: 20px;
-
-  background: none !important;
-  background-image: url('https://res.cloudinary.com/dnojcwwos/image/upload/v1775051989/c36fa1a1-7052-4db1-8996-220a4a5c79a7.png') !important;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain !important;
-
-  opacity: 1 !important;
+  width: 10px;
+  height: 10px;
+  background: #fff !important;
+  opacity: 0.4 !important;
   border-radius: 50% !important;
-  background-color: transparent !important;
-  filter: brightness(0.5) ;
-  transition: filter 0.2s;
+  filter: none;
+  transition: opacity 0.2s, transform 0.2s;
 }
 
 /* Active */
 .textile-swiper .swiper-pagination .swiper-pagination-bullet-active {
-  filter: brightness(1.2) drop-shadow(0 0 2px var(--orange, #ff5a2f));
+  background: #fff !important;
+  opacity: 1 !important;
+  transform: scale(1.2);
 }
 
 .carousel-wrapper {
@@ -53,26 +154,32 @@
 
 .card {
   background: var(--white);
-  border-radius: 20px;
+  border-radius: 47.32px;
   padding: 20px;
   text-align: center;
-  border: 2px solid transparent;
+
   transition: all 0.3s ease;
-  border-color: #ff5a2f; /* accent comme ton design */
-  width : 40%;
-  height: 500px;
+
+  width : 30%;
+  height:381.18px;
 }
 
 .card p {
   color: var(--black);
   margin-top: 10px;
   text-align: left;
+  margin-left: 1rem;
+}
+
+.info-line {
+  font-family: 'Pluto';
 }
 
 
 .card img {
-  width: 100%;
-  border-radius: 12px;
+  width: 90%;
+ 
+ 
 }
 
 .card h3 {
@@ -90,10 +197,37 @@
     width: 40%;
 }
 
+.card-description .reference-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-description .reference-line span {
+  margin-left: auto;
+}
+
+.card-description .description-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-description .description-line span {
+  margin-left: auto;
+}
+
 .card-info > * {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   border-bottom: 1px solid #ccc; /* ou la couleur de ton choix */
   padding-bottom: 8px; /* optionnel, pour espacer le contenu du bord */
   margin-bottom: 8px;  /* optionnel, pour éviter que le bord touche le suivant */
+}
+
+.card-info > * span {
+  margin-left: auto;
 }
 
 /* Si tu ne veux pas de bord sur le dernier élément : */
@@ -115,11 +249,12 @@
 
 /* Swiper pagination bullets : actifs en blanc, inactifs en gris */
 .textile-swiper .swiper-pagination-bullet {
-  background: #888 !important;
-  opacity: 1;
+  background: #fff !important;
+  opacity: 0.4;
 }
 .textile-swiper .swiper-pagination-bullet-active {
   background: #fff !important;
+  opacity: 1;
 }
 
 
@@ -146,23 +281,8 @@
   text-align: center;
   border: 2px solid #ff5a2f;
   transition: all 0.3s ease;
-  width: 45%;
+  width: 40%;
   overflow: hidden;
 }
 
-.card-image-service img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block; /* 👈 évite les petits espaces chelous */
-}
 
-.card-service {
-  background: var(--white);
-  border-radius: 20px;
-  text-align: center;
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
-  border-color: #ff5a2f;
-  width: 45%;
-}

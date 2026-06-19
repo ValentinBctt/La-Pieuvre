@@ -127,11 +127,11 @@ const ImagesBureauContainer = [
   items: [{}]
 },
 {
-  nameCategory: 'Graphic Design',
+  nameCategory: 'Product Design',
   items: [{}]
 },
 {
-  nameCategory: 'Objets',
+  nameCategory: 'Activations',
   items: [{}]
 },
 
@@ -150,8 +150,8 @@ export default function BureauHome() {
     'Branding',
     'Photo',
     'Merchandising',
-    'Graphic Design',
-    'Objets',
+    'Product Design',
+    'Activations',
   ];
   // Liste des sous-catégories (projets)
   const projectCategories = [

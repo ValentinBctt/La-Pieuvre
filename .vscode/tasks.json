@@ -1,0 +1,11 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Generate migration add_name_to_users",
+			"type": "shell",
+			"command": "rails generate migration AddNameToUsers name:string",
+			"group": "build"
+		}
+	]
+}

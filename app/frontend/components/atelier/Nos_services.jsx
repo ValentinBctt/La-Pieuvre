@@ -9,6 +9,9 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import TextileList from "./Selection_textile.jsx";
+import quantityIcon from "../../assets/quantity.svg";
+import colorLimitIcon from "../../assets/color-limit.svg";
+import productionTimeIcon from "../../assets/production-time.svg";
 
 const items = [
   {
@@ -195,9 +198,9 @@ export default function NosServices() {
                   <h3><strong>{service.title}</strong></h3>
                   <p>{service.description}</p>
                   <div className="card-info">
-                    <p><strong>Quantité minimum : </strong>{service.quantity}</p>
-                    <p><strong>Limite de couleurs : </strong>{service.colorLimit}</p>
-                    <p><strong>Temps de production : </strong>{service.productionTime}</p>
+                    <p><img src={quantityIcon} alt="Quantité minimum" /> <strong>Quantité minimum : </strong><span>{service.quantity}</span></p>
+                    <p><img src={colorLimitIcon} alt="Limite de couleurs" /> <strong>Limite de couleurs : </strong><span>{service.colorLimit}</span></p>
+                    <p><img src={productionTimeIcon} alt="Temps de production" /> <strong>Temps de production : </strong><span>{service.productionTime}</span></p>
                   </div>
                 </div>
               </div>

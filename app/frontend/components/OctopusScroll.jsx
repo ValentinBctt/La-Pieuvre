@@ -57,6 +57,9 @@ export default function OctopusScroll() {
       raf = requestAnimationFrame(animate);
     };
 
+
+    // Appelle onScroll au montage pour décaler l'animation dès le départ
+    onScroll();
     animate();
     window.addEventListener('scroll', onScroll, { passive: true });
 
@@ -101,3 +104,4 @@ export default function OctopusScroll() {
     </div>
   );
 }
+

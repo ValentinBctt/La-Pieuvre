@@ -378,22 +378,67 @@ function useFloatLinks(selector = 'a') {
   }, [selector]);
 }
 useFloatLinks('.home-la-pieuvre a, .home-atelier a, .home-bureau a, .home-studio a');
+
+// Animation flottante pour l'image pieuvre
+function useFloatPieuvreImg(selector = '.pieuvre-atelier, .pieuvre-bureau, .pieuvre-studio') {
+  useEffect(() => {
+    let raf;
+    const elements = document.querySelectorAll(selector);
+    const animate = () => {
+      const t = Date.now() * 0.0015;
+      const floatY = Math.sin(t) * 12 + Math.sin(t * 2.2) * 6;
+      const floatX = Math.sin(t * 0.9) * 14;
+      elements.forEach((el, i) => {
+        const offset = i * 1.2;
+        const x = floatX + Math.sin(t + offset) * 12;
+        const y = floatY + Math.cos(t + offset) * 6;
+        el.style.display = 'inline-block';
+        el.style.transform = `translate(${x}px, calc(${y}px + 3rem))`;
+        el.style.willChange = 'transform';
+      });
+      raf = requestAnimationFrame(animate);
+    };
+    animate();
+    return () => cancelAnimationFrame(raf);
+  }, [selector]);
+}
+useFloatPieuvreImg('.pieuvre-atelier, .pieuvre-bureau, .pieuvre-studio');
   // Rendu JSX
   return (
         <>
     <div className="home-all">
+
         <OctopusScroll />
+        
       <div className="home-la-pieuvre">
-        <a href="#"><strong>LA PIEUVRE</strong></a>
+        <div className="la-pieuvre-title-content">
+        <div style={{position: "relative", width: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}>
+          <a href="#" style={{zIndex:2, position:"relative"}}><strong>LA PIEUVRE</strong></a>
+          <div style={{position: "absolute", left: 0, right: 0, top: "55%", display: "flex", justifyContent: "center", alignItems: "center", zIndex: 1, pointerEvents: "none"}}>
+            <img className="pieuvre-atelier" src="https://res.cloudinary.com/dnojcwwos/image/upload/v1776416329/08a6a08d-1b8c-4227-8c88-718ef85ffe28.png" alt="Logo" style={{margin: "0 0.5rem"}} />
+            <img className="pieuvre-studio" src="https://res.cloudinary.com/dnojcwwos/image/upload/v1775051959/4418d29c-8feb-4245-86d1-e47d26a49d46.png" alt="Logo" style={{margin: "0 0.5rem"}} />
+            <img className="pieuvre-bureau" src="https://res.cloudinary.com/dnojcwwos/image/upload/v1774863326/9d78df4e-9bd3-4d9f-b9f6-676856022d57.png" alt="Logo" style={{margin: "0 0.5rem"}} />
+          </div>
+        </div>
+      </div>
       </div>
       <div className="home-atelier">
-        <a href="/atelier">Atelier&nbsp;<strong>LA PIEUVRE</strong></a>
+        <div className="atelier-home-content">
+          <img className="pieuvre-atelier" src="https://res.cloudinary.com/dnojcwwos/image/upload/v1776416329/08a6a08d-1b8c-4227-8c88-718ef85ffe28.png" alt="Logo" />
+          <a href="/atelier">Atelier&nbsp;<strong>LA PIEUVRE</strong></a>
+        </div>
       </div>
       <div className="home-bureau">
-        <a href="/bureau">Bureau &nbsp;<strong>LA PIEUVRE</strong></a>
+        <div className="bureau-home-content">
+          <img className="pieuvre-bureau" src="https://res.cloudinary.com/dnojcwwos/image/upload/v1774863326/9d78df4e-9bd3-4d9f-b9f6-676856022d57.png" alt="Logo" />
+          <a href="/bureau">Bureau &nbsp;<strong>LA PIEUVRE</strong></a>
+        </div>
       </div>
       <div className="home-studio">
-        <a href="/studio">Studio &nbsp;<strong>LA PIEUVRE</strong></a>
+        <div className="studio-home-content">
+          <img className="pieuvre-studio" src="https://res.cloudinary.com/dnojcwwos/image/upload/v1775051959/4418d29c-8feb-4245-86d1-e47d26a49d46.png" alt="Logo" />
+          <a href="/studio">Studio &nbsp;<strong>LA PIEUVRE</strong></a>
+        </div>
       </div>
 
     </div>
@@ -413,29 +458,20 @@ useFloatLinks('.home-la-pieuvre a, .home-atelier a, .home-bureau a, .home-studio
       </div>
       <div id="depth-label" ref={labelRef} style={{ position: "fixed" }}>0 m</div>
       {/* HUD gauche */}
-      <aside className="hud left" id="hud">
-        <div className="scan-line"></div>
-        <div>
-          <div className="badge">Océan Atlantique</div>
-          <div ref={clockRef} className="clock">00:00:00</div>
-        </div>
-        <div className="scale">
-          <div className="legend" style={{ position: "absolute", left: 0, right: 0, top: 4 }}>
+      <aside className="hud left" id="hud" style={{display: 'flex', flexDirection: 'column'}}>
+        {/* Responsive: HUD gauche minimal sur mobile/tablette */}
+        <div className="scale" style={{height: '100%', minHeight: 0, flex: 1}}>
+          <div className="legend">
             <span>0 m</span><span>-1000 m</span>
           </div>
           <div ref={markerRef} className="marker" style={{ top: "0%" }}></div>
           <div ref={bubbleRef} className="bubble">0 m</div>
         </div>
-        <div className="stat" style={{ justifySelf: "stretch" }}>
-          <span>Pression</span><span className="val" ref={pressureRef}>1.0 bar</span>
-        </div>
       </aside>
       {/* HUD droit */}
       <aside className="hud right" id="diverHud">
         <div className="diver-title">Niveau d’oxygène / autonomie</div>
-        <div className="diver-stage">
-          {/* Ici tu peux ajouter une image de plongeur si besoin */}
-        </div>
+        <div className="diver-stage"></div>
         <div className="stat"><span>Oxygène</span><span className="val" ref={o2ValRef}>100%</span></div>
         <div className="gauge"><span ref={o2BarRef}></span></div>
         <div className="stat"><span>Fréquence cardiaque</span><span className="val" ref={hrValRef}>72 bpm</span></div>

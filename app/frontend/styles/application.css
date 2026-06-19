@@ -180,38 +180,83 @@ p {
 .navbar-atelier {
   display : flex;
   justify-content: space-between;
-  padding: 1rem 2rem;
-  background-color: var(--orange);
-;
+  padding: 1rem 4rem;
+  background-color: var(--black);
+  border-bottom: solid 1px var(--orange);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navbar-atelier::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0%;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(to right, var(--orange) 0%, transparent 50%, var(--orange) 100%);
+  opacity: 1;
+  transform: translateX(-50%);
+  transition: all 0.3s ease;
+  transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
+  z-index: 2;
+}
+
+.navbar-atelier:hover::after {
+  width: 100%;
+}
+
+.navbar-atelier:hover {
+  border-bottom-color: transparent;
+}
+
+.navbar-atelier:hover .navbar-bureau-center img {
+  padding: 0.5rem 40rem;
 }
 
 .navbar-bureau {
   display : flex;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  padding: 1rem 5rem;
   background-color: var(--black);
   border-bottom: solid 1px var(--white);
-
+    font-family: 'Pluto';
   transition: all 0.3s ease;
+
   &:hover {
     .navbar-bureau-center img {
-      padding: 0.5rem 35rem;
+      padding: 0.5rem 40rem;
 
     }
   }
 }
 
 .navbar-atelier a {
-  color: var(--white);
+  color: var(--orange);
   text-decoration: none;
-   font-family: 'Pluto';
+      font-size: 16.22px;
   font-weight: 400;
+    font-family: 'Pluto';
+
+       transition: 0.3s ease;
+  &:hover {
+    color: var(--white);
+  }
+ 
 }
 
 .navbar-bureau a {
-  color: var(--white);
+  color: var(--orange);
   text-decoration: none;
- 
+      font-size: 16.22px;
+  font-weight: 400;
+    font-family: 'Pluto';
+  color: var(--white);
+       transition: 0.3s ease;
+  &:hover {
+    color: var(--orange);
+  }
 }
 
 /* Espace horizontal entre les liens de la navbar à droite */
@@ -220,7 +265,7 @@ p {
 }
 
 .navbar-atelier-center img {
-  background-color: var(--orange);
+  background-color: var(--black);
   height: 3rem;
   object-fit: cover;
   border-radius: 100%;

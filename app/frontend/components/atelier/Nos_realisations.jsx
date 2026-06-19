@@ -48,19 +48,26 @@ export default function NosRealisations() {
   const images = [...ImagesRealisations, ...ImagesRealisations];
 
   return (
-    <a href="/atelier/realisations" style={{ textDecoration: 'none', color: 'inherit' }}>
-      <div className="nos-realisations">
-        <h2>Nos réalisations</h2>
-        <div className="marquee">
-          <div className="marquee-content">
-            {images.map((img, idx) => (
-              <div className="realisations-image" key={idx}>
-                <img src={img} alt={`Réalisation ${idx + 1}`} />
-              </div>
-            ))}
-          </div>
+    <div className="nos-realisations">
+      <h2>Réalisations</h2>
+      <div className="marquee">
+        <div className="marquee-content">
+          {images.map((img, idx) => (
+            <div className="realisations-image" key={idx}>
+              <img src={img} alt={`Réalisation ${idx + 1}`} />
+            </div>
+          ))}
         </div>
-      </div>
-    </a>
-  );
+        <div className="voir-en-details-wrap">
+          <a href="/atelier/realisations" className="voir-en-details">
+            Voir en details
+          </a>
+          <svg className="voir-en-details-arrow" viewBox="0 0 130 32" aria-hidden="true" focusable="false">
+            <path d="M14 2 V20 H120" />
+            <path d="M115 15 L120 20 L115 25" />
+          </svg>
+        </div>
+      </div>  
+    </div>
+  );    
 }

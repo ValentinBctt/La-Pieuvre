@@ -7,8 +7,7 @@ const stationFData = [
            client: 'Station F',
     contexte: 'Évenement promotionel ',
     missions: 'Personnalisation textile - Sérigraphie - DTF',
-    description: `Dans le cadre du lancement d’une nouvelle paire de running, la prestation live pour reebok transforme l’espace en atelier de personnalisation en action.Sur place, le public découvre un dispositif de marquage et de personnalisation en temps réel, pensé pour prolonger l’identité du modèle et créer un lien direct avec le produit.
-Chaque intervention met en avant le geste, la matière et le détail. les participant·e·s peuvent personnaliser leur paire ou des supports textiles associés, assister aux différentes étapes du marquage et repartir avec une pièce unique, réalisée sous leurs yeux.`,
+    description: `Dans le cadre du lancement d’un événement organisé par Équipage Solidaire, nous avons fait de la serigraphie en live nous avons ensuite personnalisé des tote bags en direct, à l’aide de transferts DTF,  pour des étudiants en situation de précarité.`,
         image1: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948025/01_b9qbtj.webp',
         image2: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948026/05_gtevkx.webp',
         image3: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948025/03_isr2i7.webp',

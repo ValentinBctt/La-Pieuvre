@@ -1,3 +1,91 @@
+@media (max-width: 600px) {
+  .hud.left {
+    display: none !important;
+  }
+  .hud.right {
+
+    right: auto;
+    transform: translateX(-50%);
+    width: 90% !important;
+      margin: 1rem auto;
+    border-radius: 14px;
+    padding: 10px 10 10px 10px !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 8px 10px;
+    background: linear-gradient(180deg, rgba(6,16,20,.92), rgba(8,20,24,.38));
+    box-shadow: 0 2px 16px rgba(0,255,110,.12);
+    z-index: 920;
+  }
+  .hud.right .diver-title, .hud.right .diver-stage {
+    flex-basis: 100%;
+    text-align: left;
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+  .hud.right .stat, .hud.right .gauge {
+    font-size: 11px;
+    min-width: 70px;
+    flex: 1 1 70px;
+    margin: 0 1px;
+  }
+  .hud.right .gauge {
+    min-width: 90px;
+    height: 7px;
+  }
+}
+/* Responsive HUD gauche fin et HUD droit en haut */
+@media (max-width: 900px) {
+    .hud.left {
+    display: none !important;
+  }
+  
+  .hud.left .marker {
+    left: 2px;
+    right: 2px;
+    height: 1px;
+  }
+  /* HUD droit en haut, largeur 100% */
+  .hud.right {
+    top: 0;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    max-width: none;
+    min-width: 0;
+    border-radius: 0 0 14px 14px;
+    transform: none;
+    height: auto;
+    padding: 8px 2vw 6px 2vw;
+    z-index: 920;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 8px 18px;
+    background: linear-gradient(180deg, rgba(6,16,20,.85), rgba(8,20,24,.32));
+    box-shadow: 0 2px 16px rgba(0,255,110,.12);
+  }
+  .hud.right .diver-title, .hud.right .diver-stage {
+    flex-basis: 100%;
+    text-align: left;
+    font-size: 13px;
+    margin-bottom: 2px;
+  }
+  .hud.right .stat, .hud.right .gauge {
+    font-size: 12px;
+    min-width: 80px;
+    flex: 1 1 80px;
+    margin: 0 2px;
+  }
+  .hud.right .gauge {
+    min-width: 120px;
+    height: 8px;
+  }
+}
 :root{ --ripple-ms: 800ms; } /* ajusté dynamiquement sur la durée audio */
 
 html, body { height:100%; margin:0; background:#000; cursor:none; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }

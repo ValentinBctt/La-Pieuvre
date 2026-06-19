@@ -1,10 +1,10 @@
 # config/cloudinary.yml
 development:
-  cloud_name: "dnojcwwos"
-  api_key: "459896845145127"
-  api_secret: "TAaagspy6ect2YIigfpEPgZd5xs"
+  cloud_name: <%= ENV.fetch("CLOUDINARY_CLOUD_NAME") %>
+  api_key: <%= ENV.fetch("CLOUDINARY_API_KEY") %>
+  api_secret: <%= ENV.fetch("CLOUDINARY_API_SECRET") %>
 
 production:
-  cloud_name: "dnojcwwos"
-  api_key: "459896845145127"
-  api_secret: "TAaagspy6ect2YIigfpEPgZd5xs"
+  cloud_name: <%= ENV.fetch("CLOUDINARY_CLOUD_NAME") %>
+  api_key: <%= ENV.fetch("CLOUDINARY_API_KEY") %>
+  api_secret: <%= ENV.fetch("CLOUDINARY_API_SECRET") %>

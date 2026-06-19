@@ -30,6 +30,7 @@
 }
 
 
+
 .home-la-pieuvre a,
 .home-atelier a,
 .home-bureau a,
@@ -42,17 +43,81 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto;
-  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s ease;
 
   &:hover {
+    transform: scale(1.02);
     color: var(--orange);
-    transform: scale(1.03);
-    
   }
 }
 
+@media (max-width: 900px) {
+  .home-la-pieuvre a,
+  .home-atelier a,
+  .home-bureau a,
+  .home-studio a {
+    font-size: 3rem;
 
-.home-pieuvre-white {
+  }
 
+  .home-la-pieuvre,
+.home-atelier,
+.home-bureau,
+.home-studio {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+}
+
+@media (max-width: 600px) {
+  .home-la-pieuvre a,
+  .home-atelier a,
+  .home-bureau a,
+  .home-studio a {
+    font-size: 3rem;
+
+  }
+
+  .home-la-pieuvre,
+.home-atelier,
+.home-bureau,
+.home-studio {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+}
+
+.la-pieuvre-title-content {
+
+}
+
+
+  .pieuvre-atelier, .pieuvre-studio {
+    z-index: -1;
+   
+    rotate: -20deg;
+  }
+
+  .pieuvre-studio {
+    width: 100px;
+    height: 100px;
+
+  }
+
+  
+.bureau-home-content {
+  display: flex;
+  align-items: center;
+}
+
+.pieuvre-bureau {
+  order: 2;
+  margin-left: auto;
+  rotate: 20deg;
 }
