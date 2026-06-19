@@ -3,8 +3,13 @@
 Rails.application.config.after_initialize do
   next unless Rails.env.production?
 
-  # Allow asset precompilation during deploy builds without runtime secrets.
-  next if defined?(Rake) && Rake.application.top_level_tasks.any? { |task| task.start_with?("assets:") }
+  # Skip validation during asset precompile (safe detection)
+  if defined?(Rake) && Rake.respond_to?(:application)
+    rake_app = Rake.application
+    if rake_app&.top_level_tasks&.any? { |task| task.start_with?("assets:") }
+      next
+    end
+  end
 
   required = {
     "SMTP_EMAIL" => ENV["SMTP_EMAIL"],
