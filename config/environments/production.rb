@@ -14,9 +14,18 @@ Rails.application.configure do
       user_name:            smtp_email,
       password:             smtp_password,
       authentication:       'plain',
-      enable_starttls_auto: true
+      enable_starttls_auto: true,
+      open_timeout:         5,
+      read_timeout:         5
     }
     config.action_mailer.raise_delivery_errors = true
+    config.action_mailer.perform_deliveries = true
+    puts "[Mailer] delivery_method = :smtp (user_name=#{smtp_email})"
+  else
+    # Pas de SMTP configuré : Rails part sur delivery_method = :smtp par défaut
+    # sans credentials, donc tous les envois vont échouer ou rester silencieux.
+    config.action_mailer.raise_delivery_errors = true
+    puts "[Mailer] ATTENTION: ENV['SMTP_EMAIL'] ou ENV['SMTP_PASSWORD'] absent en production. Les emails ne partiront pas."
   end
   # Settings specified here will take precedence over those in config/application.rb.
 

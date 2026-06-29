@@ -1,10 +1,22 @@
-
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+
+// ─────────────────────────────────────────────────────────────────────────
+// Liste des champs affichés dans la section "Infos" de chaque carte produit.
+// Pour RETIRER un champ : supprime sa ligne (ou commente-la avec //).
+// Pour AJOUTER un champ : ajoute une ligne { key: "nom_du_champ_api", label: "Libellé affiché" }.
+// L'ordre de cette liste = l'ordre d'affichage à l'écran.
+// ─────────────────────────────────────────────────────────────────────────
+const INFO_FIELDS = [
+  { key: "matiere", label: "Matière" },
+  { key: "quality", label: "Qualité" },
+  { key: "sizes_available", label: "Tailles" },
+
+];
 
 function SkeletonSelectionTextile() {
   return (
@@ -84,6 +96,12 @@ function TextileList({ items, selectedCategory, onSelect }) {
   );
 }
 
+// Affiche la valeur d'un champ, qu'elle soit un tableau, un objet, ou une valeur simple.
+function formatFieldValue(value) {
+  if (Array.isArray(value)) return value.join(", ");
+  if (typeof value === "object") return JSON.stringify(value);
+  return value.toString();
+}
 
 const SelectionTextile = () => {
   const [items, setItems] = useState([]);
@@ -166,7 +184,7 @@ const SelectionTextile = () => {
                 <p><strong>{product.name}</strong></p>
                 {Array.isArray(product.colors) && product.colors.length > 0 && (
                   <div style={{ display: "flex", gap: "0.5em", margin: "0.5em 1rem"
-                    
+
                   }}>
                     {product.colors.map((color, idx) => (
                       <span key={idx} title={color} style={{
@@ -176,7 +194,7 @@ const SelectionTextile = () => {
                         background: color,
                         border: "1px solid #ccc",
                         borderRadius: "50%",
-              
+
                       }}></span>
                     ))}
                   </div>
@@ -187,15 +205,14 @@ const SelectionTextile = () => {
                 {product.description && <p className="description-line"><strong>Description : </strong> <span>{product.description}</span></p>}
                 <div className="card-info">
                   <p className="info-line"><strong>Infos</strong></p>
-                  {Object.entries(product)
-                    .filter(([key, value]) =>
-                      value !== undefined && value !== null && value !== "" &&
-                      !["id", "name", "image"].includes(key)
+                  {INFO_FIELDS
+                    .filter(({ key }) =>
+                      product[key] !== undefined && product[key] !== null && product[key] !== ""
                     )
-                    .map(([key, value]) => (
+                    .map(({ key, label }) => (
                       <p key={key}>
-                        <strong>{key} : </strong>
-                       <span>{typeof value === "object" ? JSON.stringify(value) : value.toString()}</span>
+                        <strong>{label} : </strong>
+                        <span>{formatFieldValue(product[key])}</span>
                       </p>
                     ))}
                 </div>

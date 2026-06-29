@@ -14,10 +14,15 @@ Rails.application.configure do
       user_name:            ENV['SMTP_EMAIL'],
       password:             ENV['SMTP_PASSWORD'],
       authentication:       'plain',
-      enable_starttls_auto: true
+      enable_starttls_auto: true,
+      open_timeout:         5,
+      read_timeout:         5
     }
+    puts "[Mailer] delivery_method = :smtp (user_name=#{ENV['SMTP_EMAIL']})"
   else
     config.action_mailer.delivery_method = :letter_opener
+    config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
+    puts "[Mailer] delivery_method = :letter_opener (ENV['SMTP_EMAIL'] ou ENV['SMTP_PASSWORD'] absent)"
   end
 
   # Autorise les requêtes venant de Vite (localhost et 127.0.0.1)
