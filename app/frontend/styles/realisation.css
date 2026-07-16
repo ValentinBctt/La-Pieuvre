@@ -7,7 +7,7 @@
 .ils-nous-font-confiance .marquee-content {
   display: flex;
   align-items: center;
-  animation: defilement-infinite 60s linear infinite;
+  animation: defilement-infinite 70s linear infinite;
 }
 
 .ils-nous-font-confiance .realisations-image {

@@ -5,6 +5,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+import quantityIcon from "../../assets/quantity.svg";
+import grammageyIcon from "../../assets/grammage.svg";
+import matiereIcon from "../../assets/matiere.svg";
+import quality2Icon from "../../assets/quality2.svg";
+
 // ─────────────────────────────────────────────────────────────────────────
 // Liste des champs affichés dans la section "Infos" de chaque carte produit.
 // Pour RETIRER un champ : supprime sa ligne (ou commente-la avec //).
@@ -12,10 +17,11 @@ import "swiper/css/pagination";
 // L'ordre de cette liste = l'ordre d'affichage à l'écran.
 // ─────────────────────────────────────────────────────────────────────────
 const INFO_FIELDS = [
-  { key: "matiere", label: "Matière" },
-  { key: "quality", label: "Qualité" },
-  { key: "sizes_available", label: "Tailles" },
-  { key: "grammage", label: "Grammage" },
+ 
+  { key: "sizes_available", label: "Tailles", icon: quantityIcon },
+  { key: "grammage", label: "Grammage", icon: grammageyIcon },
+   { key: "matiere", label: "Matière", icon: matiereIcon },
+  { key: "quality", label: "Qualité", icon: quality2Icon },
 
 ];
 
@@ -210,8 +216,9 @@ const SelectionTextile = () => {
                     .filter(({ key }) =>
                       product[key] !== undefined && product[key] !== null && product[key] !== ""
                     )
-                    .map(({ key, label }) => (
-                      <p key={key}>
+                    .map(({ key, label, icon }) => (
+                      <p key={key} className="info-field">
+                        {icon && <img className="info-field-icon" src={icon} alt={label} />}
                         <strong>{label} : </strong>
                         <span>{formatFieldValue(product[key])}</span>
                       </p>
