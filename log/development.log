@@ -4553,3 +4553,31 @@ Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2026-
   
 ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
   
+Started GET "/prestationlive/Pac_118" for ::1 at 2026-07-16 11:11:57 +0200
+Processing by PrestationliveController#show as HTML
+  Parameters: {"name"=>"Pac_118"}
+  Rendering layout layouts/application.html.erb
+  Rendering prestationlive/show.html.erb within layouts/application
+  Rendered prestationlive/show.html.erb within layouts/application (Duration: 16.6ms | Allocations: 333)
+  Rendered layout layouts/application.html.erb (Duration: 18.9ms | Allocations: 802)
+Completed 200 OK in 32ms (Views: 25.5ms | ActiveRecord: 0.0ms | Allocations: 1462)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2026-07-16 11:16:50 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/prestationlive/Pac_118" for ::1 at 2026-07-16 11:17:33 +0200
+Processing by PrestationliveController#show as HTML
+  Parameters: {"name"=>"Pac_118"}
+  Rendering layout layouts/application.html.erb
+  Rendering prestationlive/show.html.erb within layouts/application
+  Rendered prestationlive/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 623)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 860)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2026-07-16 11:17:34 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
