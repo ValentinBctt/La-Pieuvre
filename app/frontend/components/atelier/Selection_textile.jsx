@@ -15,6 +15,7 @@ const INFO_FIELDS = [
   { key: "matiere", label: "Matière" },
   { key: "quality", label: "Qualité" },
   { key: "sizes_available", label: "Tailles" },
+  { key: "grammage", label: "Grammage" },
 
 ];
 

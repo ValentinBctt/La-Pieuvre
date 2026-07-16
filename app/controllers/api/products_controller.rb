@@ -14,7 +14,7 @@ module Api
       end
 
       products = Product.with_attached_image
-                        .select(:id, :name, :reference, :description, :colors, :matiere, :quality, :sizes_available, :subname, :category_id)
+                        .select(:id, :name, :reference, :description, :colors, :matiere, :grammage, :quality, :sizes_available, :subname, :category_id)
                         .map do |p|
         {
           id: p.id,
@@ -23,6 +23,7 @@ module Api
           description: p.description,
           colors: p.colors,
           matiere: p.matiere,
+          grammage: p.grammage,
           quality: p.quality,
           sizes_available: p.sizes_available,
           subname: p.subname,
