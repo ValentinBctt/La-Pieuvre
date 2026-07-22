@@ -79,7 +79,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 6rem; /* espace augmenté entre chaque image */
+
   
   padding: 1rem;
   min-width: 180px;
@@ -91,7 +91,7 @@
   
   height: 25rem;
   object-fit: cover;
-  border-radius: 0.7rem;
+
  
 }
 
@@ -150,7 +150,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 0.5rem;
+
   padding-bottom: 2rem;
   overflow: hidden;
 }
@@ -166,17 +166,7 @@
   border-radius: inherit;
   border: 2px solid transparent;
 
-  /* Gradient pour “dessiner” le border */
-  background: linear-gradient(90deg, var(--orange) 50%, transparent 50%);
-  background-size: 200% 200%;
-  background-repeat: no-repeat;
-  background-clip: padding-box;
-  pointer-events: none;
 
-  /* On commence invisible */
-  transform: scaleX(0) scaleY(0);
-  transform-origin: top left;
-  transition: transform 0.5s ease;
 }
 
 /* Au hover, le border se dessine progressivement */
@@ -212,7 +202,7 @@
 
 .realisation-item {
   position: relative;
-  border-radius: 16px;
+
   overflow: hidden;
   
   backdrop-filter: blur(10px);
@@ -223,43 +213,41 @@
 
 /* Glow dynamique qui suit la souris */
 
-.voir-en-details {
-  display: block;
+.voir-en-details-wrap {
   width: fit-content;
   margin-left: auto;
-  margin-right: 7rem;
-  margin-top: 2rem;
-  padding: 0.5rem 1rem;
+  margin-right: 5rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.voir-en-details {
   color: var(--white);
   text-decoration: none;
   font-weight: 700;
 
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: var(--orange);
-  }
+  opacity: 0;
+  transform: translateX(-8px);
+  pointer-events: none;
+  
+  transition: opacity .3s ease, transform .3s ease, color .3s ease;
 }
 
-.voir-en-details-wrap {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+.voir-en-details-wrap:hover .voir-en-details {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.voir-en-details:hover {
+  color: var(--orange);
 }
 
 .voir-en-details-arrow {
-  z-index: -10;
-  width: 96px;
-  height: 96px;
-  margin-top: -2.5rem;
-  margin-right: 7rem;
-}
-
-.voir-en-details-arrow path {
-  fill: none;
-  stroke: var(--white);
-  stroke-width: 3.2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  width: 18px;
+  height: 18px;
+  fill: white;
+  flex-shrink: 0;
 }

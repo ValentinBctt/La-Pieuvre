@@ -57,57 +57,71 @@ function SkeletonSelectionTextile() {
 }
 
 function TextileList({ items, selectedCategory, onSelect }) {
-  const [hovered, setHovered] = useState(null);
-
-  if (!items || items.length === 0) return null;
+  const [hoveredCategory, setHoveredCategory] = useState(null);
 
   return (
-    <div style={{
-      display: "flex", gap: "40px", justifyContent: "center",
-      alignItems: "center", flexWrap: "wrap", width: "95%", marginTop: "4rem"
-    }}>
-      {/* Préchargement invisible des imagesorange */}
-      {items.map((item, idx) =>
-        item.imageorange ? (
-          <img
-            key={"preload-" + idx}
-            src={item.imageorange}
-            alt=""
-            style={{ display: "none" }}
-            decoding="async"
-          />
-        ) : null
-      )}
+    <div
+      className="textile-list"
+      style={{
+        display: "flex",
+        gap: "40px",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+        marginTop: "4rem",
+        flexWrap: "wrap"
+      }}
+    >
       {items.map((item, index) => {
-        const isActive = selectedCategory === item.id || hovered === index;
+        const isActive = selectedCategory === item.id;
+        const isHovered = hoveredCategory === item.id;
+
         return (
-          <div
-            key={item.id || index}
+          <button
+            key={item.id ?? index}
+            type="button"
             onClick={() => onSelect(item.id)}
-            onMouseEnter={() => setHovered(index)}
-            onMouseLeave={() => setHovered(null)}
-            style={{ cursor: "pointer", textAlign: "center" }}
+            onMouseEnter={() => setHoveredCategory(item.id)}
+            onMouseLeave={() => setHoveredCategory(null)}
+            style={{
+              cursor: "pointer",
+              textAlign: "center",
+              background: "transparent",
+              border: "none",
+              padding: 0
+            }}
           >
-            <img
-              src={isActive ? (item.imageorange || item.image || "/images/placeholder.png") : (item.image || "/images/placeholder.png")}
-              alt={item.name}
-              style={{ height: item.name === "Head-wear" ? "70px" : "120px" }}
-            />
-            <p style={{ color: isActive ? '#ff5a2f' : '#fff', transition: 'color 0.2s' }}>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "flex-end",
+                justifyContent: "center",
+                height: "120px"
+              }}
+            >
+              <img
+                src={isActive || isHovered ? item.imageorange : item.image}
+                alt={item.name}
+                style={{
+                  height: item.name === "Head-wear" ? "70px" : "120px",
+                  transition: "0.3s ease"
+                }}
+              />
+            </div>
+
+            <p
+              style={{
+                color: isActive || isHovered ? "#ff5a2f" : "#fff",
+                transition: "color 0.1s"
+              }}
+            >
               {item.name}
             </p>
-          </div>
+          </button>
         );
       })}
     </div>
   );
-}
-
-// Affiche la valeur d'un champ, qu'elle soit un tableau, un objet, ou une valeur simple.
-function formatFieldValue(value) {
-  if (Array.isArray(value)) return value.join(", ");
-  if (typeof value === "object") return JSON.stringify(value);
-  return value.toString();
 }
 
 const SelectionTextile = () => {
@@ -115,7 +129,19 @@ const SelectionTextile = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState(null); // ← ajout
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+  const formatFieldValue = (value) => {
+    if (Array.isArray(value)) {
+      return value.join(", ");
+    }
+
+    if (value && typeof value === "object") {
+      return Object.values(value).join(", ");
+    }
+
+    return String(value);
+  };
 
   const preloadImage = (src) => {
     if (!src) return Promise.resolve();
@@ -137,10 +163,15 @@ const SelectionTextile = () => {
       .then(async (data) => {
         setItems(data.categories);
         setProducts(data.products);
-        setSelectedCategory(data.categories[0]?.id ?? null); // ← sélectionne la 1ère catégorie par défaut
+
+        // SUPPRIMÉ :
+        // setSelectedCategory(data.categories[0]?.id ?? null);
 
         const imageUrls = [
-          ...data.categories.flatMap((category) => [category.image, category.imageorange]),
+          ...data.categories.flatMap((category) => [
+            category.image,
+            category.imageorange
+          ]),
           ...data.products.map((product) => product.image)
         ].filter(Boolean);
 
@@ -154,81 +185,137 @@ const SelectionTextile = () => {
       });
   }, []);
 
+
   if (loading) return <SkeletonSelectionTextile />;
   if (error) return <div>Erreur : {error}</div>;
 
-  const filteredProducts = products.filter(p => p.category_id === selectedCategory); // ← filtre
+
+  const filteredProducts = products.filter(
+    (p) => p.category_id === selectedCategory
+  );
+
 
   return (
     <div className="selection-textile">
-      <h2>Notre sélection de textile</h2>
+      <h2>NOTRE SELECTION DE TEXTILE</h2>
+
 
       <TextileList
         items={items}
         selectedCategory={selectedCategory}
-        onSelect={setSelectedCategory} // ← passe le setter
+        onSelect={setSelectedCategory}
       />
 
-      <Swiper
-        modules={[Navigation, Pagination]}
-        slidesPerView={1.4}
-        centeredSlides={false}
-        spaceBetween={100}
-        loop={filteredProducts.length > 1} // ← évite le bug loop avec 1 seul élément
-        navigation
-        pagination={{ clickable: true }}
-        className="textile-swiper"
-        breakpoints={{
-          0: { slidesPerView: 1, spaceBetween: 20 },
-          768: { slidesPerView: 1.4, spaceBetween: 100 }
-        }}
-      >
-        {filteredProducts.map((product) => (
-          <SwiperSlide key={product.id}>
-            <div className="full-card">
-              <div className="card">
-                <img src={product.image || "/images/placeholder.png"} alt={product.name} />
-                <p><strong>{product.name}</strong></p>
-                {Array.isArray(product.colors) && product.colors.length > 0 && (
-                  <div style={{ display: "flex", gap: "0.5em", margin: "0.5em 1rem"
 
-                  }}>
-                    {product.colors.map((color, idx) => (
-                      <span key={idx} title={color} style={{
-                        display: "inline-block",
-                        width: "1.5em",
-                        height: "1.5em",
-                        background: color,
-                        border: "1px solid #ccc",
-                        borderRadius: "50%",
+      {selectedCategory && (
+        <Swiper
+          modules={[Navigation, Pagination]}
+          slidesPerView={1.4}
+          centeredSlides={false}
+          spaceBetween={100}
+          loop={filteredProducts.length > 1}
+          navigation
+          pagination={{ clickable: true }}
+          className="textile-swiper"
+          breakpoints={{
+            0: { slidesPerView: 1, spaceBetween: 20 },
+            768: { slidesPerView: 1.4, spaceBetween: 100 }
+          }}
+        >
+          {filteredProducts.map((product) => (
+            <SwiperSlide key={product.id}>
+              <div className="full-card">
 
-                      }}></span>
-                    ))}
-                  </div>
-                )}
-              </div>
-              <div className="card-description">
-                {product.reference && <p className="reference-line"><strong>Réf : </strong> <span>{product.reference}</span></p>}
-                {product.description && <p className="description-line"><strong>Description : </strong> <span>{product.description}</span></p>}
-                <div className="card-info">
-                  <p className="info-line"><strong>Infos</strong></p>
-                  {INFO_FIELDS
-                    .filter(({ key }) =>
-                      product[key] !== undefined && product[key] !== null && product[key] !== ""
-                    )
-                    .map(({ key, label, icon }) => (
-                      <p key={key} className="info-field">
-                        {icon && <img className="info-field-icon" src={icon} alt={label} />}
-                        <strong>{label} : </strong>
-                        <span>{formatFieldValue(product[key])}</span>
-                      </p>
-                    ))}
+                <div className="card">
+                  <img 
+                    src={product.image || "/images/placeholder.png"} 
+                    alt={product.name} 
+                  />
+
+                  <p>
+                    <strong>{product.name}</strong>
+                  </p>
+
+
+                  {Array.isArray(product.colors) && product.colors.length > 0 && (
+                    <div style={{
+                      display: "flex",
+                      gap: "0.5em",
+                      margin: "0.5em 1rem"
+                    }}>
+                      {product.colors.map((color, idx) => (
+                        <span
+                          key={idx}
+                          title={color}
+                          style={{
+                            display: "inline-block",
+                            width: "1.5em",
+                            height: "1.5em",
+                            background: color,
+                            border: "1px solid #ccc",
+                            borderRadius: "50%",
+                          }}
+                        />
+                      ))}
+                    </div>
+                  )}
                 </div>
+
+
+                <div className="card-description">
+
+                  {product.reference && (
+                    <p className="reference-line">
+                      <strong>Réf : </strong>
+                      <span>{product.reference}</span>
+                    </p>
+                  )}
+
+                  {product.description && (
+                    <p className="description-line">
+                      <strong>Description : </strong>
+                      <span>{product.description}</span>
+                    </p>
+                  )}
+
+
+                  <div className="card-info">
+                    <p className="info-line">
+                      <strong>Infos</strong>
+                    </p>
+
+                    {INFO_FIELDS
+                      .filter(({ key }) =>
+                        product[key] !== undefined &&
+                        product[key] !== null &&
+                        product[key] !== ""
+                      )
+                      .map(({ key, label, icon }) => (
+                        <p key={key} className="info-field">
+                          {icon && (
+                            <img
+                              className="info-field-icon"
+                              src={icon}
+                              alt={label}
+                            />
+                          )}
+
+                          <strong>{label} : </strong>
+                          <span>
+                            {formatFieldValue(product[key])}
+                          </span>
+                        </p>
+                      ))}
+                  </div>
+
+                </div>
+
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      )}
+
     </div>
   );
 };

@@ -118,30 +118,43 @@ const services = [
 ];
 
 export default function NosServices() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(null);
   const [hovered, setHovered] = useState(null);
+  const [selected, setSelected] = useState(false);
   const swiperRef = useRef(null);
 
-  // Quand on clique sur une icône → on slide vers la slide correspondante
+  // Quand on clique sur une icône → on affiche le carousel et on slide
   const handleItemClick = (index) => {
     setActiveIndex(index);
+    setSelected(true);
+
     if (swiperRef.current) {
-      swiperRef.current.slideToLoop(index); // slideToLoop car loop={true}
+      swiperRef.current.slideToLoop(index);
     }
   };
 
   // Quand le carousel change de slide → on met à jour l'icône active
   const handleSlideChange = (swiper) => {
-    setActiveIndex(swiper.realIndex); // realIndex pour gérer le mode loop
+    setActiveIndex(swiper.realIndex);
   };
 
   return (
     <>
       <div className="nos-services">
-        <h2>Nos services</h2>
+        <h2>NOS SERVICES</h2>
 
         {/* Liste des icônes */}
-        <div style={{ display: "flex", gap: "40px", justifyContent: "center", alignItems: "center", width: "100%", marginTop: "4rem", flexWrap: "wrap", }}>
+        <div 
+          style={{ 
+            display: "flex", 
+            gap: "40px", 
+            justifyContent: "center", 
+            alignItems: "center", 
+            width: "100%", 
+            marginTop: "4rem", 
+            flexWrap: "wrap"
+          }}
+        >
           {items.map((item, index) => {
             const isActive = activeIndex === index || hovered === index;
 
@@ -153,7 +166,14 @@ export default function NosServices() {
                 onMouseLeave={() => setHovered(null)}
                 style={{ cursor: "pointer", textAlign: "center" }}
               >
-                <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "center", height: "120px",  }}>
+                <div 
+                  style={{ 
+                    display: "flex", 
+                    alignItems: "flex-end", 
+                    justifyContent: "center", 
+                    height: "120px"
+                  }}
+                >
                   <img
                     src={isActive ? item.imageorange : item.image}
                     alt={item.name}
@@ -163,50 +183,92 @@ export default function NosServices() {
                     }}
                   />
                 </div>
-                <p style={{ color: isActive ? '#ff5a2f' : '#fff', transition: 'color 0.1s' }}>{item.name}</p>
+
+                <p 
+                  style={{ 
+                    color: isActive ? '#ff5a2f' : '#fff',
+                    transition: 'color 0.1s'
+                  }}
+                >
+                  {item.name}
+                </p>
               </div>
             );
           })}
         </div>
 
-        {/* Carousel */}
-        <Swiper
-          modules={[Navigation, Pagination]}
-          slidesPerView={1.4}
-          centeredSlides={false}
-          spaceBetween={100}
-          loop={true}
-          navigation
-          pagination={{ clickable: true }}
-          className="textile-swiper"
-          breakpoints={{
-            0: { slidesPerView: 1, spaceBetween: 20 }, // mobile
-            768: { slidesPerView: 1.4, spaceBetween: 100 } // tablette et +
-          }}
-          onSwiper={(swiper) => { swiperRef.current = swiper; }}  // ← récupère l'instance Swiper
-          onSlideChange={handleSlideChange}                        // ← sync icône → carousel
-        >
-          {services.map((service) => (
-            <SwiperSlide key={service.id}>
-              <div className="full-card">
-                <div className="card-service">
-                  <div className="card-image-service">
-                    <img src={service.image} alt={service.title} />
+
+        {/* Carousel affiché uniquement après sélection */}
+        {selected && (
+          <Swiper
+            modules={[Navigation, Pagination]}
+            slidesPerView={1.4}
+            centeredSlides={false}
+            spaceBetween={100}
+            loop={true}
+            navigation
+            pagination={{ clickable: true }}
+            className="textile-swiper"
+            breakpoints={{
+              0: { slidesPerView: 1, spaceBetween: 20 },
+              768: { slidesPerView: 1.4, spaceBetween: 100 }
+            }}
+            onSwiper={(swiper) => { 
+              swiperRef.current = swiper;
+              swiper.slideToLoop(activeIndex);
+            }}
+            onSlideChange={handleSlideChange}
+          >
+            {services.map((service) => (
+              <SwiperSlide key={service.id}>
+                <div className="full-card">
+                  <div className="card-service">
+                    <div className="card-image-service">
+                      <img src={service.image} alt={service.title} />
+                    </div>
+                  </div>
+
+                  <div className="card-description">
+                    <h3><strong>{service.title}</strong></h3>
+                    <p>{service.description}</p>
+
+                    <div className="card-info">
+                      <p>
+                        <img src={quantityIcon} alt="Quantité minimum" />
+                        <strong>Quantité minimum : </strong>
+                        <span>{service.quantity}</span>
+                      </p>
+
+                      <p>
+                        <img src={colorLimitIcon} alt="Limite de couleurs" />
+                        <strong>Limite de couleurs : </strong>
+                        <span>{service.colorLimit}</span>
+                      </p>
+
+                      <p>
+                        <img src={productionTimeIcon} alt="Temps de production" />
+                        <strong>Temps de production : </strong>
+                        <span>{service.productionTime}</span>
+                      </p>
+                    </div>
+
+                    <p 
+                      style={{ 
+                        fontSize: '0.9rem',
+                        fontStyle: 'italic',
+                        textDecoration: 'underline',
+                        textAlign: 'right'
+                      }}
+                    >
+                      Urgences possibles
+                    </p>
                   </div>
                 </div>
-                <div className="card-description">
-                  <h3><strong>{service.title}</strong></h3>
-                  <p>{service.description}</p>
-                  <div className="card-info">
-                    <p><img src={quantityIcon} alt="Quantité minimum" /> <strong>Quantité minimum : </strong><span>{service.quantity}</span></p>
-                    <p><img src={colorLimitIcon} alt="Limite de couleurs" /> <strong>Limite de couleurs : </strong><span>{service.colorLimit}</span></p>
-                    <p><img src={productionTimeIcon} alt="Temps de production" /> <strong>Temps de production : </strong><span>{service.productionTime}</span></p>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
+
       </div>
     </>
   );

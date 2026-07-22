@@ -49,7 +49,7 @@ export default function NosRealisations() {
 
   return (
     <div className="nos-realisations">
-      <h2>Réalisations</h2>
+      <h2>RÉALISATIONS</h2>
       <div className="marquee">
         <div className="marquee-content">
           {images.map((img, idx) => (
@@ -60,11 +60,16 @@ export default function NosRealisations() {
         </div>
         <div className="voir-en-details-wrap">
           <a href="/atelier/realisations" className="voir-en-details">
-            Voir en details
+            Voir en détails
           </a>
-          <svg className="voir-en-details-arrow" viewBox="0 0 130 32" aria-hidden="true" focusable="false">
-            <path d="M14 2 V20 H120" />
-            <path d="M115 15 L120 20 L115 25" />
+
+          <svg
+            className="voir-en-details-arrow"
+            viewBox="0 0 12 12"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <polygon points="2,1 10,6 2,11" />
           </svg>
         </div>
       </div>  

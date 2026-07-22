@@ -12,7 +12,7 @@ const prestations = [
 export default function PrestationLive() {
   return (
     <>
-    <h2>Prestation live</h2>
+    <h2>PRESTATION LIVE</h2>
     <div
       className="prestation-live"
       style={{

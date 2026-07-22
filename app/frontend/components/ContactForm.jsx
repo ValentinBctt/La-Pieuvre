@@ -47,7 +47,7 @@ export default function ContactForm({ endpoint = '/api/contacts', buttonText = '
   return (
     <>       
     <div className="contactez-nous" id="contactez-nous">
-      <h2>Contactez-nous</h2>
+      <h2>CONTACTEZ-NOUS</h2>
         {/* Scroll smooth vers l'ancre depuis n'importe quelle page */}
         <script dangerouslySetInnerHTML={{
           __html: `

@@ -3,7 +3,8 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
-import { Scrollbar } from 'swiper/modules';
+import { Scrollbar, Navigation } from 'swiper/modules';
+import 'swiper/css/navigation';
 import '../../../styles/prestationlive.css';
 import ContactForm from '../../ContactForm';
 import NavbarAtelier from '../NavbarAtelier';
@@ -43,9 +44,10 @@ export default function PrestationLiveAll({ prestations }) {
           </div>
           <div className="scroll-container">
             <Swiper
-              modules={[Scrollbar]}
+              modules={[Scrollbar, Navigation]}
               spaceBetween={20}
               slidesPerView={2}
+              navigation
               scrollbar={{ draggable: true, hide: false }}
               style={{ padding: '1rem 0' }}
             >

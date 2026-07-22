@@ -4,7 +4,7 @@
 }
 .textile-swiper .card {
   background: #fff;
-  border-radius: 8px;
+
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   padding: 1rem;
   text-align: center;
@@ -12,7 +12,7 @@
 .textile-swiper .card img {
   width: 100%;
   height: auto;
-  border-radius: 4px;
+
   margin-bottom: 0.5rem;
 }
 .textile-swiper .card h3 {

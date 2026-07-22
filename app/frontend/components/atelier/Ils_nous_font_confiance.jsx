@@ -30,7 +30,7 @@ export default function IlsNousFontConfiance() {
 
   return (
     <div className="ils-nous-font-confiance" style={{ margin: '0 auto' }}>
-      <h2>Ils nous font confiance</h2>
+      <h2>ILS NOUS FONT CONFIANCE</h2>
       <div className="marquee">
         <div className="marquee-content">
           {images.map((img, idx) => (
