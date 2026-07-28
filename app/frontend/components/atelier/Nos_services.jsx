@@ -234,19 +234,19 @@ export default function NosServices() {
 
                     <div className="card-info">
                       <p>
-                        <img src={quantityIcon} alt="Quantité minimum" />
+                        <img className="card-icon" src={quantityIcon} alt="Quantité minimum" />
                         <strong>Quantité minimum : </strong>
                         <span>{service.quantity}</span>
                       </p>
 
                       <p>
-                        <img src={colorLimitIcon} alt="Limite de couleurs" />
+                        <img className="card-icon" src={colorLimitIcon} alt="Limite de couleurs" />
                         <strong>Limite de couleurs : </strong>
                         <span>{service.colorLimit}</span>
                       </p>
 
                       <p>
-                        <img src={productionTimeIcon} alt="Temps de production" />
+                        <img className="card-icon" src={productionTimeIcon} alt="Temps de production" />
                         <strong>Temps de production : </strong>
                         <span>{service.productionTime}</span>
                       </p>

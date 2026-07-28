@@ -189,7 +189,7 @@
 
 .card-description {
     margin-left: 6rem;
-    width: 40%;
+    width: 50%;
 }
 
 .card-description .reference-line {
@@ -231,8 +231,13 @@
 }
 
 .textile-swiper .swiper-button-next {
-    right: 20rem; /* Ajuste la position à droite */
+    right: 25% !important; /* Ajuste la position à droite */
 }
+
+.textile-swiper .swiper-button-prev {
+    left: 30% !important; /* Ajuste la position à gauche */
+}
+
 
 /* Swiper navigation arrows blanches */
 .textile-swiper .swiper-button-next,
@@ -281,3 +286,9 @@
 }
 
 
+.card-icon img {
+
+  &:hover {
+    color: var(--orange);
+  }
+}

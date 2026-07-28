@@ -69,7 +69,7 @@ export default function ContactForm({ endpoint = '/api/contacts', buttonText = '
       
 
       <div className="form-message">
-        <p><strong>ATELIER LA PIEUVRE</strong></p>
+        <p style={{fontFamily: 'Pluto'}} >ATELIER <strong>LA PIEUVRE</strong></p>
         <p>DTF_Sérigraphie_Broderie_DTG</p>
         <h1>Contact</h1>
             <textarea
@@ -80,6 +80,10 @@ export default function ContactForm({ endpoint = '/api/contacts', buttonText = '
         onChange={handleChange}
         required
       />
+            <div className="form-good-services">
+          <p>Good_Services_And_Fast_Delivery</p>
+          <p>Since_2022</p>
+          </div>
       </div>
 
       <div className="form-contact">
@@ -124,7 +128,7 @@ export default function ContactForm({ endpoint = '/api/contacts', buttonText = '
     <div className='footer'>
       <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', width: '100%', justifyContent: 'center', marginBottom: '2rem' }}>
         <div className="footer-bar" style={{ width: barWidth }} />
-        <h2 className="footer-holding" ref={holdingRef}><strong>LA PIEUVRE</strong>&nbsp;HOLDING</h2>
+        <h2 className="footer-holding" ref={holdingRef}><strong>LA PIEUVRE</strong>&nbsp;<div className="footer-holding-text">HOLDING</div></h2>
         <div className="footer-bar" style={{ width: barWidth }} />
       </div>
     </div>

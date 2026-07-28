@@ -486,6 +486,19 @@ background: linear-gradient(
 
 }
 
+.form-good-services {
+    display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 15%;
+
+}
+
+.form-good-services p {
+  margin: 0.5rem;
+}
+
+
 
 .footer {
   display: flex;
@@ -499,7 +512,6 @@ background: linear-gradient(
 }
 
 
-
 .footer-holding {
   display: flex;
   align-items: center;
@@ -509,11 +521,16 @@ background: linear-gradient(
   color: var(--white);
   font-size: 2rem;
   font-family: 'Pluto', 'Montserrat', 'Segoe UI', sans-serif;
-  font-weight: 700;
+  font-weight: 650;
   position: relative;
 
   
 }
+
+.footer-holding-text{
+  font-weight: 300;
+}
+
 .footer h2 {
   margin: 0;
   position: relative;
@@ -542,11 +559,12 @@ background: linear-gradient(
   flex-direction: row;
   justify-content: center;
   align-items: top;
-  gap: 8rem;
+  gap: 20%;
   margin-top: 2rem;
   padding-bottom: 5rem;
    
 }
+
 .footer-la-pieuvre {
   display: flex;
   flex-direction: column;
