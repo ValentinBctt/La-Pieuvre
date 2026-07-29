@@ -99,6 +99,7 @@
   align-items: center;
 }
 
+
 @keyframes defilement-infinite {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -251,3 +252,49 @@
   fill: white;
   flex-shrink: 0;
 }
+
+.header-realisation {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.personalisation-text,
+.realisation-title-right {
+  white-space: normal;
+  min-width: 0;
+}
+
+.personalisation-text {
+  flex: 1 1 300px;
+  min-width: 0;
+}
+
+.realisation-title-right {
+  flex: 0 1 200px;
+  min-width: 0;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .realisation-title-right {
+    width: 100%;
+    text-align: right;
+  }
+}
+
+@media (max-width: 1500px) {
+  .realisation-item .realisation-titles h3 {
+    margin-top: 3rem !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .realisation-item .realisation-titles h3 {
+    margin-top: 5rem !important;
+  }
+}
+
+
+

@@ -43,14 +43,21 @@ export default function PrestationLiveAll({ prestations }) {
           <p >{presta.description}</p>
           </div>
           <div className="scroll-container">
-            <Swiper
-              modules={[Scrollbar, Navigation]}
-              spaceBetween={20}
-              slidesPerView={2}
-              navigation
-              scrollbar={{ draggable: true, hide: false }}
-              style={{ padding: '1rem 0' }}
-            >
+                              <Swiper
+                    modules={[Scrollbar, Navigation]}
+                    spaceBetween={20}
+                    navigation
+                   
+                    breakpoints={{
+                      0: {
+                        slidesPerView: 1,
+                      },
+                      768: {
+                        slidesPerView: 2,
+                      }
+                    }}
+           
+                  >
               {[presta.image1, presta.image2, presta.image3, presta.image4, presta.image5]
                 .filter(Boolean)
                 .map((img, i) => (

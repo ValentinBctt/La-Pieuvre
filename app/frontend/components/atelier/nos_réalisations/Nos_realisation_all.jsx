@@ -259,6 +259,13 @@ export default function NosRealisationsAll() {
     return () => grid.removeEventListener("pointermove", handleMouseMove);
   }, []);
 
+  const breakOnUnderscore = (text) =>
+  text.split("_").flatMap((part, index, array) =>
+    index < array.length - 1
+      ? [part, "_", <wbr key={index} />]
+      : [part]
+  );
+
   return (
     <>
       <NavbarAtelier />
@@ -266,12 +273,17 @@ export default function NosRealisationsAll() {
 
         <div className="realisation-on-title">
           <p>ATELIER LA PIEUVRE</p>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-            <p className="personalisation-text">
-              Confection_Personalisation_Events_Merchandising
-            </p>
-            <p className="realisation-title-right">Selection_2024_2025</p>
-          </div>
+       <div className="header-realisation">
+
+  <p className="personalisation-text">
+    {breakOnUnderscore("Confection_Personalisation_Events_Merchandising")}
+  </p>
+
+  <p className="realisation-title-right">
+    Selection_2024_2025
+  </p>
+</div>
+
         </div>
 
         <div className="realisation-container">
@@ -283,9 +295,11 @@ export default function NosRealisationsAll() {
                 style={{ zIndex: "10" }}
                 >
                 <img src={item.image} alt={item.name} />
+                <div className="realisation-titles" >
                 <h3 style={{ zIndex: "10" }}><strong>{item.name}</strong></h3>
                 <p style={{ zIndex: "10" }}>{item.subname}</p>
                 <p style={{ fontStyle: "italic", zIndex: "10" }}>{item.type}</p>
+                </div>
               </div>
             ))}
           </div>
