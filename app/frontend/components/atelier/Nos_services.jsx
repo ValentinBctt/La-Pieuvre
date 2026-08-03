@@ -143,6 +143,18 @@ export default function NosServices() {
       <div className="nos-services">
         <h2>NOS SERVICES</h2>
 
+                <div className="service-texte">
+  <p>
+    Nous sommes un atelier de production textile spécialisé dans l’impression,
+    le marquage et la personnalisation de vêtements. Sérigraphie, DTF, DTG,
+    broderie, flocage ou patchs, nous accompagnons chaque projet de la
+    préparation des fichiers jusqu’à la production finale.
+
+    Notre bureau créatif peut également intervenir sur la direction artistique,
+    la création graphique et la préparation des visuels, afin d’assurer une
+    cohérence entre conception et production.
+  </p>
+</div>
         {/* Liste des icônes */}
         <div 
           style={{ 

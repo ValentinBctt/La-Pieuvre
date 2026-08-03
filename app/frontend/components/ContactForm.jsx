@@ -128,15 +128,15 @@ export default function ContactForm({ endpoint = '/api/contacts', buttonText = '
     <div className='footer'>
       <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', width: '100%', justifyContent: 'center', marginBottom: '2rem' }}>
         <div className="footer-bar" style={{ width: barWidth }} />
-        <h2 className="footer-holding" ref={holdingRef}><strong>LA PIEUVRE</strong>&nbsp;<div className="footer-holding-text">HOLDING</div></h2>
+        <h2 className="footer-holding" ref={holdingRef}><strong>LA PIEUVRE</strong></h2>
         <div className="footer-bar" style={{ width: barWidth }} />
       </div>
     </div>
     <div className="footer-content">
       <div className='footer-la-pieuvre'>
         <a href=""><img className="footer-logo" src="https://res.cloudinary.com/dnojcwwos/image/upload/v1775051989/c36fa1a1-7052-4db1-8996-220a4a5c79a7.png" alt="Logo" />ATELIER <strong>LA PIEUVRE</strong></a>
-        <a href=""><img className="footer-logo" src="https://res.cloudinary.com/dnojcwwos/image/upload/v1775051900/0399de92-9454-428b-9bc9-4983ee670d80.png" alt="Logo" />BUREAU <strong>LA PIEUVRE</strong></a>
-        <a href=''><img className="footer-logo" src="https://res.cloudinary.com/dnojcwwos/image/upload/v1775051959/4418d29c-8feb-4245-86d1-e47d26a49d46.png" alt="Logo" />STUDIO <strong>LA PIEUVRE</strong></a>
+       
+        <a href=''><img className="footer-logo" src="https://res.cloudinary.com/dnojcwwos/image/upload/v1775051959/4418d29c-8feb-4245-86d1-e47d26a49d46.png" alt="Logo" />MAISON <strong>LA PIEUVRE</strong></a>
       </div>
 
       <div className='footer-contact'>

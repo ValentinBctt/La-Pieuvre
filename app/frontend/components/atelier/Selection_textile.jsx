@@ -10,6 +10,8 @@ import grammageyIcon from "../../assets/grammage.svg";
 import matiereIcon from "../../assets/matiere.svg";
 import quality2Icon from "../../assets/quality2.svg";
 
+import fournisseur from "../../assets/fournisseurs.svg";
+
 // ─────────────────────────────────────────────────────────────────────────
 // Liste des champs affichés dans la section "Infos" de chaque carte produit.
 // Pour RETIRER un champ : supprime sa ligne (ou commente-la avec //).
@@ -30,6 +32,7 @@ function SkeletonSelectionTextile() {
     <div className="selection-textile">
       <h2>Notre sélection de textile</h2>
 
+   
       <div className="textile-list-skeleton" aria-hidden="true">
         {Array.from({ length: 6 }).map((_, index) => (
           <div className="textile-list-skeleton-item" key={index}>
@@ -52,6 +55,7 @@ function SkeletonSelectionTextile() {
           </div>
         ))}
       </div>
+      
     </div>
   );
 }
@@ -60,6 +64,7 @@ function TextileList({ items, selectedCategory, onSelect }) {
   const [hoveredCategory, setHoveredCategory] = useState(null);
 
   return (
+
     <div
       className="textile-list"
       style={{
@@ -72,6 +77,8 @@ function TextileList({ items, selectedCategory, onSelect }) {
         flexWrap: "wrap"
       }}
     >
+
+
       {items.map((item, index) => {
         const isActive = selectedCategory === item.id;
         const isHovered = hoveredCategory === item.id;
@@ -199,7 +206,8 @@ const SelectionTextile = () => {
     <div className="selection-textile">
       <h2>NOTRE SELECTION DE TEXTILE</h2>
 
-
+          <div className="fournisseur-image">         <img src={fournisseur} alt="Fournisseur"  />
+    </div>
       <TextileList
         items={items}
         selectedCategory={selectedCategory}

@@ -31,15 +31,27 @@ export default function IlsNousFontConfiance() {
   return (
     <div className="ils-nous-font-confiance" style={{ margin: '0 auto' }}>
       <h2>ILS NOUS FONT CONFIANCE</h2>
-      <div className="marquee">
-        <div className="marquee-content">
-          {images.map((img, idx) => (
-            <div className="realisations-image" key={idx}>
-              <img src={img.src} alt={img.name || `Confiance ${idx + 1}`} />
-            </div>
-          ))}
-        </div>
+{/* Mobile : marquee */}
+<div className="marquee mobile-only">
+  <div className="marquee-content">
+    {images.map((img, idx) => (
+      <div className="realisations-image" key={idx}>
+        <img src={img.src} alt={img.name || `Confiance ${idx + 1}`} />
       </div>
+    ))}
+  </div>
+</div>
+
+{/* Desktop : grille */}
+
+<div className="desktop-grid">
+  {ImagesConfiance.map((img, idx) => (
+    <div className="realisations-image-desktop" key={idx}>
+      <img src={img.src} alt={img.name || `Confiance ${idx + 1}`} />
     </div>
+  ))}
+</div>
+      </div>
+ 
   );
 }
