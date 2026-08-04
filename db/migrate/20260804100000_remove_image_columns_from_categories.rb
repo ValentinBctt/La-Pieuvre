@@ -1,4 +1,4 @@
-class RemoveImageColumnsFromCategories < ActiveRecord::Migration[7.0]
+class RemoveImageColumnsFromCategoriesLate < ActiveRecord::Migration[7.0]
   def change
     return unless table_exists?(:categories)
 
