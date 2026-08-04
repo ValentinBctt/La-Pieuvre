@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { useParams } from 'react-router-dom';
 import PrestationLiveAll from '../components/atelier/prestations-live/Prestation_live_all.jsx';
 import Pac_118 from '../components/atelier/prestations-live/Pac_118.jsx';
 import PSG from '../components/atelier/prestations-live/PSG.jsx';
@@ -20,15 +19,42 @@ const prestationsMap = {
   '93_lab': Lab93,
 };
 
-function normalize(str) {
+function normalize(str = '') {
   return str.toLowerCase().replace(/[- ]/g, '_');
 }
 
 function PrestationLiveRouter() {
+  const [prestations, setPrestations] = useState([]);
+  const [loading, setLoading] = useState(true);
   const name = window.location.pathname.split('/').pop();
   const normalizedName = normalize(name);
   const Component = prestationsMap[normalizedName];
-  return Component ? <Component /> : <PrestationLiveAll />;
+
+  useEffect(() => {
+    if (Component || !/^\d+$/.test(name)) {
+      setLoading(false);
+      return;
+    }
+
+    fetch('/api/prestation_lives')
+      .then((response) => response.json())
+      .then((data) => {
+        setPrestations(Array.isArray(data) ? data : []);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, [Component, name]);
+
+  if (Component) {
+    return <Component />;
+  }
+
+  if (loading) {
+    return <PrestationLiveAll prestations={[]} />;
+  }
+
+  const matched = prestations.find((presta) => String(presta.id) === String(name));
+  return <PrestationLiveAll prestations={matched ? [matched] : prestations} />;
 }
 
 window.React = React;

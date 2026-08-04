@@ -22,7 +22,12 @@ Rails.application.routes.draw do
 namespace :admin do
   resources :categories
   resources :products
+  resources :prestation_lives
   root to: "categories#index"
 
+end
+
+namespace :api do
+  resources :prestation_lives, only: [:index]
 end
 end
