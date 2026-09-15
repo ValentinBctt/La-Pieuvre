@@ -117,7 +117,7 @@ a {
   font-family: 'Gotham';
 
   &:hover {
-  
+
     color: var(--orange);
   }
 }
@@ -186,7 +186,7 @@ p {
   padding: 1rem 4rem;
   background-color: var(--black);
   border-bottom: solid 1px var(--orange);
-  
+
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -257,7 +257,7 @@ p {
   visibility: hidden;
   transform: translateY(-5px);
   transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
-  
+
 }
 
 .navbar-links a {
@@ -361,13 +361,17 @@ background: linear-gradient(
   top: 1rem;
   left: 50%;
   transform: translateX(-50%);
-  
+
   transition: all 0.3s ease;
 }
 
 .banner-atelier-title {
-  font-size: 9rem;
-  margin-bottom: 1rem;
+font-size: 47.45px;
+margin: 0;
+text-align: center;
+font-weight: 400;
+letter-spacing: 34%;
+z-index: 10 !important;
 }
 
 .banner-atelier-subtitle {
@@ -377,8 +381,9 @@ background: linear-gradient(
 
 .banner-image {
   position: relative;
-  width: 100%;
-  height: 80vh;
+  width: 50%;
+  margin: 0 auto;
+
 }
 
 .banner-image img {
@@ -386,7 +391,7 @@ background: linear-gradient(
   height: 100%;
   object-fit: cover;
   object-position: center 60%;
-  filter: brightness(0.5);
+
 }
 
 .banner-overlay {
@@ -416,7 +421,7 @@ background: linear-gradient(
 
 
 .form-message h1 {
- 
+
   margin-bottom: 0;
   margin-top: 0;
 
@@ -507,7 +512,7 @@ background: linear-gradient(
   justify-content: center;
   width: 100%;
     margin-top: 5rem;
-    
+
 
 }
 
@@ -524,7 +529,7 @@ background: linear-gradient(
   font-weight: 650;
   position: relative;
 
-  
+
 }
 
 .footer-holding-text{
@@ -562,7 +567,7 @@ background: linear-gradient(
   gap: 20%;
   margin-top: 2rem;
   padding-bottom: 5rem;
-   
+
 }
 
 .footer-la-pieuvre {

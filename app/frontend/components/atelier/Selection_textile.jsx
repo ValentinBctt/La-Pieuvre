@@ -19,7 +19,7 @@ import fournisseur from "../../assets/fournisseurs.svg";
 // L'ordre de cette liste = l'ordre d'affichage à l'écran.
 // ─────────────────────────────────────────────────────────────────────────
 const INFO_FIELDS = [
- 
+
   { key: "sizes_available", label: "Tailles", icon: quantityIcon },
   { key: "grammage", label: "Grammage", icon: grammageyIcon },
    { key: "matiere", label: "Matière", icon: matiereIcon },
@@ -27,12 +27,15 @@ const INFO_FIELDS = [
 
 ];
 
+/*
 function SkeletonSelectionTextile() {
   return (
     <div className="selection-textile">
-      <h2>Notre sélection de textile</h2>
+      <h2>NOTRE CARGAISON</h2>
 
-   
+      <p>Nos best-sellers pour étaler notre encre.</p>
+
+
       <div className="textile-list-skeleton" aria-hidden="true">
         {Array.from({ length: 6 }).map((_, index) => (
           <div className="textile-list-skeleton-item" key={index}>
@@ -55,11 +58,13 @@ function SkeletonSelectionTextile() {
           </div>
         ))}
       </div>
-      
+
     </div>
   );
 }
+*/
 
+/*
 function TextileList({ items, selectedCategory, onSelect }) {
   const [hoveredCategory, setHoveredCategory] = useState(null);
 
@@ -130,6 +135,7 @@ function TextileList({ items, selectedCategory, onSelect }) {
     </div>
   );
 }
+*/
 
 const SelectionTextile = () => {
   const [items, setItems] = useState([]);
@@ -193,7 +199,7 @@ const SelectionTextile = () => {
   }, []);
 
 
-  if (loading) return <SkeletonSelectionTextile />;
+  /* if (loading) return <SkeletonSelectionTextile />; */
   if (error) return <div>Erreur : {error}</div>;
 
 
@@ -204,15 +210,16 @@ const SelectionTextile = () => {
 
   return (
     <div className="selection-textile">
-      <h2>NOTRE SELECTION DE TEXTILE</h2>
+      <h2>NOTRE CARGAISON</h2>
+      <p className="selection-textile-description">Nos best-sellers pour étaler notre encre.</p>
 
           <div className="fournisseur-image">         <img src={fournisseur} alt="Fournisseur"  />
     </div>
-      <TextileList
+      {/* <TextileList
         items={items}
         selectedCategory={selectedCategory}
         onSelect={setSelectedCategory}
-      />
+      /> */}
 
 
       {selectedCategory && (
@@ -235,9 +242,9 @@ const SelectionTextile = () => {
               <div className="full-card">
 
                 <div className="card">
-                  <img 
-                    src={product.image || "/images/placeholder.png"} 
-                    alt={product.name} 
+                  <img
+                    src={product.image || "/images/placeholder.png"}
+                    alt={product.name}
                   />
 
                   <p>
@@ -323,7 +330,9 @@ const SelectionTextile = () => {
           ))}
         </Swiper>
       )}
-
+      <p className="selection-textile-description" style={{ color: "grey" }}>
+        “No-label” et confection possible sur demande
+      </p>
     </div>
   );
 };

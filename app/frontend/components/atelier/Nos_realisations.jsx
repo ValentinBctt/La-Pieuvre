@@ -49,7 +49,7 @@ export default function NosRealisations() {
 
   return (
     <div className="nos-realisations">
-      <h2>RÉALISATIONS</h2>
+
       <div className="marquee">
         <div className="marquee-content">
           {images.map((img, idx) => (
@@ -60,7 +60,7 @@ export default function NosRealisations() {
         </div>
         <div className="voir-en-details-wrap">
           <a href="/atelier/realisations" className="voir-en-details">
-            Voir en détails
+            VOIR PLUS
           </a>
 
           <svg
@@ -72,7 +72,17 @@ export default function NosRealisations() {
             <polygon points="2,1 10,6 2,11" />
           </svg>
         </div>
-      </div>  
-    </div>
-  );    
+      </div>
+
+      <div className="savoir-faire"></div>
+        <h2 className="savoir-faire-title">NOTRE SAVOIR-FAIRE</h2>
+        <p className="savoir-faire-description">
+          L'Atelier maîtrise différentes techniques d'impression :
+          sérigraphie, broderie, DTF, DTG, sublimation… Pour vous, nous adaptons chaque production à vos besoins, de la petite série aux grandes quantités.
+Nos tentacules peuvent aussi embarquer sur vos événements pour
+créer des expériences en live et des ateliers sur mesure.Pour vous accompagner dans la création et l'image, notre studio créatif Bureau La Pieuvre peut s'occuper de la direction
+artistique, des visuels, des logos, des photos et des vidéos. </p>
+      </div>
+
+  );
 }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2026_04_15_092554) do
+ActiveRecord::Schema[7.0].define(version: 2026_09_15_000000) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -51,6 +51,26 @@ ActiveRecord::Schema[7.0].define(version: 2026_04_15_092554) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "bureau_categories", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "kind", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name", "kind"], name: "index_bureau_categories_on_name_and_kind", unique: true
+  end
+
+  create_table "bureau_projects", force: :cascade do |t|
+    t.integer "bureau_category_id", null: false
+    t.string "name", null: false
+    t.text "mission"
+    t.text "contexte"
+    t.text "client"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bureau_category_id"], name: "index_bureau_projects_on_bureau_category_id"
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -89,10 +109,8 @@ ActiveRecord::Schema[7.0].define(version: 2026_04_15_092554) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-
-
-
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bureau_projects", "bureau_categories"
   add_foreign_key "products", "categories"
 end

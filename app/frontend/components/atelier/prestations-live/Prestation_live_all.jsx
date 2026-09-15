@@ -47,7 +47,7 @@ export default function PrestationLiveAll({ prestations }) {
                     modules={[Scrollbar, Navigation]}
                     spaceBetween={20}
                     navigation
-                   
+
                     breakpoints={{
                       0: {
                         slidesPerView: 1,
@@ -56,10 +56,12 @@ export default function PrestationLiveAll({ prestations }) {
                         slidesPerView: 2,
                       }
                     }}
-           
+
                   >
-              {[presta.image1, presta.image2, presta.image3, presta.image4, presta.image5]
-                .filter(Boolean)
+                        {Object.entries(presta)
+                          .filter(([key, value]) => /^image\d+$/.test(key) && Boolean(value))
+                          .sort(([leftKey], [rightKey]) => Number(leftKey.replace('image', '')) - Number(rightKey.replace('image', '')))
+                          .map(([, img]) => img)
                 .map((img, i) => (
                   <SwiperSlide key={i}>
                     <div className="scroll-item">
@@ -70,7 +72,7 @@ export default function PrestationLiveAll({ prestations }) {
             </Swiper>
           </div>
         </div>
-        
+
       ))}
     </div>
     <ContactForm />
