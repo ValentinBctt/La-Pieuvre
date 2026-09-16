@@ -3,6 +3,8 @@ import React from "react";
 import NavbarAtelier from "../NavbarAtelier";
 import ContactForm from "../../ContactForm";
 
+import Confiance from "../Confiance-marquee.jsx";
+
 const ImagesRealisations = [
   {
     image: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1775471153/01_TCHEKSPLAY_dcdfex.webp',
@@ -269,7 +271,9 @@ export default function NosRealisationsAll() {
   return (
     <>
       <NavbarAtelier />
+
       <div className="nos-realisations-all">
+        <Confiance />
 
         <div className="realisation-on-title">
           <p>ATELIER LA PIEUVRE</p>
@@ -287,7 +291,7 @@ export default function NosRealisationsAll() {
         </div>
 
         <div className="realisation-container">
-          <h1 className="realisation-title">NOS REALISATIONS</h1>
+          <h1 className="realisation-title">LE SHOWROOM</h1>
           <div className="realisation-grid" ref={gridRef}
           >
             {ImagesRealisations.map((item, index) => (

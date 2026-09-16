@@ -8,6 +8,7 @@ import 'swiper/css/navigation';
 import '../../../styles/prestationlive.css';
 import ContactForm from '../../ContactForm';
 import NavbarAtelier from '../NavbarAtelier';
+import Confiance from "../Confiance-marquee.jsx";
 
 const defaultPrestations = [
   {
@@ -75,6 +76,8 @@ export default function PrestationLiveAll({ prestations }) {
 
       ))}
     </div>
+    <Confiance />
+
     <ContactForm />
     </>
   );
