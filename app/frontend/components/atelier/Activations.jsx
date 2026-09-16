@@ -1,7 +1,7 @@
 import React from 'react';
 import PrestationLiveAll from './prestations-live/Prestation_live_all';
 
-import Confiance from "../Confiance-marquee.jsx";
+import Confiance from "./Confiance-marquee.jsx";
 
 const activationsData = [
   {
