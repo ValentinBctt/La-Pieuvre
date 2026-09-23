@@ -5,12 +5,16 @@ require_relative "config/application"
 
 Rails.application.load_tasks
 
-if ENV["RAILS_SKIP_ASSET_COMPILATION"] == "1"
-	Rake::Task["assets:precompile"].clear if Rake::Task.task_defined?("assets:precompile")
+skip_assets_precompile = ["1", "true"].include?(ENV["RAILS_SKIP_ASSET_COMPILATION"].to_s.downcase) ||
+	["1", "true"].include?(ENV["SKIP_ASSET_COMPILATION"].to_s.downcase)
 
-	namespace :assets do
-		task :precompile do
-			puts "Skipping assets:precompile (RAILS_SKIP_ASSET_COMPILATION=1)"
+if skip_assets_precompile
+	["vite:install_dependencies", "vite:build_all", "assets:precompile"].each do |task_name|
+		next unless Rake::Task.task_defined?(task_name)
+
+		Rake::Task[task_name].clear
+		Rake::Task[task_name].enhance do
+			puts "Skipping #{task_name} (asset compilation disabled)"
 		end
 	end
 end
