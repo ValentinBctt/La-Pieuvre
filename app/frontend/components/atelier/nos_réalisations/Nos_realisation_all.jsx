@@ -238,7 +238,7 @@ const fallbackImagesRealisations = [
 
 export default function NosRealisationsAll({ items = [] }) {
   const gridRef = useRef(null);
-  const [imagesRealisations, setImagesRealisations] = useState(items.length > 0 ? items : fallbackImagesRealisations);
+  const [imagesRealisations, setImagesRealisations] = useState(items);
 
   useEffect(() => {
     let isMounted = true;
@@ -246,14 +246,17 @@ export default function NosRealisationsAll({ items = [] }) {
     async function loadShowroomItems() {
       try {
         const response = await fetch('/api/showroom_items.json');
-        if (!response.ok) return;
+        if (!response.ok) {
+          if (isMounted) setImagesRealisations(items);
+          return;
+        }
 
         const data = await response.json();
-        if (isMounted && Array.isArray(data) && data.length > 0) {
+        if (isMounted && Array.isArray(data)) {
           setImagesRealisations(data);
         }
       } catch (error) {
-        if (items.length > 0) {
+        if (isMounted) {
           setImagesRealisations(items);
         }
       }
