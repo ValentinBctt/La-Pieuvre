@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import "../../styles/realisation.css";
 
 const ImagesConfiance = [
@@ -23,77 +23,16 @@ const ImagesConfiance = [
 
 ];
 
-const SINGLE_IMAGE_SRC = 'https://res.cloudinary.com/dnojcwwos/image/upload/v1790159653/vector_o7xzwn.webp';
-
-function keepSingleVectorImage(images) {
-  let alreadySeen = false;
-
-  return images.filter((image) => {
-    if (image.src !== SINGLE_IMAGE_SRC) return true;
-    if (alreadySeen) return false;
-    alreadySeen = true;
-    return true;
-  });
-}
-
-const uniqueImages = keepSingleVectorImage(ImagesConfiance);
-const marqueeImages = [...uniqueImages, ...uniqueImages.filter((image) => image.src !== SINGLE_IMAGE_SRC)];
+const marqueeImages = [...ImagesConfiance, ...ImagesConfiance];
 
 export default function ConfianceMarquee() {
-  const marqueeRef = useRef(null);
-
-  useEffect(() => {
-    const marquee = marqueeRef.current;
-    if (!marquee) return undefined;
-
-    let frameId = 0;
-    let lastTime = 0;
-
-    const speed = 0.45;
-
-    const step = (time) => {
-      if (!lastTime) lastTime = time;
-      const delta = time - lastTime;
-      lastTime = time;
-
-      if (marquee.scrollWidth > marquee.clientWidth) {
-        marquee.scrollLeft += speed * delta;
-
-        const halfWidth = marquee.scrollWidth / 2;
-        if (marquee.scrollLeft >= halfWidth) {
-          marquee.scrollLeft = 0;
-        }
-      }
-
-      frameId = window.requestAnimationFrame(step);
-    };
-
-    frameId = window.requestAnimationFrame(step);
-
-    return () => {
-      window.cancelAnimationFrame(frameId);
-    };
-  }, []);
-
   return (
     <section className="ils-nous-font-confiance confiance-marquee">
   
-      <div ref={marqueeRef} className="marquee" aria-label="Logos des clients" style={{ overflow: "hidden" }}>
-        <div
-          className="marquee-content"
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            flexWrap: "nowrap",
-            alignItems: "center",
-            width: "max-content",
-            whiteSpace: "nowrap",
-            gap: "8rem",
-            willChange: "scroll-position"
-          }}
-        >
+      <div className="marquee">
+        <div className="marquee-content">
           {marqueeImages.map((image, index) => (
-            <div className="realisations-image" key={`${image.name}-${index}`} style={{ flex: "0 0 auto" }}>
+            <div className="realisations-image" key={`${image.name}-${index}`}>
               <img src={image.src} alt={image.name} />
             </div>
           ))}

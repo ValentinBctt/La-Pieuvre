@@ -12,7 +12,7 @@
   display: flex;
   width: max-content;
   align-items: center;
-  animation: defilement-infinite 15s linear infinite;
+  animation: defilement-infinite 60s linear infinite;
 }
 
 .ils-nous-font-confiance .realisations-image {
