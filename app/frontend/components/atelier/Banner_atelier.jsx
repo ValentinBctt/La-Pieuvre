@@ -1,7 +1,7 @@
 import React from "react";
 import Realisation from "./Nos_realisations.jsx";
 
-export default function BannerAtelier() {
+export default function BannerAtelier({ showroomImages = [] }) {
     return (
         <div className="banner-atelier" style={{ position: 'relative' }}>
        <div className="banner-image">
@@ -20,7 +20,7 @@ export default function BannerAtelier() {
 
             </div>
 
-          <Realisation />
+          <Realisation images={showroomImages} />
         </div>
     )
 }

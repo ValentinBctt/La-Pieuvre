@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   namespace :api do
     resources :contacts, only: [:create]
     resources :products, only: [:index]
+    resources :showroom_items, only: [:index]
     get 'bureau', to: 'bureau#index'
     get 'bureau/projects/:id', to: 'bureau#show', as: :bureau_project
   end
@@ -30,6 +31,7 @@ Rails.application.routes.draw do
 namespace :admin do
   resources :categories
   resources :products
+  resources :showroom_items
   resources :prestation_lives
   resources :bureau_categories
   resources :bureau_projects

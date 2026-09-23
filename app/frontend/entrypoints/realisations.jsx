@@ -8,6 +8,7 @@ import '../styles/responsive.css'
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("realisations-react-root");
   if (root) {
-    createRoot(root).render(<NosRealisationsAll />);
+    const showroomItems = JSON.parse(root.dataset.showroomItems || "[]");
+    createRoot(root).render(<NosRealisationsAll items={showroomItems} />);
   }
 });

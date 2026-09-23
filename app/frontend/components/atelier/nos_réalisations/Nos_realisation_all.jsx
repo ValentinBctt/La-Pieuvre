@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import NavbarAtelier from "../NavbarAtelier";
 import ContactForm from "../../ContactForm";
 
 import Confiance from "../Confiance-marquee.jsx";
 
-const ImagesRealisations = [
+const fallbackImagesRealisations = [
   {
     image: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1775471153/01_TCHEKSPLAY_dcdfex.webp',
     name: 'Tcheksplay',
@@ -236,10 +236,35 @@ const ImagesRealisations = [
   }
 ];
 
-import { useEffect, useRef } from "react";
-
-export default function NosRealisationsAll() {
+export default function NosRealisationsAll({ items = [] }) {
   const gridRef = useRef(null);
+  const [imagesRealisations, setImagesRealisations] = useState(items.length > 0 ? items : fallbackImagesRealisations);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    async function loadShowroomItems() {
+      try {
+        const response = await fetch('/api/showroom_items.json');
+        if (!response.ok) return;
+
+        const data = await response.json();
+        if (isMounted && Array.isArray(data) && data.length > 0) {
+          setImagesRealisations(data);
+        }
+      } catch (error) {
+        if (items.length > 0) {
+          setImagesRealisations(items);
+        }
+      }
+    }
+
+    loadShowroomItems();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [items]);
 
   useEffect(() => {
     const grid = gridRef.current;
@@ -294,8 +319,8 @@ export default function NosRealisationsAll() {
           <h1 className="realisation-title">LE SHOWROOM</h1>
           <div className="realisation-grid" ref={gridRef}
           >
-            {ImagesRealisations.map((item, index) => (
-              <div key={index} className="realisation-item"
+            {imagesRealisations.map((item, index) => (
+              <div key={item.id || index} className="realisation-item"
                 style={{ zIndex: "10" }}
                 >
                 <img src={item.image} alt={item.name} />

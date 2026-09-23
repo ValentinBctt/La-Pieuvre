@@ -10,10 +10,11 @@ window.React = React
 function mountAtelier() {
   const container = document.getElementById('atelier-root');
   if (container) {
+    const showroomImages = JSON.parse(container.dataset.showroomImages || '[]');
     if (!window._atelierReactRoot) {
       window._atelierReactRoot = createRoot(container);
     }
-    window._atelierReactRoot.render(<Atelier />);
+    window._atelierReactRoot.render(<Atelier showroomImages={showroomImages} />);
   }
 }
 
