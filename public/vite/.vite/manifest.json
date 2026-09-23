@@ -141,12 +141,13 @@
     "src": "assets/fournisseurs.svg"
   },
   "entrypoints/activations.jsx": {
-    "file": "assets/activations-CvEsswhW.js",
+    "file": "assets/activations-C_pP-kj0.js",
     "name": "entrypoints\\activations.jsx",
     "src": "entrypoints/activations.jsx",
     "isEntry": true,
     "imports": [
       "_responsive-D313Kiak.js",
+      "_realisation-KOA3ZdrZ.js",
       "_Prestation_live_all-Dc9jRQit.js"
     ]
   },
