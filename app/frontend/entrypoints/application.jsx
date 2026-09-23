@@ -4,7 +4,6 @@ import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import App from '../components/App.jsx'
-import NosRealisationsAll from '../components/atelier/nos_réalisations/Nos_realisation_all.jsx'
 
 // Mount
 document.addEventListener('DOMContentLoaded', () => {
