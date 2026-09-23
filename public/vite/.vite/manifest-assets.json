@@ -1,0 +1,94 @@
+{
+  "assets\\color-limit.svg": {
+    "file": "assets/color-limit-B1ZDVStL.svg",
+    "src": "assets\\color-limit.svg"
+  },
+  "assets\\fonts\\ChaparralPro-Light.otf": {
+    "file": "assets/ChaparralPro-Light-BOzeumd6.otf",
+    "src": "assets\\fonts\\ChaparralPro-Light.otf"
+  },
+  "assets\\fonts\\Gotham-Bold.otf": {
+    "file": "assets/Gotham-Bold-BUZkTt9Z.otf",
+    "src": "assets\\fonts\\Gotham-Bold.otf"
+  },
+  "assets\\fonts\\Gotham-Book.otf": {
+    "file": "assets/Gotham-Book-C1TAP-J8.otf",
+    "src": "assets\\fonts\\Gotham-Book.otf"
+  },
+  "assets\\fonts\\Gotham-BookItalic.otf": {
+    "file": "assets/Gotham-BookItalic-k9PQ0ii4.otf",
+    "src": "assets\\fonts\\Gotham-BookItalic.otf"
+  },
+  "assets\\fonts\\Gotham-Medium.otf": {
+    "file": "assets/Gotham-Medium-BUrkf28q.otf",
+    "src": "assets\\fonts\\Gotham-Medium.otf"
+  },
+  "assets\\fonts\\PlutoBold.otf": {
+    "file": "assets/PlutoBold-DHQRFFl0.otf",
+    "src": "assets\\fonts\\PlutoBold.otf"
+  },
+  "assets\\fonts\\PlutoHeavy.otf": {
+    "file": "assets/PlutoHeavy-Cz1e_8RQ.otf",
+    "src": "assets\\fonts\\PlutoHeavy.otf"
+  },
+  "assets\\fonts\\PlutoRegular.otf": {
+    "file": "assets/PlutoRegular-CjdYgVDC.otf",
+    "src": "assets\\fonts\\PlutoRegular.otf"
+  },
+  "assets\\fournisseurs.svg": {
+    "file": "assets/fournisseurs-CFkCL5GO.svg",
+    "src": "assets\\fournisseurs.svg"
+  },
+  "assets\\grammage.svg": {
+    "file": "assets/grammage-ClQjZYSD.svg",
+    "src": "assets\\grammage.svg"
+  },
+  "assets\\matiere.svg": {
+    "file": "assets/matiere-CHgj-AQK.svg",
+    "src": "assets\\matiere.svg"
+  },
+  "assets\\production-time.svg": {
+    "file": "assets/production-time-CYVpyx-4.svg",
+    "src": "assets\\production-time.svg"
+  },
+  "assets\\quality2.svg": {
+    "file": "assets/quality2-7GYWxJEP.svg",
+    "src": "assets\\quality2.svg"
+  },
+  "assets\\quantity.svg": {
+    "file": "assets/quantity-C8-ANacC.svg",
+    "src": "assets\\quantity.svg"
+  },
+  "fonts\\ChaparralPro-Light.woff2": {
+    "file": "assets/ChaparralPro-Light-Dm6M96ok.woff2",
+    "src": "fonts\\ChaparralPro-Light.woff2"
+  },
+  "fonts\\Gotham-Bold.woff2": {
+    "file": "assets/Gotham-Bold-DSCKbCF9.woff2",
+    "src": "fonts\\Gotham-Bold.woff2"
+  },
+  "fonts\\Gotham-Book.woff2": {
+    "file": "assets/Gotham-Book-CqOnInll.woff2",
+    "src": "fonts\\Gotham-Book.woff2"
+  },
+  "fonts\\Gotham-BookItalic.woff2": {
+    "file": "assets/Gotham-BookItalic-C6k-ygIf.woff2",
+    "src": "fonts\\Gotham-BookItalic.woff2"
+  },
+  "fonts\\Gotham-Medium.woff2": {
+    "file": "assets/Gotham-Medium-BaeVGWGl.woff2",
+    "src": "fonts\\Gotham-Medium.woff2"
+  },
+  "fonts\\PlutoBold.woff2": {
+    "file": "assets/PlutoBold-CjZGgqyL.woff2",
+    "src": "fonts\\PlutoBold.woff2"
+  },
+  "fonts\\PlutoHeavy.woff2": {
+    "file": "assets/PlutoHeavy-CBJ9G9Yt.woff2",
+    "src": "fonts\\PlutoHeavy.woff2"
+  },
+  "fonts\\PlutoRegular.woff2": {
+    "file": "assets/PlutoRegular-NK0uPnLC.woff2",
+    "src": "fonts\\PlutoRegular.woff2"
+  }
+}

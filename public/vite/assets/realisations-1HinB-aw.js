@@ -1,0 +1,1 @@
+import{i as e,n as t,r as n}from"./responsive-CURygBFu.js";import"./realisation-Cov311_b.js";import{t as r}from"./Nos_realisation_all-6H4SrXWO.js";e();var i=n(),a=t();document.addEventListener(`DOMContentLoaded`,()=>{let e=document.getElementById(`realisations-react-root`);e&&(0,i.createRoot)(e).render((0,a.jsx)(r,{}))});

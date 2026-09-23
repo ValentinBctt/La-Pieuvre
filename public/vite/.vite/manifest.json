@@ -1,0 +1,281 @@
+{
+  "_ChaparralPro-Light-BOzeumd6.otf": {
+    "file": "assets/ChaparralPro-Light-BOzeumd6.otf",
+    "src": "_ChaparralPro-Light-BOzeumd6.otf"
+  },
+  "_Confiance-marquee-Dnu086Pf.js": {
+    "file": "assets/Confiance-marquee-Dnu086Pf.js",
+    "name": "Confiance-marquee",
+    "imports": [
+      "_responsive-CURygBFu.js",
+      "_realisation-hKX6Mimw.js"
+    ]
+  },
+  "_Gotham-Bold-BUZkTt9Z.otf": {
+    "file": "assets/Gotham-Bold-BUZkTt9Z.otf",
+    "src": "_Gotham-Bold-BUZkTt9Z.otf"
+  },
+  "_Gotham-Book-C1TAP-J8.otf": {
+    "file": "assets/Gotham-Book-C1TAP-J8.otf",
+    "src": "_Gotham-Book-C1TAP-J8.otf"
+  },
+  "_Gotham-BookItalic-k9PQ0ii4.otf": {
+    "file": "assets/Gotham-BookItalic-k9PQ0ii4.otf",
+    "src": "_Gotham-BookItalic-k9PQ0ii4.otf"
+  },
+  "_Gotham-Medium-BUrkf28q.otf": {
+    "file": "assets/Gotham-Medium-BUrkf28q.otf",
+    "src": "_Gotham-Medium-BUrkf28q.otf"
+  },
+  "_Nos_realisation_all-DMFwyrpm.js": {
+    "file": "assets/Nos_realisation_all-DMFwyrpm.js",
+    "name": "Nos_realisation_all",
+    "imports": [
+      "_responsive-CURygBFu.js",
+      "_Confiance-marquee-Dnu086Pf.js",
+      "_realisation-hKX6Mimw.js"
+    ]
+  },
+  "_PlutoBold-DHQRFFl0.otf": {
+    "file": "assets/PlutoBold-DHQRFFl0.otf",
+    "src": "_PlutoBold-DHQRFFl0.otf"
+  },
+  "_PlutoHeavy-Cz1e_8RQ.otf": {
+    "file": "assets/PlutoHeavy-Cz1e_8RQ.otf",
+    "src": "_PlutoHeavy-Cz1e_8RQ.otf"
+  },
+  "_PlutoRegular-CjdYgVDC.otf": {
+    "file": "assets/PlutoRegular-CjdYgVDC.otf",
+    "src": "_PlutoRegular-CjdYgVDC.otf"
+  },
+  "_Prestation_live_all-EFuL-iVv.js": {
+    "file": "assets/Prestation_live_all-EFuL-iVv.js",
+    "name": "Prestation_live_all",
+    "imports": [
+      "_responsive-CURygBFu.js",
+      "_Confiance-marquee-Dnu086Pf.js",
+      "_realisation-hKX6Mimw.js"
+    ],
+    "css": [
+      "assets/Prestation_live_all-WKIcNPUl.css"
+    ]
+  },
+  "_Prestation_live_all-WKIcNPUl.css": {
+    "file": "assets/Prestation_live_all-WKIcNPUl.css",
+    "src": "_Prestation_live_all-WKIcNPUl.css"
+  },
+  "_color-limit-B1ZDVStL.svg": {
+    "file": "assets/color-limit-B1ZDVStL.svg",
+    "src": "_color-limit-B1ZDVStL.svg"
+  },
+  "_grammage-ClQjZYSD.svg": {
+    "file": "assets/grammage-ClQjZYSD.svg",
+    "src": "_grammage-ClQjZYSD.svg"
+  },
+  "_matiere-CHgj-AQK.svg": {
+    "file": "assets/matiere-CHgj-AQK.svg",
+    "src": "_matiere-CHgj-AQK.svg"
+  },
+  "_production-time-CYVpyx-4.svg": {
+    "file": "assets/production-time-CYVpyx-4.svg",
+    "src": "_production-time-CYVpyx-4.svg"
+  },
+  "_quality2-7GYWxJEP.svg": {
+    "file": "assets/quality2-7GYWxJEP.svg",
+    "src": "_quality2-7GYWxJEP.svg"
+  },
+  "_quantity-C8-ANacC.svg": {
+    "file": "assets/quantity-C8-ANacC.svg",
+    "src": "_quantity-C8-ANacC.svg"
+  },
+  "_realisation-B7Zntn9p.css": {
+    "file": "assets/realisation-B7Zntn9p.css",
+    "src": "_realisation-B7Zntn9p.css"
+  },
+  "_realisation-hKX6Mimw.js": {
+    "file": "assets/realisation-hKX6Mimw.js",
+    "name": "realisation",
+    "imports": [
+      "_responsive-CURygBFu.js"
+    ],
+    "css": [
+      "assets/realisation-B7Zntn9p.css"
+    ]
+  },
+  "_responsive-CURygBFu.js": {
+    "file": "assets/responsive-CURygBFu.js",
+    "name": "responsive",
+    "css": [
+      "assets/responsive-DopZ81GK.css"
+    ],
+    "assets": [
+      "assets/Gotham-Book-CqOnInll.woff2",
+      "assets/Gotham-BookItalic-C6k-ygIf.woff2",
+      "assets/Gotham-Medium-BaeVGWGl.woff2",
+      "assets/Gotham-Bold-DSCKbCF9.woff2",
+      "assets/PlutoRegular-NK0uPnLC.woff2",
+      "assets/PlutoBold-CjZGgqyL.woff2",
+      "assets/PlutoHeavy-CBJ9G9Yt.woff2",
+      "assets/ChaparralPro-Light-Dm6M96ok.woff2"
+    ]
+  },
+  "_responsive-DopZ81GK.css": {
+    "file": "assets/responsive-DopZ81GK.css",
+    "src": "_responsive-DopZ81GK.css"
+  },
+  "_swiper-Bdbi0viN.css": {
+    "file": "assets/swiper-Bdbi0viN.css",
+    "src": "_swiper-Bdbi0viN.css"
+  },
+  "_swiper-C9ArB7Lx.js": {
+    "file": "assets/swiper-C9ArB7Lx.js",
+    "name": "swiper",
+    "imports": [
+      "_responsive-CURygBFu.js"
+    ],
+    "css": [
+      "assets/swiper-Bdbi0viN.css"
+    ]
+  },
+  "assets/fournisseurs.svg": {
+    "file": "assets/fournisseurs-CFkCL5GO.svg",
+    "src": "assets/fournisseurs.svg"
+  },
+  "entrypoints/activations.jsx": {
+    "file": "assets/activations-ChVkwk6p.js",
+    "name": "entrypoints\\activations.jsx",
+    "src": "entrypoints/activations.jsx",
+    "isEntry": true,
+    "imports": [
+      "_responsive-CURygBFu.js",
+      "_Prestation_live_all-EFuL-iVv.js"
+    ]
+  },
+  "entrypoints/application.js": {
+    "file": "assets/application-DQXq7vvp.js",
+    "name": "entrypoints\\application.js",
+    "src": "entrypoints/application.js",
+    "isEntry": true
+  },
+  "entrypoints/application.jsx": {
+    "file": "assets/application-B3nKLpz9.js",
+    "name": "entrypoints\\application.jsx",
+    "src": "entrypoints/application.jsx",
+    "isEntry": true,
+    "imports": [
+      "_responsive-CURygBFu.js",
+      "_Nos_realisation_all-DMFwyrpm.js"
+    ],
+    "css": [
+      "assets/application-BdI6zbL7.css"
+    ]
+  },
+  "entrypoints/atelier.jsx": {
+    "file": "assets/atelier-DvSlVAn8.js",
+    "name": "entrypoints\\atelier.jsx",
+    "src": "entrypoints/atelier.jsx",
+    "isEntry": true,
+    "imports": [
+      "_responsive-CURygBFu.js",
+      "_realisation-hKX6Mimw.js",
+      "_swiper-C9ArB7Lx.js"
+    ],
+    "css": [
+      "assets/atelier-Dfv3lv8O.css"
+    ],
+    "assets": [
+      "assets/fournisseurs-CFkCL5GO.svg"
+    ]
+  },
+  "entrypoints/bureau.jsx": {
+    "file": "assets/bureau-qaw1ql2L.js",
+    "name": "entrypoints\\bureau.jsx",
+    "src": "entrypoints/bureau.jsx",
+    "isEntry": true,
+    "imports": [
+      "_responsive-CURygBFu.js",
+      "_swiper-C9ArB7Lx.js"
+    ],
+    "css": [
+      "assets/bureau-BaN1jwVR.css"
+    ]
+  },
+  "entrypoints/prestationlive.jsx": {
+    "file": "assets/prestationlive-iHY8kkzH.js",
+    "name": "entrypoints\\prestationlive.jsx",
+    "src": "entrypoints/prestationlive.jsx",
+    "isEntry": true,
+    "imports": [
+      "_responsive-CURygBFu.js",
+      "_Prestation_live_all-EFuL-iVv.js"
+    ]
+  },
+  "entrypoints/realisations.jsx": {
+    "file": "assets/realisations-8JY_KXOJ.js",
+    "name": "entrypoints\\realisations.jsx",
+    "src": "entrypoints/realisations.jsx",
+    "isEntry": true,
+    "imports": [
+      "_responsive-CURygBFu.js",
+      "_realisation-hKX6Mimw.js",
+      "_Nos_realisation_all-DMFwyrpm.js"
+    ]
+  },
+  "fonts/ChaparralPro-Light.woff2": {
+    "file": "assets/ChaparralPro-Light-Dm6M96ok.woff2",
+    "src": "fonts/ChaparralPro-Light.woff2"
+  },
+  "fonts/Gotham-Bold.woff2": {
+    "file": "assets/Gotham-Bold-DSCKbCF9.woff2",
+    "src": "fonts/Gotham-Bold.woff2"
+  },
+  "fonts/Gotham-Book.woff2": {
+    "file": "assets/Gotham-Book-CqOnInll.woff2",
+    "src": "fonts/Gotham-Book.woff2"
+  },
+  "fonts/Gotham-BookItalic.woff2": {
+    "file": "assets/Gotham-BookItalic-C6k-ygIf.woff2",
+    "src": "fonts/Gotham-BookItalic.woff2"
+  },
+  "fonts/Gotham-Medium.woff2": {
+    "file": "assets/Gotham-Medium-BaeVGWGl.woff2",
+    "src": "fonts/Gotham-Medium.woff2"
+  },
+  "fonts/PlutoBold.woff2": {
+    "file": "assets/PlutoBold-CjZGgqyL.woff2",
+    "src": "fonts/PlutoBold.woff2"
+  },
+  "fonts/PlutoHeavy.woff2": {
+    "file": "assets/PlutoHeavy-CBJ9G9Yt.woff2",
+    "src": "fonts/PlutoHeavy.woff2"
+  },
+  "fonts/PlutoRegular.woff2": {
+    "file": "assets/PlutoRegular-NK0uPnLC.woff2",
+    "src": "fonts/PlutoRegular.woff2"
+  },
+  "fonts/stylesheet.css": {
+    "file": "assets/stylesheet-LacdUrme.css",
+    "name": "fonts\\stylesheet.css",
+    "names": [
+      "fonts/stylesheet.css"
+    ],
+    "src": "fonts/stylesheet.css",
+    "isEntry": true,
+    "assets": [
+      "assets/ChaparralPro-Light-Dm6M96ok.woff2",
+      "assets/Gotham-Bold-DSCKbCF9.woff2",
+      "assets/Gotham-Book-CqOnInll.woff2",
+      "assets/Gotham-BookItalic-C6k-ygIf.woff2",
+      "assets/Gotham-Medium-BaeVGWGl.woff2",
+      "assets/PlutoBold-CjZGgqyL.woff2",
+      "assets/PlutoHeavy-CBJ9G9Yt.woff2",
+      "assets/PlutoRegular-NK0uPnLC.woff2"
+    ]
+  },
+  "images/images.jsx": {
+    "file": "assets/images-DRrHJdkT.js",
+    "name": "images\\images.jsx",
+    "src": "images/images.jsx",
+    "isEntry": true
+  }
+}
