@@ -6,14 +6,19 @@ Rails.application.routes.draw do
   root 'atelier#index'
   get '/atelier', to: 'atelier#index'
   get '/bureau', to: 'bureau#index'
+  get '/bureau/projects/:id', to: 'bureau#show'
+  get '/activations', to: 'atelier/activations#index'
   get '/prestationlive/:name', to: 'prestationlive#show', as: :prestationlive
 
   namespace :api do
     resources :contacts, only: [:create]
     resources :products, only: [:index]
+    get 'bureau', to: 'bureau#index'
+    get 'bureau/projects/:id', to: 'bureau#show', as: :bureau_project
   end
 
   namespace :atelier do
+    get 'activations', to: 'activations#index', as: :activations
     get 'prestationlive/:name', to: 'prestationlive#show', as: :prestationlive
     get 'realisations', to: 'realisations#index', as: :realisations
   end
@@ -22,7 +27,12 @@ Rails.application.routes.draw do
 namespace :admin do
   resources :categories
   resources :products
+<<<<<<< HEAD
   resources :prestation_lives
+=======
+  resources :bureau_categories
+  resources :bureau_projects
+>>>>>>> origin/master
   root to: "categories#index"
 
 end

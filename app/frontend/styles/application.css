@@ -117,7 +117,7 @@ a {
   font-family: 'Gotham';
 
   &:hover {
-  
+
     color: var(--orange);
   }
 }
@@ -186,37 +186,18 @@ p {
   padding: 1rem 4rem;
   background-color: var(--black);
   border-bottom: solid 1px var(--orange);
-  
+
   position: sticky;
   top: 0;
   z-index: 1000;
 
   transition: all 0.3s ease;
+
+  &:hover {
+    border-bottom-color: transparent;
+  }
 }
 
-.navbar-atelier::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 0%;
-  height: 1px;
-  pointer-events: none;
-  background: linear-gradient(to right, var(--orange) 0%, transparent 50%, var(--orange) 100%);
-  opacity: 1;
-  transform: translateX(-50%);
-  transition: all 0.3s ease;
-  transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
-  z-index: 2;
-}
-
-.navbar-atelier:hover::after {
-  width: 100%;
-}
-
-.navbar-atelier:hover {
-  border-bottom-color: transparent;
-}
 
 .navbar-atelier:hover .navbar-bureau-center img {
   padding: 0.5rem 40rem;
@@ -232,13 +213,153 @@ p {
   transition: all 0.3s ease;
 
   &:hover {
-    .navbar-bureau-center img {
-      padding: 0.5rem 40rem;
-
-    }
+    border-bottom-color: transparent;
   }
 }
 
+/* Les deux navbars */
+.navbar-bureau .navbar-left,
+.navbar-atelier .navbar-left {
+  height: 100%;
+  align-items: stretch;
+}
+
+/* Liens principaux */
+.navbar-bureau .navbar-left > a,
+.navbar-atelier .navbar-left > a,
+.navbar-bureau .navbar-links a,
+.navbar-atelier .navbar-links a,
+.navbar-bureau .navbar-right a,
+.navbar-atelier .navbar-right a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Espace entre BUREAU / ATELIER / MAISON / GRENIER */
+.navbar-bureau .navbar-links,
+.navbar-atelier .navbar-links {
+  display: flex;
+  align-items: stretch;
+  gap: 3rem;
+  height: 100%;
+
+}
+
+.navbar-bureau .navbar-right,
+.navbar-atelier .navbar-right {
+  display: flex;
+  align-items: stretch;
+  gap: 1rem;
+  height: 100%;
+}
+
+/* BUREAU */
+.navbar-bureau .navbar-left > a,
+.navbar-atelier .navbar-left > a {
+  color: white;
+  border-bottom: 0;
+}
+
+.navbar-atelier .navbar-left > a {
+  color: var(--orange);
+}
+
+/* ATELIER */
+.navbar-bureau .navbar-links a[href="/atelier"] {
+  color: #EA5137;
+}
+
+.navbar-atelier .navbar-links a[href="/atelier"] {
+  color: #55E1AD;
+}
+
+/* MAISON */
+.navbar-bureau .navbar-links a[href="/maison"],
+.navbar-atelier .navbar-links a[href="/maison"] {
+  color: #55E1AD;
+}
+
+/* GRENIER */
+.navbar-bureau .navbar-links a[href="/grenier"],
+.navbar-atelier .navbar-links a[href="/grenier"],
+.navbar-atelier .navbar-links a[href="/contact"] {
+  color: #D3AD55;
+}
+
+.navbar-bureau .navbar-left > a::after,
+.navbar-atelier .navbar-left > a::after,
+.navbar-bureau .navbar-links a::after,
+.navbar-atelier .navbar-links a::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -1rem;
+  left: 0;
+  height: 1px;
+  background-color: currentColor;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.navbar-bureau:hover .navbar-left > a::after,
+.navbar-atelier:hover .navbar-left > a::after,
+.navbar-bureau:hover .navbar-links a::after,
+.navbar-atelier:hover .navbar-links a::after {
+  opacity: 1;
+}
+
+.navbar-atelier .navbar-right a {
+  color: var(--white);
+}
+
+.navbar-atelier .navbar-right a::after,
+.navbar-bureau .navbar-right a::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -1rem;
+  left: 0;
+  height: 1px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.navbar-atelier .navbar-right a::after {
+  background-color: var(--orange);
+}
+
+.navbar-atelier .navbar-right a:hover {
+  color: var(--orange);
+  text-shadow:
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 20px currentColor;
+}
+
+.navbar-atelier:hover .navbar-right a {
+  color: var(--orange);
+}
+
+.navbar-atelier:hover .navbar-right a::after {
+  background-color: var(--orange);
+  opacity: 1;
+}
+
+.navbar-bureau .navbar-right a::after {
+  background-color: var(--white);
+}
+
+.navbar-bureau .navbar-right a,
+.navbar-bureau .navbar-right a:hover {
+  color: var(--white);
+}
+
+.navbar-bureau:hover .navbar-right a::after {
+  opacity: 1;
+}
 .navbar-left {
   display: flex;
   gap: 3rem;
@@ -252,12 +373,19 @@ p {
   }
 }
 
+.navbar-bureau:hover .navbar-links,
+.navbar-atelier:hover .navbar-links {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
 .navbar-links {
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-5px);
-  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
-  
+  transform: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+
 }
 
 .navbar-links a {
@@ -276,9 +404,9 @@ p {
   &:hover {
     color: var(--orange);
     text-shadow:
-      0 0 5px var(--orange),
-      0 0 10px var(--orange),
-      0 0 20px var(--orange);
+      0 0 5px currentColor,
+      0 0 10px currentColor,
+      0 0 20px currentColor;
   }
 }
 .navbar-bureau a {
@@ -291,12 +419,16 @@ p {
        transition: 0.3s ease;
   &:hover {
     color: var(--orange);
+        text-shadow:
+          0 0 5px currentColor,
+          0 0 10px currentColor,
+          0 0 20px currentColor;
   }
 }
 
 /* Espace horizontal entre les liens de la navbar à droite */
 .navbar-right a:not(:last-child) {
-  margin-right: 1rem;
+  margin-right: 0;
 }
 
 .burger {
@@ -343,6 +475,23 @@ p {
   transform: translateX(-50%);
 }
 
+.navbar-atelier-center .navbar-atelier-logo-default,
+.navbar-atelier-center .navbar-atelier-logo-hover {
+  transition: opacity 0.35s ease;
+}
+
+.navbar-atelier-center .navbar-atelier-logo-hover {
+  opacity: 0;
+}
+
+.navbar-atelier:hover .navbar-atelier-logo-default {
+  opacity: 0;
+}
+
+.navbar-atelier:hover .navbar-atelier-logo-hover {
+  opacity: 1;
+}
+
 .navbar-bureau-center img {
 background: linear-gradient(
   to right,
@@ -361,13 +510,17 @@ background: linear-gradient(
   top: 1rem;
   left: 50%;
   transform: translateX(-50%);
-  
+
   transition: all 0.3s ease;
 }
 
 .banner-atelier-title {
-  font-size: 9rem;
-  margin-bottom: 1rem;
+font-size: 47.45px;
+margin: 0;
+text-align: center;
+font-weight: 400;
+letter-spacing: 34%;
+z-index: 10 !important;
 }
 
 .banner-atelier-subtitle {
@@ -377,8 +530,9 @@ background: linear-gradient(
 
 .banner-image {
   position: relative;
-  width: 100%;
-  height: 80vh;
+  width: 50%;
+  margin: 0 auto;
+
 }
 
 .banner-image img {
@@ -386,7 +540,7 @@ background: linear-gradient(
   height: 100%;
   object-fit: cover;
   object-position: center 60%;
-  filter: brightness(0.5);
+
 }
 
 .banner-overlay {
@@ -416,7 +570,7 @@ background: linear-gradient(
 
 
 .form-message h1 {
- 
+
   margin-bottom: 0;
   margin-top: 0;
 
@@ -507,7 +661,7 @@ background: linear-gradient(
   justify-content: center;
   width: 100%;
     margin-top: 5rem;
-    
+
 
 }
 
@@ -524,7 +678,7 @@ background: linear-gradient(
   font-weight: 650;
   position: relative;
 
-  
+
 }
 
 .footer-holding-text{
@@ -562,7 +716,7 @@ background: linear-gradient(
   gap: 20%;
   margin-top: 2rem;
   padding-bottom: 5rem;
-   
+
 }
 
 .footer-la-pieuvre {

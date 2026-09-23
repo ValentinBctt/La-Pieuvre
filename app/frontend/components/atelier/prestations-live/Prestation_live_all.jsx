@@ -8,6 +8,7 @@ import 'swiper/css/navigation';
 import '../../../styles/prestationlive.css';
 import ContactForm from '../../ContactForm';
 import NavbarAtelier from '../NavbarAtelier';
+import Confiance from "../Confiance-marquee.jsx";
 
 const defaultPrestations = [
   {
@@ -16,71 +17,68 @@ const defaultPrestations = [
     contexte: null,
     missions: null,
     description: 'Veuillez choisir une prestation dans la liste.',
-    images: []
+    image1: null,
+    image2: null,
+    image3: null,
+    image4: null,
+    image5: null
   }
 ];
 
-function normalizePrestation(presta) {
-  const images = [presta.image, ...(Array.isArray(presta.photos) ? presta.photos : [])]
-    .filter(Boolean);
-
-  return {
-    title: presta.title || presta.name || 'Aucune prestation sélectionnée',
-    client: presta.client || null,
-    contexte: presta.contexte || null,
-    missions: presta.missions || null,
-    description: presta.description || presta.texte || 'Veuillez choisir une prestation dans la liste.',
-    images
-  };
-}
-
 export default function PrestationLiveAll({ prestations }) {
-  const data = Array.isArray(prestations) && prestations.length > 0
-    ? prestations.map(normalizePrestation)
-    : defaultPrestations.map(normalizePrestation);
-
+  const data = Array.isArray(prestations) && prestations.length > 0 ? prestations : defaultPrestations;
   return (
     <>
-      <NavbarAtelier />
+    <NavbarAtelier />
 
-      <div className="prestation-live">
-        {data.map((presta, idx) => (
-          <div className="prestation-live-content" key={idx}>
-            <h1>{presta.title}</h1>
-         
-            <div className="info-presta">
-              <p><strong>Client:</strong> {presta.client || 'Non spécifié'}</p>
-              <p className="contexte"><strong>Contexte:</strong> {presta.contexte || 'Non spécifié'}</p>
-              <p><strong>Missions:</strong> {presta.missions || 'Non spécifié'}</p>
-            </div>
-            <div className="description">
-              <p>{presta.description}</p>
-            </div>
-            {presta.images.length > 0 && (
-              <div className="scroll-container">
-                <Swiper
-                  modules={[Scrollbar, Navigation]}
-                  spaceBetween={20}
-                  navigation
-                  breakpoints={{
-                    0: { slidesPerView: 1 },
-                    768: { slidesPerView: 2 }
-                  }}
-                >
-                  {presta.images.map((img, i) => (
-                    <SwiperSlide key={i}>
-                      <div className="scroll-item">
-                        <img src={img} alt={presta.title} loading="lazy" />
-                      </div>
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-              </div>
-            )}
+    <div className="prestation-live">
+      {data.map((presta, idx) => (
+        <div className='prestation-live-content' key={idx}>
+          <h1>{presta.title}</h1>
+          <div className='info-presta'>
+            <p><strong>Client:</strong> {presta.client || 'Non spécifié'}</p>
+            <p className='contexte'><strong>Contexte:</strong> {presta.contexte || 'Non spécifié'}</p>
+            <p><strong>Missions:</strong> {presta.missions || 'Non spécifié'}</p>
           </div>
-        ))}
-      </div>
-      <ContactForm />
+          <div className="description">
+          <p >{presta.description}</p>
+          </div>
+          <div className="scroll-container">
+                              <Swiper
+                    modules={[Scrollbar, Navigation]}
+                    spaceBetween={20}
+                    navigation
+
+                    breakpoints={{
+                      0: {
+                        slidesPerView: 1,
+                      },
+                      768: {
+                        slidesPerView: 2,
+                      }
+                    }}
+
+                  >
+                        {Object.entries(presta)
+                          .filter(([key, value]) => /^image\d+$/.test(key) && Boolean(value))
+                          .sort(([leftKey], [rightKey]) => Number(leftKey.replace('image', '')) - Number(rightKey.replace('image', '')))
+                          .map(([, img]) => img)
+                .map((img, i) => (
+                  <SwiperSlide key={i}>
+                    <div className="scroll-item">
+                      <img src={img} alt={presta.title} loading="lazy" />
+                    </div>
+                  </SwiperSlide>
+                ))}
+            </Swiper>
+          </div>
+        </div>
+
+      ))}
+    </div>
+    <Confiance />
+
+    <ContactForm />
     </>
   );
 }

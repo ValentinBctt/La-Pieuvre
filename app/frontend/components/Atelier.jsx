@@ -5,8 +5,8 @@ import SelectionTextile from './atelier/Selection_textile'
 import NosServices from './atelier/Nos_services'
 import NosRealisations from './atelier/Nos_realisations'
 import PrestationLive from './atelier/Prestation_live'
-import ContactezNous from './atelier/Contactez_nous'    
-import ContactForm from './ContactForm'    
+import ContactezNous from './atelier/Contactez_nous'
+import ContactForm from './ContactForm'
 
 import NavbarAtelier from './atelier/NavbarAtelier'
 
@@ -15,10 +15,10 @@ export default function Atelier() {
     <div className="atelier-page">
         <NavbarAtelier />
         <BannerAtelier />
-        <IlsNousFontConfiance />
         <SelectionTextile />
-        <NosServices />
-        <NosRealisations />
+        <IlsNousFontConfiance />
+
+
         <PrestationLive />
         <ContactezNous />
         <ContactForm />

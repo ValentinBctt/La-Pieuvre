@@ -1,11 +1,16 @@
 #!/usr/bin/env sh
 
+PROJECT_ROOT="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
+cd "$PROJECT_ROOT" || exit 1
+
+export RBENV_VERSION="$(tr -d '[:space:]' < .ruby-version)"
+
 # Start Vite dev server
-bundle exec vite dev &
+rbenv exec bundle exec vite dev &
 VITE_PID=$!
 
 # Start Rails server
-bundle exec rails s &
+rbenv exec bundle exec rails s &
 RAILS_PID=$!
 
 # Handle cleanup on exit
