@@ -43,10 +43,23 @@ export default function ConfianceMarquee() {
   return (
     <section className="ils-nous-font-confiance confiance-marquee">
   
-      <div className="marquee" aria-label="Logos des clients">
-        <div className="marquee-content" style={{ animation: "defilement-infinite 15s linear infinite", willChange: "transform" }}>
+      <div className="marquee" aria-label="Logos des clients" style={{ overflow: "hidden" }}>
+        <div
+          className="marquee-content"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            flexWrap: "nowrap",
+            alignItems: "center",
+            width: "max-content",
+            whiteSpace: "nowrap",
+            gap: "8rem",
+            animation: "defilement-infinite 15s linear infinite",
+            willChange: "transform"
+          }}
+        >
           {marqueeImages.map((image, index) => (
-            <div className="realisations-image" key={`${image.name}-${index}`}>
+            <div className="realisations-image" key={`${image.name}-${index}`} style={{ flex: "0 0 auto" }}>
               <img src={image.src} alt={image.name} />
             </div>
           ))}
