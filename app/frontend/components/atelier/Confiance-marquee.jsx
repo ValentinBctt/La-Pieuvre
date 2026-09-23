@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "../../styles/realisation.css";
 
 const ImagesConfiance = [
@@ -40,10 +40,45 @@ const uniqueImages = keepSingleVectorImage(ImagesConfiance);
 const marqueeImages = [...uniqueImages, ...uniqueImages.filter((image) => image.src !== SINGLE_IMAGE_SRC)];
 
 export default function ConfianceMarquee() {
+  const marqueeRef = useRef(null);
+
+  useEffect(() => {
+    const marquee = marqueeRef.current;
+    if (!marquee) return undefined;
+
+    let frameId = 0;
+    let lastTime = 0;
+
+    const speed = 0.45;
+
+    const step = (time) => {
+      if (!lastTime) lastTime = time;
+      const delta = time - lastTime;
+      lastTime = time;
+
+      if (marquee.scrollWidth > marquee.clientWidth) {
+        marquee.scrollLeft += speed * delta;
+
+        const halfWidth = marquee.scrollWidth / 2;
+        if (marquee.scrollLeft >= halfWidth) {
+          marquee.scrollLeft = 0;
+        }
+      }
+
+      frameId = window.requestAnimationFrame(step);
+    };
+
+    frameId = window.requestAnimationFrame(step);
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+    };
+  }, []);
+
   return (
     <section className="ils-nous-font-confiance confiance-marquee">
   
-      <div className="marquee" aria-label="Logos des clients" style={{ overflow: "hidden" }}>
+      <div ref={marqueeRef} className="marquee" aria-label="Logos des clients" style={{ overflow: "hidden" }}>
         <div
           className="marquee-content"
           style={{
@@ -54,8 +89,7 @@ export default function ConfianceMarquee() {
             width: "max-content",
             whiteSpace: "nowrap",
             gap: "8rem",
-            animation: "defilement-infinite 15s linear infinite",
-            willChange: "transform"
+            willChange: "scroll-position"
           }}
         >
           {marqueeImages.map((image, index) => (
