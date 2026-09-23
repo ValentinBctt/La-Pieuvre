@@ -63,8 +63,11 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for Apache
   # config.action_dispatch.x_sendfile_header = "X-Accel-Redirect" # for NGINX
 
-  # Store uploaded files on the local file system (see config/storage.yml for options).
-  config.active_storage.service = :cloudinary
+  # During assets precompile, avoid initializing external storage providers.
+  is_assets_precompile = defined?(Rake) && Rake.respond_to?(:application) &&
+    Rake.application&.top_level_tasks&.any? { |task| task.start_with?("assets:") }
+
+  config.active_storage.service = is_assets_precompile ? :local : :cloudinary
 
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
