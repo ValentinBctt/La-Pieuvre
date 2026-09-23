@@ -1,5 +1,5 @@
 require "administrate/base_dashboard"
-require "administrate/field/active_storage"
+require_relative "../fields/attached_photos_with_removal_field"
 
 class BureauProjectDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
@@ -11,7 +11,7 @@ class BureauProjectDashboard < Administrate::BaseDashboard
     client: Field::Text,
     description: Field::Text,
     main_image: Field::ActiveStorage.with_options(show_preview: true),
-    photos: Field::ActiveStorage.with_options(show_preview: true),
+    photos: AttachedPhotosWithRemovalField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze

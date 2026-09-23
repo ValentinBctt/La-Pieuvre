@@ -1,9 +1,5 @@
 module Admin
   class PrestationLivesController < Admin::ApplicationController
-    def index
-      super
-    end
-
     def update
       if params[:prestation_live] && params[:prestation_live][:remove_photo_ids].present?
         ids = params[:prestation_live].delete(:remove_photo_ids)

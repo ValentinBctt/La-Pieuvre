@@ -339,7 +339,7 @@
   margin: 3rem auto 0 auto;
   text-align: center;
   align-items: center;
-  width: 70%;
+  width: 60%;
 }
 
 @media (max-width: 768px) {
@@ -347,6 +347,17 @@
     width: 100%;
     text-align: right;
   }
+}
+
+  
+@media (max-width: 1000px) {
+  .savoir-faire-description {
+    width: 90%;
+   
+  }
+
+
+
 }
 
 @media (max-width: 1500px) {

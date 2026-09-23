@@ -1,5 +1,5 @@
 require "administrate/base_dashboard"
-require "administrate/field/active_storage"
+require_relative "../fields/attached_photos_with_removal_field"
 
 class PrestationLiveDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
@@ -10,7 +10,7 @@ class PrestationLiveDashboard < Administrate::BaseDashboard
     missions: Field::Text,
     texte: Field::Text,
     image: Field::ActiveStorage.with_options(show_preview: true),
-    photos: Field::ActiveStorage.with_options(show_preview: true),
+    photos: AttachedPhotosWithRemovalField,
     position: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime

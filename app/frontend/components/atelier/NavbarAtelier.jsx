@@ -17,7 +17,7 @@ export default function NavbarAtelier() {
     <nav className="navbar-atelier">
       <div className="navbar-left">
         <a href="/atelier">
-          ATELIER <strong>LA PIEUVRE</strong>
+          ATELIER&nbsp; <strong>LA PIEUVRE</strong>
         </a>
 
         <div className={`navbar-links ${menuOpen ? "active" : ""}`}>

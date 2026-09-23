@@ -13,7 +13,7 @@ export default function NavbarBureau() {
     <nav className="navbar-bureau">
       <div className="navbar-left">
         <a href="/bureau">
-          BUREAU <strong>LA PIEUVRE</strong>
+          BUREAU&nbsp;<strong>LA PIEUVRE</strong>
         </a>
 
         <div className={`navbar-links ${menuOpen ? "active" : ""}`}>
@@ -35,7 +35,7 @@ export default function NavbarBureau() {
       </div>
 
       <div className="navbar-right">
-        <a href="/" style={{ marginRight: "10rem" }}>
+        <a href="/">
           INSTAGRAM
         </a>
         <a href="#contactez-nous">CONTACT</a>
