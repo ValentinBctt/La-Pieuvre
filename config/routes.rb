@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get '/bureau/projects/:id', to: 'bureau#show'
   get '/activation', to: 'atelier/activations#index'
   get '/activations', to: 'atelier/activations#index'
+  get '/realisation', to: redirect('/atelier/realisations')
+  get '/realisations', to: redirect('/atelier/realisations')
   get '/prestationlive/:name', to: 'prestationlive#show', as: :prestationlive
 
   namespace :api do
