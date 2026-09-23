@@ -4,3 +4,13 @@
 require_relative "config/application"
 
 Rails.application.load_tasks
+
+if ENV["RAILS_SKIP_ASSET_COMPILATION"] == "1"
+	Rake::Task["assets:precompile"].clear if Rake::Task.task_defined?("assets:precompile")
+
+	namespace :assets do
+		task :precompile do
+			puts "Skipping assets:precompile (RAILS_SKIP_ASSET_COMPILATION=1)"
+		end
+	end
+end
