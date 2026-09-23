@@ -1,99 +1,54 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PrestationLiveAll from './prestations-live/Prestation_live_all';
 
-import Confiance from "./Confiance-marquee.jsx";
+function formatTitle(name = '') {
+  return name.replace(/_/g, ' ');
+}
 
-const activationsData = [
-  {
-    title: 'PAC 118',
-    client: 'PAC 118',
-    contexte: 'Compétition sportive',
-    missions: 'Personnalisation textile - Sérigraphie - DTF',
-    description: `À l'occasion de la 6ᵉ édition de la Paris African Cup, organisée dans le 18ᵉ arrondissement de Paris, nous avons accompagné l'événement avec une prestation live de personnalisation textile, au cœur du quartier de la Goutte-d'Or.
+function mapApiPrestationToActivation(prestation) {
+  const photos = Array.isArray(prestation.photos) ? prestation.photos : [];
+  const mapped = {
+    id: prestation.id,
+    anchor: `activation-${prestation.id}`,
+    title: formatTitle(prestation.name),
+    client: prestation.client,
+    contexte: prestation.contexte,
+    missions: prestation.missions,
+    description: prestation.texte
+  };
 
-En collaboration avec Nouvel Air et Maison Château Rouge, et en tant que sponsor de cette édition, nous avons conçu et réalisé les maillots des arbitres et des coachs des 24 équipes engagées.
-Tout au long de la compétition, notre dispositif de personnalisation sur place a permis au public et aux participants de repartir avec des t-shirts uniques, réalisés en direct, renforçant l'identité collective et l'ancrage local de l'événement.`,
-    image1: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948022/04_PAC_yom3ao.png',
-    image2: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948022/03_PAC_aatsqc.png',
-    image3: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948022/02_PAC_nbqscm.png',
-    image4: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948022/01_PAC_c9t02l.png',
-  },
-  {
-    title: 'PSG',
-    client: 'PSG',
-    contexte: 'Évènement caritatif',
-    missions: 'Personnalisation textile - Sérigraphie - DTF',
-    description: `Intervention réalisée au Parc des Princes dans le cadre des Cantines Solidaires, un événement associatif initié par PSG for Communities.
-Une sérigraphie en direct, en rouge et bleu, a été mise en place sur des tote bags distribués aux 1000 étudiants présents lors de l’événement.
-Le dispositif a été conçu comme une action à la fois productive et symbolique, associant fabrication sur site, identité visuelle forte et engagement solidaire.`,
-    image1: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948024/14_bfyqkd.webp',
-    image2: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948024/12_uauekk.webp',
-    image3: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948023/07_wfmy8x.webp',
-    image4: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948024/10_vemct9.webp',
-    image5: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948023/06_kozgns.webp',
-    image6: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948023/03_atnjgw.webp'
-  },
-  {
-    title: 'Reebok',
-    client: 'Reebok',
-    contexte: 'Évenement promotionel',
-    missions: 'Personnalisation textile - Sérigraphie - DTF',
-    description: `Dans le cadre du lancement d’une nouvelle paire de running, la prestation live pour reebok transforme l’espace en atelier de personnalisation en action. Sur place, le public découvre un dispositif de marquage et de personnalisation en temps réel, pensé pour prolonger l’identité du modèle et créer un lien direct avec le produit.
-Chaque intervention met en avant le geste, la matière et le détail. Les participant·e·s peuvent personnaliser leur paire ou des supports textiles associés, assister aux différentes étapes du marquage et repartir avec une pièce unique, réalisée sous leurs yeux.`,
-    image1: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948024/01_gujqad.webp',
-    image2: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948025/04_dogdnf.webp',
-    image3: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948025/02_oe1duh.webp',
-    image4: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948025/03_jch3wd.webp',
-  },
-  {
-    title: 'Yamaha x Union',
-    client: 'Yamaha x Union',
-    contexte: 'Lancement de produit',
-    missions: 'Personnalisation textile - Sérigraphie - DTF',
-    description: `Dans le cadre de l’événement En Y(amaha) organisé par Yamaha Sport à Union Jeunesse Internationale, le Bureau La Pieuvre a développé une identité graphique dédiée à la customisation live.
+  photos.forEach((photo, index) => {
+    mapped[`image${index + 1}`] = photo;
+  });
 
-En collaboration avec Youssouf F. et Clément Gicquel, une série complète d’assets graphiques a été conçue : typographies, pictogrammes, modules illustrés et compositions adaptables pour impression sérigraphique et DTF.
-Ces éléments ont été pensés pour fonctionner en système, permettre une personnalisation instantanée et garantir une cohérence visuelle forte avec l’univers Yamaha.
-Ce travail a servi de base à la production en direct opérée par Atelier La Pieuvre, offrant aux participants une palette variée de visuels exploitables sur place.`,
-    image1: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948028/14_mnfyem.webp',
-    image2: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948028/13_wpusxe.webp',
-    image3: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948028/17_x7rj1j.webp',
-    image4: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948028/10_l5fs5q.webp',
-    image5: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948027/05_ckolci.webp',
-    image6: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948027/02_rrwxbs.webp',
-    image7: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948028/09_ii5fzb.webp'
-  },
-  {
-    title: 'Station F',
-    client: 'Station F',
-    contexte: 'Évenement promotionel',
-    missions: 'Personnalisation textile - Sérigraphie - DTF',
-    description: `Dans le cadre du lancement d’un événement organisé par Équipage Solidaire, nous avons fait de la sérigraphie en live puis personnalisé des tote bags en direct, à l’aide de transferts DTF, pour des étudiants en situation de précarité.`,
-    image1: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948025/01_b9qbtj.webp',
-    image2: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948026/05_gtevkx.webp',
-    image3: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948025/03_isr2i7.webp',
-    image4: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948026/07_rnpqcq.webp',
-    image5: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948026/04_ph6pbq.webp',
-  },
-  {
-    title: '93 Lab',
-    client: '93 Lab',
-    contexte: 'Évènement Associatif',
-    missions: 'Personnalisation textile - Sérigraphie - DTF',
-    description: `Au 93 lab, nous avons eu le plaisir de guider des jeunes dans une découverte complète de la sérigraphie.
-Chaque étape, du moodboard à l’impression textile, a été pensée pour les rendre acteurs du processus.
-Un atelier qui prouve que la créativité n’attend pas l’âge, mais qu’elle a besoin d’espace pour s’exprimer.
-On est fiers d’avoir pu contribuer à cela.
-Merci à l’association pour cette initiative, et surtout aux jeunes, pour leur belle implication.`,
-    image1: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948019/01_s6ktrs.webp',
-    image2: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948019/08_btyoca.webp',
-    image3: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948021/23_rcqoqk.webp',
-    image4: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948021/18_hk1ckq.webp',
-    image5: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948020/13_tzckc8.webp',
-    image6: 'https://res.cloudinary.com/dnojcwwos/image/upload/v1774948019/04_drunfa.webp'
-  }
-];
+  return mapped;
+}
 
 export default function Activations() {
-  return <PrestationLiveAll prestations={activationsData} />;
+  const [prestations, setPrestations] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    fetch('/api/prestation_lives')
+      .then((response) => response.json())
+      .then((data) => {
+        if (!isMounted) return;
+        const nextPrestations = Array.isArray(data) ? data.map(mapApiPrestationToActivation) : [];
+        setPrestations(nextPrestations);
+        setLoading(false);
+      })
+      .catch(() => {
+        if (!isMounted) return;
+        setPrestations([]);
+        setLoading(false);
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  return <PrestationLiveAll prestations={prestations} loading={loading} />;
 }

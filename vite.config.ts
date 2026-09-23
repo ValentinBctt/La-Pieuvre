@@ -6,7 +6,7 @@ export default defineConfig({
     RubyPlugin()
   ],
   server: {
-    host: 'localhost',
+    host: '0.0.0.0',
     port: 3036,
     strictPort: true,
     watch: {

@@ -16,7 +16,15 @@ function ProjectCard({ project, slider = false }) {
         <p>{project.category.name}</p>
       </div>
       <div className={containerClass}>
-        {project.main_image && <img className={imageClass} src={project.main_image} alt={project.name} />}
+        {project.main_image && (
+          <img
+            className={imageClass}
+            src={project.main_image}
+            alt={project.name}
+            loading="lazy"
+            decoding="async"
+          />
+        )}
         <div className="bureau-item-hover">
           <p>{project.name}</p>
           <p>{project.description}</p>

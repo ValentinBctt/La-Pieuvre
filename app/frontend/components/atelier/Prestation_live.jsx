@@ -1,45 +1,30 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 
-const prestations = [
-  {
-    name: 'Pac_118', label: 'Pac 118', image: "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948022/01_PAC_c9t02l.png",
-    client: 'PAC 118', contexte: 'Compétition sportive', missions: 'Personnalisation textile - Sérigraphie - DTF',
-    description: `À l'occasion de la 6ᵉ édition de la Paris African Cup, organisée dans le 18ᵉ arrondissement de Paris, nous avons accompagné l'événement avec une prestation live de personnalisation textile, au cœur du quartier de la Goutte-d'Or.\nEn collaboration avec Nouvel Air et Maison Château Rouge, et en tant que sponsor de cette édition, nous avons conçu et réalisé les maillots des arbitres et des coachs des 24 équipes engagées.\nTout au long de la compétition, notre dispositif de personnalisation sur place a permis au public et aux participants de repartir avec des t-shirts uniques, réalisés en direct, renforçant l'identité collective et l'ancrage local de l'événement.`,
-    images: ["https://res.cloudinary.com/dnojcwwos/image/upload/v1774948022/04_PAC_yom3ao.png", "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948022/03_PAC_aatsqc.png", "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948022/02_PAC_nbqscm.png", "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948022/01_PAC_c9t02l.png"]
-  },
-  {
-    name: 'PSG', label: 'PSG', image: "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948024/14_bfyqkd.webp",
-    client: 'PSG', contexte: 'Évènement caritatif', missions: 'Personnalisation textile - Sérigraphie - DTF',
-    description: `Intervention réalisée au Parc des Princes dans le cadre des Cantines Solidaires, un événement associatif initié par PSG for Communities.\nUne sérigraphie en direct, en rouge et bleu, a été mise en place sur des tote bags distribués aux 1000 étudiants présents lors de l’événement.\nLe dispositif a été conçu comme une action à la fois productive et symbolique, associant fabrication sur site, identité visuelle forte et engagement solidaire.`,
-    images: ["https://res.cloudinary.com/dnojcwwos/image/upload/v1774948024/14_bfyqkd.webp", "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948024/12_uauekk.webp", "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948023/07_wfmy8x.webp", "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948024/10_vemct9.webp", "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948023/06_kozgns.webp", "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948023/03_atnjgw.webp"]
-  },
-  {
-    name: 'Reebok', label: 'Reebok', image: "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948024/01_gujqad.webp",
-    client: 'Reebok', contexte: 'Évenement promotionel', missions: 'Personnalisation textile - Sérigraphie - DTF',
-    description: `Dans le cadre du lancement d’une nouvelle paire de running, la prestation live pour Reebok transforme l’espace en atelier de personnalisation en action. Sur place, le public découvre un dispositif de marquage et de personnalisation en temps réel, pensé pour prolonger l’identité du modèle et créer un lien direct avec le produit.\nChaque intervention met en avant le geste, la matière et le détail. Les participant·e·s peuvent personnaliser leur paire ou des supports textiles associés, assister aux différentes étapes du marquage et repartir avec une pièce unique, réalisée sous leurs yeux.`,
-    images: ["https://res.cloudinary.com/dnojcwwos/image/upload/v1774948024/01_gujqad.webp", "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948025/04_dogdnf.webp", "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948025/02_oe1duh.webp", "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948025/03_jch3wd.webp"]
-  },
-  {
-    name: 'Yamaha_x_union', label: 'Yamaha x Union', image: "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948028/14_mnfyem.webp",
-    client: 'Yamaha x Union', contexte: 'Lancement de produit', missions: 'Personnalisation textile - Sérigraphie - DTF',
-    description: `Dans le cadre de l’événement En Y(amaha) organisé par Yamaha Sport à Union Jeunesse Internationale, le Bureau La Pieuvre a développé une identité graphique dédiée à la customisation live.\nEn collaboration avec Youssouf F. et Clément Gicquel, une série complète d’assets graphiques a été conçue : typographies, pictogrammes, modules illustrés et compositions adaptables pour impression sérigraphique et DTF.\nCes éléments ont été pensés pour fonctionner en système, permettre une personnalisation instantanée et garantir une cohérence visuelle forte avec l’univers Yamaha.\nCe travail a servi de base à la production en direct opérée par Atelier La Pieuvre, offrant aux participants une palette variée de visuels exploitables sur place.`,
-    images: ["https://res.cloudinary.com/dnojcwwos/image/upload/v1774948028/14_mnfyem.webp", "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948028/13_wpusxe.webp", "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948028/17_x7rj1j.webp", "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948028/10_l5fs5q.webp", "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948027/05_ckolci.webp", "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948027/02_rrwxbs.webp", "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948028/09_ii5fzb.webp"]
-  },
-  {
-    name: 'Station_F', label: 'Station F', image: "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948026/07_rnpqcq.webp",
-    client: 'Station F', contexte: 'Évenement promotionel', missions: 'Personnalisation textile - Sérigraphie - DTF',
-    description: `Dans le cadre du lancement d’un événement organisé par Équipage Solidaire, nous avons fait de la serigraphie en live nous avons ensuite personnalisé des tote bags en direct, à l’aide de transferts DTF, pour des étudiants en situation de précarité.`,
-    images: ["https://res.cloudinary.com/dnojcwwos/image/upload/v1774948025/01_b9qbtj.webp", "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948026/05_gtevkx.webp", "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948025/03_isr2i7.webp", "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948026/07_rnpqcq.webp", "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948026/04_ph6pbq.webp"]
-  },
-  {
-    name: '93_lab', label: '93 Lab', image: "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948020/05_phjzou.webp",
-    client: '93 Lab', contexte: 'Évènement Associatif', missions: 'Personnalisation textile - Sérigraphie - DTF',
-    description: `Au 93 lab, nous avons eu le plaisir de guider des jeunes dans une découverte complète de la sérigraphie.\nChaque étape, du moodboard à l’impression textile, a été pensée pour les rendre acteurs du processus.\nUn atelier qui prouve que la créativité n’attend pas l’âge, mais qu’elle a besoin d’espace pour s’exprimer.\nOn est fiers d’avoir pu contribuer à cela. Merci à l’association pour cette initiative, et surtout aux jeunes, pour leur belle implication.`,
-    images: ["https://res.cloudinary.com/dnojcwwos/image/upload/v1774948019/01_s6ktrs.webp", "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948019/08_btyoca.webp", "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948021/23_rcqoqk.webp", "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948021/18_hk1ckq.webp", "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948020/13_tzckc8.webp", "https://res.cloudinary.com/dnojcwwos/image/upload/v1774948019/04_drunfa.webp"]
-  },
-];
+function buildActivationAnchor(prestation) {
+  return `activation-${prestation.id}`;
+}
+
+function buildLabel(name = "") {
+  return name.replace(/_/g, " ");
+}
+
+function mapApiPrestation(prestation) {
+  return {
+    id: prestation.id,
+    name: prestation.name,
+    label: buildLabel(prestation.name),
+    image: prestation.image,
+    client: prestation.client,
+    contexte: prestation.contexte,
+    missions: prestation.missions,
+    description: prestation.texte,
+    images: Array.isArray(prestation.photos) ? prestation.photos : []
+  };
+}
 
 export default function PrestationLive() {
+  const [prestations, setPrestations] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [hoveredPrestation, setHoveredPrestation] = useState(null);
   const [popupPosition, setPopupPosition] = useState({ x: 0, y: 0 });
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -52,6 +37,28 @@ export default function PrestationLive() {
   useEffect(() => () => {
     clearTimeout(hoverTimer.current);
     clearTimeout(closeTimer.current);
+  }, []);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    fetch('/api/prestation_lives')
+      .then((response) => response.json())
+      .then((data) => {
+        if (!isMounted) return;
+        const nextPrestations = Array.isArray(data) ? data.map(mapApiPrestation) : [];
+        setPrestations(nextPrestations);
+        setLoading(false);
+      })
+      .catch(() => {
+        if (!isMounted) return;
+        setPrestations([]);
+        setLoading(false);
+      });
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   const handleMouseEnter = (prestation, event) => {
@@ -125,14 +132,14 @@ export default function PrestationLive() {
 <div className="prestation-container">
   {prestations.map((p) => (
     <a
-      key={p.name}
-      href={`/prestationlive/${p.name}`}
+      key={p.id}
+      href={`/activation#${buildActivationAnchor(p)}`}
       className="prestation-card"
       onMouseEnter={(event) => handleMouseEnter(p, event)}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <img src={p.image} alt={p.label} />
+      <img src={p.image} alt={p.label} loading="lazy" decoding="async" />
       <div className="overlay">{p.label}</div>
     </a>
   ))}
@@ -150,7 +157,7 @@ export default function PrestationLive() {
         <a
           ref={popupRef}
           className="prestation-hover-popup"
-          href={`/prestationlive/${hoveredPrestation.name}`}
+          href={`/activation#${buildActivationAnchor(hoveredPrestation)}`}
           style={{ left: popupPosition.x, top: popupPosition.y }}
           onMouseEnter={handlePopupEnter}
           onMouseLeave={handleMouseLeave}
@@ -164,10 +171,20 @@ export default function PrestationLive() {
           </div>
           <div className="prestation-hover-gallery">
             {hoveredPrestation.images.map((image, index) => (
-              <img key={`${hoveredPrestation.name}-${index}`} src={image} alt={`${hoveredPrestation.label} ${index + 1}`} />
+              <img
+                key={`${hoveredPrestation.name}-${index}`}
+                src={image}
+                alt={`${hoveredPrestation.label} ${index + 1}`}
+                loading="lazy"
+                decoding="async"
+              />
             ))}
           </div>
         </a>
+      )}
+
+      {!loading && prestations.length === 0 && (
+        <p>Aucune prestation live disponible pour le moment.</p>
       )}
 
       <style>
@@ -267,6 +284,23 @@ export default function PrestationLive() {
             overflow-x: auto;
             padding-bottom: 0.35rem;
             scroll-snap-type: x mandatory;
+            scrollbar-width: thin;
+            scrollbar-color: var(--orange) #000;
+          }
+
+          .prestation-hover-gallery::-webkit-scrollbar {
+            height: 8px;
+            background: #000;
+          }
+
+          .prestation-hover-gallery::-webkit-scrollbar-track {
+            background: #000;
+          }
+
+          .prestation-hover-gallery::-webkit-scrollbar-thumb {
+            background: var(--orange);
+            border-radius: 999px;
+            border: 1px solid #000;
           }
 
           .prestation-hover-gallery img {
@@ -298,7 +332,7 @@ export default function PrestationLive() {
       </style>
     </div>
           <div className="voir-en-details-wrap">
-            <a href="/activations" className="voir-en-details">
+            <a href="/activation" className="voir-en-details">
               VOIR PLUS
             </a>
 

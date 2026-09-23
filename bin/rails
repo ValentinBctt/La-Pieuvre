@@ -1,4 +1,7 @@
 #!/usr/bin/env ruby
+project_bin = File.expand_path(__dir__)
+ENV["PATH"] = "#{project_bin}#{File::PATH_SEPARATOR}#{ENV.fetch("PATH", "")}" unless ENV.fetch("PATH", "").split(File::PATH_SEPARATOR).first == project_bin
+
 APP_PATH = File.expand_path("../config/application", __dir__)
 require_relative "../config/boot"
 require "rails/commands"

@@ -11,6 +11,7 @@
 .prestation-live-content {
 
     margin: 0 auto; 
+  scroll-margin-top: 6rem;
 
     h1 {
     margin: 5rem;    
@@ -107,131 +108,82 @@
   white-space: pre-line;
   line-height: 1;
 }
-/* Slider horizontal pour les images de prestation */
-
-.scroll-container {
-  width: 70% !important;
-  margin: 0 auto;
+/* Layout like activation board: title + intro + horizontal image strip */
+.prestation-live .prestation-live-content h1 {
+  width: min(1400px, 94vw);
+  margin: 4rem auto 0.6rem auto;
   display: flex;
-  gap: 0.75rem;
+  align-items: center;
+  gap: 0.9rem;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.prestation-live .prestation-live-content h1::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--orange);
+}
+
+.prestation-live .prestation-live-content .description p {
+  width: min(1400px, 94vw);
+  margin: 0 auto 0.8rem auto;
+  text-align: left;
+  line-height: 1.35;
+  color: #bfbfbf;
+}
+
+.prestation-live .activation-subtitle {
+  width: min(1400px, 94vw);
+  margin: 0 auto 0.4rem auto;
+  text-align: left;
+  color: #9c9c9c;
+  font-size: 0.92rem;
+}
+
+.prestation-live .scroll-container {
+  width: min(1400px, 94vw);
+  margin: 0 auto 3.5rem auto;
+  display: flex;
+  gap: 0.9rem;
   overflow-x: auto;
+  overflow-y: hidden;
   scroll-snap-type: x mandatory;
-  padding: 0.5rem 0;
   scrollbar-width: thin;
   scrollbar-color: var(--orange) #000;
   background: #000;
-  justify-content: flex-start;
+  padding: 0 0 0.9rem 0;
 }
 
-.scroll-container::-webkit-scrollbar {
+.prestation-live .scroll-container::-webkit-scrollbar {
   height: 10px;
+}
+
+.prestation-live .scroll-container::-webkit-scrollbar-track {
   background: #000;
 }
 
-.scroll-container::-webkit-scrollbar-track {
-  background: #000;
+.prestation-live .scroll-container::-webkit-scrollbar-thumb {
+  background: var(--orange);
+  border-radius: 999px;
+  border: 2px solid #000;
 }
 
-.scroll-container::-webkit-scrollbar-thumb {
-  background-color: var(--orange);
-}
-
-
-
-
-.scroll-item {
-  flex: 0 0 auto;
-  width: 20rem;
-  height: 30rem;
- 
-  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+.prestation-live .scroll-item {
+  flex: 0 0 clamp(220px, 24vw, 340px);
+  height: clamp(240px, 33vw, 430px);
   scroll-snap-align: start;
-  position: relative;
   overflow: hidden;
-  transition: transform 0.6s ease;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 0;
+  background: #0b0b0b;
 }
 
-
-.scroll-container {
+.prestation-live .scroll-item img {
   width: 100%;
-}
-
-.scroll-item {
-  min-width: 180px;
-  min-height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-
-  padding: 1rem;
-}
-
-
-.scroll-item img {
-  width: 120%;
-  height: 120%;
+  height: 100%;
   object-fit: cover;
- 
   display: block;
-
-  box-sizing: border-box;
-}
-
-/* Swiper scrollbar custom style (optional) */
-.swiper-scrollbar {
-  background: var(--orange);
-  height: 8px;
-
-}
-.swiper-scrollbar-drag {
-  margin-top: 1rem;
-  background: var(--orange);
-
-}
-
-.swiper-slide {
-  width: auto !important;
-  margin-right: 1.5rem !important; /* même valeur que gap de .scroll-container */
-
-}
-
-.prestation-live .swiper-button-next,
-.prestation-live .swiper-button-prev {
-  position: absolute !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  color: var(--orange) !important;
-  transition: all 0.3s ease;
-  width: 44px;
-  height: 44px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &:hover {
-    color: white !important;  
-  }
-}
-
-.prestation-live .swiper-button-next::before,
-.prestation-live .swiper-button-prev::before {
-  content: "";
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  background: rgba(0, 0, 0, 0.25);
-  border-radius: 50%;
-  backdrop-filter: blur(4px);
-  z-index: -1;
 }
 
 
@@ -262,8 +214,9 @@
   }
 
   .scroll-item {
-    height: 20rem;
-    width: 10rem;
+    flex-basis: 70vw;
+    height: 50vw;
+    max-height: 320px;
   }
 
 

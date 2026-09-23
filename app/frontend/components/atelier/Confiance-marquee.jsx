@@ -23,7 +23,21 @@ const ImagesConfiance = [
 
 ];
 
-const marqueeImages = [...ImagesConfiance, ...ImagesConfiance];
+const SINGLE_IMAGE_SRC = 'https://res.cloudinary.com/dnojcwwos/image/upload/v1790159653/vector_o7xzwn.webp';
+
+function keepSingleVectorImage(images) {
+  let alreadySeen = false;
+
+  return images.filter((image) => {
+    if (image.src !== SINGLE_IMAGE_SRC) return true;
+    if (alreadySeen) return false;
+    alreadySeen = true;
+    return true;
+  });
+}
+
+const uniqueImages = keepSingleVectorImage(ImagesConfiance);
+const marqueeImages = [...uniqueImages, ...uniqueImages.filter((image) => image.src !== SINGLE_IMAGE_SRC)];
 
 export default function ConfianceMarquee() {
   return (

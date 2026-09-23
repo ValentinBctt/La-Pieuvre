@@ -78,6 +78,18 @@
   object-fit: contain;
 }
 
+.ils-nous-font-confiance .confiance-single-image {
+  width: 80vw;
+  margin: 4rem auto;
+}
+
+.ils-nous-font-confiance .confiance-single-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
 /* Mobile */
 @media (max-width: 768px) {
   .mobile-only {

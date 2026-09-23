@@ -22,10 +22,14 @@
 }
 
 .selection-textile-description {
+  display: block;
   margin: 1rem auto 3rem auto;
   text-align: center;
-  align-items: center;
-  width: 70%;
+  width: min(70%, 900px);
+}
+
+.selection-textile-description-muted {
+  color: #808080 !important;
 }
 .textile-list-skeleton {
   display: flex;
@@ -101,6 +105,18 @@
   width: 60%;
 }
 */
+
+
+.selection-textile-description {
+  display: block;
+  margin: 1rem auto 3rem auto;
+  text-align: center;
+  width: min(70%, 900px);
+}
+
+.selection-textile .selection-textile-description-muted {
+  color: #808080 !important;
+}
 
 .textile-swiper .swiper-pagination .swiper-pagination-bullet {
   width: 10px;

@@ -1,5 +1,7 @@
 module Api
   class BureauController < ApplicationController
+    include OptimizedImageUrls
+
     def index
       render json: {
         categories: categories_json,
@@ -37,8 +39,8 @@ module Api
           name: project.bureau_category.name,
           kind: project.bureau_category.kind
         },
-        main_image: project.main_image.attached? ? url_for(project.main_image) : nil,
-        photos: project.photos.map { |photo| url_for(photo) }
+        main_image: optimized_image_url(project.main_image, resize_to_limit: [1200, 1200]),
+        photos: project.photos.map { |photo| optimized_image_url(photo, resize_to_limit: [1400, 1400]) }
       }
     end
   end

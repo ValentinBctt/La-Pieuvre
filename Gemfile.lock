@@ -294,6 +294,8 @@ GEM
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
+    sqlite3 (1.7.3-x64-mingw-ucrt)
+    sqlite3 (1.7.3-x86_64-linux)
     stringio (3.2.0)
     thor (1.5.0)
     timeout (0.6.1)
@@ -352,6 +354,7 @@ DEPENDENCIES
   rails (~> 7.0.10)
   selenium-webdriver
   sprockets-rails
+  sqlite3 (~> 1.7)
   tzinfo-data
   vite_rails
   web-console
@@ -462,6 +465,8 @@ CHECKSUMS
   selenium-webdriver (4.41.0) sha256=cdc1173cd55cf186022cea83156cc2d0bec06d337e039b02ad25d94e41bedd22
   sprockets (4.2.2) sha256=761e5a49f1c288704763f73139763564c845a8f856d52fba013458f8af1b59b1
   sprockets-rails (3.5.2) sha256=a9e88e6ce9f8c912d349aa5401509165ec42326baf9e942a85de4b76dbc4119e
+  sqlite3 (1.7.3-x64-mingw-ucrt) sha256=8304a254e4fb0692e651b6f783e009415085f885d940c51c77981b8523511f45
+  sqlite3 (1.7.3-x86_64-linux) sha256=522a3285660dec8253465880c97980e873db0d79060900be8d14194217a3ee73
   stringio (3.2.0) sha256=c37cb2e58b4ffbd33fe5cd948c05934af997b36e0b6ca6fdf43afa234cf222e1
   thor (1.5.0) sha256=e3a9e55fe857e44859ce104a84675ab6e8cd59c650a49106a05f55f136425e73
   timeout (0.6.1) sha256=78f57368a7e7bbadec56971f78a3f5ecbcfb59b7fcbb0a3ed6ddc08a5094accb

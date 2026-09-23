@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/atelier', to: 'atelier#index'
   get '/bureau', to: 'bureau#index'
   get '/bureau/projects/:id', to: 'bureau#show'
+  get '/activation', to: 'atelier/activations#index'
   get '/activations', to: 'atelier/activations#index'
   get '/prestationlive/:name', to: 'prestationlive#show', as: :prestationlive
 
@@ -27,14 +28,10 @@ Rails.application.routes.draw do
 namespace :admin do
   resources :categories
   resources :products
-<<<<<<< HEAD
   resources :prestation_lives
-=======
   resources :bureau_categories
   resources :bureau_projects
->>>>>>> origin/master
   root to: "categories#index"
-
 end
 
 namespace :api do

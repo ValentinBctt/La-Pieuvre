@@ -1,21 +1,25 @@
 default: &default
-  adapter: postgresql
-  encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: <%= ENV.fetch('PG_USERNAME', 'postgres') %>
-  password: <%= ENV.fetch('PG_PASSWORD', '') %>
-  host: <%= ENV.fetch('PG_HOST', 'localhost') %>
+
+sqlite: &sqlite
+  adapter: sqlite3
+  timeout: 5000
 
 development:
-  <<: *default
-  database: atelier_lapieuvre_development
+  <<: *sqlite
+  database: db/development.sqlite3
 
 # The test database is used by the test suite and recreated between runs.
 test:
-  <<: *default
-  database: atelier_lapieuvre_test
+  <<: *sqlite
+  database: db/test.sqlite3
 
 production:
   <<: *default
+  adapter: postgresql
+  encoding: unicode
+  username: <%= ENV.fetch('PG_USERNAME', 'postgres') %>
+  password: <%= ENV.fetch('PG_PASSWORD', '') %>
+  host: <%= ENV.fetch('PG_HOST', 'localhost') %>
   # In production, prefer using DATABASE_URL provided by Heroku or your hosting provider.
   url: <%= ENV['DATABASE_URL'] %>

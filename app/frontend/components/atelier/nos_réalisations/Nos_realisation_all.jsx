@@ -302,7 +302,7 @@ export default function NosRealisationsAll() {
                 <div className="realisation-titles" >
                 <h3 style={{ zIndex: "10" }}><strong>{item.name}</strong></h3>
                 <p style={{ zIndex: "10" }}>{item.subname}</p>
-                <p style={{ fontStyle: "italic", zIndex: "10" }}>{item.type}</p>
+                <p style={{ fontStyle: "italic", zIndex: "10", color: "var(--orange)" }}>{item.type}</p>
                 </div>
               </div>
             ))}

@@ -1,5 +1,7 @@
 module Api
   class PrestationLivesController < ApplicationController
+    include OptimizedImageUrls
+
     def index
       prestations = PrestationLive.ordered.with_attached_image.with_attached_photos
 
@@ -10,8 +12,8 @@ module Api
         contexte: p.contexte,
         missions: p.missions,
         texte: p.texte,
-        image: p.image.attached? ? url_for(p.image) : nil,
-        photos: p.photos.map { |photo| url_for(photo) }
+        image: optimized_image_url(p.image, resize_to_limit: [1100, 1100]),
+        photos: p.photos.map { |photo| optimized_image_url(photo, resize_to_limit: [1400, 1400]) }
       } }
     end
   end

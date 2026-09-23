@@ -20,3 +20,25 @@ body {
     margin: 0;
     padding: 0;
 }
+
+/* Global scrollbar theme: orange thumb on black track */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--orange) var(--black);
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background: var(--black);
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--black);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--orange);
+    border-radius: 999px;
+    border: 2px solid var(--black);
+}

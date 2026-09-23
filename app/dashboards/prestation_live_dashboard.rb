@@ -50,5 +50,3 @@ class PrestationLiveDashboard < Administrate::BaseDashboard
 
   COLLECTION_FILTERS = {}.freeze
 end
-
-PrestationLifeDashboard = PrestationLiveDashboard

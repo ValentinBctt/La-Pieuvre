@@ -53,7 +53,15 @@ export default function BureauProjectDetail() {
         </div>
 
         <div className="bureau-project-gallery">
-          {project.photos.map((photo) => <img key={photo} src={photo} alt={project.name} />)}
+          {project.photos.map((photo) => (
+            <img
+              key={photo}
+              src={photo}
+              alt={project.name}
+              loading="lazy"
+              decoding="async"
+            />
+          ))}
         </div>
         </main>
       </div>

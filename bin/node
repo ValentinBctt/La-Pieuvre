@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+if [ -x /usr/local/bin/node ]; then
+	exec /usr/local/bin/node "$@"
+fi
+
+if [ -x /usr/bin/node ]; then
+	exec /usr/bin/node "$@"
+fi
+
+exec node "$@"

@@ -6,6 +6,3 @@ class PrestationLive < ApplicationRecord
 
   scope :ordered, -> { order(position: :asc, created_at: :asc) }
 end
-
-class PrestationLife < PrestationLive
-end

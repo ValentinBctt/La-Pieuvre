@@ -1,10 +1,5 @@
 
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/scrollbar';
-import { Scrollbar, Navigation } from 'swiper/modules';
-import 'swiper/css/navigation';
+import React, { useEffect } from 'react';
 import '../../../styles/prestationlive.css';
 import ContactForm from '../../ContactForm';
 import NavbarAtelier from '../NavbarAtelier';
@@ -25,52 +20,57 @@ const defaultPrestations = [
   }
 ];
 
-export default function PrestationLiveAll({ prestations }) {
-  const data = Array.isArray(prestations) && prestations.length > 0 ? prestations : defaultPrestations;
+function buildSubtitle(presta) {
+  const left = presta.contexte ? `Activation ${presta.contexte.toLowerCase()}` : 'Activation live';
+  const right = presta.client ? `En collaboration avec ${presta.client}` : null;
+  return right ? `${left}. ${right}` : left;
+}
+
+export default function PrestationLiveAll({ prestations, loading = false }) {
+  const emptyData = loading
+    ? [{ ...defaultPrestations[0], title: 'Chargement des prestations...' }]
+    : defaultPrestations;
+  const data = Array.isArray(prestations) && prestations.length > 0 ? prestations : emptyData;
+
+  useEffect(() => {
+    if (!Array.isArray(prestations) || prestations.length === 0) return;
+
+    const hash = decodeURIComponent(window.location.hash || '').replace('#', '');
+    if (!hash) return;
+
+    const anchorTarget = document.getElementById(hash);
+    if (!anchorTarget) return;
+
+    requestAnimationFrame(() => {
+      anchorTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }, [prestations]);
+
   return (
     <>
     <NavbarAtelier />
 
     <div className="prestation-live">
       {data.map((presta, idx) => (
-        <div className='prestation-live-content' key={idx}>
+        <div
+          id={presta.anchor || `activation-${presta.id || idx}`}
+          className='prestation-live-content'
+          key={presta.id || idx}
+        >
           <h1>{presta.title}</h1>
-          <div className='info-presta'>
-            <p><strong>Client:</strong> {presta.client || 'Non spécifié'}</p>
-            <p className='contexte'><strong>Contexte:</strong> {presta.contexte || 'Non spécifié'}</p>
-            <p><strong>Missions:</strong> {presta.missions || 'Non spécifié'}</p>
-          </div>
+          <p className="activation-subtitle">{buildSubtitle(presta)}</p>
           <div className="description">
           <p >{presta.description}</p>
           </div>
           <div className="scroll-container">
-                              <Swiper
-                    modules={[Scrollbar, Navigation]}
-                    spaceBetween={20}
-                    navigation
-
-                    breakpoints={{
-                      0: {
-                        slidesPerView: 1,
-                      },
-                      768: {
-                        slidesPerView: 2,
-                      }
-                    }}
-
-                  >
-                        {Object.entries(presta)
-                          .filter(([key, value]) => /^image\d+$/.test(key) && Boolean(value))
-                          .sort(([leftKey], [rightKey]) => Number(leftKey.replace('image', '')) - Number(rightKey.replace('image', '')))
-                          .map(([, img]) => img)
-                .map((img, i) => (
-                  <SwiperSlide key={i}>
-                    <div className="scroll-item">
-                      <img src={img} alt={presta.title} loading="lazy" />
-                    </div>
-                  </SwiperSlide>
-                ))}
-            </Swiper>
+            {Object.entries(presta)
+              .filter(([key, value]) => /^image\d+$/.test(key) && Boolean(value))
+              .sort(([leftKey], [rightKey]) => Number(leftKey.replace('image', '')) - Number(rightKey.replace('image', '')))
+              .map(([, img], i) => (
+                <div className="scroll-item" key={`${presta.id || idx}-${i}`}>
+                  <img src={img} alt={presta.title} loading="lazy" decoding="async" />
+                </div>
+              ))}
           </div>
         </div>
 

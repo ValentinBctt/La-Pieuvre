@@ -156,39 +156,18 @@ const SelectionTextile = () => {
     return String(value);
   };
 
-  const preloadImage = (src) => {
-    if (!src) return Promise.resolve();
-
-    return new Promise((resolve) => {
-      const image = new Image();
-      image.onload = resolve;
-      image.onerror = resolve;
-      image.src = src;
-    });
-  };
-
   useEffect(() => {
     fetch("/api/products")
       .then((res) => {
         if (!res.ok) throw new Error("Erreur lors du chargement des données");
         return res.json();
       })
-      .then(async (data) => {
+      .then((data) => {
         setItems(data.categories);
         setProducts(data.products);
 
         // SUPPRIMÉ :
         // setSelectedCategory(data.categories[0]?.id ?? null);
-
-        const imageUrls = [
-          ...data.categories.flatMap((category) => [
-            category.image,
-            category.imageorange
-          ]),
-          ...data.products.map((product) => product.image)
-        ].filter(Boolean);
-
-        await Promise.all(imageUrls.map((url) => preloadImage(url)));
 
         setLoading(false);
       })
@@ -245,6 +224,8 @@ const SelectionTextile = () => {
                   <img
                     src={product.image || "/images/placeholder.png"}
                     alt={product.name}
+                    loading="lazy"
+                    decoding="async"
                   />
 
                   <p>
@@ -330,7 +311,7 @@ const SelectionTextile = () => {
           ))}
         </Swiper>
       )}
-      <p className="selection-textile-description" style={{ color: "grey" }}>
+      <p className="selection-textile-description selection-textile-description-muted">
         “No-label” et confection possible sur demande
       </p>
     </div>

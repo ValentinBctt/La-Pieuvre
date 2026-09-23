@@ -1,5 +1,7 @@
 module Api
   class ProductsController < ApplicationController
+    include OptimizedImageUrls
+
     def index
       categories = Category.with_attached_image
                            .with_attached_imageorange
@@ -8,8 +10,8 @@ module Api
         {
           id: c.id,
           name: c.name,
-          image: c.image.attached? ? url_for(c.image) : nil,
-          imageorange: c.imageorange.attached? ? url_for(c.imageorange) : nil
+          image: optimized_image_url(c.image, resize_to_limit: [320, 320]),
+          imageorange: optimized_image_url(c.imageorange, resize_to_limit: [320, 320])
         }
       end
 
@@ -28,7 +30,7 @@ module Api
           sizes_available: p.sizes_available,
           subname: p.subname,
           category_id: p.category_id,
-          image: p.image.attached? ? url_for(p.image) : nil
+          image: optimized_image_url(p.image, resize_to_limit: [1100, 1100])
         }
       end
 
