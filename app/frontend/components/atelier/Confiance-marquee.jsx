@@ -44,7 +44,7 @@ export default function ConfianceMarquee() {
     <section className="ils-nous-font-confiance confiance-marquee">
   
       <div className="marquee" aria-label="Logos des clients">
-        <div className="marquee-content">
+        <div className="marquee-content" style={{ animation: "defilement-infinite 15s linear infinite", willChange: "transform" }}>
           {marqueeImages.map((image, index) => (
             <div className="realisations-image" key={`${image.name}-${index}`}>
               <img src={image.src} alt={image.name} />
