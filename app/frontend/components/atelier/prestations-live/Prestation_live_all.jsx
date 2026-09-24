@@ -22,7 +22,7 @@ const defaultPrestations = [
 ];
 
 function buildSubtitle(presta) {
-  const left = presta.contexte ? `Activation ${presta.contexte.toLowerCase()}` : 'Activation live';
+  const left = presta.missions || (presta.contexte ? `Activation ${presta.contexte.toLowerCase()}` : 'Activation live');
   const right = presta.client ? `En collaboration avec ${presta.client}` : null;
   return right ? `${left}. ${right}` : left;
 }
@@ -61,7 +61,7 @@ export default function PrestationLiveAll({ prestations, loading = false }) {
           <h1>{presta.title}</h1>
           <p className="activation-subtitle">{buildSubtitle(presta)}</p>
           <div className="description">
-          <p >{presta.missions}</p>
+          <p >{presta.description}</p>
           </div>
           <div className="scroll-container">
             {Object.entries(presta)
