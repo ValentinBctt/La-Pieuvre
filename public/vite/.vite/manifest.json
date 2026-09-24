@@ -142,7 +142,7 @@
   },
   "entrypoints/activations.jsx": {
     "file": "assets/activations-Dg8d4FWX.js",
-    "name": "entrypoints\\activations.jsx",
+    "name": "entrypoints/activations.jsx",
     "src": "entrypoints/activations.jsx",
     "isEntry": true,
     "imports": [
@@ -153,13 +153,13 @@
   },
   "entrypoints/application.js": {
     "file": "assets/application-DQXq7vvp.js",
-    "name": "entrypoints\\application.js",
+    "name": "entrypoints/application.js",
     "src": "entrypoints/application.js",
     "isEntry": true
   },
   "entrypoints/application.jsx": {
     "file": "assets/application-hZsWaE_A.js",
-    "name": "entrypoints\\application.jsx",
+    "name": "entrypoints/application.jsx",
     "src": "entrypoints/application.jsx",
     "isEntry": true,
     "imports": [
@@ -171,7 +171,7 @@
   },
   "entrypoints/atelier.jsx": {
     "file": "assets/atelier-mlYIgOSz.js",
-    "name": "entrypoints\\atelier.jsx",
+    "name": "entrypoints/atelier.jsx",
     "src": "entrypoints/atelier.jsx",
     "isEntry": true,
     "imports": [
@@ -189,7 +189,7 @@
   },
   "entrypoints/bureau.jsx": {
     "file": "assets/bureau-DaejvDMi.js",
-    "name": "entrypoints\\bureau.jsx",
+    "name": "entrypoints/bureau.jsx",
     "src": "entrypoints/bureau.jsx",
     "isEntry": true,
     "imports": [
@@ -203,7 +203,7 @@
   },
   "entrypoints/prestationlive.jsx": {
     "file": "assets/prestationlive-CFhAhjz7.js",
-    "name": "entrypoints\\prestationlive.jsx",
+    "name": "entrypoints/prestationlive.jsx",
     "src": "entrypoints/prestationlive.jsx",
     "isEntry": true,
     "imports": [
@@ -213,7 +213,7 @@
   },
   "entrypoints/realisations.jsx": {
     "file": "assets/realisations-Cb4zHxN5.js",
-    "name": "entrypoints\\realisations.jsx",
+    "name": "entrypoints/realisations.jsx",
     "src": "entrypoints/realisations.jsx",
     "isEntry": true,
     "imports": [
@@ -257,7 +257,7 @@
   },
   "fonts/stylesheet.css": {
     "file": "assets/stylesheet-LacdUrme.css",
-    "name": "fonts\\stylesheet.css",
+    "name": "fonts/stylesheet.css",
     "names": [
       "fonts/stylesheet.css"
     ],
@@ -276,7 +276,7 @@
   },
   "images/images.jsx": {
     "file": "assets/images-DRrHJdkT.js",
-    "name": "images\\images.jsx",
+    "name": "images/images.jsx",
     "src": "images/images.jsx",
     "isEntry": true
   }

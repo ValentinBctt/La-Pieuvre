@@ -238,7 +238,9 @@ const fallbackImagesRealisations = [
 
 export default function NosRealisationsAll({ items = [] }) {
   const gridRef = useRef(null);
-  const [imagesRealisations, setImagesRealisations] = useState(items);
+  // Affiche instantanément les visuels connus à l'avance pendant que l'API se charge en arrière-plan.
+  const initialImages = items.length ? items : fallbackImagesRealisations;
+  const [imagesRealisations, setImagesRealisations] = useState(initialImages);
 
   useEffect(() => {
     let isMounted = true;
@@ -247,17 +249,17 @@ export default function NosRealisationsAll({ items = [] }) {
       try {
         const response = await fetch('/api/showroom_items.json');
         if (!response.ok) {
-          if (isMounted) setImagesRealisations(items);
+          if (isMounted) setImagesRealisations(initialImages);
           return;
         }
 
         const data = await response.json();
-        if (isMounted && Array.isArray(data)) {
+        if (isMounted && Array.isArray(data) && data.length) {
           setImagesRealisations(data);
         }
       } catch (error) {
         if (isMounted) {
-          setImagesRealisations(items);
+          setImagesRealisations(initialImages);
         }
       }
     }
@@ -326,7 +328,7 @@ export default function NosRealisationsAll({ items = [] }) {
               <div key={item.id || index} className="realisation-item"
                 style={{ zIndex: "10" }}
                 >
-                <img src={item.image} alt={item.name} />
+                <img src={item.image} alt={item.name} loading={index < 8 ? "eager" : "lazy"} decoding="async" />
                 <div className="realisation-titles" >
                 <h3 style={{ zIndex: "10" }}><strong>{item.name}</strong></h3>
                 <p style={{ zIndex: "10" }}>{item.subname}</p>

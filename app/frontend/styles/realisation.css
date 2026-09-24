@@ -238,8 +238,11 @@
   .realisation-item img {
     width: 100%;
 
+    /* Réserve la hauteur avant le chargement pour éviter le décalage de layout (CLS) */
+    aspect-ratio: 1 / 1;
     height: auto;
     margin-bottom: -5rem;
+    background-color: rgba(255, 255, 255, 0.04);
 
     object-fit: cover;
     z-index: 10;

@@ -134,34 +134,19 @@ h1 {
 h2 {
   font-family: 'Pluto';
   margin-bottom: 0.5rem;
+  font-size: 32px;
   background-color: var(--black);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 350;
+  font-weight: 700;
   text-align: center;
   position: relative;
   z-index: 1;
+  border-top: solid 1px var(--orange);
+  padding-top: 3rem;
 }
 
-h2::before,
-h2::after {
-  content: '';
-  flex: 1 1;
-  height: 2px;
-  background: var(--orange);
-  border-radius: 1px;
-  display: block;
-  margin: 0;
-}
-
-h2::before {
-  margin-right: 3rem;
-}
-
-h2::after {
-  margin-left: 3rem;
-}
 
 
 h3 {

@@ -1,2 +1,0 @@
-import{i as e,n as t,r as n}from"./responsive-CURygBFu.js";import"./realisation-hKX6Mimw.js";import{t as r}from"./Nos_realisation_all-DMFwyrpm.js";e();var i=n(),a=t();document.addEventListener(`DOMContentLoaded`,()=>{let e=document.getElementById(`realisations-react-root`);e&&(0,i.createRoot)(e).render((0,a.jsx)(r,{}))});
-//# sourceMappingURL=realisations-8JY_KXOJ.js.map
