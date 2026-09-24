@@ -67,6 +67,7 @@ export default function PrestationLiveAll({ prestations, loading = false }) {
             {Object.entries(presta)
               .filter(([key, value]) => /^image\d+$/.test(key) && Boolean(value))
               .sort(([leftKey], [rightKey]) => Number(leftKey.replace('image', '')) - Number(rightKey.replace('image', '')))
+              .slice(0, 6)
               .map(([, img], i) => (
                 <div className="scroll-item" key={`${presta.id || idx}-${i}`}>
                   <img src={img} alt={presta.title} loading="lazy" decoding="async" />
