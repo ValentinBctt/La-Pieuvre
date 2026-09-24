@@ -61,7 +61,7 @@ export default function PrestationLiveAll({ prestations, loading = false }) {
           <h1>{presta.title}</h1>
           <p className="activation-subtitle">{buildSubtitle(presta)}</p>
           <div className="description">
-          <p >{presta.description}</p>
+          <p >{presta.missions}</p>
           </div>
           <div className="scroll-container">
             {Object.entries(presta)
