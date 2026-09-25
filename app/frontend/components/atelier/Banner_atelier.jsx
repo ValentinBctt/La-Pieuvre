@@ -7,7 +7,7 @@ export default function BannerAtelier({ showroomImages = [] }) {
        <div className="banner-image">
 
   <img
-    src="https://res.cloudinary.com/dnojcwwos/image/upload/v1789465861/c2328aab24dba75d6b81b02ac1b86d7cb51c2956_posgol.gif"
+    src="https://res.cloudinary.com/dnojcwwos/image/upload/v1790326356/c2328aab24dba75d6b81b02ac1b86d7cb51c2956_posgol.gif"
     alt="Atelier Lapieuvre"
   />
   <div className="banner-overlay"></div>

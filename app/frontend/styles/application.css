@@ -506,6 +506,7 @@ text-align: center;
 font-weight: 400;
 letter-spacing: 34%;
 z-index: 10 !important;
+margin-top: 2rem;
 }
 
 .banner-atelier-subtitle {
@@ -521,6 +522,7 @@ z-index: 10 !important;
 }
 
 .banner-image img {
+  margin-top: 4rem;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -528,16 +530,12 @@ z-index: 10 !important;
 
 }
 
-.banner-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent 50%,
-    rgba(0, 0, 0, 0.8) 80%,
-    rgba(0, 0, 0, 1) 100%
-  );
+@media (max-width: 1300px) {
+  .banner-image {
+    width: 90%;
+  }
 }
+
 
 .contact-form {
   display: flex;

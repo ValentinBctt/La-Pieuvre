@@ -1,5 +1,7 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 
+const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
 function buildActivationAnchor(prestation) {
   return `activation-${prestation.id}`;
 }
@@ -62,6 +64,9 @@ export default function PrestationLive() {
   }, []);
 
   const handleMouseEnter = (prestation, event) => {
+
+     if (isMobile) return;
+     
     clearTimeout(hoverTimer.current);
     clearTimeout(closeTimer.current);
     setHoveredPrestation(prestation);

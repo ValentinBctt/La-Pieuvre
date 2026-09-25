@@ -457,6 +457,11 @@ h2::after {
       margin-bottom: 1rem;
     }
 
+    .banner-atelier-title {
+      font-size: 2rem;
+      margin: 2rem auto;
+    }
+
 }
 
 @media (max-width: 480px) {
