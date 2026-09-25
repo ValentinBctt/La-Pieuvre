@@ -109,14 +109,6 @@ export default function BureauHomeData() {
             </div>
           )}
         </div>
-
-        <button
-          className="toggle-bureau"
-          onClick={() => setShowSlider((visible) => !visible)}
-          aria-label={showSlider ? "Afficher la grille" : "Afficher le slider"}
-        >
-          {showSlider ? "▦" : "▬"}
-        </button>
       </div>
     </>
   );

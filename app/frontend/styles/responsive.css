@@ -206,17 +206,19 @@ h2::after {
 
 }
 
-.navbar-atelier, .navbar-bureau {
-    padding: 1rem 0.5rem;
-
+.navbar-atelier,
+.navbar-bureau {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 1rem 0.5rem;
+  padding-inline: 1rem;
 }
-
-  .navbar-atelier {
-    position: sticky;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    padding-inline: 1rem;
-  }
 
   .navbar-left,
   .navbar-right {
@@ -229,7 +231,8 @@ h2::after {
     z-index: 1001;
   }
 
-  .navbar-atelier-center img {
+  .navbar-atelier-center img,
+  .navbar-bureau-center img {
     position: static;
     top: auto;
     left: auto;
@@ -237,6 +240,12 @@ h2::after {
     height: 2.5rem;
     padding: 0.35rem;
     margin-right: auto;
+    background: transparent;
+  }
+
+  .navbar-atelier:hover .navbar-bureau-center img,
+  .navbar-bureau:hover .navbar-bureau-center img {
+    padding: 0.35rem;
   }
 
   .navbar-mobile-menu {

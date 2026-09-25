@@ -2,22 +2,48 @@ import React, { useEffect, useState } from "react";
 import '../../styles/realisation.css';
 
 export default function NosRealisations({ images: showroomImages = [] }) {
-  const [images, setImages] = useState(showroomImages);
+  const [images, setImages] = useState(() => {
+    // Si les images sont déjà disponibles en props, les utiliser immédiatement
+    if (Array.isArray(showroomImages) && showroomImages.length > 0) {
+      return showroomImages;
+    }
+    // Sinon, essayer de récupérer depuis localStorage
+    try {
+      const cached = localStorage.getItem('showroomImages');
+      return cached ? JSON.parse(cached) : [];
+    } catch {
+      return [];
+    }
+  });
 
   useEffect(() => {
     let isMounted = true;
 
     async function loadShowroomImages() {
       try {
+        // Si les images sont déjà chargées depuis props, ne pas faire de requête
+        if (Array.isArray(showroomImages) && showroomImages.length > 0) {
+          if (isMounted) {
+            setImages(showroomImages);
+            // Mettre en cache pour les visites suivantes
+            localStorage.setItem('showroomImages', JSON.stringify(showroomImages));
+          }
+          return;
+        }
+
+        // Fallback API call si pas de props
         const response = await fetch('/api/showroom_items.json');
         if (!response.ok) return;
 
         const data = await response.json();
         if (isMounted && Array.isArray(data)) {
-          setImages(data.map((item) => item.image).filter(Boolean));
+          const imageUrls = data.map((item) => item.image).filter(Boolean);
+          setImages(imageUrls);
+          localStorage.setItem('showroomImages', JSON.stringify(imageUrls));
         }
       } catch (error) {
-        if (showroomImages.length > 0) {
+        console.error('Erreur lors du chargement des images:', error);
+        if (showroomImages.length > 0 && isMounted) {
           setImages(showroomImages);
         }
       }

@@ -9,6 +9,11 @@ export default function NavbarBureau() {
     { href: "/grenier", label: "GRENIER" },
   ];
 
+  const secondaryLinks = [
+    { href: "/", label: "INSTAGRAM" },
+    { href: "#contactez-nous", label: "CONTACT" },
+  ];
+
   return (
     <nav className="navbar-bureau">
       <div className="navbar-left">
@@ -35,10 +40,11 @@ export default function NavbarBureau() {
       </div>
 
       <div className="navbar-right">
-        <a href="/">
-          INSTAGRAM
-        </a>
-        <a href="#contactez-nous">CONTACT</a>
+        {secondaryLinks.map((link) => (
+          <a key={link.href} href={link.href}>
+            {link.label}
+          </a>
+        ))}
       </div>
 
       {/* Burger */}
@@ -72,13 +78,15 @@ export default function NavbarBureau() {
         </div>
 
         <div className="navbar-mobile-links navbar-mobile-links-secondary">
-          <a href="/" onClick={() => setMenuOpen(false)}>
-            INSTAGRAM
-          </a>
-
-          <a href="#contactez-nous" onClick={() => setMenuOpen(false)}>
-            CONTACT
-          </a>
+          {secondaryLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setMenuOpen(false)}
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
       </div>
     </nav>

@@ -4,14 +4,14 @@
     width: 90%;          /* ou 100% si tu veux occuper tout l'espace sauf le left margin */
     margin-left: 10%;    /* laisse 10% d'espace à gauche */
     margin-right: 0;     /* collé à droite */
-    
+     margin-bottom: 10rem !important;
 }
 
 .bureau-home-items-1 {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    margin-bottom: 3rem;
+   
 }
 
 .bureau-home-item {
@@ -20,6 +20,7 @@
     padding: 1rem;
     position: relative;
     gap: 2rem;
+    margin-bottom: 3rem;
 }
 
 .bureau-nav-left-separator {
