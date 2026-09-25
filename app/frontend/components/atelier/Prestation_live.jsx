@@ -130,7 +130,7 @@ export default function PrestationLive() {
       <p>La Pieuvre propose des animations sur mesure lors <br /> d'événements extérieurs grâce à la personnalisation live.</p>
 
 <div className="prestation-container">
-  {prestations.map((p) => (
+  {prestations.slice(0, 6).map((p) => (
     <a
       key={p.id}
       href={`/activation#${buildActivationAnchor(p)}`}

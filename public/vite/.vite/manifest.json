@@ -46,8 +46,8 @@
     "file": "assets/PlutoRegular-CjdYgVDC.otf",
     "src": "_PlutoRegular-CjdYgVDC.otf"
   },
-  "_Prestation_live_all-DyvBpILv.js": {
-    "file": "assets/Prestation_live_all-DyvBpILv.js",
+  "_Prestation_live_all-C7boOzXg.js": {
+    "file": "assets/Prestation_live_all-C7boOzXg.js",
     "name": "Prestation_live_all",
     "imports": [
       "_responsive-C3I8Odku.js",
@@ -141,14 +141,14 @@
     "src": "assets/fournisseurs.svg"
   },
   "entrypoints/activations.jsx": {
-    "file": "assets/activations-BUwJrZ1J.js",
+    "file": "assets/activations-xDwhSg6j.js",
     "name": "entrypoints\\activations.jsx",
     "src": "entrypoints/activations.jsx",
     "isEntry": true,
     "imports": [
       "_responsive-C3I8Odku.js",
       "_realisation-M7zmUJBi.js",
-      "_Prestation_live_all-DyvBpILv.js"
+      "_Prestation_live_all-C7boOzXg.js"
     ]
   },
   "entrypoints/application.js": {
@@ -170,7 +170,7 @@
     ]
   },
   "entrypoints/atelier.jsx": {
-    "file": "assets/atelier-BdPs6Yh2.js",
+    "file": "assets/atelier-CQ8KdHtf.js",
     "name": "entrypoints\\atelier.jsx",
     "src": "entrypoints/atelier.jsx",
     "isEntry": true,
@@ -202,13 +202,13 @@
     ]
   },
   "entrypoints/prestationlive.jsx": {
-    "file": "assets/prestationlive-CaHsdx_l.js",
+    "file": "assets/prestationlive-CMAT3lC3.js",
     "name": "entrypoints\\prestationlive.jsx",
     "src": "entrypoints/prestationlive.jsx",
     "isEntry": true,
     "imports": [
       "_responsive-C3I8Odku.js",
-      "_Prestation_live_all-DyvBpILv.js"
+      "_Prestation_live_all-C7boOzXg.js"
     ]
   },
   "entrypoints/realisations.jsx": {
