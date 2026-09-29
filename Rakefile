@@ -7,7 +7,11 @@ Rails.application.load_tasks
 
 skip_assets_precompile = 
 	["1", "true"].include?(ENV["RAILS_SKIP_ASSET_COMPILATION"].to_s.downcase) ||
-	["1", "true"].include?(ENV["SKIP_ASSET_COMPILATION"].to_s.downcase)
+	["1", "true"].include?(ENV["SKIP_ASSET_COMPILATION"].to_s.downcase) ||
+	(ENV["SOURCE_VERSION"].to_s != "" && ENV["STACK"].to_s.start_with?("heroku-"))
 
-# Only skip if explicitly requested, not just because we're on Heroku
+# Skip assets:precompile if on Heroku (Vite already compiled them during Node.js build phase)
+if skip_assets_precompile
+	Rake::Task["assets:precompile"].clear if Rake::Task.task_defined?("assets:precompile")
+end
 
