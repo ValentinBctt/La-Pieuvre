@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: white;
+  background-color: white !important;
   height: auto;
   margin: 0;
   padding: 0;
@@ -18,20 +18,20 @@ body {
 
 /* Navbar Maison */
 .navbar-maison {
-  background-color: var(--turquoise-dark);
+  background-color: var(--turquoise-dark) !important;
   border-bottom: none;
 }
 
 .navbar-maison {
-    border-bottom: 1px solid var(--turquoise-dark);
+    border-bottom: 1px solid var(--turquoise-dark) !important;
 }
 
 .navbar-maison-center {
-    background-color: var(--turquoise-dark);
+    background-color: var(--turquoise-dark) !important;
 }
 
 .navbar-maison-center img {
-  background-color: var(--turquoise-dark);
+  background-color: var(--turquoise-dark) !important;
 }
 
 .navbar-maison-logo:hover .navbar-maison-logo-default {
@@ -41,16 +41,16 @@ body {
 
 .navbar-maison-left,
 .navbar-maison-right {
-  color: white;
+  color: white !important;
 }
 
 .navbar-maison-left a,
 .navbar-maison-right a {
-  color: white;
+  color: white !important;
 }
 
 .navbar-maison .navbar-left > a {
-  color: white;
+  color: white !important;
 }
 
 .navbar-maison-center::before,
@@ -60,7 +60,7 @@ body {
 
 /* Textes en blanc pour toute la page maison */
 .maison-container {
-  color: white;
+  color: white !important;
 }
 
 .maison-container h1,
@@ -73,11 +73,11 @@ body {
 .maison-container span,
 
 .maison-container em {
-  color: white;
+  color: white !important;
 }
 
 .maison-contactez-nous-description {
-    color: var(--turquoise);
+    color: var(--turquoise) !important;
     margin: 0 auto;
     text-align: center;
     font-weight: 600;
@@ -95,12 +95,12 @@ body {
 }
 
 .maison-banner-text h1  {
-    color: var(--turquoise);
+    color: var(--turquoise) !important;
     font-weight: 450;
 }
 
 .maison-banner-text p {
-    color: var(--turquoise);
+    color: var(--turquoise) !important;
 }
 
 
@@ -117,8 +117,9 @@ body {
 
 .maison-banner-image {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
+  object-fit: cover;
 }
 
 .maison-content-caroussel {
@@ -161,7 +162,7 @@ body {
 .maison-scrollbar-thumb {
   height: 100%;
   width: 30%;
-  background: var(--turquoise-dark);
+  background: var(--turquoise-dark) !important;
   border-radius: 4px;
   transition: transform 0.1s ease;
 }
@@ -176,105 +177,105 @@ body {
 
 /* Formulaire Maison */
 .maison-contactez-nous {
-  color: var(--turquoise);
+  color: var(--turquoise) !important;
   border: none;
 }
 
 .maison-contactez-nous h2 {
-  color: var(--turquoise);
-  background-color: white;
+  color: var(--turquoise) !important;
+  background-color: white !important;
   padding: 10px 20px;
   border: none;
 }
 
 .maison-contact-form {
-  color: var(--turquoise);
+  color: var(--turquoise) !important;
 }
 
 .maison-contact-form input,
 .maison-contact-form textarea,
 .maison-contact-form button {
-  color: var(--turquoise);
-  border: 1px solid var(--turquoise);
-  background-color: white;
+  color: var(--turquoise) !important;
+  border: 1px solid var(--turquoise) !important;
+  background-color: white !important;
 }
 
 .maison-contact-form input::placeholder,
 .maison-contact-form textarea::placeholder {
-  color: var(--turquoise);
+  color: var(--turquoise) !important;
   opacity: 0.7;
 }
 
 .maison-contact-form button {
-  background-color: white;
+  background-color: white !important;
   cursor: pointer;
 }
 
 .maison-contact-form button:hover {
-  background-color: var(--turquoise);
-  color: white;
+  background-color: var(--turquoise) !important;
+  color: white !important;
 }
 
 .maison-form-message {
-  color: var(--turquoise);
-  background-color: white;
+  color: var(--turquoise) !important;
+  background-color: white !important;
 }
 
 .maison-form-message p {
-  color: var(--turquoise);
+  color: var(--turquoise) !important;
 }
 
 .maison-form-message-textarea {
-  color: var(--turquoise);
-  border: 2px solid var(--turquoise);
-  background-color: white;
+  color: var(--turquoise) !important;
+  border: 2px solid var(--turquoise) !important;
+  background-color: white !important;
 }
 
 .maison-form-good-services {
-  color: var(--turquoise);
+  color: var(--turquoise) !important;
 }
 
 .maison-form-good-services p {
-  color: var(--turquoise);
+  color: var(--turquoise) !important;
 }
 
 .maison-form-contact {
-  color: var(--turquoise);
+  color: var(--turquoise) !important;
 }
 
 .maison-form-status {
-  color: var(--turquoise);
+  color: var(--turquoise) !important;
 }
 
 .maison-footer {
-  color: var(--turquoise);
-  background-color: white;
+  color: var(--turquoise) !important;
+  background-color: white !important;
 }
 
 .maison-footer-holding {
-  color: var(--turquoise);
-  background-color: white;
+  color: var(--turquoise) !important;
+  background-color: white !important;
   padding: 10px 20px;
 
-  border: 2px solid var(--turquoise);
-  border-top: 2px solid var(--turquoise);
+  border: 2px solid var(--turquoise) !important;
+  border-top: 2px solid var(--turquoise) !important;
 }
 
 .maison-footer-content {
-  color: var(--turquoise);
-  background-color: white;
+  color: var(--turquoise) !important;
+  background-color: white !important;
 }
 
 .maison-footer-content h3 {
-  color: var(--turquoise);
+  color: var(--turquoise) !important;
 }
 
 .maison-footer-content a {
-  color: var(--turquoise);
+  color: var(--turquoise) !important;
 }
 
 .maison-footer-bar {
-  background-color: var(--turquoise);
+  background-color: var(--turquoise) !important;
 }
 
 @media (max-width: 768px) {
