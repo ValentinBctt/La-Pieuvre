@@ -13,8 +13,8 @@ export default function IlsNousFontConfiance() {
         <img
           src={SINGLE_IMAGE_SRC}
           alt="Vector"
-          loading="lazy"
-          decoding="async"
+          loading="eager"
+          decoding="sync"
         />
       </div>
     </div>

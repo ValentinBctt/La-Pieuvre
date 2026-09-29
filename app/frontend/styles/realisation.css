@@ -86,13 +86,16 @@
 .ils-nous-font-confiance .confiance-single-image {
   width: 80vw;
   margin: 4rem auto;
+  max-width: 100%;
+  display: block;
 }
 
 .ils-nous-font-confiance .confiance-single-image img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  max-width: 100% !important;
 }
 
 /* Mobile */
