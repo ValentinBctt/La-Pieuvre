@@ -161,7 +161,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-85%, -50%);
-   
+    background-color: transparent !important;
 }
 
 .maison-banner-text h1  {
@@ -392,5 +392,88 @@ body {
 
     .maison-banner h1 {
         font-size: 2rem;
+    }
+
+    /* Navbar responsive on mobile */
+    .navbar-maison {
+        flex-wrap: wrap !important;
+        height: auto !important;
+        padding: 10px 15px !important;
+        gap: 10px !important;
+    }
+
+    .navbar-maison-left {
+        flex: 1 !important;
+        gap: 15px !important;
+    }
+
+    .navbar-maison-right {
+        display: none !important;
+    }
+
+    .navbar-maison-links {
+        display: none !important;
+    }
+
+    .navbar-maison-burger {
+        display: block !important;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .navbar-maison-burger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        transition: all 0.3s ease;
+    }
+
+    .navbar-maison-burger.open span:nth-child(1) {
+        transform: rotate(45deg) translate(10px, 10px);
+    }
+
+    .navbar-maison-burger.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar-maison-mobile-menu {
+        display: none !important;
+        width: 100% !important;
+        background-color: var(--turquoise-dark) !important;
+        padding: 15px 0 !important;
+        flex-basis: 100% !important;
+        order: 3 !important;
+    }
+
+    .navbar-maison-mobile-menu.active {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .navbar-maison-mobile-links {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        padding: 0 15px !important;
+    }
+
+    .navbar-maison-mobile-links a {
+        color: white !important;
+        text-decoration: none !important;
+        font-size: 0.9rem !important;
+        font-weight: 600 !important;
+    }
+
+    .navbar-maison-center {
+        display: none !important;
     }
 }

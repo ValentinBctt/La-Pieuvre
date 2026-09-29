@@ -211,7 +211,7 @@
     ]
   },
   "entrypoints/maison.jsx": {
-    "file": "assets/maison-BQE4iYf-.js",
+    "file": "assets/maison-CLP0mPhN.js",
     "name": "entrypoints/maison.jsx",
     "src": "entrypoints/maison.jsx",
     "isEntry": true,
@@ -220,7 +220,7 @@
       "_useScrollbarDrag-DnkCreXF.js"
     ],
     "css": [
-      "assets/maison-DMF7HT2u.css"
+      "assets/maison-CZjlx-wl.css"
     ]
   },
   "entrypoints/prestationlive.jsx": {
