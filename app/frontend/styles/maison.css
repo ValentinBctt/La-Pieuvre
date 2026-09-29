@@ -47,20 +47,63 @@ body {
 
 /* Navbar */
 .navbar-maison {
-  background-color: var(--turquoise-dark);
-  border-bottom: none;
+  background-color: var(--turquoise-dark) !important;
+  border-bottom: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 0 20px !important;
+  height: 70px !important;
+  gap: 30px !important;
 }
 
-.navbar-maison {
-    border-bottom: 1px solid var(--turquoise-dark);
+.navbar-atelier.navbar-maison {
+  background-color: var(--turquoise-dark) !important;
+  border-bottom: none !important;
 }
 
 .navbar-maison-center {
-    background-color: var(--turquoise-dark);
+    background-color: var(--turquoise-dark) !important;
+    display: flex !important;
+    align-items: center !important;
 }
 
 .navbar-maison-center img {
-  background-color: var(--turquoise-dark);
+  background-color: var(--turquoise-dark) !important;
+  max-height: 60px !important;
+  width: auto !important;
+}
+
+.navbar-maison-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 30px !important;
+}
+
+.navbar-maison-right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 30px !important;
+  margin-left: auto !important;
+}
+
+.navbar-maison-left a,
+.navbar-maison-right a,
+.navbar-maison-title {
+  color: white !important;
+  text-decoration: none !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  transition: opacity 0.2s !important;
+}
+
+.navbar-maison-left a:hover,
+.navbar-maison-right a:hover {
+  opacity: 0.8 !important;
+}
+
+.navbar-maison .navbar-left > a {
+  color: white !important;
 }
 
 .navbar-maison-logo:hover .navbar-maison-logo-default {
@@ -68,23 +111,21 @@ body {
   opacity: 1 !important;
 }
 
-.navbar-maison-left,
-.navbar-maison-right {
-  color: white;
-}
-
-.navbar-maison-left a,
-.navbar-maison-right a {
-  color: white;
-}
-
-.navbar-maison .navbar-left > a {
-  color: white;
-}
-
 .navbar-maison-center::before,
 .navbar-maison-center::after {
-  display: none;
+  display: none !important;
+}
+
+.navbar-maison-links {
+  display: none !important;
+}
+
+.navbar-maison-burger {
+  display: none !important;
+}
+
+.navbar-maison-mobile-menu {
+  display: none !important;
 }
 
 /* Textes en blanc pour toute la page maison */
