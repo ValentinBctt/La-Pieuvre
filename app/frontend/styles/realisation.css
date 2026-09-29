@@ -87,7 +87,9 @@
   width: 80vw;
   margin: 4rem auto;
   max-width: 100%;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .ils-nous-font-confiance .confiance-single-image img {
@@ -96,6 +98,20 @@
   height: auto !important;
   object-fit: contain !important;
   max-width: 100% !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .ils-nous-font-confiance .confiance-single-image {
+    width: 90vw;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+
+  .ils-nous-font-confiance .confiance-single-image img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
 }
 
 /* Mobile */
