@@ -12,7 +12,7 @@
   display: flex;
   width: max-content;
   align-items: center;
-  animation: defilement-infinite 20s linear infinite;
+  animation: defilement-infinite 30s linear infinite;
 }
 
 .ils-nous-font-confiance .realisations-image {
@@ -28,7 +28,7 @@
   border-radius: 0;
 }
 
-.ils-nous-font-confiance .realisations-image img {
+.ils-nous-font-confiance  img {
   height: 43px;
   width: auto;
   object-fit: contain;
@@ -37,6 +37,10 @@
   box-shadow: none;
 }
 
+.realisations-image img {
+  height: 300px;
+  object-fit: cover;
+}
 .confiance-marquee .marquee {
   margin: 3rem auto;
 }
@@ -50,6 +54,7 @@
   display: flex;
   width: max-content; /* important */
   animation: defilement-infinite 20s linear infinite;
+
 }
 
 /* Par défaut : desktop */
@@ -147,7 +152,7 @@
 
 .realisations-image img {
 
-  height: 25rem;
+  height: 300px;
   object-fit: cover;
 
 
