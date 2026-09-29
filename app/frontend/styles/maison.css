@@ -5,18 +5,47 @@
   --black: #000000;
 }
 
+html {
+  background-color: white !important;
+}
+
 body {
-  background-color: white;
-  height: auto;
+  background-color: white !important;
+  height: auto !important;
   margin: 0;
   padding: 0;
+}
+
+#maison-root {
+  background-color: white !important;
 }
 
 .maison-container {
     background-color: white !important;
 }
 
-/* Navbar Maison */
+.maison-container * {
+  background-color: inherit !important;
+}
+
+/* Exceptions: carousel avec turquoise */
+.maison-content-caroussel {
+  background-color: var(--turquoise) !important;
+}
+
+.maison-scroller {
+  background-color: var(--turquoise) !important;
+}
+
+.maison-scrollbar {
+  background-color: rgba(241, 241, 241, 0.5) !important;
+}
+
+.maison-scrollbar-thumb {
+  background-color: var(--turquoise-dark) !important;
+}
+
+/* Navbar */
 .navbar-maison {
   background-color: var(--turquoise-dark);
   border-bottom: none;
@@ -172,6 +201,31 @@ body {
   width: auto;
   object-fit: cover;
   
+}
+
+/* Force white background on all form elements */
+.maison-container .contact-form,
+.maison-container .form-message,
+.maison-container .form-good-services,
+.maison-container .form-contact,
+.maison-container .form-status,
+.maison-container .contactez-nous {
+  background-color: white !important;
+}
+
+.maison-container input,
+.maison-container textarea,
+.maison-container button,
+.maison-container select {
+  background-color: white !important;
+}
+
+.maison-container input[type="text"],
+.maison-container input[type="email"],
+.maison-container input[type="tel"],
+.maison-container textarea {
+  background-color: white !important;
+  color: var(--turquoise) !important;
 }
 
 /* Formulaire Maison */
