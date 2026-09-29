@@ -5,7 +5,8 @@
     "node": "22.x"
   },
   "scripts": {
-    "build": "vite build"
+    "build": "vite build",
+    "postinstall": "vite build"
   },
   "devDependencies": {
     "vite": "^8.0.3",
