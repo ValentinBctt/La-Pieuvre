@@ -69,7 +69,7 @@ body {
 }
 
 .navbar-maison-center img {
-  background-color: var(--turquoise-dark) !important;
+  background-color: transparent !important;
   max-height: 60px !important;
   width: auto !important;
 }
@@ -267,6 +267,8 @@ body {
 .maison-container textarea {
   background-color: white !important;
   color: var(--turquoise) !important;
+  border-color: var(--turquoise-dark) !important;
+  border-width: 2px !important;
 }
 
 /* Formulaire Maison */
@@ -290,7 +292,7 @@ body {
 .maison-contact-form textarea,
 .maison-contact-form button {
   color: var(--turquoise);
-  border: 1px solid var(--turquoise);
+  border: 2px solid var(--turquoise-dark) !important;
   background-color: white;
 }
 
@@ -321,7 +323,7 @@ body {
 
 .maison-form-message-textarea {
   color: var(--turquoise);
-  border: 2px solid var(--turquoise);
+  border: 2px solid var(--turquoise-dark) !important;
   background-color: white;
 }
 
