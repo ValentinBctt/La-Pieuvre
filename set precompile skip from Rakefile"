@@ -1,0 +1,16 @@
+[1mdiff --git a/Rakefile b/Rakefile[m
+[1mindex fdb52a2..846196a 100644[m
+[1m--- a/Rakefile[m
+[1m+++ b/Rakefile[m
+[36m@@ -1,11 +1,6 @@[m
+ # Add your own tasks in files placed in lib/tasks ending in .rake,[m
+ # for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.[m
+ [m
+[31m-require_relative "config/application"[m
+[31m-[m
+[31m-Rails.application.load_tasks[m
+[31m-[m
+[31m-heroku_build_context = ENV["SOURCE_VERSION"].to_s != "" && ENV["STACK"].to_s.start_with?("heroku-")[m
+ [m
+ skip_assets_precompile = [m
+ 	["1", "true"].include?(ENV["RAILS_SKIP_ASSET_COMPILATION"].to_s.downcase) ||[m
