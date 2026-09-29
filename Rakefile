@@ -12,7 +12,7 @@ Rails.application.load_tasks
 
 heroku_build_context = ENV["SOURCE_VERSION"].to_s != "" && ENV["STACK"].to_s.start_with?("heroku-")
 
-skip_assets_precompile = heroku_build_context ||
+skip_assets_precompile = 
 	["1", "true"].include?(ENV["RAILS_SKIP_ASSET_COMPILATION"].to_s.downcase) ||
 	["1", "true"].include?(ENV["SKIP_ASSET_COMPILATION"].to_s.downcase)
 
