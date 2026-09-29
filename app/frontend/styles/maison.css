@@ -74,6 +74,32 @@ body {
   width: auto !important;
 }
 
+.navbar-maison-center a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar-atelier-logo-default {
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-atelier-logo-hover {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-maison-center a:hover .navbar-atelier-logo-default {
+  opacity: 0;
+}
+
+.navbar-maison-center a:hover .navbar-atelier-logo-hover {
+  opacity: 1;
+}
+
 .navbar-maison-left {
   display: flex !important;
   align-items: center !important;
@@ -268,7 +294,8 @@ body {
   background-color: white !important;
   color: var(--turquoise) !important;
   border-color: var(--turquoise-dark) !important;
-  border-width: 2px !important;
+  border-width: 1px !important;
+  border-style: solid !important;
 }
 
 /* Formulaire Maison */
@@ -292,7 +319,7 @@ body {
 .maison-contact-form textarea,
 .maison-contact-form button {
   color: var(--turquoise);
-  border: 2px solid var(--turquoise-dark) !important;
+  border: solid 1px var(--turquoise-dark) !important;
   background-color: white;
 }
 

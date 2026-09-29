@@ -29,13 +29,17 @@ export default function NavbarMaison() {
       </div>
 
       <div className="navbar-atelier-center navbar-maison-center">
-        <a href="/" className="navbar-maison-logo">
+        <a href="/">
           <img
             className="navbar-atelier-logo-default navbar-maison-logo-default"
-            src="https://res.cloudinary.com/dnojcwwos/image/upload/v1774863326/9d78df4e-9bd3-4d9f-b9f6-676856022d57.png"
+            src="https://res.cloudinary.com/dnojcwwos/image/upload/v1776416329/08a6a08d-1b8c-4227-8c88-718ef85ffe28.png"
             alt="Logo"
           />
-     
+          <img
+            className="navbar-atelier-logo-hover navbar-maison-logo-hover"
+            src="https://res.cloudinary.com/dnojcwwos/image/upload/v1774863326/9d78df4e-9bd3-4d9f-b9f6-676856022d57.png"
+            alt="Logo Hover"
+          />
         </a>
       </div>
 
