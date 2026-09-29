@@ -1,4 +1,5 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
+import { useScrollbarDrag } from "../../hooks/useScrollbarDrag";
 import NavBarMaison from "./NavBarMaison";
 import ContactFormMaison from "../ContactFormMaison";
 
@@ -6,27 +7,7 @@ const Maison = () => {
   const scrollerRef = useRef(null);
   const scrollbarThumbRef = useRef(null);
 
-  useEffect(() => {
-    const scroller = scrollerRef.current;
-    const thumb = scrollbarThumbRef.current;
-    if (!scroller || !thumb) return;
-
-    const handleScroll = () => {
-      const scrollLeft = scroller.scrollLeft;
-      const scrollWidth = scroller.scrollWidth;
-      const clientWidth = scroller.clientWidth;
-      const scrollTrackWidth = thumb.parentElement.clientWidth;
-      const thumbWidth = (clientWidth / scrollWidth) * scrollTrackWidth;
-      const thumbLeft = (scrollLeft / (scrollWidth - clientWidth)) * (scrollTrackWidth - thumbWidth);
-
-      thumb.style.width = `${thumbWidth}px`;
-      thumb.style.transform = `translateX(${thumbLeft}px)`;
-    };
-
-    scroller.addEventListener("scroll", handleScroll);
-    handleScroll(); // Init
-    return () => scroller.removeEventListener("scroll", handleScroll);
-  }, []);
+  useScrollbarDrag(scrollerRef, scrollbarThumbRef);
 
   return (
     <div className="maison-container">

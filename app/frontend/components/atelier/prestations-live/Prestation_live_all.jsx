@@ -1,5 +1,6 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
+import { useScrollbarDrag } from '../../../hooks/useScrollbarDrag';
 import '../../../styles/prestationlive.css';
 import ContactForm from '../../ContactForm';
 import NavbarAtelier from '../NavbarAtelier';
@@ -28,6 +29,9 @@ function buildSubtitle(presta) {
 }
 
 export default function PrestationLiveAll({ prestations, loading = false }) {
+  const scrollContainerRef = useRef(null);
+  useScrollbarDrag(scrollContainerRef, null);
+
   const emptyData = loading
     ? [{ ...defaultPrestations[0], title: 'Chargement des prestations...' }]
     : defaultPrestations;
@@ -63,7 +67,7 @@ export default function PrestationLiveAll({ prestations, loading = false }) {
           <div className="description">
           <p >{presta.description}</p>
           </div>
-          <div className="scroll-container">
+          <div className="scroll-container" ref={scrollContainerRef}>
             {Object.entries(presta)
               .filter(([key, value]) => /^image\d+$/.test(key) && Boolean(value))
               .sort(([leftKey], [rightKey]) => Number(leftKey.replace('image', '')) - Number(rightKey.replace('image', '')))

@@ -1,4 +1,5 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useScrollbarDrag } from "../../hooks/useScrollbarDrag";
 
 const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
@@ -54,6 +55,9 @@ export default function PrestationLive() {
   const closeTimer = useRef(null);
   const cursorPositionRef = useRef({ x: 0, y: 0 });
   const popupRef = useRef(null);
+  const galleryRef = useRef(null);
+
+  useScrollbarDrag(galleryRef, null);
 
   useEffect(() => () => {
     clearTimeout(hoverTimer.current);
@@ -215,7 +219,7 @@ export default function PrestationLive() {
             <p><strong>Missions:</strong> {hoveredPrestation.missions}</p>
             <p className="prestation-hover-description">{hoveredPrestation.description}</p>
           </div>
-          <div className="prestation-hover-gallery">
+          <div className="prestation-hover-gallery" ref={galleryRef}>
             {hoveredPrestation.images.map((image, index) => (
               <img
                 key={`${hoveredPrestation.name}-${index}`}
