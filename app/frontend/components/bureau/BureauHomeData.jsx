@@ -35,20 +35,62 @@ function ProjectCard({ project, slider = false }) {
 }
 
 export default function BureauHomeData() {
-  const [data, setData] = useState({ categories: [], projects: [] });
+  const [data, setData] = useState(() => {
+    // Essayer de charger depuis localStorage en priorité
+    try {
+      const cached = localStorage.getItem('bureauProjectsCache');
+      return cached ? JSON.parse(cached) : { categories: [], projects: [] };
+    } catch {
+      return { categories: [], projects: [] };
+    }
+  });
   const [selectedCategory, setSelectedCategory] = useState("");
   const [showSlider, setShowSlider] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [loading, setLoading] = useState(() => {
+    try {
+      const cached = localStorage.getItem('bureauProjectsCache');
+      if (cached) {
+        const cachedData = JSON.parse(cached);
+        return !cachedData.projects || cachedData.projects.length === 0;
+      }
+      return true;
+    } catch {
+      return true;
+    }
+  });
 
   useEffect(() => {
-    fetch("/api/bureau")
-      .then((response) => response.json())
-      .then((json) => {
+    let isMounted = true;
+
+    async function loadBureauData() {
+      try {
+        const response = await fetch("/api/bureau");
+        if (!response.ok) return;
+
+        const json = await response.json();
+        if (!isMounted) return;
+
         setData(json);
+        
+        // Mettre en cache pour les visites suivantes
+        localStorage.setItem('bureauProjectsCache', JSON.stringify(json));
+        
         const firstProjectCategory = json.categories.find((category) => category.kind === "project");
         const firstMainCategory = json.categories.find((category) => category.name === MAIN_CATEGORY_NAMES[0]);
         setSelectedCategory((firstProjectCategory || firstMainCategory || json.categories[0])?.name || "");
-      });
+        setLoading(false);
+      } catch (error) {
+        console.error('Erreur lors du chargement des projets bureau:', error);
+        setLoading(false);
+      }
+    }
+
+    loadBureauData();
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   const mainCategories = MAIN_CATEGORY_NAMES
@@ -95,7 +137,13 @@ export default function BureauHomeData() {
         )}
 
         <div className="bureau-home-container">
-          {!showSlider ? (
+          {loading ? (
+            <div className="bureau-projects-skeleton">
+              {Array.from({ length: 6 }).map((_, idx) => (
+                <div key={idx} className="bureau-project-card-skeleton skeleton" />
+              ))}
+            </div>
+          ) : !showSlider ? (
             <div className="bureau-home-items-1">
               {items.map((project) => <ProjectCard key={project.id} project={project} />)}
             </div>

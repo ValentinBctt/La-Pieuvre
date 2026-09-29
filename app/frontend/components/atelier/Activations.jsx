@@ -25,25 +25,47 @@ function mapApiPrestationToActivation(prestation) {
 }
 
 export default function Activations() {
-  const [prestations, setPrestations] = useState([]);
+  const [prestations, setPrestations] = useState(() => {
+    // Essayer de charger depuis localStorage en priorité
+    try {
+      const cached = localStorage.getItem('activationPrestationsCache');
+      return cached ? JSON.parse(cached) : [];
+    } catch {
+      return [];
+    }
+  });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let isMounted = true;
 
-    fetch('/api/prestation_lives')
-      .then((response) => response.json())
-      .then((data) => {
+    async function loadPrestations() {
+      try {
+        const response = await fetch('/api/prestation_lives');
+        if (!response.ok) {
+          setLoading(false);
+          return;
+        }
+
+        const data = await response.json();
         if (!isMounted) return;
+
         const nextPrestations = Array.isArray(data) ? data.map(mapApiPrestationToActivation) : [];
         setPrestations(nextPrestations);
+        
+        // Mettre en cache pour les visites suivantes
+        localStorage.setItem('activationPrestationsCache', JSON.stringify(nextPrestations));
+        
         setLoading(false);
-      })
-      .catch(() => {
+      } catch (error) {
+        console.error('Erreur lors du chargement des activations:', error);
         if (!isMounted) return;
         setPrestations([]);
         setLoading(false);
-      });
+      }
+    }
+
+    loadPrestations();
 
     return () => {
       isMounted = false;

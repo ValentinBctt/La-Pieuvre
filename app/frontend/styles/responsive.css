@@ -174,23 +174,7 @@ h2 {
   gap: 1rem; /* espace entre texte et barres */
 }
 
-h2::before,
-h2::after {
-  content: '';
-  flex: 1; /* les barres prennent l'espace disponible */
-  height: 2px;
-  background: var(--orange);
-  border-radius: 1px;
-  display: block;
-}
 
-h2::before {
-  margin-right: 1rem; /* espace entre barre et texte */
-}
-
-h2::after {
-  margin-left: 1rem; /* espace entre texte et barre */
-}
 
 .navbar-left a {
   color: var(--orange);

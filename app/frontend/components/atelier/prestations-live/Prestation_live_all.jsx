@@ -50,7 +50,7 @@ export default function PrestationLiveAll({ prestations, loading = false }) {
   return (
     <>
     <NavbarAtelier />
-
+         <h1 className="realisation-title">ACTIVATIONS</h1>
     <div className="prestation-live">
       {data.map((presta, idx) => (
         <div

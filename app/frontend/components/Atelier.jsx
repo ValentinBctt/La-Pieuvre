@@ -15,10 +15,10 @@ export default function Atelier({ showroomImages = [] }) {
         <NavbarAtelier />
         <BannerAtelier showroomImages={showroomImages} />
         <SelectionTextile />
-        <IlsNousFontConfiance />
 
 
         <PrestationLive />
+        <IlsNousFontConfiance />
         <ContactezNous />
         <ContactForm />
     </div>

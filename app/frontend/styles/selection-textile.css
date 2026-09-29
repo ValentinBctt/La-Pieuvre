@@ -1,4 +1,4 @@
-/* Skeleton loading animation and textile list placeholders.
+/* Skeleton loading animation and textile list placeholders */
 @keyframes skeleton-pulse {
   0%, 100% {
     opacity: 1;
@@ -21,16 +21,30 @@
   }
 }
 
-.selection-textile-description {
-  display: block;
-  margin: 1rem auto 3rem auto;
-  text-align: center;
-  width: min(70%, 900px);
+/* Generic skeleton styles */
+.skeleton {
+  border-radius: 8px;
+  background-color: #333333;
+  background-size: 1000px 100%;
+  animation: skeleton-pulse 8s infinite, skeleton-shimmer 12s infinite !important;
 }
 
-.selection-textile-description-muted {
-  color: #808080 !important;
+.skeleton-line {
+  height: 12px;
+  width: 100%;
+  border-radius: 4px;
+  animation: skeleton-pulse 8s infinite, skeleton-shimmer 12s infinite !important;
 }
+
+.skeleton-line-wide {
+  width: 90%;
+}
+
+.skeleton-line-medium {
+  width: 60%;
+}
+
+/* Textile skeleton */
 .textile-list-skeleton {
   display: flex;
   gap: 40px;
@@ -52,27 +66,15 @@
   align-items: center;
 }
 
-.skeleton {
-  border-radius: 8px;
-  background-color: #333333;
-  background-size: 1000px 100%;
-}
-
 .skeleton-thumb {
   width: 120px;
   height: 140px;
   border-radius: 12px;
-  animation: skeleton-pulse 8s infinite, skeleton-shimmer 12s infinite !important;
-}
-
-.skeleton-label {
-  display: none;
 }
 
 .textile-swiper-skeleton {
   width: 90%;
-
-
+  margin: 3rem auto;
 }
 
 .textile-swiper-skeleton-card {
@@ -91,21 +93,89 @@
   display: none;
 }
 
-.skeleton-line {
-  height: 12px;
+/* Prestation/Realisation carousel skeleton */
+.marquee-skeleton {
   width: 100%;
-  border-radius: 4px;
+  height: 300px;
+  display: flex;
+  gap: 1rem;
+  padding: 2rem;
+  overflow: hidden;
 }
 
-.skeleton-line-wide {
+.marquee-skeleton-item {
+  width: 300px;
+  height: 100%;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.prestation-card-skeleton {
+  width: 200px;
+  height: 280px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.prestation-container-skeleton {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
   width: 90%;
+  margin: 2rem auto;
 }
 
-.skeleton-line-medium {
+.prestation-card-skeleton-item {
+  width: 100%;
+  height: 280px;
+  border-radius: 8px;
+}
+
+/* Bureau projects skeleton */
+.bureau-projects-skeleton {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  width: 90%;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.bureau-project-card-skeleton {
+  height: 350px;
+  border-radius: 8px;
+}
+
+/* Bureau project detail skeleton */
+.bureau-project-detail-skeleton {
+  width: 100%;
+  padding: 2rem;
+}
+
+.bureau-project-detail-skeleton-header {
+  height: 400px;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.bureau-project-detail-skeleton-line {
+  height: 20px;
+  margin: 1rem 0;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.bureau-project-detail-skeleton-line:nth-child(2) {
+  width: 80%;
+}
+
+.bureau-project-detail-skeleton-line:nth-child(3) {
   width: 60%;
 }
-*/
 
+.skeleton-label {
+  display: none;
+}
 
 .selection-textile-description {
   display: block;
@@ -114,7 +184,7 @@
   width: min(70%, 900px);
 }
 
-.selection-textile .selection-textile-description-muted {
+.selection-textile-description-muted {
   color: #808080 !important;
 }
 

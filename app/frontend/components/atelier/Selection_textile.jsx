@@ -138,9 +138,34 @@ function TextileList({ items, selectedCategory, onSelect }) {
 */
 
 const SelectionTextile = () => {
-  const [items, setItems] = useState([]);
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [items, setItems] = useState(() => {
+    try {
+      const cached = localStorage.getItem('textileProductsCache');
+      return cached ? JSON.parse(cached).categories : [];
+    } catch {
+      return [];
+    }
+  });
+  const [products, setProducts] = useState(() => {
+    try {
+      const cached = localStorage.getItem('textileProductsCache');
+      return cached ? JSON.parse(cached).products : [];
+    } catch {
+      return [];
+    }
+  });
+  const [loading, setLoading] = useState(() => {
+    try {
+      const cached = localStorage.getItem('textileProductsCache');
+      if (cached) {
+        const data = JSON.parse(cached);
+        return !data.categories || data.categories.length === 0;
+      }
+      return true;
+    } catch {
+      return true;
+    }
+  });
   const [error, setError] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
 
@@ -157,34 +182,62 @@ const SelectionTextile = () => {
   };
 
   useEffect(() => {
-    fetch("/api/products")
-      .then((res) => {
-        if (!res.ok) throw new Error("Erreur lors du chargement des données");
-        return res.json();
-      })
-      .then((data) => {
+    let isMounted = true;
+
+    async function loadProducts() {
+      try {
+        const response = await fetch("/api/products");
+        if (!response.ok) throw new Error("Erreur lors du chargement des données");
+        
+        const data = await response.json();
+        
+        if (!isMounted) return;
+        
         setItems(data.categories);
         setProducts(data.products);
-
-        // SUPPRIMÉ :
-        // setSelectedCategory(data.categories[0]?.id ?? null);
+        
+        // Mettre en cache pour les visites suivantes
+        localStorage.setItem('textileProductsCache', JSON.stringify({
+          categories: data.categories,
+          products: data.products
+        }));
 
         setLoading(false);
-      })
-      .catch((err) => {
+      } catch (err) {
+        if (!isMounted) return;
         setError(err.message);
         setLoading(false);
-      });
+      }
+    }
+
+    // Essayer de charger depuis localStorage en priorité
+    try {
+      const cached = localStorage.getItem('textileProductsCache');
+      if (cached) {
+        const data = JSON.parse(cached);
+        setItems(data.categories);
+        setProducts(data.products);
+        setLoading(false);
+        // Quand même charger à jour en arrière-plan
+        loadProducts();
+        return;
+      }
+    } catch (error) {
+      console.error('Erreur du cache textile:', error);
+    }
+
+    loadProducts();
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
-
-
-  /* if (loading) return <SkeletonSelectionTextile />; */
-  if (error) return <div>Erreur : {error}</div>;
-
 
   const filteredProducts = products.filter(
     (p) => p.category_id === selectedCategory
   );
+
+  if (error) return <div>Erreur : {error}</div>;
 
 
   return (
@@ -194,14 +247,20 @@ const SelectionTextile = () => {
 
           <div className="fournisseur-image">         <img src={fournisseur} alt="Fournisseur"  />
     </div>
-      {/* <TextileList
-        items={items}
-        selectedCategory={selectedCategory}
-        onSelect={setSelectedCategory}
-      /> */}
 
-
-      {selectedCategory && (
+      {loading ? (
+        <div className="textile-swiper-skeleton">
+          {Array.from({ length: 6 }).map((_, idx) => (
+            <div key={idx} className="textile-swiper-skeleton-card">
+              <div className="card">
+                <div className="skeleton-thumb skeleton" />
+                <div className="skeleton-line skeleton" style={{ width: '80%', height: '16px', marginTop: '10px' }} />
+                <div className="skeleton-line skeleton" style={{ width: '60%', height: '12px', marginTop: '8px' }} />
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : selectedCategory && (
         <Swiper
           modules={[Navigation, Pagination]}
           slidesPerView={1.4}

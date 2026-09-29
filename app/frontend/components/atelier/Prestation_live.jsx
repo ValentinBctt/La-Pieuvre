@@ -25,8 +25,27 @@ function mapApiPrestation(prestation) {
 }
 
 export default function PrestationLive() {
-  const [prestations, setPrestations] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [prestations, setPrestations] = useState(() => {
+    // Essayer de charger depuis localStorage en priorité
+    try {
+      const cached = localStorage.getItem('prestationLiveCache');
+      return cached ? JSON.parse(cached) : [];
+    } catch {
+      return [];
+    }
+  });
+  const [loading, setLoading] = useState(() => {
+    try {
+      const cached = localStorage.getItem('prestationLiveCache');
+      if (cached) {
+        const data = JSON.parse(cached);
+        return data.length === 0;  // Si cache vide, on charge encore
+      }
+      return true;  // Pas de cache = on charge
+    } catch {
+      return true;
+    }
+  });
   const [hoveredPrestation, setHoveredPrestation] = useState(null);
   const [popupPosition, setPopupPosition] = useState({ x: 0, y: 0 });
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -44,19 +63,33 @@ export default function PrestationLive() {
   useEffect(() => {
     let isMounted = true;
 
-    fetch('/api/prestation_lives')
-      .then((response) => response.json())
-      .then((data) => {
+    async function loadPrestations() {
+      try {
+        const response = await fetch('/api/prestation_lives');
+        if (!response.ok) {
+          setLoading(false);
+          return;
+        }
+
+        const data = await response.json();
         if (!isMounted) return;
+
         const nextPrestations = Array.isArray(data) ? data.map(mapApiPrestation) : [];
         setPrestations(nextPrestations);
+        
+        // Mettre en cache pour les visites suivantes
+        localStorage.setItem('prestationLiveCache', JSON.stringify(nextPrestations));
+        
         setLoading(false);
-      })
-      .catch(() => {
+      } catch (error) {
+        console.error('Erreur lors du chargement des prestations:', error);
         if (!isMounted) return;
         setPrestations([]);
         setLoading(false);
-      });
+      }
+    }
+
+    loadPrestations();
 
     return () => {
       isMounted = false;
@@ -134,21 +167,29 @@ export default function PrestationLive() {
     >
       <p>La Pieuvre propose des animations sur mesure lors <br /> d'événements extérieurs grâce à la personnalisation live.</p>
 
-<div className="prestation-container">
-  {prestations.slice(0, 6).map((p) => (
-    <a
-      key={p.id}
-      href={`/activation#${buildActivationAnchor(p)}`}
-      className="prestation-card"
-      onMouseEnter={(event) => handleMouseEnter(p, event)}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-    >
-      <img src={p.image} alt={p.label} loading="lazy" decoding="async" />
-      <div className="overlay">{p.label}</div>
-    </a>
-  ))}
-</div>
+      {loading ? (
+        <div className="prestation-container-skeleton">
+          {Array.from({ length: 6 }).map((_, idx) => (
+            <div key={idx} className="prestation-card-skeleton-item skeleton" />
+          ))}
+        </div>
+      ) : (
+        <div className="prestation-container">
+          {prestations.slice(0, 6).map((p) => (
+            <a
+              key={p.id}
+              href={`/activation#${buildActivationAnchor(p)}`}
+              className="prestation-card"
+              onMouseEnter={(event) => handleMouseEnter(p, event)}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+            >
+              <img src={p.image} alt={p.label} loading="lazy" decoding="async" />
+              <div className="overlay">{p.label}</div>
+            </a>
+          ))}
+        </div>
+      )}
 
       {hoveredPrestation && !isPopupVisible && (
         <div

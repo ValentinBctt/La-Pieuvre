@@ -71,7 +71,7 @@ export default function ContactForm({ endpoint = '/api/contacts', buttonText = '
       <div className="form-message">
         <p style={{fontFamily: 'Pluto'}} >ATELIER <strong>LA PIEUVRE</strong></p>
         <p>DTF_Sérigraphie_Broderie_DTG</p>
-        <h1>Contact</h1>
+
             <textarea
             className='form-message'
         name="message"
@@ -134,9 +134,9 @@ export default function ContactForm({ endpoint = '/api/contacts', buttonText = '
     </div>
     <div className="footer-content">
       <div className='footer-la-pieuvre'>
-        <a href=""><img className="footer-logo" src="https://res.cloudinary.com/dnojcwwos/image/upload/v1775051989/c36fa1a1-7052-4db1-8996-220a4a5c79a7.png" alt="Logo" />ATELIER <strong>LA PIEUVRE</strong></a>
-       
-        <a href=''><img className="footer-logo" src="https://res.cloudinary.com/dnojcwwos/image/upload/v1775051959/4418d29c-8feb-4245-86d1-e47d26a49d46.png" alt="Logo" />MAISON <strong>LA PIEUVRE</strong></a>
+        <a href="/atelier"><img className="footer-logo" src="https://res.cloudinary.com/dnojcwwos/image/upload/v1776416329/08a6a08d-1b8c-4227-8c88-718ef85ffe28.png" alt="Logo" />ATELIER <strong>LA PIEUVRE</strong></a>
+        <a href='/bureau'><img className="footer-logo" src="https://res.cloudinary.com/dnojcwwos/image/upload/v1775051989/c36fa1a1-7052-4db1-8996-220a4a5c79a7.png" alt="Logo" />BUREAU <strong>LA PIEUVRE</strong></a>
+        <a href='/maison'><img className="footer-logo" src="https://res.cloudinary.com/dnojcwwos/image/upload/v1775051959/4418d29c-8feb-4245-86d1-e47d26a49d46.png" alt="Logo" />MAISON <strong>LA PIEUVRE</strong></a>
       </div>
 
       <div className='footer-contact'>

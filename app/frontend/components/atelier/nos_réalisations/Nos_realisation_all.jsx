@@ -240,36 +240,29 @@ export default function NosRealisationsAll({ items = [] }) {
   const gridRef = useRef(null);
   // Affiche instantanément les visuels connus à l'avance pendant que l'API se charge en arrière-plan.
   const initialImages = items.length ? items : fallbackImagesRealisations;
-  const [imagesRealisations, setImagesRealisations] = useState(initialImages);
-
-  useEffect(() => {
-    let isMounted = true;
-
-    async function loadShowroomItems() {
-      try {
-        const response = await fetch('/api/showroom_items.json');
-        if (!response.ok) {
-          if (isMounted) setImagesRealisations(initialImages);
-          return;
-        }
-
-        const data = await response.json();
-        if (isMounted && Array.isArray(data) && data.length) {
-          setImagesRealisations(data);
-        }
-      } catch (error) {
-        if (isMounted) {
-          setImagesRealisations(initialImages);
-        }
-      }
+  const [imagesRealisations, setImagesRealisations] = useState(() => {
+    // Essayer de charger depuis localStorage en priorité
+    try {
+      const cached = localStorage.getItem('realisationsCache');
+      return cached ? JSON.parse(cached) : initialImages;
+    } catch {
+      return initialImages;
     }
-
-    loadShowroomItems();
-
-    return () => {
-      isMounted = false;
-    };
-  }, [items]);
+  });
+  // Loading uniquement si pas d'images DU TOUT
+  const [loading, setLoading] = useState(() => {
+    try {
+      const cached = localStorage.getItem('realisationsCache');
+      if (cached) {
+        const data = JSON.parse(cached);
+        return !Array.isArray(data) || data.length === 0;
+      }
+      return !items.length;
+    } catch {
+      return !items.length;
+    }
+  });
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   useEffect(() => {
     const grid = gridRef.current;
@@ -322,17 +315,14 @@ export default function NosRealisationsAll({ items = [] }) {
 
         <div className="realisation-container">
           <h1 className="realisation-title">LE SHOWROOM</h1>
-          <div className="realisation-grid" ref={gridRef}
-          >
+          <div className="realisation-grid" ref={gridRef}>
             {imagesRealisations.map((item, index) => (
-              <div key={item.id || index} className="realisation-item"
-                style={{ zIndex: "10" }}
-                >
+              <div key={item.id || index} className="realisation-item" style={{ zIndex: "10" }}>
                 <img src={item.image} alt={item.name} loading={index < 8 ? "eager" : "lazy"} decoding="async" />
-                <div className="realisation-titles" >
-                <h3 style={{ zIndex: "10" }}><strong>{item.name}</strong></h3>
-                <p style={{ zIndex: "10" }}>{item.subname}</p>
-                <p style={{ fontStyle: "italic", zIndex: "10", color: "var(--orange)" }}>{item.type}</p>
+                <div className="realisation-titles">
+                  <h3 style={{ zIndex: "10" }}><strong>{item.name}</strong></h3>
+                  <p style={{ zIndex: "10" }}>{item.subname}</p>
+                  <p style={{ fontStyle: "italic", zIndex: "10", color: "var(--orange)" }}>{item.type}</p>
                 </div>
               </div>
             ))}

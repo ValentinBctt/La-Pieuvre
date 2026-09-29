@@ -15,6 +15,19 @@ export default function NosRealisations({ images: showroomImages = [] }) {
       return [];
     }
   });
+  const [loading, setLoading] = useState(() => {
+    if (Array.isArray(showroomImages) && showroomImages.length > 0) return false;
+    try {
+      const cached = localStorage.getItem('showroomImages');
+      if (cached) {
+        const data = JSON.parse(cached);
+        return !Array.isArray(data) || data.length === 0;
+      }
+      return true;
+    } catch {
+      return true;
+    }
+  });
 
   useEffect(() => {
     let isMounted = true;
@@ -25,6 +38,7 @@ export default function NosRealisations({ images: showroomImages = [] }) {
         if (Array.isArray(showroomImages) && showroomImages.length > 0) {
           if (isMounted) {
             setImages(showroomImages);
+            setLoading(false);
             // Mettre en cache pour les visites suivantes
             localStorage.setItem('showroomImages', JSON.stringify(showroomImages));
           }
@@ -39,12 +53,14 @@ export default function NosRealisations({ images: showroomImages = [] }) {
         if (isMounted && Array.isArray(data)) {
           const imageUrls = data.map((item) => item.image).filter(Boolean);
           setImages(imageUrls);
+          setLoading(false);
           localStorage.setItem('showroomImages', JSON.stringify(imageUrls));
         }
       } catch (error) {
         console.error('Erreur lors du chargement des images:', error);
         if (showroomImages.length > 0 && isMounted) {
           setImages(showroomImages);
+          setLoading(false);
         }
       }
     }
@@ -58,6 +74,44 @@ export default function NosRealisations({ images: showroomImages = [] }) {
 
   const marqueeImages = [...images, ...images];
 
+  if (loading || images.length === 0) {
+    return (
+      <div className="nos-realisations">
+        <div className="marquee">
+          <div className="marquee-skeleton">
+            {Array.from({ length: 4 }).map((_, idx) => (
+              <div key={idx} className="marquee-skeleton-item skeleton" />
+            ))}
+          </div>
+          <div className="voir-en-details-wrap">
+            <a href="/atelier/realisations" className="voir-en-details">
+              VOIR PLUS
+            </a>
+            <svg
+              className="voir-en-details-arrow"
+              viewBox="0 0 12 12"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <polygon points="2,1 10,6 2,11" />
+            </svg>
+          </div>
+        </div>
+
+        <div className="savoir-faire">
+          <h2 className="savoir-faire-title">NOTRE SAVOIR-FAIRE</h2>
+          <p className="savoir-faire-description">
+            L'Atelier maîtrise différentes techniques d'impression :
+            sérigraphie, broderie, DTF, DTG, sublimation… Pour vous, nous adaptons chaque production à vos besoins, de la petite série aux grandes quantités.
+            Nos tentacules peuvent aussi embarquer sur vos événements pour
+            créer des expériences en live et des ateliers sur mesure. Pour vous accompagner dans la création et l'image, notre studio créatif Bureau La Pieuvre peut s'occuper de la direction
+            artistique, des visuels, des logos, des photos et des vidéos. 
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="nos-realisations">
 
@@ -65,7 +119,7 @@ export default function NosRealisations({ images: showroomImages = [] }) {
         <div className="marquee-content">
           {marqueeImages.map((img, idx) => (
             <div className="realisations-image" key={idx}>
-              <img src={img} alt={`Réalisation ${idx + 1}`} />
+              <img src={img} alt={`Réalisation ${idx + 1}`} loading="lazy" decoding="async" />
             </div>
           ))}
         </div>
@@ -91,7 +145,7 @@ export default function NosRealisations({ images: showroomImages = [] }) {
           L'Atelier maîtrise différentes techniques d'impression :
           sérigraphie, broderie, DTF, DTG, sublimation… Pour vous, nous adaptons chaque production à vos besoins, de la petite série aux grandes quantités.
 Nos tentacules peuvent aussi embarquer sur vos événements pour
-créer des expériences en live et des ateliers sur mesure.Pour vous accompagner dans la création et l'image, notre studio créatif Bureau La Pieuvre peut s'occuper de la direction
+créer des expériences en live et des ateliers sur mesure. Pour vous accompagner dans la création et l'image, notre studio créatif Bureau La Pieuvre peut s'occuper de la direction
 artistique, des visuels, des logos, des photos et des vidéos. </p>
       </div>
 

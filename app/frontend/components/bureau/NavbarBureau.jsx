@@ -6,7 +6,6 @@ export default function NavbarBureau() {
   const mainLinks = [
     { href: "/atelier", label: "ATELIER" },
     { href: "/maison", label: "MAISON" },
-    { href: "/grenier", label: "GRENIER" },
   ];
 
   const secondaryLinks = [
