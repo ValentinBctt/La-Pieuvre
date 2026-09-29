@@ -5,6 +5,9 @@ export default defineConfig({
   plugins: [
     RubyPlugin()
   ],
+  build: {
+    reportCompressedSize: false
+  },
   server: {
     host: '0.0.0.0',
     port: 3036,
