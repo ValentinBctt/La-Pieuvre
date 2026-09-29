@@ -455,6 +455,11 @@ h2 {
       margin: 2rem auto;
     }
 
+    .ils-nous-font-confiance .confiance-single-image img {
+      width: 110%;
+      margin: 0 -5%;
+    }
+
 }
 
 @media (max-width: 480px) {

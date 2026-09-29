@@ -78,6 +78,10 @@ html {
 
     --orange: #ea5137;
 
+    --turquoise: #00727E;
+    --turquoise-dark: #00424C;
+;
+
 
     /* Neutral Colors */
     --white: #ffffff;
@@ -103,7 +107,7 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    padding-top: 80px;
+ 
 }
 
 h1, h2, h3, p {

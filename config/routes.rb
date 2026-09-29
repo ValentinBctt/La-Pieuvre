@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/atelier', to: 'atelier#index'
   get '/bureau', to: 'bureau#index'
   get '/bureau/projects/:id', to: 'bureau#show'
+  get '/maison', to: 'maison#index'
   get '/activation', to: 'atelier/activations#index'
   get '/activations', to: 'atelier/activations#index'
   get '/realisation', to: redirect('/atelier/realisations')
