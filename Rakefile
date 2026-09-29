@@ -10,8 +10,13 @@ skip_assets_precompile =
 	["1", "true"].include?(ENV["SKIP_ASSET_COMPILATION"].to_s.downcase) ||
 	(ENV["SOURCE_VERSION"].to_s != "" && ENV["STACK"].to_s.start_with?("heroku-"))
 
-# Skip assets:precompile if on Heroku (Vite already compiled them during Node.js build phase)
+# On Heroku, compile Vite assets instead of Rails assets
 if skip_assets_precompile
 	Rake::Task["assets:precompile"].clear if Rake::Task.task_defined?("assets:precompile")
+	
+	task "assets:precompile" do
+		puts "Compiling Vite assets..."
+		Rake::Task["vite:build_all"].invoke
+	end
 end
 
