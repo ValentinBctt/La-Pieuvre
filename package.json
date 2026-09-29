@@ -6,7 +6,7 @@
   },
   "scripts": {
     "build": "vite build",
-    "postinstall": "vite build"
+    "postinstall": "[ -f node_modules/.bin/vite ] && vite build || true"
   },
   "devDependencies": {
     "vite": "^8.0.3",
