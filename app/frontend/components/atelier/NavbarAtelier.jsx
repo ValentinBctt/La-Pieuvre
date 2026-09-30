@@ -19,7 +19,7 @@ export default function NavbarAtelier() {
           ATELIER&nbsp; <strong>LA PIEUVRE</strong>
         </a>
 
-        <div className={`navbar-links ${menuOpen ? "active" : ""}`}>
+        <div className={` navbar-links-left navbar-links ${menuOpen ? "active" : ""}`}>
           {mainLinks.map((link) => (
             <a key={link.href} href={link.href}>
               {link.label}

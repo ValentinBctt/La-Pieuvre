@@ -294,7 +294,10 @@ body {
     .maison-banner-text {
         width: 90%;
         transform: translate(-50%, -50%);
+           margin: 2rem auto;
     }
+
+
 
     .maison-banner h1 {
         font-size: 2rem;

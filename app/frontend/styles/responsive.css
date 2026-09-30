@@ -217,6 +217,11 @@ h2 {
 
 }
 
+.navbar-mobile-menu.active {
+  margin-bottom : 2rem;
+  margin-top: 1rem;
+}
+
  .navbar-left {
   display: flex;
   justify-content: flex-start;
@@ -225,6 +230,10 @@ h2 {
   margin-left: 2rem !important;
   padding-left: 0 !important;
   margin-right: auto !important;
+}
+
+.navbar-links-left{
+  display: none !important;
 }
 
   .navbar-right,
@@ -249,7 +258,7 @@ h2 {
 
   .navbar-atelier-center img,
   .navbar-bureau-center img {
-    height: 3.5rem;
+    height: 2.5rem;
     padding: 0.35rem;
     background: var(--black);
     border-radius: 100%;
@@ -484,6 +493,7 @@ h2 {
       margin: 0 -5%;
     }
 
+
 }
 
 @media (max-width: 480px) {
@@ -505,5 +515,15 @@ h2 {
 
   .navbar-left a {
     font-size: 0.8rem;
+  }
+
+  
+}
+
+@media (max-width: 400px) {
+    .navbar-atelier-center img,
+  .navbar-bureau-center img {
+    height: 2rem;
+  
   }
 }

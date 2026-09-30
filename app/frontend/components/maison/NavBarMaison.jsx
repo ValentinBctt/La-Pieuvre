@@ -19,7 +19,7 @@ export default function NavbarMaison() {
           MAISON&nbsp; <strong>LA PIEUVRE</strong>
         </a>
 
-        <div className={`navbar-links navbar-maison-links ${menuOpen ? "active" : ""}`}>
+        <div className={`navbar-links navbar-links-left navbar-maison-links ${menuOpen ? "active" : ""}`}>
           {mainLinks.map((link) => (
             <a key={link.href} href={link.href}>
               {link.label}

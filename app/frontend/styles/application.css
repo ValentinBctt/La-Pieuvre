@@ -192,6 +192,27 @@ p {
 }
 
 
+@media (max-width: 808px) {
+    .navbar-maison {
+    border-bottom-color: var(--turquoise) !important;
+  }
+
+  .navbar-atelier  {
+    &:hover {
+      border-bottom-color: var(--orange);
+    }
+  }
+
+  .navbar-bureau  {
+    &:hover {
+      border-bottom-color: white !important;
+    }
+  }
+
+
+  }
+
+
 .navbar-atelier:hover .navbar-bureau-center img {
   padding: 0.5rem 40rem;
 }
