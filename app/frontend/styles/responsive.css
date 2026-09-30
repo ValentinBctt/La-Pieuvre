@@ -43,7 +43,7 @@
   position: fixed;
   top: 72px; /* sous la navbar (ajustez selon la hauteur de votre navbar) */
   left: 24px;
-  z-index: 2100;
+  z-index: 1;
 }
 .burger-bars span {
   width: 28px;
