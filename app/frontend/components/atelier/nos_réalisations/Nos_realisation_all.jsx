@@ -298,20 +298,10 @@ export default function NosRealisationsAll({ items = [] }) {
       <div className="nos-realisations-all">
         <Confiance />
 
-        <div className="realisation-on-title">
-          <p>ATELIER LA PIEUVRE</p>
-       <div className="header-realisation">
 
-  <p className="personalisation-text">
-    {breakOnUnderscore("Confection_Personalisation_Events_Merchandising")}
-  </p>
-
-  <p className="realisation-title-right">
-    Selection_2024_2025
-  </p>
 </div>
 
-        </div>
+        
 
         <div className="realisation-container">
           <h1 className="realisation-title">LE SHOWROOM</h1>
@@ -328,7 +318,7 @@ export default function NosRealisationsAll({ items = [] }) {
             ))}
           </div>
         </div>
-      </div>
+    
       <ContactForm />
     </>
   );
