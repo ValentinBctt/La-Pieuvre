@@ -71,7 +71,7 @@
   .hamburger-menu {
     display: flex;
     position: static !important;
-    margin: 0.5rem 0 0 0.5rem;
+    margin: 4rem 0 0 0.5rem;
     top: unset;
     left: unset;
     align-self: flex-start;
@@ -116,6 +116,10 @@
   to { opacity: 1; transform: translateY(0); }
 }
 @media (max-width: 768px) {
+  body,
+  html {
+    overflow-y: scroll;
+  }
 
   .bureau-home {
     margin: 1rem auto;
@@ -192,39 +196,51 @@ h2 {
 
 .navbar-atelier,
 .navbar-bureau {
-  position: sticky;
+  
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 1000;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 0.75rem;
   padding: 1rem 0.5rem;
   padding-inline: 1rem;
+  box-sizing: border-box;
+
 }
 
   .navbar-left,
-  .navbar-right {
-    display: none;
+  .navbar-right,
+  .navbar-maison-right {
+    display: none !important;
   }
 
   .burger {
     display: flex;
-    margin-left: auto;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
     z-index: 1001;
+  }
+
+  .navbar-atelier-center,
+  .navbar-bureau-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .navbar-atelier-center img,
   .navbar-bureau-center img {
-    position: static;
-    top: auto;
-    left: auto;
-    transform: none;
-    height: 2.5rem;
+    height: 3.5rem;
     padding: 0.35rem;
-    margin-right: auto;
-    background: transparent;
+    background: var(--black);
+    border-radius: 100%;
   }
 
   .navbar-atelier:hover .navbar-bureau-center img,
@@ -435,10 +451,6 @@ h2 {
 
     .navbar-mobile-menu.active a{
       margin-top: 0.5rem;
-    }
-
-    .navbar-mobile-menu.active {
-        margin-top: 0.5rem;
     }
 
     .form-good-services {

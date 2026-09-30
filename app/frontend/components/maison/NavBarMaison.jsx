@@ -60,9 +60,9 @@ export default function NavbarMaison() {
 
       <div
         id="atelier-mobile-menu"
-        className={`navbar-mobile-menu navbar-maison-mobile-menu ${menuOpen ? "active" : ""}`}
+        className={`navbar-mobile-menu ${menuOpen ? "active" : ""}`}
       >
-        <div className="navbar-mobile-links navbar-maison-mobile-links">
+        <div className="navbar-mobile-links">
           {mainLinks.map((link) => (
             <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)}>
               {link.label}
@@ -70,7 +70,7 @@ export default function NavbarMaison() {
           ))}
         </div>
 
-        <div className="navbar-mobile-links navbar-mobile-links-secondary navbar-maison-mobile-links-secondary">
+        <div className="navbar-mobile-links navbar-mobile-links-secondary">
           {secondaryLinks.map((link) => (
             <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)}>
               {link.label}

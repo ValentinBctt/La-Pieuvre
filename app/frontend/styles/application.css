@@ -304,15 +304,17 @@ p {
   transition: opacity 0.25s ease;
 }
 
-.navbar-bureau:hover .navbar-left > a::after,
-.navbar-atelier:hover .navbar-left > a::after,
-.navbar-bureau:hover .navbar-links a::after,
-.navbar-atelier:hover .navbar-links a::after {
+.navbar-bureau .navbar-left > a:hover::after,
+.navbar-atelier .navbar-left > a:hover::after,
+.navbar-bureau .navbar-links a:hover::after,
+.navbar-atelier .navbar-links a:hover::after {
   opacity: 1;
 }
 
 .navbar-atelier .navbar-right a {
   color: var(--white);
+
+
 }
 
 .navbar-atelier .navbar-right a::after,
@@ -331,52 +333,17 @@ p {
   background-color: var(--orange);
 }
 
-.navbar-atelier .navbar-right a:not(:first-child):not(:last-child):hover {
-  color: var(--orange);
-}
-
-.navbar-atelier .navbar-right a:first-child:hover,
-.navbar-atelier .navbar-right a:last-child:hover {
-  color: var(--white);
-}
-
-.navbar-atelier:hover .navbar-right a:not(:first-child):not(:last-child) {
-  color: var(--orange);
-}
-
-.navbar-atelier:hover .navbar-right a:first-child,
-.navbar-atelier:hover .navbar-right a:last-child {
-  color: var(--white);
-}
-
-.navbar-atelier:hover .navbar-right a::after {
+.navbar-atelier .navbar-right a:hover::after {
   background-color: var(--orange);
   opacity: 1;
 }
 
-.navbar-bureau .navbar-right a::after {
+.navbar-bureau .navbar-right a:hover::after {
   background-color: var(--white);
+  opacity: 1;
 }
 
 .navbar-bureau .navbar-right a {
-  color: var(--white);
-}
-
-.navbar-bureau .navbar-right a:not(:first-child):not(:last-child):hover {
-  color: var(--white);
-}
-
-.navbar-bureau .navbar-right a:first-child:hover,
-.navbar-bureau .navbar-right a:last-child:hover {
-  color: var(--white);
-}
-
-.navbar-bureau:hover .navbar-right a:not(:first-child):not(:last-child) {
-  color: var(--white);
-}
-
-.navbar-bureau:hover .navbar-right a:first-child,
-.navbar-bureau:hover .navbar-right a:last-child {
   color: var(--white);
 }
 .navbar-left {
@@ -420,9 +387,7 @@ p {
 
   transition: color 0.3s ease;
 
-  &:hover {
-    color: var(--orange);
-  }
+
 }
 .navbar-bureau a {
   color: var(--orange);
@@ -432,9 +397,11 @@ p {
   font-family: 'Pluto';
   color: var(--white);
   transition: 0.3s ease;
-  &:hover {
-    color: var(--orange);
-  }
+
+}
+
+.navbar-maison-title a   {
+  color: var(--white) !important;
 }
 
 /* Espace horizontal entre les liens de la navbar à droite */

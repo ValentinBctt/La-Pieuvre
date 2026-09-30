@@ -41,7 +41,7 @@ body {
 
 .navbar-maison-left,
 .navbar-maison-right {
-  color: white !important;
+  color: var(--turquoise) !important;
 }
 
 .navbar-maison-left a,
@@ -50,8 +50,8 @@ body {
 }
 
 .navbar-maison .navbar-left > a {
-  color: white !important;
-}
+    color: white !important;
+  }
 
 .navbar-maison-center::before,
 .navbar-maison-center::after {
