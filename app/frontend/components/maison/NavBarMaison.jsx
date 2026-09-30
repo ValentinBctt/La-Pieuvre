@@ -15,8 +15,8 @@ export default function NavbarMaison() {
   return (
     <nav className="navbar-atelier navbar-maison">
       <div className="navbar-left navbar-maison-left">
-        <a href="/atelier" className="navbar-maison-title">
-          ATELIER&nbsp; <strong>LA PIEUVRE</strong>
+        <a href="/maison" className="navbar-maison-title">
+          MAISON&nbsp; <strong>LA PIEUVRE</strong>
         </a>
 
         <div className={`navbar-links navbar-maison-links ${menuOpen ? "active" : ""}`}>
