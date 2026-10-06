@@ -34,9 +34,12 @@ function ProjectCard({ project, slider = false }) {
   );
 }
 
-export default function BureauHomeData() {
+export default function BureauHomeData({ bureauData = { categories: [], projects: [] } }) {
   const [data, setData] = useState(() => {
-    // Essayer de charger depuis localStorage en priorité
+    // Utiliser les données du serveur si disponibles, sinon le cache
+    if (bureauData && bureauData.projects && bureauData.projects.length > 0) {
+      return bureauData;
+    }
     try {
       const cached = localStorage.getItem('bureauProjectsCache');
       return cached ? JSON.parse(cached) : { categories: [], projects: [] };
@@ -48,6 +51,10 @@ export default function BureauHomeData() {
   const [showSlider, setShowSlider] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [loading, setLoading] = useState(() => {
+    // Pas de loading si données du serveur disponibles
+    if (bureauData && bureauData.projects && bureauData.projects.length > 0) {
+      return false;
+    }
     try {
       const cached = localStorage.getItem('bureauProjectsCache');
       if (cached) {
@@ -63,35 +70,40 @@ export default function BureauHomeData() {
   useEffect(() => {
     let isMounted = true;
 
-    async function loadBureauData() {
-      try {
-        const response = await fetch("/api/bureau");
-        if (!response.ok) return;
+    // Initialiser la catégorie sélectionnée
+    const firstProjectCategory = data.categories.find((category) => category.kind === "project");
+    const firstMainCategory = data.categories.find((category) => category.name === MAIN_CATEGORY_NAMES[0]);
+    setSelectedCategory((firstProjectCategory || firstMainCategory || data.categories[0])?.name || "");
 
-        const json = await response.json();
-        if (!isMounted) return;
+    // Charger les données de l'API seulement si pas de données du serveur
+    if (!bureauData || !bureauData.projects || bureauData.projects.length === 0) {
+      async function loadBureauData() {
+        try {
+          const response = await fetch("/api/bureau");
+          if (!response.ok) return;
 
-        setData(json);
-        
-        // Mettre en cache pour les visites suivantes
-        localStorage.setItem('bureauProjectsCache', JSON.stringify(json));
-        
-        const firstProjectCategory = json.categories.find((category) => category.kind === "project");
-        const firstMainCategory = json.categories.find((category) => category.name === MAIN_CATEGORY_NAMES[0]);
-        setSelectedCategory((firstProjectCategory || firstMainCategory || json.categories[0])?.name || "");
-        setLoading(false);
-      } catch (error) {
-        console.error('Erreur lors du chargement des projets bureau:', error);
-        setLoading(false);
+          const json = await response.json();
+          if (!isMounted) return;
+
+          setData(json);
+          
+          // Mettre en cache pour les visites suivantes
+          localStorage.setItem('bureauProjectsCache', JSON.stringify(json));
+          
+          setLoading(false);
+        } catch (error) {
+          console.error('Erreur lors du chargement des projets bureau:', error);
+          setLoading(false);
+        }
       }
-    }
 
-    loadBureauData();
+      loadBureauData();
+    }
 
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [bureauData]);
 
   const mainCategories = MAIN_CATEGORY_NAMES
     .map((name) => data.categories.find((category) => category.name === name && category.kind === "main"))

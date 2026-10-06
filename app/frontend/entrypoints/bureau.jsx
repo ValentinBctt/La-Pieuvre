@@ -10,9 +10,10 @@ window.React = React
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('root');
   if (container) {
+    const bureauData = JSON.parse(container.dataset.bureauData || '{"categories":[],"projects":[]}')
     if (!window._bureauReactRoot) {
       window._bureauReactRoot = createRoot(container);
     }
-    window._bureauReactRoot.render(<Bureau />);
+    window._bureauReactRoot.render(<Bureau bureauData={bureauData} />);
   }
 });

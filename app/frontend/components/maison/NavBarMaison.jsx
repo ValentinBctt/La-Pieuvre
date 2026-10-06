@@ -3,8 +3,10 @@ import React, { useState } from "react";
 export default function NavbarMaison() {
   const [menuOpen, setMenuOpen] = useState(false);
   const mainLinks = [
-    { href: "/bureau", label: "BUREAU" },
+
     { href: "/atelier", label: "ATELIER" },
+    { href: "/bureau", label: "BUREAU" },
+    
   ];
 
   const secondaryLinks = [

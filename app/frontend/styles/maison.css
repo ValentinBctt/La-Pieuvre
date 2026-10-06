@@ -137,9 +137,9 @@ body {
   gap: 16px;
   overflow-x: auto;
   padding: 20px 5%;
-  scroll-behavior: smooth;
   width: 100%;
   flex: 1;
+  -webkit-overflow-scrolling: touch;
   
   /* Cacher la scrollbar native */
   scrollbar-width: none;
@@ -164,7 +164,8 @@ body {
   width: 30%;
   background: var(--turquoise-dark) !important;
   border-radius: 4px;
-  transition: transform 0.1s ease;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .maison-scroll-image {
@@ -172,7 +173,8 @@ body {
   height: 475px;
   width: auto;
   object-fit: cover;
-  
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 /* Formulaire Maison */

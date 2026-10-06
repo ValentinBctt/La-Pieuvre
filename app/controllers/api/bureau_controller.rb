@@ -3,6 +3,9 @@ module Api
     include OptimizedImageUrls
 
     def index
+      # Cache 12h
+      expires_in 12.hours, public: true
+      
       render json: {
         categories: categories_json,
         projects: projects_json(BureauProject.includes(:bureau_category).with_attached_main_image.with_attached_photos)

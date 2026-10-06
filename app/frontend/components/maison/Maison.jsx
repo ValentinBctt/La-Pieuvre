@@ -3,11 +3,26 @@ import { useScrollbarDrag } from "../../hooks/useScrollbarDrag";
 import NavBarMaison from "./NavBarMaison";
 import ContactFormMaison from "../ContactFormMaison";
 
-const Maison = () => {
+const Maison = ({ showroomItems = [] }) => {
   const scrollerRef = useRef(null);
   const scrollbarThumbRef = useRef(null);
 
   useScrollbarDrag(scrollerRef, scrollbarThumbRef);
+
+  // Fallback aux images statiques si pas de données du serveur
+  const defaultImages = [
+    'https://res.cloudinary.com/dnojcwwos/image/upload/v1790683639/rectangle_268_1x_qrgu0m.webp',
+    'https://res.cloudinary.com/dnojcwwos/image/upload/v1790683637/rectangle_266_1x_pryfir.webp',
+    'https://res.cloudinary.com/dnojcwwos/image/upload/v1790683637/rectangle_263_1x_u2qrof.webp',
+    'https://res.cloudinary.com/dnojcwwos/image/upload/v1790683637/rectangle_265_1x_w0wf4b.webp',
+    'https://res.cloudinary.com/dnojcwwos/image/upload/v1790683636/rectangle_264_1x_bz9xqj.webp',
+    'https://res.cloudinary.com/dnojcwwos/image/upload/v1790683636/rectangle_262_1x_qvbxwz.webp',
+    'https://res.cloudinary.com/dnojcwwos/image/upload/v1790683636/rectangle_261_1x_cyc1cy.webp'
+  ];
+
+  const imagesToDisplay = showroomItems.length > 0 
+    ? showroomItems.map(item => item.image)
+    : defaultImages;
 
   return (
     <div className="maison-container">
@@ -26,13 +41,16 @@ Retrouvez bientôt nos différents ateliers sur cette page…</p>
 
       <div className="maison-content-caroussel">
         <div className="maison-scroller" ref={scrollerRef}>
-          <img className="maison-scroll-image" src="https://res.cloudinary.com/dnojcwwos/image/upload/v1790683639/rectangle_268_1x_qrgu0m.webp" alt="Image 1" />
-          <img className="maison-scroll-image" src="https://res.cloudinary.com/dnojcwwos/image/upload/v1790683637/rectangle_266_1x_pryfir.webp" alt="Image 2" />
-          <img className="maison-scroll-image" src="https://res.cloudinary.com/dnojcwwos/image/upload/v1790683637/rectangle_263_1x_u2qrof.webp" alt="Image 3" />
-          <img className="maison-scroll-image" src="https://res.cloudinary.com/dnojcwwos/image/upload/v1790683637/rectangle_265_1x_w0wf4b.webp" alt="Image 4" />
-          <img className="maison-scroll-image" src="https://res.cloudinary.com/dnojcwwos/image/upload/v1790683636/rectangle_264_1x_bz9xqj.webp" alt="Image 5" />
-          <img className="maison-scroll-image" src="https://res.cloudinary.com/dnojcwwos/image/upload/v1790683636/rectangle_262_1x_qvbxwz.webp" alt="Image 6" />
-          <img className="maison-scroll-image" src="https://res.cloudinary.com/dnojcwwos/image/upload/v1790683636/rectangle_261_1x_cyc1cy.webp" alt="Image 7" />
+          {imagesToDisplay.map((src, index) => (
+            <img 
+              key={index}
+              className="maison-scroll-image" 
+              src={src} 
+              alt={`Image ${index + 1}`}
+              loading="lazy"
+              decoding="async"
+            />
+          ))}
         </div>
 
         <div className="maison-scrollbar">

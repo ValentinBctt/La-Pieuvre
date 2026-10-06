@@ -12,8 +12,9 @@ export const useScrollbarDrag = (scrollerRef, thumbRef) => {
     let isDragging = false;
     let startX = 0;
     let startScrollLeft = 0;
+    let animationFrameId = null;
 
-    // Mise à jour du thumb position/width basée sur le scroll
+    // Mise à jour du thumb position/width basée sur le scroll (optimisé avec RAF)
     const updateThumb = () => {
       if (!thumbRef?.current) return;
 
@@ -23,13 +24,19 @@ export const useScrollbarDrag = (scrollerRef, thumbRef) => {
       const clientWidth = scroller.clientWidth;
       const scrollTrackWidth = thumb.parentElement.clientWidth;
       
-      if (scrollWidth === clientWidth) return; // Pas besoin de scrollbar
+      if (scrollWidth === clientWidth) return;
       
       const thumbWidth = (clientWidth / scrollWidth) * scrollTrackWidth;
       const thumbLeft = (scrollLeft / (scrollWidth - clientWidth)) * (scrollTrackWidth - thumbWidth);
 
       thumb.style.width = `${thumbWidth}px`;
       thumb.style.transform = `translateX(${thumbLeft}px)`;
+    };
+
+    // Debounce thumb update pour éviter le jank
+    const scheduleThumbUpdate = () => {
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+      animationFrameId = requestAnimationFrame(updateThumb);
     };
 
     // Gestion du drag sur le scroller
@@ -39,15 +46,15 @@ export const useScrollbarDrag = (scrollerRef, thumbRef) => {
       startScrollLeft = scroller.scrollLeft;
       scroller.style.cursor = "grabbing";
       scroller.style.userSelect = "none";
-      e.preventDefault();
     };
 
     const handleMouseMove = (e) => {
       if (!isDragging) return;
 
       const deltaX = e.clientX - startX;
-      const sensitivity = 1.5; // Augmente la sensibilité du drag
+      const sensitivity = 1.5;
       scroller.scrollLeft = startScrollLeft - deltaX * sensitivity;
+      scheduleThumbUpdate();
     };
 
     const handleMouseUp = () => {
@@ -69,27 +76,29 @@ export const useScrollbarDrag = (scrollerRef, thumbRef) => {
       const deltaX = e.touches[0].clientX - startX;
       const sensitivity = 1.5;
       scroller.scrollLeft = startScrollLeft - deltaX * sensitivity;
+      scheduleThumbUpdate();
     };
 
     const handleTouchEnd = () => {
       isDragging = false;
     };
 
-    // Event listeners avec passive: false pour preventDefault
-    scroller.addEventListener("scroll", updateThumb);
-    scroller.addEventListener("mousedown", handleMouseDown, { passive: false });
-    scroller.addEventListener("touchstart", handleTouchStart, { passive: false });
-    document.addEventListener("mousemove", handleMouseMove, { passive: false });
-    document.addEventListener("mouseup", handleMouseUp);
-    document.addEventListener("touchmove", handleTouchMove, { passive: false });
-    document.addEventListener("touchend", handleTouchEnd);
+    // Event listeners - passive: true pour les scroll/touch (meilleure perf mobile)
+    scroller.addEventListener("scroll", scheduleThumbUpdate, { passive: true });
+    scroller.addEventListener("mousedown", handleMouseDown, { passive: true });
+    scroller.addEventListener("touchstart", handleTouchStart, { passive: true });
+    document.addEventListener("mousemove", handleMouseMove, { passive: true });
+    document.addEventListener("mouseup", handleMouseUp, { passive: true });
+    document.addEventListener("touchmove", handleTouchMove, { passive: true });
+    document.addEventListener("touchend", handleTouchEnd, { passive: true });
 
     // Init
     scroller.style.cursor = "grab";
     updateThumb();
 
     return () => {
-      scroller.removeEventListener("scroll", updateThumb);
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+      scroller.removeEventListener("scroll", scheduleThumbUpdate);
       scroller.removeEventListener("mousedown", handleMouseDown);
       scroller.removeEventListener("touchstart", handleTouchStart);
       document.removeEventListener("mousemove", handleMouseMove);

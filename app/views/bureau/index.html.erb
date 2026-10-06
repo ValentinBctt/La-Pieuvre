@@ -1,2 +1,2 @@
-<div id="root"></div>
+<div id="root" data-bureau-data="<%= json_escape(@bureau_data.to_json) %>"></div>
 <%= vite_javascript_tag 'bureau.jsx' %>

@@ -1,2 +1,2 @@
-<div id="maison-root"></div>
+<div id="maison-root" data-showroom-items="<%= json_escape(@showroom_items.to_json) %>"></div>
 <%= vite_javascript_tag 'maison.jsx' %>

@@ -530,3 +530,11 @@ h2 {
   
   }
 }
+
+@media (max-width: 375px) {
+    .navbar-left a {
+    font-size: 0.6rem;
+  }
+
+  
+}
