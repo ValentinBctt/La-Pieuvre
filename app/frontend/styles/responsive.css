@@ -373,7 +373,7 @@ h2 {
     display: grid;
     grid-template-columns: repeat(1, 1fr) !important;
     gap: 2rem;
-    margin-top: 4rem;
+    margin: 4rem auto 0 auto;
     width: 90%;
   }
 
