@@ -253,7 +253,7 @@
 
    .realisation-title {
     text-align: center;
-    margin: 4rem auto;
+    margin: 7rem auto;
 
 
    }
@@ -263,7 +263,7 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     margin-top: 4rem;
-    width: 100%;
+    width: 90%;
   }
 
 .realisation-item {
