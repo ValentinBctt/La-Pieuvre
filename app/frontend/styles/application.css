@@ -151,6 +151,11 @@ h2 {
   padding-top: 3rem;
 }
 
+.savoir-faire-title h2 {
+  margin-top : 1rem !important;
+  padding-top: 0 !important;
+}
+
 
 
 h3 {
@@ -238,6 +243,10 @@ p {
   &:hover {
     border-bottom-color: transparent;
   }
+}
+
+.navbar-left a {
+  margin-right: 0 !important;
 }
 
 /* Les deux navbars */

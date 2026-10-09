@@ -166,7 +166,7 @@ export default function PrestationLive() {
         justifyContent: 'center',
 
         textAlign: 'center',
-        padding: '2rem'
+        padding: '0'
       }}
     >
       <p>La Pieuvre propose des animations sur mesure lors <br /> d'événements extérieurs grâce à la personnalisation live.</p>

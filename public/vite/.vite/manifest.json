@@ -3,19 +3,33 @@
     "file": "assets/ChaparralPro-Light-BOzeumd6.otf",
     "src": "_ChaparralPro-Light-BOzeumd6.otf"
   },
-  "_Confiance-marquee-BRylcYsW.js": {
-    "file": "assets/Confiance-marquee-BRylcYsW.js",
+  "_Confiance-marquee-zz4TRy9P.js": {
+    "file": "assets/Confiance-marquee-zz4TRy9P.js",
     "name": "Confiance-marquee",
     "imports": [
-      "_responsive-C_TmRnVT.js",
-      "_realisation-Ds-FXeJU.js"
+      "_responsive-DrfEyDKJ.js",
+      "_realisation-N4BzJ6wG.js"
     ]
   },
-  "_ContactForm-CId1NPLw.js": {
-    "file": "assets/ContactForm-CId1NPLw.js",
+  "_ContactForm-BuPMIuBf.js": {
+    "file": "assets/ContactForm-BuPMIuBf.js",
     "name": "ContactForm",
     "imports": [
-      "_responsive-C_TmRnVT.js"
+      "_responsive-DrfEyDKJ.js"
+    ]
+  },
+  "_CookiePopup-IQbDQj10.css": {
+    "file": "assets/CookiePopup-IQbDQj10.css",
+    "src": "_CookiePopup-IQbDQj10.css"
+  },
+  "_CookiePopup-O4SccwNe.js": {
+    "file": "assets/CookiePopup-O4SccwNe.js",
+    "name": "CookiePopup",
+    "imports": [
+      "_responsive-DrfEyDKJ.js"
+    ],
+    "css": [
+      "assets/CookiePopup-IQbDQj10.css"
     ]
   },
   "_Gotham-Bold-BUZkTt9Z.otf": {
@@ -46,23 +60,23 @@
     "file": "assets/PlutoRegular-CjdYgVDC.otf",
     "src": "_PlutoRegular-CjdYgVDC.otf"
   },
-  "_Prestation_live_all-B-2ACwYP.css": {
-    "file": "assets/Prestation_live_all-B-2ACwYP.css",
-    "src": "_Prestation_live_all-B-2ACwYP.css"
-  },
-  "_Prestation_live_all-R4-xe-Wq.js": {
-    "file": "assets/Prestation_live_all-R4-xe-Wq.js",
+  "_Prestation_live_all-9XgZabXN.js": {
+    "file": "assets/Prestation_live_all-9XgZabXN.js",
     "name": "Prestation_live_all",
     "imports": [
-      "_responsive-C_TmRnVT.js",
-      "_ContactForm-CId1NPLw.js",
-      "_Confiance-marquee-BRylcYsW.js",
-      "_realisation-Ds-FXeJU.js",
-      "_useScrollbarDrag-BdKwWZsa.js"
+      "_responsive-DrfEyDKJ.js",
+      "_ContactForm-BuPMIuBf.js",
+      "_Confiance-marquee-zz4TRy9P.js",
+      "_realisation-N4BzJ6wG.js",
+      "_useScrollbarDrag-0cdklNwp.js"
     ],
     "css": [
-      "assets/Prestation_live_all-B-2ACwYP.css"
+      "assets/Prestation_live_all-BuJhn-fT.css"
     ]
+  },
+  "_Prestation_live_all-BuJhn-fT.css": {
+    "file": "assets/Prestation_live_all-BuJhn-fT.css",
+    "src": "_Prestation_live_all-BuJhn-fT.css"
   },
   "_color-limit-B1ZDVStL.svg": {
     "file": "assets/color-limit-B1ZDVStL.svg",
@@ -88,25 +102,29 @@
     "file": "assets/quantity-C8-ANacC.svg",
     "src": "_quantity-C8-ANacC.svg"
   },
-  "_realisation-BGxsWypv.css": {
-    "file": "assets/realisation-BGxsWypv.css",
-    "src": "_realisation-BGxsWypv.css"
+  "_realisation-CubK7uvb.css": {
+    "file": "assets/realisation-CubK7uvb.css",
+    "src": "_realisation-CubK7uvb.css"
   },
-  "_realisation-Ds-FXeJU.js": {
-    "file": "assets/realisation-Ds-FXeJU.js",
+  "_realisation-N4BzJ6wG.js": {
+    "file": "assets/realisation-N4BzJ6wG.js",
     "name": "realisation",
     "imports": [
-      "_responsive-C_TmRnVT.js"
+      "_responsive-DrfEyDKJ.js"
     ],
     "css": [
-      "assets/realisation-BGxsWypv.css"
+      "assets/realisation-CubK7uvb.css"
     ]
   },
-  "_responsive-C_TmRnVT.js": {
-    "file": "assets/responsive-C_TmRnVT.js",
+  "_responsive-DJYP01aF.css": {
+    "file": "assets/responsive-DJYP01aF.css",
+    "src": "_responsive-DJYP01aF.css"
+  },
+  "_responsive-DrfEyDKJ.js": {
+    "file": "assets/responsive-DrfEyDKJ.js",
     "name": "responsive",
     "css": [
-      "assets/responsive-DH5ZJH0E.css"
+      "assets/responsive-DJYP01aF.css"
     ],
     "assets": [
       "assets/Gotham-Book-CqOnInll.woff2",
@@ -119,29 +137,25 @@
       "assets/ChaparralPro-Light-Dm6M96ok.woff2"
     ]
   },
-  "_responsive-DH5ZJH0E.css": {
-    "file": "assets/responsive-DH5ZJH0E.css",
-    "src": "_responsive-DH5ZJH0E.css"
-  },
   "_swiper-Bdbi0viN.css": {
     "file": "assets/swiper-Bdbi0viN.css",
     "src": "_swiper-Bdbi0viN.css"
   },
-  "_swiper-zS0Rd5fm.js": {
-    "file": "assets/swiper-zS0Rd5fm.js",
+  "_swiper-CuTbpuke.js": {
+    "file": "assets/swiper-CuTbpuke.js",
     "name": "swiper",
     "imports": [
-      "_responsive-C_TmRnVT.js"
+      "_responsive-DrfEyDKJ.js"
     ],
     "css": [
       "assets/swiper-Bdbi0viN.css"
     ]
   },
-  "_useScrollbarDrag-BdKwWZsa.js": {
-    "file": "assets/useScrollbarDrag-BdKwWZsa.js",
+  "_useScrollbarDrag-0cdklNwp.js": {
+    "file": "assets/useScrollbarDrag-0cdklNwp.js",
     "name": "useScrollbarDrag",
     "imports": [
-      "_responsive-C_TmRnVT.js"
+      "_responsive-DrfEyDKJ.js"
     ]
   },
   "assets/fournisseurs.svg": {
@@ -149,14 +163,14 @@
     "src": "assets/fournisseurs.svg"
   },
   "entrypoints/activations.jsx": {
-    "file": "assets/activations-C_R1h2nx.js",
+    "file": "assets/activations-CIFo5k4r.js",
     "name": "entrypoints/activations.jsx",
     "src": "entrypoints/activations.jsx",
     "isEntry": true,
     "imports": [
-      "_responsive-C_TmRnVT.js",
-      "_realisation-Ds-FXeJU.js",
-      "_Prestation_live_all-R4-xe-Wq.js"
+      "_responsive-DrfEyDKJ.js",
+      "_realisation-N4BzJ6wG.js",
+      "_Prestation_live_all-9XgZabXN.js"
     ]
   },
   "entrypoints/application.js": {
@@ -166,83 +180,86 @@
     "isEntry": true
   },
   "entrypoints/application.jsx": {
-    "file": "assets/application-BHtAE6kD.js",
+    "file": "assets/application-BytEcNpC.js",
     "name": "entrypoints/application.jsx",
     "src": "entrypoints/application.jsx",
     "isEntry": true,
     "imports": [
-      "_responsive-C_TmRnVT.js"
+      "_responsive-DrfEyDKJ.js"
     ],
     "css": [
       "assets/application-BdI6zbL7.css"
     ]
   },
   "entrypoints/atelier.jsx": {
-    "file": "assets/atelier-COARnB58.js",
+    "file": "assets/atelier-Drl_Z0oc.js",
     "name": "entrypoints/atelier.jsx",
     "src": "entrypoints/atelier.jsx",
     "isEntry": true,
     "imports": [
-      "_responsive-C_TmRnVT.js",
-      "_ContactForm-CId1NPLw.js",
-      "_realisation-Ds-FXeJU.js",
-      "_useScrollbarDrag-BdKwWZsa.js",
-      "_swiper-zS0Rd5fm.js"
+      "_responsive-DrfEyDKJ.js",
+      "_ContactForm-BuPMIuBf.js",
+      "_CookiePopup-O4SccwNe.js",
+      "_realisation-N4BzJ6wG.js",
+      "_useScrollbarDrag-0cdklNwp.js",
+      "_swiper-CuTbpuke.js"
     ],
     "css": [
-      "assets/atelier-Cyzoz108.css"
+      "assets/atelier-BUTdfekk.css"
     ],
     "assets": [
       "assets/fournisseurs-CFkCL5GO.svg"
     ]
   },
   "entrypoints/bureau.jsx": {
-    "file": "assets/bureau--LPcEf07.js",
+    "file": "assets/bureau-Iit86ke2.js",
     "name": "entrypoints/bureau.jsx",
     "src": "entrypoints/bureau.jsx",
     "isEntry": true,
     "imports": [
-      "_responsive-C_TmRnVT.js",
-      "_ContactForm-CId1NPLw.js",
-      "_swiper-zS0Rd5fm.js"
+      "_responsive-DrfEyDKJ.js",
+      "_ContactForm-BuPMIuBf.js",
+      "_CookiePopup-O4SccwNe.js",
+      "_swiper-CuTbpuke.js"
     ],
     "css": [
       "assets/bureau-TMq7MG3M.css"
     ]
   },
   "entrypoints/maison.jsx": {
-    "file": "assets/maison-DBlhf6fh.js",
+    "file": "assets/maison-BEyj8F2y.js",
     "name": "entrypoints/maison.jsx",
     "src": "entrypoints/maison.jsx",
     "isEntry": true,
     "imports": [
-      "_responsive-C_TmRnVT.js",
-      "_useScrollbarDrag-BdKwWZsa.js"
+      "_responsive-DrfEyDKJ.js",
+      "_CookiePopup-O4SccwNe.js",
+      "_useScrollbarDrag-0cdklNwp.js"
     ],
     "css": [
       "assets/maison-Do-ElYUg.css"
     ]
   },
   "entrypoints/prestationlive.jsx": {
-    "file": "assets/prestationlive-oZK1l4_V.js",
+    "file": "assets/prestationlive-dRA743KT.js",
     "name": "entrypoints/prestationlive.jsx",
     "src": "entrypoints/prestationlive.jsx",
     "isEntry": true,
     "imports": [
-      "_responsive-C_TmRnVT.js",
-      "_Prestation_live_all-R4-xe-Wq.js"
+      "_responsive-DrfEyDKJ.js",
+      "_Prestation_live_all-9XgZabXN.js"
     ]
   },
   "entrypoints/realisations.jsx": {
-    "file": "assets/realisations-Dnb4wWck.js",
+    "file": "assets/realisations-DDu8i7EK.js",
     "name": "entrypoints/realisations.jsx",
     "src": "entrypoints/realisations.jsx",
     "isEntry": true,
     "imports": [
-      "_responsive-C_TmRnVT.js",
-      "_ContactForm-CId1NPLw.js",
-      "_Confiance-marquee-BRylcYsW.js",
-      "_realisation-Ds-FXeJU.js"
+      "_responsive-DrfEyDKJ.js",
+      "_ContactForm-BuPMIuBf.js",
+      "_Confiance-marquee-zz4TRy9P.js",
+      "_realisation-N4BzJ6wG.js"
     ]
   },
   "fonts/ChaparralPro-Light.woff2": {

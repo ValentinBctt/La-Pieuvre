@@ -1,0 +1,129 @@
+<%= stylesheet_link_tag 'cookie_policy', media: 'all', 'data-turbo-track': 'reload' %>
+
+<div class="cookie-policy-container">
+  <div class="cookie-policy-content">
+    <div class="cookie-policy-header">
+      <h1>🍪 Politique de Cookies</h1>
+      <div class="header-line"></div>
+    </div>
+
+    <section class="cookie-section">
+      <h2>1. Qu'est-ce qu'un cookie ?</h2>
+      <p>
+        Un cookie est un petit fichier texte stocké sur votre appareil lorsque vous visitez notre site web. 
+        Les cookies nous permettent de reconnaître votre appareil et de mémoriser vos préférences. 
+        Ils sont essentiels pour l'expérience utilisateur moderne et peuvent être stockés de manière sécurisée.
+      </p>
+    </section>
+
+    <section class="cookie-section">
+      <h2>2. Quels types de cookies utilisons-nous ?</h2>
+      <div class="cookie-types">
+        <div class="cookie-type-item">
+          <h3>Cookies essentiels</h3>
+          <p>
+            Nécessaires pour le fonctionnement du site (authentification, sécurité, CSRF protection). 
+            Ces cookies sont indispensables et fonctionnent sans consentement.
+          </p>
+        </div>
+
+        <div class="cookie-type-item">
+          <h3>Cookies analytiques</h3>
+          <p>
+            Nous aident à comprendre comment vous utilisez notre site pour l'améliorer. 
+            Nous utilisons Google Analytics pour suivre les statistiques d'utilisation.
+          </p>
+        </div>
+
+        <div class="cookie-type-item">
+          <h3>Cookies de préférence</h3>
+          <p>
+            Mémorisent vos choix et paramètres personnels comme la langue, la région, 
+            ou les préférences d'affichage.
+          </p>
+        </div>
+
+        <div class="cookie-type-item">
+          <h3>Cookies de marketing</h3>
+          <p>
+            Utilisés pour afficher des publicités pertinentes basées sur vos intérêts 
+            et votre historique de navigation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cookie-section">
+      <h2>3. Durée de stockage des cookies</h2>
+      <p>
+        Les cookies essentiels restent généralement le temps de votre session. 
+        Les cookies de consentement restent stockés pendant 1 an. 
+        Les cookies analytiques peuvent avoir une durée de 2 ans maximum.
+      </p>
+    </section>
+
+    <section class="cookie-section">
+      <h2>4. Comment gérer vos préférences de cookies ?</h2>
+      <p>
+        Vous pouvez contrôler les cookies à tout moment via :
+      </p>
+      <ul>
+        <li>Le popup de consentement qui s'affiche sur notre site</li>
+        <li>Les paramètres de votre navigateur (Chrome, Firefox, Safari, Edge, etc.)</li>
+        <li>Les outils de gestion de la vie privée de votre système d'exploitation</li>
+      </ul>
+      <p>
+        <strong>Important :</strong> La désactivation de certains cookies peut affecter 
+        la fonctionnalité du site et votre expérience utilisateur.
+      </p>
+    </section>
+
+    <section class="cookie-section">
+      <h2>5. Consentement et conformité RGPD</h2>
+      <p>
+        Conformément au Règlement Général sur la Protection des Données (RGPD), 
+        nous demandons votre consentement avant de placer des cookies non-essentiels sur votre appareil.
+      </p>
+      <p>
+        En continuant à naviguer sur notre site après notification, ou en cliquant sur "Accepter tous", 
+        vous acceptez notre utilisation des cookies. Vous pouvez modifier vos préférences à tout moment 
+        via le popup de cookie ou vos paramètres de navigateur.
+      </p>
+    </section>
+
+    <section class="cookie-section">
+      <h2>6. Tiers et partenaires</h2>
+      <p>
+        Certains cookies peuvent être placés par des tiers (Google Analytics, services de streaming vidéo, etc.). 
+        Ces tiers opèrent selon leurs propres politiques de confidentialité.
+      </p>
+    </section>
+
+    <section class="cookie-section">
+      <h2>7. Mise à jour de cette politique</h2>
+      <p>
+        Nous pouvons mettre à jour cette politique de cookies à tout moment. 
+        Les changements importants seront communiqués via une notification sur le site.
+      </p>
+    </section>
+
+    <section class="cookie-section last-section">
+      <h2>8. Contact</h2>
+      <p>
+        Pour toute question concernant notre politique de cookies ou pour exercer vos droits, 
+        veuillez nous contacter :
+      </p>
+      <div class="contact-info">
+        <p><strong>Email :</strong> <a href="mailto:contact@lapieuvre.fr">contact@lapieuvre.fr</a></p>
+        <p><strong>Adresse :</strong> La Pieuvre, France</p>
+      </div>
+    </section>
+
+    <div class="cookie-policy-footer">
+      <%= link_to 'Politique de confidentialité', privacy_policy_path, class: 'footer-link' %>
+      <%= link_to 'Conditions générales', terms_path, class: 'footer-link' %>
+      <%= link_to 'Accessibilité', accessibility_path, class: 'footer-link' %>
+      <%= link_to 'Retour à l\'accueil', root_path, class: 'btn-back' %>
+    </div>
+  </div>
+</div>

@@ -1,11 +1,9 @@
 
+
 .prestation-live-container {
-  padding: 2rem;
+  padding: 0;
   max-width: 800px;
   margin: 0 auto;
-
-
-
 }
 
 .prestation-live h1 {
@@ -190,6 +188,14 @@
   display: block;
 }
 
+.prestation-live {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.prestation-live-container {
+  padding-top: 0 !important;
+}
 
 
 

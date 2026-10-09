@@ -371,7 +371,7 @@ h2 {
 
   .realisation-grid {
     display: grid;
-    grid-template-columns: repeat(1, 1fr) !important;
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 2rem;
     margin: 4rem auto 0 auto;
     width: 90%;
@@ -496,6 +496,13 @@ h2 {
       margin: 0 -5%;
     }
 
+    .voir-en-details  {
+      margin-top: 2rem;
+    }
+
+    .voir-en-details-arrow {
+      margin-top: 2rem;
+    }
 
 }
 

@@ -273,9 +273,8 @@
   margin-top: 15px;
 }
 
-.selection-textile {
-  padding: 2rem 0;
-
+.voir-en-details-wrap.wrap-marquee {
+  margin-bottom: 1rem !important;
 }
 
 .card-description {

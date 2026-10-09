@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { useScrollbarDrag } from "../../hooks/useScrollbarDrag";
 import NavBarMaison from "./NavBarMaison";
 import ContactFormMaison from "../ContactFormMaison";
+import CookiePopup from "../CookiePopup";
 
 const Maison = ({ showroomItems = [] }) => {
   const scrollerRef = useRef(null);
@@ -20,12 +21,11 @@ const Maison = ({ showroomItems = [] }) => {
     'https://res.cloudinary.com/dnojcwwos/image/upload/v1790683636/rectangle_261_1x_cyc1cy.webp'
   ];
 
-  const imagesToDisplay = showroomItems.length > 0 
-    ? showroomItems.map(item => item.image)
-    : defaultImages;
+  const imagesToDisplay = defaultImages;
 
   return (
     <div className="maison-container">
+      <CookiePopup />
       <NavBarMaison />
       <div className="maison-banner">
         <img className="maison-banner-image" src="https://res.cloudinary.com/dnojcwwos/image/upload/v1790683636/ACCUEIL_dlxpbc.webp" alt="Maison Banner" />

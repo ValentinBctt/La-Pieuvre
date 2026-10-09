@@ -6,12 +6,14 @@ import NosServices from './atelier/Nos_services'
 import PrestationLive from './atelier/Prestation_live'
 import ContactezNous from './atelier/Contactez_nous'
 import ContactForm from './ContactForm'
+import CookiePopup from './CookiePopup'
 
 import NavbarAtelier from './atelier/NavbarAtelier'
 
 export default function Atelier({ showroomImages = [] }) {
   return (
     <div className="atelier-page">
+        <CookiePopup />
         <NavbarAtelier />
         <BannerAtelier showroomImages={showroomImages} />
         <SelectionTextile />

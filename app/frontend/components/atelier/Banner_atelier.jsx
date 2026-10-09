@@ -3,6 +3,7 @@ import Realisation from "./Nos_realisations.jsx";
 
 export default function BannerAtelier({ showroomImages = [] }) {
     return (
+        <div>
         <div className="banner-atelier" style={{ position: 'relative' }}>
        <div className="banner-image">
 
@@ -20,6 +21,8 @@ export default function BannerAtelier({ showroomImages = [] }) {
 
             </div>
 
+        </div>
+        
           <Realisation images={showroomImages} />
         </div>
     )

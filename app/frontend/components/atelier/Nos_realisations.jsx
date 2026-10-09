@@ -123,7 +123,7 @@ export default function NosRealisations({ images: showroomImages = [] }) {
             </div>
           ))}
         </div>
-        <div className="voir-en-details-wrap">
+        <div className="voir-en-details-wrap wrap-marquee">
           <a href="/atelier/realisations" className="voir-en-details">
             VOIR PLUS
           </a>

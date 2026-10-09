@@ -148,10 +148,10 @@ export default function ContactForm({ endpoint = '/api/contacts', buttonText = '
 
       <div className='footer-legal'>
         <h3>MENTIONS LÉGALES</h3>
-        <a href="">Politique de confidentialité</a>
-        <a href="">Conditions générales</a>
-        <a href="">Cookies</a>
-        <a href="">Accesibilité</a>
+        <a href="/politique-confidentialite">Politique de confidentialité</a>
+        <a href="/conditions-generales">Conditions générales</a>
+        <a href="/politique-cookies">Cookies</a>
+        <a href="/accessibilite">Accessibilité</a>
       </div>
     </div>
     </>

@@ -13,11 +13,18 @@ Rails.application.routes.draw do
   get '/realisation', to: redirect('/atelier/realisations')
   get '/realisations', to: redirect('/atelier/realisations')
   get '/prestationlive/:name', to: 'prestationlive#show', as: :prestationlive
+  get '/politique-cookies', to: 'pages#cookie_policy', as: :cookie_policy
+  get '/politique-confidentialite', to: 'pages#privacy_policy', as: :privacy_policy
+  get '/conditions-generales', to: 'pages#terms', as: :terms
+  get '/accessibilite', to: 'pages#accessibility', as: :accessibility
 
   namespace :api do
     resources :contacts, only: [:create]
     resources :products, only: [:index]
     resources :showroom_items, only: [:index]
+    resources :prestation_lives, only: [:index]
+    post 'cookie_consent', to: 'cookie_consent#create'
+    get 'cookie_consent', to: 'cookie_consent#show'
     get 'bureau', to: 'bureau#index'
     get 'bureau/projects/:id', to: 'bureau#show', as: :bureau_project
   end
@@ -28,18 +35,13 @@ Rails.application.routes.draw do
     get 'realisations', to: 'realisations#index', as: :realisations
   end
 
-
-namespace :admin do
-  resources :categories
-  resources :products
-  resources :showroom_items
-  resources :prestation_lives
-  resources :bureau_categories
-  resources :bureau_projects
-  root to: "categories#index"
-end
-
-namespace :api do
-  resources :prestation_lives, only: [:index]
-end
+  namespace :admin do
+    resources :categories
+    resources :products
+    resources :showroom_items
+    resources :prestation_lives
+    resources :bureau_categories
+    resources :bureau_projects
+    root to: "categories#index"
+  end
 end
