@@ -275,7 +275,7 @@
 }
 
 .bureau-project-detail h1 {
-    font-size: clamp(2rem, 5vw, 5rem);
+    font-size: 64px;
     margin: 0;
 }
 
@@ -319,7 +319,7 @@
 
 .bureau-project-description {
     max-width: 700px;
-    margin: 0 auto 3rem;
+    margin: 2rem auto ;
     text-align: center;
     white-space: pre-line;
 }
