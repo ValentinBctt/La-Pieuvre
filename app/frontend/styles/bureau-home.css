@@ -276,7 +276,7 @@
 
 .bureau-project-detail h1 {
     font-size: clamp(2rem, 5vw, 5rem);
-    margin: 1rem 0 2rem;
+    margin: 0;
 }
 
 .bureau-project-main-image {
@@ -285,21 +285,43 @@
     object-fit: cover;
 }
 
+.bureau-project-header-hero {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 4rem;
+    margin-bottom: 3rem;
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--grey);
+}
+
+.bureau-project-header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 0 0 30%;
+}
+
+.bureau-project-header-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.bureau-project-header-right h1 {
+    text-align: right;
+}
+
 .bureau-project-heading {
     display: flex;
     align-items: flex-start;
     width: 100%;
+    margin-bottom: 3rem;
 }
 
-.bureau-project-heading > h1,
 .bureau-project-heading > .bureau-project-field {
-    box-sizing: border-box;
-    width: 50%;
-    flex: 0 0 50%;
-}
-
-.bureau-project-heading > h1 {
-    margin: 1rem 0 2rem;
+    flex: 1;
 }
 
 .bureau-project-copy {

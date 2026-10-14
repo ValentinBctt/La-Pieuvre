@@ -121,15 +121,19 @@ export default function BureauProjectDetail() {
 
         <main className="bureau-project-detail">
 
-        <div className="bureau-project-copy">
-          <ProjectField label="Date_" value={project.date} />
-          <ProjectField label="Mission_" value={project.mission} />
-          <ProjectField label="Contexte_" value={project.contexte} />
-          <ProjectField label="Client_" value={project.client} />
+        <div className="bureau-project-header-hero">
+          <div className="bureau-project-header-left">
+            <ProjectField label="Client_" value={project.client} />
+            <ProjectField label="Mission_" value={project.mission} />
+            <ProjectField label="Contexte_" value={project.contexte} />
+            <ProjectField label="Date_" value={project.date} />
+          </div>
+          <div className="bureau-project-header-right">
+            <h1>{project.name}</h1>
+          </div>
         </div>
 
         <div className="bureau-project-heading">
-          <h1>{project.name}</h1>
           <ProjectField value={project.description} />
         </div>
 
