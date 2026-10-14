@@ -151,7 +151,7 @@ export default function BureauProjectDetail() {
 }
 
 function ProjectField({ label, value }) {
-  return value ? (
+  return value !== null && value !== undefined && value !== '' ? (
     <p className="bureau-project-field">
       <span className="bureau-project-field-label">{label}</span><span className="bureau-project-field-value">{value}</span>
     </p>

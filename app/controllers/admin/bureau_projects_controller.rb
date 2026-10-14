@@ -51,7 +51,7 @@ module Admin
 
     def resource_params
       params.require(:bureau_project).permit(
-        :name, :mission, :contexte, :client, :description,
+        :name, :mission, :contexte, :client, :date, :description,
         :bureau_category_id, :main_image, photos: [], remove_photo_ids: []
       )
     end
