@@ -6,10 +6,12 @@ class BureauController < ApplicationController
     # Cache 12h - les données changent rarement
     expires_in 12.hours, public: true
     
-    @bureau_data = {
-      categories: BureauCategory.order(:kind, :name).map { |c| { id: c.id, name: c.name, kind: c.kind } },
-      projects: BureauProject.includes(:bureau_category).with_attached_main_image.with_attached_photos.map { |p| format_project(p) }
-    }
+    @bureau_data = Rails.cache.fetch('bureau_index', expires_in: 12.hours) do
+      {
+        categories: BureauCategory.order(:kind, :name).map { |c| { id: c.id, name: c.name, kind: c.kind } },
+        projects: BureauProject.includes(:bureau_category).with_attached_main_image.with_attached_photos.map { |p| format_project(p) }
+      }
+    end
   end
 
   def show
