@@ -121,21 +121,22 @@ export default function BureauProjectDetail() {
 
         <main className="bureau-project-detail">
 
-        <div className="bureau-project-header-hero">
-          <div className="bureau-project-header-left">
+        <div className="bureau-project-meta">
+          <div className="bureau-project-meta-left">
             <ProjectField label="Client_" value={project.client} />
             <ProjectField label="Mission_" value={project.mission} />
+          </div>
+          <div className="bureau-project-meta-right">
             <ProjectField label="Contexte_" value={project.contexte} />
             <ProjectField label="Date_" value={project.date} />
           </div>
-          <div className="bureau-project-header-right">
-            <h1>{project.name}</h1>
-          </div>
         </div>
 
-        <div className="bureau-project-heading">
-          <ProjectField value={project.description} />
-        </div>
+        <h1 className="bureau-project-title">{project.name}</h1>
+
+        {project.description && (
+          <p className="bureau-project-description">{project.description}</p>
+        )}
 
         <div className="bureau-project-gallery">
           {project.photos.map((photo) => (
