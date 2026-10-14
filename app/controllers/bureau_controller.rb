@@ -26,6 +26,7 @@ class BureauController < ApplicationController
       mission: project.mission,
       contexte: project.contexte,
       client: project.client,
+      date: project.date,
       description: project.description,
       category: {
         id: project.bureau_category.id,

@@ -122,6 +122,7 @@ export default function BureauProjectDetail() {
         <main className="bureau-project-detail">
 
         <div className="bureau-project-copy">
+          <ProjectField label="Date_" value={project.date ? new Date(project.date * 1000).getFullYear() : null} />
           <ProjectField label="Mission_" value={project.mission} />
           <ProjectField label="Contexte_" value={project.contexte} />
           <ProjectField label="Client_" value={project.client} />
