@@ -29,6 +29,7 @@ class BureauController < ApplicationController
       date: project.date,
       description: project.description,
       description_hover: project.description_hover,
+      title_hover: project.title_hover,
       categories: project.bureau_categories.map { |c| { id: c.id, name: c.name, kind: c.kind } },
       # Réduire les dimensions pour accélérer le chargement
       main_image: optimized_image_url(project.main_image, resize_to_limit: [900, 900]),

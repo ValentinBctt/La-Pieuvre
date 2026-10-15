@@ -39,6 +39,7 @@ module Api
         date: project.date,
         description: project.description,
         description_hover: project.description_hover,
+        title_hover: project.title_hover,
         categories: project.bureau_categories.map { |c| { id: c.id, name: c.name, kind: c.kind } },
         main_image: optimized_image_url(project.main_image, resize_to_limit: [1200, 1200]),
         photos: project.photos.map { |photo| optimized_image_url(photo, resize_to_limit: [1400, 1400]) }

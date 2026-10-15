@@ -118,6 +118,17 @@
     margin: 1rem 1rem !important;
 }
 
+.bureau-item-hover .bureau-item-hover-title {
+    font-size: 0.75rem;
+    font-style: italic;
+    font-weight: normal;
+    margin: 1rem 1rem 0;
+}
+
+.bureau-item-hover .bureau-item-hover-title + p {
+    margin-top: 0.4rem !important;
+}
+
 .bureau-home-images:hover .bureau-home-image-2  {
     display: block;
 }

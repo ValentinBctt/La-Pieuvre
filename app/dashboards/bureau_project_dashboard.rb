@@ -12,6 +12,7 @@ class BureauProjectDashboard < Administrate::BaseDashboard
     date: Field::Number,
     description: Field::Text,
     description_hover: Field::Text,
+    title_hover: Field::String,
     main_image: Field::ActiveStorage.with_options(show_preview: true),
     photos: AttachedPhotosWithRemovalField,
     created_at: Field::DateTime,
@@ -20,10 +21,10 @@ class BureauProjectDashboard < Administrate::BaseDashboard
 
   COLLECTION_ATTRIBUTES = %i[id name bureau_categories main_image].freeze
   SHOW_PAGE_ATTRIBUTES = %i[
-    id name bureau_categories main_image photos mission contexte client date description description_hover created_at updated_at
+    id name bureau_categories main_image photos mission contexte client date description description_hover title_hover created_at updated_at
   ].freeze
   FORM_ATTRIBUTES = %i[
-    name bureau_categories main_image photos mission     contexte client date description description_hover
+    name bureau_categories main_image photos mission     contexte client date     description description_hover title_hover
   ].freeze
   COLLECTION_FILTERS = {}.freeze
 end
