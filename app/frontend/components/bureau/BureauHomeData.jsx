@@ -13,7 +13,6 @@ function ProjectCard({ project, slider = false }) {
     <a className={slider ? "bureau-home-item-swiper" : "bureau-home-item"} href={`/bureau/projects/${project.id}`}>
       <div className="bureau-home-item-title">
         <p>{project.name}</p>
-        <p>{(project.categories || []).map((category) => category.name).join(", ")}</p>
       </div>
       <div className={containerClass}>
         {project.main_image && (
