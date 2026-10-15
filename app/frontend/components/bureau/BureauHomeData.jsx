@@ -27,7 +27,7 @@ function ProjectCard({ project, slider = false }) {
         )}
         <div className="bureau-item-hover">
           <p>{project.name}</p>
-          <p>{project.description}</p>
+          <p>{project.description_hover}</p>
         </div>
       </div>
     </a>
