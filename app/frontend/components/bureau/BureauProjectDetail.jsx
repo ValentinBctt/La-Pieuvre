@@ -31,6 +31,7 @@ export default function BureauProjectDetail() {
       return true;
     }
   });
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   useEffect(() => {
     let isMounted = true;
@@ -111,6 +112,14 @@ export default function BureauProjectDetail() {
     <>
       <NavbarBureau />
       <div className="bureau-project-page">
+        <button
+          className={`hamburger-menu${showMobileMenu ? " open" : ""}`}
+          onClick={() => setShowMobileMenu((visible) => !visible)}
+          aria-label={showMobileMenu ? "Fermer le menu" : "Ouvrir le menu"}
+        >
+          {showMobileMenu ? "✕" : <span className="burger-bars"><span /><span /><span /></span>}
+        </button>
+
         <CategoryNavigation
           mainCategories={mainCategories}
           projectCategories={projectCategories}
@@ -118,6 +127,18 @@ export default function BureauProjectDetail() {
           onSelect={selectCategory}
           mobile={false}
         />
+
+        {showMobileMenu && (
+          <div className="mobile-menu">
+            <CategoryNavigation
+              mainCategories={mainCategories}
+              projectCategories={projectCategories}
+              selectedCategory={project.categories?.[0]?.name}
+              onSelect={selectCategory}
+              mobile
+            />
+          </div>
+        )}
 
         <main className="bureau-project-detail">
 
