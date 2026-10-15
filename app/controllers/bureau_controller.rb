@@ -9,7 +9,7 @@ class BureauController < ApplicationController
     @bureau_data = Rails.cache.fetch('bureau_index', expires_in: 12.hours) do
       {
         categories: BureauCategory.order(:kind, :name).map { |c| { id: c.id, name: c.name, kind: c.kind } },
-        projects: BureauProject.includes(:bureau_category).with_attached_main_image.with_attached_photos.map { |p| format_project(p) }
+        projects: BureauProject.includes(:bureau_categories).with_attached_main_image.with_attached_photos.map { |p| format_project(p) }
       }
     end
   end
@@ -28,11 +28,7 @@ class BureauController < ApplicationController
       client: project.client,
       date: project.date,
       description: project.description,
-      category: {
-        id: project.bureau_category.id,
-        name: project.bureau_category.name,
-        kind: project.bureau_category.kind
-      },
+      categories: project.bureau_categories.map { |c| { id: c.id, name: c.name, kind: c.kind } },
       # Réduire les dimensions pour accélérer le chargement
       main_image: optimized_image_url(project.main_image, resize_to_limit: [900, 900]),
       photos: project.photos.map { |photo| optimized_image_url(photo, resize_to_limit: [1000, 1000]) }

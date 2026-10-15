@@ -114,7 +114,7 @@ export default function BureauProjectDetail() {
         <CategoryNavigation
           mainCategories={mainCategories}
           projectCategories={projectCategories}
-          selectedCategory={project.category.name}
+          selectedCategory={project.categories?.[0]?.name}
           onSelect={selectCategory}
           mobile={false}
         />

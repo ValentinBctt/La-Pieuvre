@@ -13,7 +13,7 @@ function ProjectCard({ project, slider = false }) {
     <a className={slider ? "bureau-home-item-swiper" : "bureau-home-item"} href={`/bureau/projects/${project.id}`}>
       <div className="bureau-home-item-title">
         <p>{project.name}</p>
-        <p>{project.category.name}</p>
+        <p>{(project.categories || []).map((category) => category.name).join(", ")}</p>
       </div>
       <div className={containerClass}>
         {project.main_image && (
@@ -109,7 +109,9 @@ export default function BureauHomeData({ bureauData = { categories: [], projects
     .map((name) => data.categories.find((category) => category.name === name && category.kind === "main"))
     .filter(Boolean);
   const projectCategories = data.categories.filter((category) => category.kind === "project");
-  const items = data.projects.filter((project) => project.category.name === selectedCategory);
+  const items = data.projects.filter((project) =>
+    (project.categories || []).some((category) => category.name === selectedCategory)
+  );
 
   const selectCategory = (category) => {
     setSelectedCategory(category.name);

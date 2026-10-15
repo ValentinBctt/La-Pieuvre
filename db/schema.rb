@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2026_10_14_085923) do
+ActiveRecord::Schema[7.0].define(version: 2026_10_15_090000) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -59,8 +59,17 @@ ActiveRecord::Schema[7.0].define(version: 2026_10_14_085923) do
     t.index ["name", "kind"], name: "index_bureau_categories_on_name_and_kind", unique: true
   end
 
-  create_table "bureau_projects", force: :cascade do |t|
+  create_table "bureau_project_categories", force: :cascade do |t|
+    t.integer "bureau_project_id", null: false
     t.integer "bureau_category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bureau_category_id"], name: "index_bureau_project_categories_on_bureau_category_id"
+    t.index ["bureau_project_id", "bureau_category_id"], name: "index_bureau_project_categories_uniqueness", unique: true
+    t.index ["bureau_project_id"], name: "index_bureau_project_categories_on_bureau_project_id"
+  end
+
+  create_table "bureau_projects", force: :cascade do |t|
     t.string "name", null: false
     t.text "mission"
     t.text "contexte"
@@ -69,7 +78,6 @@ ActiveRecord::Schema[7.0].define(version: 2026_10_14_085923) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "date"
-    t.index ["bureau_category_id"], name: "index_bureau_projects_on_bureau_category_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -133,6 +141,7 @@ ActiveRecord::Schema[7.0].define(version: 2026_10_14_085923) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bureau_projects", "bureau_categories"
+  add_foreign_key "bureau_project_categories", "bureau_categories"
+  add_foreign_key "bureau_project_categories", "bureau_projects"
   add_foreign_key "products", "categories"
 end
