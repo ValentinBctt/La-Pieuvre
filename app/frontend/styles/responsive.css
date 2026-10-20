@@ -62,6 +62,12 @@
 
 }
 
+@media (max-width: 1300px) {
+  .bureau-nav-left {
+    margin-right: 5rem;
+  }
+}
+
 @media (max-width: 768px) {
 
 
