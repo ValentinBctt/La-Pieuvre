@@ -3,8 +3,8 @@
     "file": "assets/ChaparralPro-Light-BOzeumd6.otf",
     "src": "_ChaparralPro-Light-BOzeumd6.otf"
   },
-  "_Confiance-marquee-zz4TRy9P.js": {
-    "file": "assets/Confiance-marquee-zz4TRy9P.js",
+  "_Confiance-marquee-BAbjoe1K.js": {
+    "file": "assets/Confiance-marquee-BAbjoe1K.js",
     "name": "Confiance-marquee",
     "imports": [
       "_responsive-DrfEyDKJ.js",
@@ -60,23 +60,23 @@
     "file": "assets/PlutoRegular-CjdYgVDC.otf",
     "src": "_PlutoRegular-CjdYgVDC.otf"
   },
-  "_Prestation_live_all-9XgZabXN.js": {
-    "file": "assets/Prestation_live_all-9XgZabXN.js",
+  "_Prestation_live_all-BuJhn-fT.css": {
+    "file": "assets/Prestation_live_all-BuJhn-fT.css",
+    "src": "_Prestation_live_all-BuJhn-fT.css"
+  },
+  "_Prestation_live_all-Dl0WrfOI.js": {
+    "file": "assets/Prestation_live_all-Dl0WrfOI.js",
     "name": "Prestation_live_all",
     "imports": [
       "_responsive-DrfEyDKJ.js",
       "_ContactForm-BuPMIuBf.js",
-      "_Confiance-marquee-zz4TRy9P.js",
+      "_Confiance-marquee-BAbjoe1K.js",
       "_realisation-N4BzJ6wG.js",
       "_useScrollbarDrag-0cdklNwp.js"
     ],
     "css": [
       "assets/Prestation_live_all-BuJhn-fT.css"
     ]
-  },
-  "_Prestation_live_all-BuJhn-fT.css": {
-    "file": "assets/Prestation_live_all-BuJhn-fT.css",
-    "src": "_Prestation_live_all-BuJhn-fT.css"
   },
   "_color-limit-B1ZDVStL.svg": {
     "file": "assets/color-limit-B1ZDVStL.svg",
@@ -163,14 +163,14 @@
     "src": "assets/fournisseurs.svg"
   },
   "entrypoints/activations.jsx": {
-    "file": "assets/activations-CIFo5k4r.js",
+    "file": "assets/activations-C8BSczUe.js",
     "name": "entrypoints/activations.jsx",
     "src": "entrypoints/activations.jsx",
     "isEntry": true,
     "imports": [
       "_responsive-DrfEyDKJ.js",
       "_realisation-N4BzJ6wG.js",
-      "_Prestation_live_all-9XgZabXN.js"
+      "_Prestation_live_all-Dl0WrfOI.js"
     ]
   },
   "entrypoints/application.js": {
@@ -192,7 +192,7 @@
     ]
   },
   "entrypoints/atelier.jsx": {
-    "file": "assets/atelier-Drl_Z0oc.js",
+    "file": "assets/atelier-dfrILoZb.js",
     "name": "entrypoints/atelier.jsx",
     "src": "entrypoints/atelier.jsx",
     "isEntry": true,
@@ -241,24 +241,24 @@
     ]
   },
   "entrypoints/prestationlive.jsx": {
-    "file": "assets/prestationlive-dRA743KT.js",
+    "file": "assets/prestationlive-B_5E9XCI.js",
     "name": "entrypoints/prestationlive.jsx",
     "src": "entrypoints/prestationlive.jsx",
     "isEntry": true,
     "imports": [
       "_responsive-DrfEyDKJ.js",
-      "_Prestation_live_all-9XgZabXN.js"
+      "_Prestation_live_all-Dl0WrfOI.js"
     ]
   },
   "entrypoints/realisations.jsx": {
-    "file": "assets/realisations-DDu8i7EK.js",
+    "file": "assets/realisations-DZ6YlyCc.js",
     "name": "entrypoints/realisations.jsx",
     "src": "entrypoints/realisations.jsx",
     "isEntry": true,
     "imports": [
       "_responsive-DrfEyDKJ.js",
       "_ContactForm-BuPMIuBf.js",
-      "_Confiance-marquee-zz4TRy9P.js",
+      "_Confiance-marquee-BAbjoe1K.js",
       "_realisation-N4BzJ6wG.js"
     ]
   },

@@ -2,7 +2,7 @@
 import React from "react";
 import '../../styles/realisation.css';
 
-const SINGLE_IMAGE_SRC = 'https://res.cloudinary.com/dnojcwwos/image/upload/v1790159653/vector_o7xzwn.webp';
+const SINGLE_IMAGE_SRC = 'https://res.cloudinary.com/dnojcwwos/image/upload/v1792488570/Fichier_3_si0jf4.svg';
 
 export default function IlsNousFontConfiance() {
   return (
