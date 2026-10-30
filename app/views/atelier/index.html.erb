@@ -1,2 +1,6 @@
+<link rel="preload" as="image" href="https://res.cloudinary.com/dnojcwwos/image/upload/v1790326356/c2328aab24dba75d6b81b02ac1b86d7cb51c2956_posgol.gif" fetchpriority="high">
+<% @showroom_images.first(6).each do |url| %>
+  <link rel="preload" as="image" href="<%= url %>">
+<% end %>
 <div id="atelier-root" data-showroom-images="<%= json_escape(@showroom_images.to_json) %>"></div>
 <%= vite_javascript_tag 'atelier.jsx' %>

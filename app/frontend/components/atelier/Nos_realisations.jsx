@@ -74,6 +74,19 @@ export default function NosRealisations({ images: showroomImages = [] }) {
 
   const marqueeImages = [...images, ...images];
 
+  // Le défilement part de -50% de la largeur du contenu : on attend que les images
+  // soient chargées pour que cette largeur soit stable (sinon décalages / zones vides sur Safari/Mac).
+  const [loadedCount, setLoadedCount] = useState(0);
+  const [forceReady, setForceReady] = useState(false);
+  const marqueeReady = forceReady || (images.length > 0 && loadedCount >= images.length);
+
+  useEffect(() => {
+    setLoadedCount(0);
+    setForceReady(false);
+    const timer = setTimeout(() => setForceReady(true), 2500);
+    return () => clearTimeout(timer);
+  }, [images]);
+
   if (loading || images.length === 0) {
     return (
       <div className="nos-realisations">
@@ -116,12 +129,24 @@ export default function NosRealisations({ images: showroomImages = [] }) {
     <div className="nos-realisations">
 
       <div className="marquee">
-        <div className="marquee-content">
-          {marqueeImages.map((img, idx) => (
-            <div className="realisations-image" key={idx}>
-              <img src={img} alt={`Réalisation ${idx + 1}`} loading="lazy" decoding="async" />
-            </div>
-          ))}
+        <div className={`marquee-content${marqueeReady ? " is-ready" : ""}`}>
+          {marqueeImages.map((img, idx) => {
+            // Seule la première copie compte pour le chargement (la 2e est identique, donc en cache)
+            const countLoad = idx < images.length ? () => setLoadedCount((c) => c + 1) : undefined;
+            return (
+              <div className="realisations-image" key={idx}>
+                <img
+                  src={img}
+                  alt={`Réalisation ${(idx % images.length) + 1}`}
+                  loading="eager"
+                  fetchPriority={idx < 6 ? "high" : "auto"}
+                  decoding="async"
+                  onLoad={countLoad}
+                  onError={countLoad}
+                />
+              </div>
+            );
+          })}
         </div>
         <div className="voir-en-details-wrap wrap-marquee">
           <a href="/atelier/realisations" className="voir-en-details">
@@ -139,15 +164,16 @@ export default function NosRealisations({ images: showroomImages = [] }) {
         </div>
       </div>
 
-      <div className="savoir-faire"></div>
+      <div className="savoir-faire">
         <h2 className="savoir-faire-title">NOTRE SAVOIR-FAIRE</h2>
         <p className="savoir-faire-description">
           L'Atelier maîtrise différentes techniques d'impression :
           sérigraphie, broderie, DTF, DTG, sublimation… Pour vous, nous adaptons chaque production à vos besoins, de la petite série aux grandes quantités.
-Nos tentacules peuvent aussi embarquer sur vos événements pour
-créer des expériences en live et des ateliers sur mesure. Pour vous accompagner dans la création et l'image, notre studio créatif Bureau La Pieuvre peut s'occuper de la direction
-artistique, des visuels, des logos, des photos et des vidéos. </p>
+          Nos tentacules peuvent aussi embarquer sur vos événements pour
+          créer des expériences en live et des ateliers sur mesure. Pour vous accompagner dans la création et l'image, notre studio créatif Bureau La Pieuvre peut s'occuper de la direction
+          artistique, des visuels, des logos, des photos et des vidéos.
+        </p>
       </div>
-
+    </div>
   );
 }

@@ -183,6 +183,34 @@
 
 }
 
+.nos-realisations .marquee {
+  contain: paint;
+}
+
+.nos-realisations .marquee-content {
+  opacity: 0;
+  animation-play-state: paused;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: opacity 0.4s ease;
+}
+
+.nos-realisations .marquee-content.is-ready {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+.nos-realisations .realisations-image {
+  flex-shrink: 0;
+}
+
+.nos-realisations .realisations-image img {
+  display: block;
+  width: auto;
+  max-width: none;
+}
+
 .realisations-swiper {
   width: 90vw;
   margin: 0 auto;

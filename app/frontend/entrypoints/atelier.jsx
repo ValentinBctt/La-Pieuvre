@@ -8,7 +8,10 @@ import '../styles/responsive.css'
 window.React = React
 
 function mountAtelier() {
-  const container = document.getElementById('atelier-root');
+  // Le layout contient un #atelier-root vide : on cible celui qui porte les images (évite un appel API en plus)
+  const container =
+    document.querySelector('#atelier-root[data-showroom-images]') ||
+    document.getElementById('atelier-root');
   if (container) {
     const showroomImages = JSON.parse(container.dataset.showroomImages || '[]');
     if (!window._atelierReactRoot) {
