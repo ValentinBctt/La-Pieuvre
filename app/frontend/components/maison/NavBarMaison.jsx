@@ -10,7 +10,7 @@ export default function NavbarMaison() {
   ];
 
   const secondaryLinks = [
-    { href: "/", label: "INSTAGRAM" },
+    { href: "https://www.instagram.com/atelierlapieuvre/", label: "INSTAGRAM", external: true },
     { href: "#contactez-nous", label: "CONTACT" },
   ];
 
@@ -42,7 +42,12 @@ export default function NavbarMaison() {
 
       <div className="navbar-right navbar-maison-right">
         {secondaryLinks.map((link) => (
-          <a key={link.href} href={link.href} className="navbar-maison-secondary">
+          <a
+            key={link.href}
+            href={link.href}
+            className="navbar-maison-secondary"
+            {...(link.external && { target: "_blank", rel: "noopener noreferrer" })}
+          >
             {link.label}
           </a>
         ))}
@@ -74,7 +79,12 @@ export default function NavbarMaison() {
 
         <div className="navbar-mobile-links navbar-mobile-links-secondary">
           {secondaryLinks.map((link) => (
-            <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)}>
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setMenuOpen(false)}
+              {...(link.external && { target: "_blank", rel: "noopener noreferrer" })}
+            >
               {link.label}
             </a>
           ))}

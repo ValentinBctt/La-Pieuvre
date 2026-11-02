@@ -1,5 +1,5 @@
 class ContactMailer < ApplicationMailer
-  default to: 'vbracchetti@yahoo.fr'
+  default to: 'atelierlapieuvre@gmail.com'
 
   def contact_email(data)
     @data = data.transform_keys(&:to_s)

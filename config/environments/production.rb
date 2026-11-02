@@ -29,6 +29,17 @@ Rails.application.configure do
   end
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # Hôtes autorisés. APP_HOSTS accepte des hôtes supplémentaires séparés par des virgules
+  # (ex. l'URL herokuapp.com de l'application).
+  atelier_host = config.x.domains.atelier
+  config.hosts = [
+    atelier_host,
+    "www.#{atelier_host}",
+    *ENV.fetch("APP_HOSTS", "").split(",").map(&:strip).reject(&:empty?)
+  ]
+
+  config.action_mailer.default_url_options = { host: atelier_host, protocol: "https" }
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -75,7 +86,7 @@ Rails.application.configure do
   # config.action_cable.allowed_request_origins = [ "http://example.com", /http:\/\/example.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force_ssl = true
 
   # Include generic and useful information about system operation, but avoid logging too much
   # information to avoid inadvertent exposure of personally identifiable information (PII).

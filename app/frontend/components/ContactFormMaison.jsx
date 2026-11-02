@@ -142,9 +142,9 @@ export default function ContactForm({ endpoint = '/api/contacts', buttonText = '
 
       <div className='footer-contact maison-footer-contact'>
         <h3>NOUS CONTACTER</h3>
-        <a href="">Contact</a>
-        <a href="">Instagram</a>
-        <a href="">Linkedin</a>
+        <a href="#contactez-nous">Contact</a>
+        <a href="https://www.instagram.com/atelierlapieuvre/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.linkedin.com/company/atelier-la-pieuvre/" target="_blank" rel="noopener noreferrer">Linkedin</a>
       </div>
 
       <div className='footer-legal maison-footer-legal'>

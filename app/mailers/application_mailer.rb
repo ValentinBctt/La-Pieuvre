@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: ENV.fetch("SMTP_EMAIL", "from@example.com")
+  default from: "Atelier La Pieuvre <#{ENV.fetch('SMTP_EMAIL', 'from@example.com')}>"
   layout "mailer"
 end

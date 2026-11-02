@@ -19,5 +19,10 @@ module AtelierLapieuvre
     # config.time_zone = "Central Time (US & Canada)"
     config.autoload_paths << Rails.root.join("app/dashboards")
     config.eager_load_paths << Rails.root.join("app/dashboards")
+
+    # Domaines publics. Bureau et Maison n'ont pas encore leur domaine :
+    # leurs pages affichent "en travaux" sur le domaine Atelier.
+    config.x.domains.atelier = ENV.fetch("ATELIER_HOST", "atelierlapieuvre.com")
+    config.x.domains.bureau = ENV.fetch("BUREAU_HOST", "bureaulapieuvre.com")
   end
 end
