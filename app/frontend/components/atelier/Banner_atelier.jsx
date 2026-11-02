@@ -8,7 +8,7 @@ export default function BannerAtelier({ showroomImages = [] }) {
        <div className="banner-image">
 
   <img
-    src="https://res.cloudinary.com/dnojcwwos/image/upload/v1790326356/c2328aab24dba75d6b81b02ac1b86d7cb51c2956_posgol.gif"
+    src="https://res.cloudinary.com/dnojcwwos/image/upload/v1793624976/LOGO-LPV-TONE-CROP_hfacl2.gif"
     alt="Atelier Lapieuvre"
     loading="eager"
     fetchPriority="high"
