@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/politique-confidentialite', to: 'pages#privacy_policy', as: :privacy_policy
   get '/conditions-generales', to: 'pages#terms', as: :terms
   get '/accessibilite', to: 'pages#accessibility', as: :accessibility
+  get '/sitemap.xml', to: 'sitemaps#show', defaults: { format: 'xml' }
 
   namespace :api do
     resources :contacts, only: [:create]

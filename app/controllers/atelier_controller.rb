@@ -3,6 +3,7 @@ class AtelierController < ApplicationController
 
   def index
     @page_title = "La Pieuvre - Atelier"
+    @meta_description = "Atelier La Pieuvre : print & event, production textile et prestations live."
     # Cache 12h - les images changent rarement
     expires_in 12.hours, public: true
     
