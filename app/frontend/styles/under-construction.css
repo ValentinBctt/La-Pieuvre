@@ -1,0 +1,35 @@
+.under-construction-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 2rem 6rem;
+}
+
+.under-construction-status {
+  font-family: 'Pluto';
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.2em;
+  color: var(--orange);
+  margin: 0.5rem 0 2rem;
+}
+
+.under-construction-text {
+  max-width: 36rem;
+  line-height: 1.5;
+  margin: 0 0 2rem;
+}
+
+.under-construction-link {
+  font-family: 'Gotham';
+  color: var(--white);
+  border: 1px solid var(--orange);
+  padding: 0.75rem 1.5rem;
+  transition: background 0.2s ease;
+}
+
+.under-construction-link:hover {
+  background: var(--orange);
+  color: var(--black);
+}

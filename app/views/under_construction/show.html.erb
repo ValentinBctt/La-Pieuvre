@@ -1,5 +1,2 @@
-<main>
-  <h1><%= @section %> en travaux</h1>
-  <p>La section <%= @section %> de La Pieuvre arrive bientôt. Merci de votre patience.</p>
-  <p><a href="/atelier">Retour à l'Atelier La Pieuvre</a></p>
-</main>
+<div id="under-construction-root" data-section="<%= @section %>"></div>
+<%= vite_javascript_tag 'under_construction.jsx' %>
